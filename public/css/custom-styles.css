@@ -7,6 +7,10 @@
 
 .site-footer {
     background-color: #1b1e28;
+    background-image: url("/images/frontend/gradient_2.svg");
+    background-position: top right;
+    background-size: cover;
+    background-blend-mode: exclusion;
     height: 400px;
     padding: 60px 90px;
 }
@@ -104,7 +108,7 @@
 .nav-item {
     font-size: 17px;
     font-weight: 400;
-    color: #000;
+    color: #fff;
     text-decoration: none;
     padding: 20px 15px 30px 15px;
     border-bottom: 3px solid transparent;
@@ -174,11 +178,278 @@
     color: #000;
 }
 
-/* @media screen and (min-width: 450px) {
-    .footer-link {
-        text-align: center;
-    }
-} */
+.site-header-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 9;
+}
+
+.content-container {
+    padding: 20px 15px;
+    background-color: #000;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.hero-section {
+    height: 800px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 24px;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay color */
+    z-index: 1; /* Keep overlay above background */
+    border-radius: 24px;
+}
+
+.hero-section > * {
+    position: relative;
+    z-index: 2; /* Ensure text and other content are above overlay */
+    color: white; /* Example text color */
+    padding-top: 160px;
+}
+
+.hero-check-container {
+    padding: 6px;
+    border-radius: 32px;
+    border: 2px solid #fff;
+    width: 128px;
+    height: 36px;
+}
+
+.site-check-text {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.hero-title-text {
+    font-size: 90px;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 31px;
+    width: 90%;
+    line-height: 1.1;
+}
+
+.hero-detail-text {
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff99;
+    margin-top: 40px;
+    width: 70%;
+    line-height: 1.1;
+}
+
+.brands-container {
+}
+
+.hero-brands {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    padding: 0 60px;
+}
+
+.py-60px {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.div-graphic-element {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.home-section-2 {
+    height: auto;
+}
+
+.w-60-perc {
+    width: 60%;
+}
+
+.home-sect-2-title {
+    font-weight: 400;
+    font-size: 64px;
+}
+
+.home-sect-2-img {
+    width: 35%;
+    height: 430px;
+}
+
+.home-sect-2-img img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.home-sect-2-text-container {
+    background-color: #0000000a;
+    border-radius: 20px;
+    width: 63%;
+    height: 100%;
+    padding: 15px 30px;
+}
+
+.home-sect-2-text-heading {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.home-sect-2-text-detail {
+    font-size: 16px;
+    font-weight: 400;
+    color: #535353;
+}
+
+.home-sect-2-text-detail-2 h3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.home-sect-2-text-detail-2 ul {
+    padding-left: 18px;
+}
+
+.home-sect-2-text-detail-2 li {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.home-sect-2-text-detail-2 p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #535353;
+}
+
+.home-sect-2-text-detail-2 span {
+    font-size: 15px;
+    font-weight: 400;
+    color: #535353;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.carousel-indicators {
+    align-items: center;
+    gap: 10px;
+    bottom: 14% !important;
+}
+
+.carousel-indicators button {
+    height: 15px !important;
+    width: 15px !important;
+    border-radius: 100%;
+}
+
+.carousel-indicators .active {
+    height: 20px !important;
+    width: 20px !important;
+    border-radius: 100%;
+}
+
+.home-section-3 {
+    background-color: #0d101b;
+}
+
+.py-90px {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: transparent;
+    background: linear-gradient(
+        to right,
+        var(--left-gradient),
+        var(--right-gradient)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.nav-pills .nav-link {
+    text-align: left;
+    color: #ffffffab;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.nav-pills .nav-link.active::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 104.9%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(
+        45deg,
+        var(--left-gradient),
+        var(--right-gradient)
+    );
+    margin-right: 8px; /* Space between dot and text */
+    vertical-align: middle;
+}
+
+.nav.nav-pills {
+    padding-left: 25px;
+}
+
+.section-3-tab-content {
+    background-color: #ffffff0a;
+    padding: 46px 40px;
+    border-radius: 24px;
+}
+
+.section-3-tab-heading-1 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.section-3-tab-detail-1 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffffab;
+}
+
+.section-3-tab-heading-2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.section-3-img {
+    border-radius: 20px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
 
 @media (max-width: 460px) {
     .site-footer {
@@ -205,5 +476,56 @@
     }
     .site-header {
         padding: 20px 10px;
+    }
+    .hero-title-text {
+        font-size: 36px;
+        width: 95%;
+    }
+    .hero-detail-text {
+        font-size: 18px;
+        font-weight: 400;
+        color: #ffffff99;
+        margin-top: 40px;
+        width: 90%;
+        line-height: 1.1;
+    }
+    .hero-section {
+        height: auto;
+    }
+    .hero-brands {
+        position: relative;
+        padding: 0 15px;
+        margin-top: 100px;
+    }
+    .brands-container > div {
+        display: block !important;
+    }
+    .brands-container > div > img {
+        display: block !important;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    .carousel-indicators {
+        bottom: 0 !important;
+    }
+    .home-sect-2-title {
+        font-size: 36px;
+    }
+    .div-graphic-element {
+        width: 50%;
+    }
+    .home-sect-2-content-container {
+        display: block !important;
+    }
+    .home-sect-2-img {
+        width: 100% !important;
+        height: 250px !important;
+    }
+    .home-sect-2-text-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .home-sect-2-text-heading {
+        font-size: 24px;
     }
 }
