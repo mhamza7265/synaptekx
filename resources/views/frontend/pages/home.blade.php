@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container my-lg-5">
         <div class="row">
             <div class="col-md-12">
                 <h1>Home Page</h1>
