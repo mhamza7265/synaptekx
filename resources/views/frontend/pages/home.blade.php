@@ -89,7 +89,7 @@
             </button> --}}
         </div>
 
-        <section class="home-section-2 bg-white position-relative" style="border-radius: 24px; margin-top: 15px">
+        <section class="home-section-2 bg-white position-relative radius-24 mt-15">
             <img src="{{asset('images/frontend/graphic_element.svg')}}" class="div-graphic-element" />
             <div class="container py-60px">
                 <div class="hero-check-container d-flex justify-content-start align-content-center border-black">
@@ -132,12 +132,11 @@
             </div>
         </section>
 
-        <section class="home-section-3 position-relative" style="border-radius: 24px; margin-top: 15px">
+        <section class="home-section-3 position-relative radius-24 mt-15">
             <img src="{{asset('images/frontend/graphic_element.svg')}}" class="div-graphic-element" />
             <div class="container py-90px">
-                <div class="hero-check-container d-flex justify-content-start align-content-center border-white">
-                    <img src="{{asset('images/frontend/site_check_icon.svg')}}" />
-                    <span class="site-check-text ms-2 text-white">FEATURES</span>
+                <div class="d-flex justify-content-start align-content-center">
+                    <img src="{{asset('images/frontend/features_pill.svg')}}" />
                 </div>
                 <div class="col-md-12 mt-4">
                     <h1 class="w-60-perc home-sect-2-title text-white">Our Core Digital Services at <span class="text-gradient">SynaptekX</span></h1>
@@ -199,6 +198,17 @@
                 </div>
             </div>
         </section>
+
+        <section class="home-section-2 bg-white position-relative radius-24 mt-15">
+            <div class="container py-35px">
+                <div class="col-md-12 mt-4">
+                    <h1 class="home-sect-4-title text-black">The Digital <span class="text-gradient">Transformation</span> Journey</h1>
+                </div>
+                <div class="home_graphic mt-5">
+                    <img src="{{asset('images/frontend/home_graphic_1.svg')}}" class="home-graphic-1 object-fit-cover w-100" />
+                </div>
+            </div>    
+        </section> 
     </div>
 @endsection
 

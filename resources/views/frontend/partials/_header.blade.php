@@ -1,6 +1,8 @@
 <header class="site-header-main">
     <div class="site-header d-flex justify-content-between align-items-center position-relative">
-        <img src="{{asset("images/frontend/synaptekx_logo.svg")}}" alt="logo" class="header-logo d-none d-md-block" />
+        <a href="#">
+            <img src="{{asset("images/frontend/synaptekx_logo.svg")}}" alt="logo" class="header-logo d-none d-md-block" />
+        </a>
         <div class="site-navbar d-none d-md-flex justify-content-between align-items-center">
             <a href="javascript:void(0)" class="d-block nav-item">Home</a>
             <span id="services-nav" data-menu="services-menu" class="nav-item cursor-pointer">Services <i class="fa-solid fa-caret-down ms-2"></i></span>
