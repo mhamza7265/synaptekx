@@ -1,7 +1,5 @@
 @extends('frontend.layouts.main')
 
-@section('title', 'home page')
-
 @section('styles')
     <style>
         .text{
