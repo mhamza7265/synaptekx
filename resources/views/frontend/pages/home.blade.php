@@ -145,13 +145,13 @@
                 </a>
 
                 <div class="home-sect-3-content-container d-flex justify-content-between align-items-start mt-5">
-                    <div class="row w-100">
+                    <div class="row w-100 m-auto">
                         <!-- Left Side - Vertical Tabs -->
-                        <div class="d-flex col-md-4">
-                            <div class="h-100 border-1 border-white" style="padding-top: 20px">
+                        <div class="d-flex col-md-4 col-12">
+                            {{-- <div class="h-100 border-1 border-white" style="padding-top: 20px">
                                 <img src="{{asset('images/frontend/divider_gradient.svg')}}" />
-                            </div>
-                            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+                            </div> --}}
+                            <div class="nav flex-column nav-pills tab-border-left" id="v-pills-tab" role="tablist">
                                 <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button">
                                     Consulting & Strategy
                                 </button>
@@ -165,7 +165,7 @@
                         </div>
                 
                         <!-- Right Side - Tab Content -->
-                        <div class="col-md-8">
+                        <div class="col-md-8 col-12">
                             <div class="tab-content section-3-tab-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="v-pills-home">
                                     <h3 class="section-3-tab-heading-1 text-white">Consulting & Strategy</h3>
@@ -207,13 +207,90 @@
                 </div>
             </div>    
         </section> 
-    </div>
-@endsection
 
-@section('scripts')
-    <script>
-        $(document).ready(function(){
-            $('.text').css('color', 'red');
-        })
-    </script>
+        <section class="home-section-2 bg-black position-relative radius-24 mt-15 relative" style="background-image: url('/images/frontend/bg-gradient_2.svg'); background-repeat: no-repeat; background-position: right top;">
+            <div class="container py-90px">
+                <div class="d-flex justify-content-start align-content-center">
+                    <img src="{{asset('images/frontend/innovative_pill.svg')}}" />
+                </div>
+                <div class="col-md-12 mt-4">
+                    <h1 class="home-sect-2-title text-white"><span class="text-gradient">Digital Solutions</span> for Business Growth</h1>
+                </div>
+                <div class="row justify-content-center align-items-start mt-5 pt-md-5">
+                    <div class="innovative-sec-table col-lg-3 col-md-4 col-12">
+                        <img src="{{asset('images/frontend/innovative_icon_1.svg')}}" style="width: 50px" />
+                        <div class="text-div">
+                            <h5 class="innovative-sec-table-title">Startup Agility</h5>
+                            <p class="innovative-sec-table-desc">As a growing startup ourselves, we understand the challenges businesses face in today’s competitive market.</p>
+                        </div>
+                    </div>
+                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12">
+                        <img src="{{asset('images/frontend/innovative_icon_2.svg')}}" style="width: 50px" />
+                        <div class="text-div">
+                            <h5 class="innovative-sec-table-title">Customer-Centric Approach</h5>
+                            <p class="innovative-sec-table-desc">Your success is our top priority, and we tailor every solution to your specific needs.</p>
+                        </div>
+                    </div>
+                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12">
+                        <img src="{{asset('images/frontend/innovative_icon_3.svg')}}" style="width: 50px" />
+                        <div class="text-div">
+                            <h5 class="innovative-sec-table-title">Expertise Across Industries</h5>
+                            <p class="innovative-sec-table-desc">Our team of skilled professionals has experience across various domains, ensuring solutions that work.</p>
+                        </div>
+                    </div>
+                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12">
+                        <img src="{{asset('images/frontend/innovative_icon_4.svg')}}" style="width: 50px" />
+                        <div class="text-div">
+                            <h5 class="innovative-sec-table-title">Commitment to Innovation</h5>
+                            <p class="innovative-sec-table-desc">We stay ahead of the curve by embracing the latest technologies and trends.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="{{asset('images/frontend/graphic_element_1.svg')}}" class="div-graphic-element-1" />
+        </section>
+
+        <section class="home-section-2 contact-section bg-white position-relative radius-24 mt-15">
+            <div class="container contact-container br-16px" style="background-image: url('/images/frontend/bg-gradient_3.svg'); background-repeat: no-repeat; background-position: center center;">
+                <div class="row justify-content-between align-items-start">
+                    <div class="col-md-5 col-12">
+                        <div class="d-flex justify-content-start align-content-center">
+                            <img src="{{asset('images/frontend/contact_pill.svg')}}" />
+                        </div>
+                        <h1 class="home-sect-5-title text-black mt-4">Ready to Transform Your Business with <span class="text-gradient">Synaptekk?</span></h1>
+                        <p class="contact-sec-desc mt-2">We give you a lot for your money. Big websites or small, we have a plan that fits your budget and gives you everything you need.</p>
+                        <div class="row justify-content-between mt-3">
+                            <div class="col-md-5 col-12">
+                                <h1 class="home-sect-5-title text-black">Locate Us</h1>
+                                <p class="contact-sec-desc mt-2">1000 Innovation Suite 500 Ontario Canada</p>
+                            </div>
+                            <div class="col-md-5 col-12">
+                                <h1 class="home-sect-5-title text-black">Contact</h1>
+                                <p class="contact-sec-desc mt-2">Info@Synaptex.com +1 235 6543 64</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <form>
+                            <div class="d-md-flex justify-content-between align-items-start w-100">
+                                <input type="text" name="" placeholder="First Name" class="contact-input contact-flex-input" />
+                                <input type="text" name="" placeholder="Last Name" class="contact-input contact-flex-input" />
+                            </div>
+                            <div class="d-md-flex justify-content-between align-items-start w-100 mt-2">
+                                <input type="text" name="" placeholder="Email" class="contact-input contact-flex-input" />
+                                <input type="text" name="" placeholder="Phone" class="contact-input contact-flex-input" />
+                            </div>
+                            <input type="text" name="" placeholder="Subject" class="contact-input mt-2 w-100" />
+                            <textarea name="" placeholder="Write your Message" class="contact-textarea mt-2 w-100"></textarea>
+
+                            <button type="submit" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4 contact-form-btn">
+                                <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                <span class="ms-3 fs-14 text-black">Send Request</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>    
+        </section> 
+    </div>
 @endsection
