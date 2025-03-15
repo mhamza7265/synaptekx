@@ -10,6 +10,12 @@ use App\Http\Controllers\Admin\UserController;
 
 Auth::routes();
 
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
+Route::get('storage-link', [AdminController::class, 'storageLink'])->name('storage.link');
+
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
 

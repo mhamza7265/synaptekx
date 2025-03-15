@@ -1,0 +1,78 @@
+$(document).ready(function () {
+    let hideTimeouts = {}; // Store individual hide timeouts
+
+    function showMenu(navId, menuId) {
+        clearTimeout(hideTimeouts[menuId]); // Cancel hiding
+        $("#frontend-site-header").addClass("background-white");
+        $(".mega-menu").stop(true, true).slideUp(300); // Close other menus
+        $(".nav-item").removeClass("active"); // Remove active from all
+
+        $("#" + navId).addClass("active"); // Add active class to current nav item
+        $("#" + menuId)
+            .stop(true, true)
+            .slideDown(300); // Show corresponding menu
+    }
+
+    function hideMenu(menuId, navId) {
+        // Ensure menuId and navId are valid before using them in jQuery selectors
+        if (!menuId || $("#" + menuId).length === 0) menuId = null;
+        if (!navId || $("#" + navId).length === 0) navId = null;
+
+        hideTimeouts[menuId] = setTimeout(function () {
+            if (navId) {
+                $("#" + navId).removeClass("active"); // Remove active class
+            }
+            if (menuId) {
+                $("#" + menuId).slideUp(300); // Hide menu
+            }
+
+            // Remove background only if mouse is outside both menus and header
+            if (!$(".mega-menu:hover").length && !$(".nav-item:hover").length) {
+                $("#frontend-site-header").removeClass("background-white");
+            }
+        }, 10); // Delay hiding to prevent flickering
+    }
+
+    $(".nav-item").mouseenter(function () {
+        let menuId = $(this).data("menu"); // Get menu ID
+        menuId && showMenu($(this).attr("id"), menuId);
+        if (!menuId) $("#frontend-site-header").removeClass("background-white");
+    });
+
+    $(".nav-item").mouseleave(function () {
+        let menuId = $(this).data("menu");
+        let navId = $(this).attr("id");
+
+        // Ensure menuId is not empty or undefined
+        if (!menuId) {
+            hideMenu("", navId);
+            return;
+        }
+
+        // Delay hiding, but only if the cursor doesn't enter the menu
+        hideTimeouts[menuId] = setTimeout(function () {
+            if (!$("#" + menuId).is(":hover")) {
+                hideMenu(menuId, navId);
+            }
+        }, 10);
+    });
+
+    $(".mega-menu").mouseenter(function () {
+        let menuId = $(this).attr("id");
+        clearTimeout(hideTimeouts[menuId]); // Prevent hiding when hovering menu
+    });
+
+    $(".mega-menu").mouseleave(function () {
+        let menuId = $(this).attr("id");
+        let navId = $('.nav-item[data-menu="' + menuId + '"]').attr("id");
+        hideMenu(menuId, navId);
+    });
+
+    $("#frontend-site-header").mouseleave(function () {
+        setTimeout(function () {
+            if (!$(".mega-menu:hover").length && !$(".nav-item:hover").length) {
+                $("#frontend-site-header").removeClass("background-white");
+            }
+        }, 10); // Small delay to prevent flickering
+    });
+});

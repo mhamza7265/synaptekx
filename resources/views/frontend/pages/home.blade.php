@@ -10,84 +10,67 @@
 
 @section('content')
     <div class="home-page">
-        
-
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <section class="home-hero-section">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="hero-section" style="background-image: url('/images/frontend/hero_one.svg')">
+                        <div class="container overflow-hidden">
+                            <div class="d-flex justify-content-start align-content-center">
+                                <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                            </div>
+                            <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
+                            </div>
+                            <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="hero-section" style="background-image: url('/images/frontend/hero_one.svg')">
+                        <div class="container overflow-hidden">
+                            <div class="d-flex justify-content-start align-content-center">
+                                <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                            </div>
+                            <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
+                            </div>
+                            <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="hero-section" style="background-image: url('/images/frontend/hero_one.svg')">
+                        <div class="container overflow-hidden">
+                            <div class="d-flex justify-content-start align-content-center">
+                                <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                            </div>
+                            <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
+                            </div>
+                            <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <section class="hero-section" style="background-image: url('/images/frontend/hero_one.svg')">
-                    <div class="container">
-                        <div class="hero-check-container d-flex justify-content-start align-content-center">
-                            <img src="{{asset('images/frontend/site_check_icon.svg')}}" />
-                            <span class="site-check-text ms-2">SYNAPTEKX</span>
-                        </div>
-                        <div class="hero-text-content">
-                            <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
-                        </div>
-                        <div class="hero-text-detail">
-                            <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
-                        </div>
-                    </div>
-                    <div class="hero-brands">
-                        @include('frontend.partials._hero-brands')
-                    </div>
-                </section>
-              </div>
-              <div class="carousel-item">
-                <section class="hero-section" style="background-image: url('/images/frontend/hero_one.svg')">
-                    <div class="container">
-                        <div class="hero-check-container d-flex justify-content-start align-content-center">
-                            <img src="{{asset('images/frontend/site_check_icon.svg')}}" />
-                            <span class="site-check-text ms-2">SYNAPTEKX</span>
-                        </div>
-                        <div class="hero-text-content">
-                            <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
-                        </div>
-                        <div class="hero-text-detail">
-                            <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
-                        </div>
-                    </div>
-                    <div class="hero-brands">
-                        @include('frontend.partials._hero-brands')
-                    </div>
-                </section>
-              </div>
-              <div class="carousel-item">
-                <section class="hero-section" style="background-image: url('/images/frontend/hero_one.svg')">
-                    <div class="container">
-                        <div class="hero-check-container d-flex justify-content-start align-content-center">
-                            <img src="{{asset('images/frontend/site_check_icon.svg')}}" />
-                            <span class="site-check-text ms-2">SYNAPTEKX</span>
-                        </div>
-                        <div class="hero-text-content">
-                            <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
-                        </div>
-                        <div class="hero-text-detail">
-                            <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
-                        </div>
-                    </div>
-                    <div class="hero-brands">
-                        @include('frontend.partials._hero-brands')
-                    </div>
-                </section>
-              </div>
+            <div class="hero-brands">
+                @include('frontend.partials._hero-brands')
             </div>
-            {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button> --}}
-        </div>
+        </section>
 
-        <section class="home-section-2 bg-white position-relative radius-24 mt-15">
+        {{-- <section class="home-section-2 bg-white position-relative radius-24 mt-15">
             <img src="{{asset('images/frontend/graphic_element.svg')}}" class="div-graphic-element" />
             <div class="container py-60px">
                 <div class="hero-check-container d-flex justify-content-start align-content-center border-black">
@@ -128,16 +111,71 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
-        <section class="home-section-3 position-relative radius-24 mt-15">
+        <section class="home-section-3 position-relative radius-24 mt-15" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <img src="{{asset('images/frontend/graphic_element.svg')}}" class="div-graphic-element" />
-            <div class="container py-90px">
+
+            <div id="partners-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-block d-md-flex justify-content-between align-content-center overflow-hidden">
+                            <img src="{{asset('images/frontend/aws_icon.svg')}}" alt="aws icon" class="partners-icon" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" />
+                            <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
+                                <h5 class="text-white fs-16 fw-500">Amazon</h5>
+                                <p class="fs-16 text-white">Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                                <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                    <span class="ms-3 fs-14 text-white">Send Request</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-block d-md-flex justify-content-between align-content-center overflow-hidden">
+                            <img src="{{asset('images/frontend/cisco_logo.svg')}}" alt="aws icon" class="partners-icon" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" />
+                            <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
+                                <h5 class="text-white fs-16 fw-500">Amazon</h5>
+                                <p class="fs-16 text-white">Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                                <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                    <span class="ms-3 fs-14 text-white">Send Request</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-block d-md-flex justify-content-between align-content-center overflow-hidden">
+                            <img src="{{asset('images/frontend/equinix_logo.svg')}}" alt="aws icon" class="partners-icon" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" />
+                            <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
+                                <h5 class="text-white fs-16 fw-500">Amazon</h5>
+                                <p class="fs-16 text-white">Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                                <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                    <span class="ms-3 fs-14 text-white">Send Request</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#partners-carousel" data-bs-slide="prev">
+                    {{-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> --}}
+                    <img src="{{asset('images/frontend/carousel_arrow_left.svg')}}" alt="arrow-left" />
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#partners-carousel" data-bs-slide="next">
+                    {{-- <span class="carousel-control-next-icon" aria-hidden="true"></span> --}}
+                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" alt="" />
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div class="container py-90px overflow-hidden">
                 <div class="d-flex justify-content-start align-content-center">
                     <img src="{{asset('images/frontend/features_pill.svg')}}" />
                 </div>
                 <div class="col-md-12 mt-4">
-                    <h1 class="w-60-perc home-sect-2-title text-white">Our Core Digital Services at <span class="text-gradient">SynaptekX</span></h1>
+                    <h1 class="w-60-perc home-sect-2-title text-white" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out">Our Core Digital Services at <span class="text-gradient">SynaptekX</span></h1>
                 </div>
                 <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
@@ -145,9 +183,9 @@
                 </a>
 
                 <div class="home-sect-3-content-container d-flex justify-content-between align-items-start mt-5">
-                    <div class="row w-100 m-auto">
+                    <div class="row w-100 m-auto overflow-hidden">
                         <!-- Left Side - Vertical Tabs -->
-                        <div class="d-flex col-md-4 col-12">
+                        <div class="d-flex col-md-4 col-12" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
                             {{-- <div class="h-100 border-1 border-white" style="padding-top: 20px">
                                 <img src="{{asset('images/frontend/divider_gradient.svg')}}" />
                             </div> --}}
@@ -165,7 +203,7 @@
                         </div>
                 
                         <!-- Right Side - Tab Content -->
-                        <div class="col-md-8 col-12">
+                        <div class="col-md-8 col-12" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
                             <div class="tab-content section-3-tab-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="v-pills-home">
                                     <h3 class="section-3-tab-heading-1 text-white">Consulting & Strategy</h3>
@@ -197,18 +235,18 @@
             </div>
         </section>
 
-        <section class="home-section-2 bg-white position-relative radius-24 mt-15">
+        <section class="home-section-2 bg-white position-relative radius-24 mt-15 overflow-hidden" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <div class="container py-35px">
                 <div class="col-md-12 mt-4">
                     <h1 class="home-sect-4-title text-black">The Digital <span class="text-gradient">Transformation</span> Journey</h1>
                 </div>
-                <div class="home_graphic mt-5">
+                <div class="home_graphic mt-5" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
                     <img src="{{asset('images/frontend/home_graphic_1.svg')}}" class="home-graphic-1 object-fit-cover w-100" />
                 </div>
             </div>    
         </section> 
 
-        <section class="home-section-2 bg-black position-relative radius-24 mt-15 relative" style="background-image: url('/images/frontend/bg-gradient_2.svg'); background-repeat: no-repeat; background-position: right top;">
+        <section class="home-section-2 bg-black position-relative radius-24 mt-15 relative overflow-hidden" style="background-image: url('/images/frontend/bg-gradient_2.svg'); background-repeat: no-repeat; background-position: right top;" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <div class="container py-90px">
                 <div class="d-flex justify-content-start align-content-center">
                     <img src="{{asset('images/frontend/innovative_pill.svg')}}" />
@@ -216,29 +254,29 @@
                 <div class="col-md-12 mt-4">
                     <h1 class="home-sect-2-title text-white"><span class="text-gradient">Digital Solutions</span> for Business Growth</h1>
                 </div>
-                <div class="row justify-content-center align-items-start mt-5 pt-md-5">
-                    <div class="innovative-sec-table col-lg-3 col-md-4 col-12">
+                <div class="row justify-content-center align-items-start mt-5 pt-md-5 overflow-hidden">
+                    <div class="innovative-sec-table col-lg-3 col-md-4 col-12" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <img src="{{asset('images/frontend/innovative_icon_1.svg')}}" style="width: 50px" />
                         <div class="text-div">
                             <h5 class="innovative-sec-table-title">Startup Agility</h5>
                             <p class="innovative-sec-table-desc">As a growing startup ourselves, we understand the challenges businesses face in today’s competitive market.</p>
                         </div>
                     </div>
-                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12">
+                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">
                         <img src="{{asset('images/frontend/innovative_icon_2.svg')}}" style="width: 50px" />
                         <div class="text-div">
                             <h5 class="innovative-sec-table-title">Customer-Centric Approach</h5>
                             <p class="innovative-sec-table-desc">Your success is our top priority, and we tailor every solution to your specific needs.</p>
                         </div>
                     </div>
-                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12">
+                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">
                         <img src="{{asset('images/frontend/innovative_icon_3.svg')}}" style="width: 50px" />
                         <div class="text-div">
                             <h5 class="innovative-sec-table-title">Expertise Across Industries</h5>
                             <p class="innovative-sec-table-desc">Our team of skilled professionals has experience across various domains, ensuring solutions that work.</p>
                         </div>
                     </div>
-                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12">
+                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">
                         <img src="{{asset('images/frontend/innovative_icon_4.svg')}}" style="width: 50px" />
                         <div class="text-div">
                             <h5 class="innovative-sec-table-title">Commitment to Innovation</h5>
@@ -250,27 +288,27 @@
             <img src="{{asset('images/frontend/graphic_element_1.svg')}}" class="div-graphic-element-1" />
         </section>
 
-        <section class="home-section-2 contact-section bg-white position-relative radius-24 mt-15">
+        <section class="home-section-2 contact-section bg-white position-relative radius-24 mt-15 overflow-hidden" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <div class="container contact-container br-16px" style="background-image: url('/images/frontend/bg-gradient_3.svg'); background-repeat: no-repeat; background-position: center center;">
                 <div class="row justify-content-between align-items-start">
                     <div class="col-md-5 col-12">
                         <div class="d-flex justify-content-start align-content-center">
                             <img src="{{asset('images/frontend/contact_pill.svg')}}" />
                         </div>
-                        <h1 class="home-sect-5-title text-black mt-4">Ready to Transform Your Business with <span class="text-gradient">Synaptekk?</span></h1>
-                        <p class="contact-sec-desc mt-2">We give you a lot for your money. Big websites or small, we have a plan that fits your budget and gives you everything you need.</p>
-                        <div class="row justify-content-between mt-3">
-                            <div class="col-md-5 col-12">
+                        <h1 class="home-sect-5-title text-black mt-4" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Ready to Transform Your Business with <span class="text-gradient">Synaptekx?</span></h1>
+                        <p class="contact-sec-desc mt-2" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">We give you a lot for your money. Big websites or small, we have a plan that fits your budget and gives you everything you need.</p>
+                        <div class="row justify-content-between mt-3 overflow-hidden">
+                            <div class="col-md-5 col-12" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
                                 <h1 class="home-sect-5-title text-black">Locate Us</h1>
                                 <p class="contact-sec-desc mt-2">1000 Innovation Suite 500 Ontario Canada</p>
                             </div>
-                            <div class="col-md-5 col-12">
+                            <div class="col-md-5 col-12" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
                                 <h1 class="home-sect-5-title text-black">Contact</h1>
                                 <p class="contact-sec-desc mt-2">Info@Synaptex.com +1 235 6543 64</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-12">
+                    <div class="col-md-6 col-12" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <form>
                             <div class="d-md-flex justify-content-between align-items-start w-100">
                                 <input type="text" name="" placeholder="First Name" class="contact-input contact-flex-input" />
@@ -293,4 +331,34 @@
             </div>    
         </section> 
     </div>
+@endsection
+@section('scripts')
+    <script>
+        // $(document).ready(function () {
+        //     var slider = new KeenSlider(".auto-slider", {
+        //         loop: true,
+        //         slides: { perView: 5, spacing: 10 }, // 3 slides at a time
+        //         drag: true
+        //     });
+
+        //     function autoSlide() {
+        //         setInterval(function () {
+        //             slider.next(); // Moves to the next slide automatically
+        //         }, 2000); // Adjust speed (2000ms = 2 seconds per slide)
+        //     }
+
+        //     autoSlide();
+        // });
+
+        $(document).ready(function () {
+        $(".slider-track").hover(
+            function () {
+                $(this).css("animation-play-state", "paused"); // Pause on hover
+            },
+            function () {
+                $(this).css("animation-play-state", "running"); // Resume on mouse leave
+            }
+        );
+    });
+    </script>
 @endsection

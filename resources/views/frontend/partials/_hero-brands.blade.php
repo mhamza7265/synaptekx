@@ -1,12 +1,61 @@
-<div class="brands-container">
+{{-- <div class="brands-container">
     <div class="d-flex justify-content-between align-items-center">
-        <img src="{{asset('images/frontend/aws_logo.svg')}}" />
-        <img src="{{asset('images/frontend/hashicorp_logo.svg')}}" />
-        <img src="{{asset('images/frontend/microsoft_logo.svg')}}" />
-        <img src="{{asset('images/frontend/google_logo_1.svg')}}" />
-        <img src="{{asset('images/frontend/cisco_logo.svg')}}" />
-        <img src="{{asset('images/frontend/equinix_logo.svg')}}" />
-        <img src="{{asset('images/frontend/fortinet_logo.svg')}}" />
-        <img src="{{asset('images/frontend/paloalto_logo.svg')}}" />
+        <img src="{{asset('images/frontend/aws_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" />
+        <img src="{{asset('images/frontend/hashicorp_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100" />
+        <img src="{{asset('images/frontend/microsoft_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200" />
+        <img src="{{asset('images/frontend/google_logo_1.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300" />
+        <img src="{{asset('images/frontend/cisco_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="400" />
+        <img src="{{asset('images/frontend/equinix_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="500" />
+        <img src="{{asset('images/frontend/fortinet_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="600" />
+        <img src="{{asset('images/frontend/paloalto_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="700" />
+    </div>
+</div> --}}
+
+{{-- <div class="keen-slider auto-slider brands-container">
+    <div class="keen-slider__slide">
+        <img src="{{asset('images/frontend/aws_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" />
+    </div>
+    <div class="keen-slider__slide">
+        <img src="{{asset('images/frontend/hashicorp_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100" />
+    </div>
+    <div class="keen-slider__slide">
+        <img src="{{asset('images/frontend/microsoft_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200" />
+    </div>
+    <div class="keen-slider__slide">
+        <img src="{{asset('images/frontend/google_logo_1.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300" />
+    </div>
+    <div class="keen-slider__slide">
+        <img src="{{asset('images/frontend/cisco_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="400" />
+    </div>
+    <div class="keen-slider__slide">
+        <img src="{{asset('images/frontend/equinix_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="500" />
+    </div>
+    <div class="keen-slider__slide">
+        <img src="{{asset('images/frontend/fortinet_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="600" />
+    </div>
+    <div class="keen-slider__slide">
+        <img src="{{asset('images/frontend/paloalto_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="700" />
+    </div>
+</div> --}}
+
+<div class="brands-container slider-wrapper">
+    <div class="slider-track">
+        <img src="{{asset('images/frontend/aws_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" />
+        <img src="{{asset('images/frontend/hashicorp_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100" />
+        <img src="{{asset('images/frontend/microsoft_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200" />
+        <img src="{{asset('images/frontend/google_logo_1.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300" />
+        <img src="{{asset('images/frontend/cisco_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="400" />
+        <img src="{{asset('images/frontend/equinix_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="500" />
+        <img src="{{asset('images/frontend/fortinet_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="600" />
+        <img src="{{asset('images/frontend/paloalto_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="700" />
+        {{-- duplicate --}}
+        <img src="{{asset('images/frontend/aws_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" />
+        <img src="{{asset('images/frontend/hashicorp_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100" />
+        <img src="{{asset('images/frontend/microsoft_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200" />
+        <img src="{{asset('images/frontend/google_logo_1.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300" />
+        <img src="{{asset('images/frontend/cisco_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="400" />
+        <img src="{{asset('images/frontend/equinix_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="500" />
+        <img src="{{asset('images/frontend/fortinet_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="600" />
+        <img src="{{asset('images/frontend/paloalto_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="700" />
     </div>
 </div>

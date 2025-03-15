@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\FrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [FrontendController::class, 'index']);
+
+Route::get('/services', [FrontendController::class, 'services'])->name('services');

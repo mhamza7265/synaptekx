@@ -26,14 +26,12 @@
         </div>
         <div>
             <img src="{{asset('images/frontend/synaptekx_logo.svg')}}" alt="logo" class="footer-logo" />
-            <div class="footer-input-container d-flex justify-content-between mt-5">
-                <form>
-                    <input type="text" placeholder="Your email" class="footer-input" />
-                    <button type="submit" class="footer-button button-gradient">Subscribe
-                        <img src="{{asset('images/frontend/arrow_diagonal.svg')}}" />
-                    </button>
-                </form>
-            </div>
+            <form class="footer-input-container d-flex justify-content-between mt-5">
+                <input type="text" placeholder="Your email" class="footer-input" />
+                <button type="submit" class="footer-button button-gradient">Subscribe
+                    <img src="{{asset('images/frontend/arrow_diagonal.svg')}}" />
+                </button>
+            </form>
         </div>
     </div>
     <hr class="footer-divider mt-5">
