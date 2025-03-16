@@ -31,6 +31,10 @@
     font-weight: 500 !important;
 }
 
+.fw-600 {
+    font-weight: 600 !important;
+}
+
 .radius-24 {
     border-radius: 24px !important;
 }
@@ -41,6 +45,13 @@
 
 .br-16px {
     border-radius: 16px !important;
+}
+
+.container-sm {
+    margin-right: 60px !important;
+    margin-left: 60px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .site-footer {
@@ -739,6 +750,98 @@
     -webkit-text-fill-color: transparent;
 }
 
+.empowering-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.text-content.fixed-on-scroll {
+    width: 500px;
+    background-color: #fff;
+}
+
+.empower-title {
+    font-size: 57px;
+    font-weight: 500;
+    background-color: #000000; /* Base color */
+    display: block;
+    color: #000000; /* Text appears black by default */
+    --gradient-position: 50%; /* Controlled by JS */
+
+    background: -webkit-linear-gradient(
+        308deg,
+        #000000 0%,
+        #000000 28.66%,
+        #fa582d 32.66%,
+        #ffc328 33%,
+        #000000 37%,
+        #000000 45%,
+        #fa582d 47.5%,
+        #ffc328 48%,
+        #000000 50.5%,
+        #000000 64%,
+        #fa582d 69%,
+        #000000 70%
+    );
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 200% 100%, 100% 100%;
+    background-position: var(--gradient-position) 50%, 50% 50%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+    z-index: 5;
+}
+
+/* Optional: Smooth Animation */
+@keyframes text-mask {
+    0% {
+        background-position: -100% center;
+    }
+    100% {
+        background-position: 50% center;
+    }
+}
+
+.empower-title.mask-animation {
+    animation: text-mask 2s infinite alternate;
+}
+
+#fixed-on-scroll {
+    position: sticky;
+    top: 5.9375rem;
+}
+
+.empower-right-texts-parent {
+    border-left: 1px solid black;
+}
+
+.empower-right-texts {
+    padding-top: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    padding-left: 65px;
+}
+
+.empower-right-texts::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("/images/frontend/empower_text_before_element.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -22px;
+}
+
+.empower-right-texts p {
+    color: #535353;
+}
+
 @media (max-width: 460px) {
     .site-footer {
         height: auto;
@@ -866,5 +969,25 @@
         width: 100%;
         margin: auto;
         margin-top: 20px;
+    }
+    .text-content.fixed-on-scroll {
+        width: 90%;
+    }
+    #fixed-on-scroll {
+        position: relative;
+        top: unset;
+    }
+    .container-sm {
+        margin-right: 10px !important;
+        margin-left: 10px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .empower-right-texts {
+        width: 80%;
+        padding-top: 30px;
+        margin-bottom: 50px;
+        position: relative;
+        padding-left: 20px;
     }
 }
