@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="home-page">
-        <section class="home-hero-section">
+        <section class="home-hero-section position-relative">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="hero-section" style="background-image: url('/images/frontend/hero_one.svg')">
+                    <div class="hero-section" style="background-image: url('/images/frontend/carousel_3.jpg')">
                         <div class="container overflow-hidden">
                             <div class="d-flex justify-content-start align-content-center">
                                 <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="hero-section" style="background-image: url('/images/frontend/hero_one.svg')">
+                    <div class="hero-section" style="background-image: url('/images/frontend/carousel_2.jpg')">
                         <div class="container overflow-hidden">
                             <div class="d-flex justify-content-start align-content-center">
                                 <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="hero-section" style="background-image: url('/images/frontend/hero_one.svg')">
+                    <div class="hero-section" style="background-image: url('/images/frontend/carousel_3.jpg')">
                         <div class="container overflow-hidden">
                             <div class="d-flex justify-content-start align-content-center">
                                 <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />

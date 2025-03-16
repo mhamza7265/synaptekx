@@ -27,6 +27,10 @@
     font-size: 32px !important;
 }
 
+.fs-57 {
+    font-size: 57px !important;
+}
+
 .fw-500 {
     font-weight: 500 !important;
 }
@@ -45,6 +49,10 @@
 
 .br-16px {
     border-radius: 16px !important;
+}
+
+.bg-site-grey {
+    background-color: #0d101b !important;
 }
 
 .container-sm {
@@ -348,6 +356,9 @@
 .hero-brands {
     width: 100%;
     padding: 20px 60px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
 }
 
 .py-60px {
@@ -796,6 +807,13 @@
     z-index: 5;
 }
 
+.services-graphic {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    width: 350px;
+}
+
 /* Optional: Smooth Animation */
 @keyframes text-mask {
     0% {
@@ -840,6 +858,46 @@
 
 .empower-right-texts p {
     color: #535353;
+}
+
+.services-section-image {
+    width: 450px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.consulting-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.services-section-bg-grad {
+    background-image: url("/images/frontend/services_gradient.svg");
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.services-section-title {
+    font-size: 32px;
+    font-weight: 500;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.services-section-subtitle {
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.services-section-desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff89;
 }
 
 @media (max-width: 460px) {
@@ -989,5 +1047,8 @@
         margin-bottom: 50px;
         position: relative;
         padding-left: 20px;
+    }
+    #carouselExampleIndicators .carousel-indicators {
+        display: none;
     }
 }

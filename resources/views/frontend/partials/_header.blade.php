@@ -1,6 +1,6 @@
 <header class="site-header-main">
     <div id="frontend-site-header" class="site-header d-flex justify-content-between align-items-center position-relative">
-        <a href="#">
+        <a href="/">
             <img src="{{asset("images/frontend/synaptekx_logo.svg")}}" alt="logo" class="header-logo d-none d-md-block" />
         </a>
         <div class="site-navbar d-none d-md-flex justify-content-between align-items-center">
