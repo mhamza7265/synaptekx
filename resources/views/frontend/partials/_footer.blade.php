@@ -25,7 +25,9 @@
             </div>
         </div>
         <div>
-            <img src="{{asset('images/frontend/synaptekx_logo.svg')}}" alt="logo" class="footer-logo" />
+            <a href="/">
+                <img src="{{asset('images/frontend/synaptekx_logo.svg')}}" alt="logo" class="footer-logo" />
+            </a>
             <form class="footer-input-container d-flex justify-content-between mt-5">
                 <input type="text" placeholder="Your email" class="footer-input" />
                 <button type="submit" class="footer-button button-gradient">Subscribe

@@ -241,7 +241,11 @@
                     <h1 class="home-sect-4-title text-black">The Digital <span class="text-gradient">Transformation</span> Journey</h1>
                 </div>
                 <div class="home_graphic mt-5" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
-                    <img src="{{asset('images/frontend/home_graphic_1.svg')}}" class="home-graphic-1 object-fit-cover w-100" />
+                    {{-- <img src="{{asset('images/frontend/home_graphic_1.svg')}}" class="home-graphic-1 object-fit-cover w-100" /> --}}
+                    <video autoplay loop muted playsinline class="w-100">
+                        <source src="{{asset('images/frontend/transformation.mp4')}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>    
         </section> 

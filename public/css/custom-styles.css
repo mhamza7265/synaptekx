@@ -51,6 +51,20 @@
     border-radius: 16px !important;
 }
 
+.w-88 {
+    width: 88% !important;
+}
+
+.py-40px {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+}
+
+.py-200px {
+    padding-top: 200px !important;
+    padding-bottom: 200px !important;
+}
+
 .bg-site-grey {
     background-color: #0d101b !important;
 }
@@ -873,10 +887,14 @@
 }
 
 .services-section-bg-grad {
-    background-image: url("/images/frontend/services_gradient.svg");
+    /* background-image: url("/images/frontend/services_gradient.svg");
     background-position: 100% 0;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+
+    background-image: url(/images/frontend/bg-gradient_2.svg);
+    background-repeat: no-repeat;
+    background-position: right top;
 }
 
 .services-section-title {
@@ -898,6 +916,11 @@
     font-size: 16px;
     font-weight: 400;
     color: #ffffff89;
+}
+
+.transformation-section {
+    padding-top: 200px;
+    padding-bottom: 200px;
 }
 
 @media (max-width: 460px) {
@@ -1030,23 +1053,59 @@
     }
     .text-content.fixed-on-scroll {
         width: 90%;
+        background-color: transparent;
+        margin: auto;
     }
     #fixed-on-scroll {
         position: relative;
         top: unset;
     }
     .container-sm {
-        margin-right: 10px !important;
-        margin-left: 10px !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
     .empower-right-texts {
         width: 80%;
         padding-top: 30px;
         margin-bottom: 50px;
         position: relative;
-        padding-left: 20px;
+        padding-left: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .empower-right-texts::before {
+        left: -60px;
+    }
+    .fs-md-42px {
+        font-size: 42px !important;
+    }
+    .services-section-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+    .transformation-journey-section .home_graphic {
+        width: 99%;
+        margin: auto;
+    }
+    .services-section-title {
+        font-size: 26px;
+        font-weight: 500;
+        position: relative;
+        display: block;
+        margin-top: 0;
+    }
+    .services-section-title img {
+        width: 100px;
+    }
+    .services-section-subtitle {
+        font-size: 18px;
+    }
+    .title-graphic-2 {
+        width: 40%;
     }
     #carouselExampleIndicators .carousel-indicators {
         display: none;

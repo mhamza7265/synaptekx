@@ -4,7 +4,7 @@
             <img src="{{asset("images/frontend/synaptekx_logo.svg")}}" alt="logo" class="header-logo d-none d-md-block" />
         </a>
         <div class="site-navbar d-none d-md-flex justify-content-between align-items-center">
-            <a href="javascript:void(0)" data-menu="" class="d-block nav-item">Home</a>
+            <a href="/" data-menu="" class="d-block nav-item">Home</a>
             <a href="{{route('services')}}" id="services-nav" data-menu="services-menu" class="nav-item cursor-pointer">Services <i class="fa-solid fa-caret-down ms-2"></i></a>
             <span id="industries-nav" data-menu="industries-menu" class="nav-item cursor-pointer">Industries <i class="fa-solid fa-caret-down ms-2"></i></span>
             <span id="resources-nav" data-menu="resources-menu" class="nav-item cursor-pointer">Resources <i class="fa-solid fa-caret-down ms-2"></i></span>
