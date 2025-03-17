@@ -14,13 +14,13 @@
             <a href="javascript:void(0)" data-menu="" class="d-block nav-item text-gradient">Contact us</a>
             <a href="javascript:void(0)" data-menu="" class="d-block nav-item"><i class="fa-solid fa-magnifying-glass"></i></a>
         </div>
-        <nav class="d-lg-none navbar navbar-light bg-light w-100">
+        <nav class="d-lg-none navbar navbar-light w-100" id="mobile-navbar">
             <div class="container w-100">
                 <div class='d-flex justify-content-between align-items-center w-100'>
-                    <img src="{{asset("images/frontend/synaptekx_logo.svg")}}" alt="logo" class="header-logo" />
+                    <a href="/"><img src="{{asset("images/frontend/synaptekx_logo.svg")}}" alt="logo" class="header-logo" /></a>
                     
                     <!-- Mobile Menu Toggle Button -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNavbar">
+                    <button class="navbar-toggler" id="mobile-navbar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
@@ -29,10 +29,10 @@
                 <div class="collapse navbar-collapse" id="mobileNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
+                            <a class="nav-link" href="/services">Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Industries</a>

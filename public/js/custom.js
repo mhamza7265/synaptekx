@@ -75,4 +75,23 @@ $(document).ready(function () {
             }
         }, 10); // Small delay to prevent flickering
     });
+
+    // Show/hide button on scroll
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $("#scrollToTop").fadeIn();
+        } else {
+            $("#scrollToTop").fadeOut();
+        }
+    });
+
+    // Scroll to top when clicked
+    $("#scrollToTop").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 500);
+    });
+
+    $("#mobile-navbar-toggle").click(function () {
+        $(this).toggleClass("open");
+        $("#mobile-navbar").toggleClass("bg-light");
+    });
 });

@@ -5,7 +5,7 @@
         <section class="hero" style="background-image: url('{{asset('images/frontend/services_hero_2.jpg')}}');">
             <div class="container services-hero-container">
                 <div class="d-flex justify-content-center align-items-center h-100">
-                    <div class="services-hero-text-content">
+                    <div class="services-hero-text-content" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <h1 class="services-hero-title text-white text-center">Revolutionize Your Business with Cutting-Edge <span class="text-gradient">Digital Solutions<span></h1>
 
                         <p class="services-hero-subtitle text-white text-center fs-18">We deliver innovative digital strategies, business applications, and eCommerce solutions to help you scale your organization seamlessly in today’s digital-first world</p>
@@ -15,19 +15,19 @@
         </section>
         <section class="nav-section">
             <div class="d-block d-md-flex justify-content-between align-items-center px-5 py-5">
-                <a href="#empower" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0">Empowering Business</a>
-                <a href="#transformation-journey" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0">Transformation Journey</a>
-                <a href="#consulting" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0">Consulting & Strategy</a>
-                <a href="#transformation" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0">Transformation</a>
-                <a href="#business" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0">Business Applications</a>
-                <a href="#ecommerce" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0">eCommerce</a>
+                <a href="#empower" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Empowering Business</a>
+                <a href="#transformation-journey" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Transformation Journey</a>
+                <a href="#consulting" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Consulting & Strategy</a>
+                <a href="#transformation" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">Transformation</a>
+                <a href="#business" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="400">Business Applications</a>
+                <a href="#ecommerce" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="500">eCommerce</a>
             </div>
         </section>
         <section id="empower" class="empowering-section bg-white position-relative">
             <img src="{{asset('images/frontend/services_element.svg')}}" alt="graphic-element" class="services-graphic" />
             <div class="container-sm">
                 <div class="row justify-content-between align-items-start">
-                    <div id="fixed-on-scroll" class="col-11 col-md-6 mx-auto">
+                    <div id="fixed-on-scroll" class="col-12 col-md-6 mx-auto">
                         <div class="text-content fixed-on-scroll">
                             <h1 class="empower-title">
                                 Empowering Businesses to Transform & Grow
@@ -40,18 +40,18 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 empower-right-texts-parent mx-auto mt-4 mt-md-0">
-                        <div class="empower-right-texts">
+                        <div class="empower-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
                             <h5 class="fs-22 fw-500">Innovative IT Services</h5>
                             <p>Unlock potential with cutting-edge technology tailored to your business needs. Our solutions streamline operations, enhance security, and foster innovation, positioning you for success in a rapidly evolving digital landscape.</p>
                             <div id="div-end-unfiix"></div>
                         </div>
                         
-                        <div class="empower-right-texts">
+                        <div class="empower-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
                             <h5>Strategic Industry Insights</h5>
                             <p>Gain a competitive edge with our in-depth analysis of market trends and emerging technologies. Our experts provide actionable insights that empower your strategic decisions and drive sustainable growth.</p>
                         </div>
 
-                        <div class="empower-right-texts">
+                        <div class="empower-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
                             <h5>Transformative Digital Experiences</h5>
                             <p>Experience digital transformation that engages customers and revolutionizes your operations. We create seamless, user-centric digital interfaces that improve engagement and optimize user experience.</p>
                         </div>
@@ -73,12 +73,14 @@
             </div>
         </section>
         <section id="consulting" class="consulting-section bg-site-grey services-section-bg-grad">
-            <div class="container-sm">
+            <div class="container-sm overflow-hidden">
                 <div class="row">
-                    <div class="col-12 col-md-5 mx-auto">
-                        <img src="{{asset('images/frontend/services_section_1.png')}}" alt="" class="services-section-image" />
+                    <div class="col-12 col-md-5 mx-auto" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
+                        <div class="services-section-image">
+                            <img src="{{asset('images/frontend/services_section_1.png')}}" alt="" class="services-section-img" />
+                        </div>
                     </div>
-                    <div class="col-12 col-md-7 ps-md-5 mx-auto mt-4 mt-md-0">
+                    <div class="col-12 col-md-7 ps-md-5 mx-auto mt-4 mt-md-0" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <h1 class="services-section-title text-gradient mb-4 text-center text-md-start">Consulting & Strategy
                             <img src="{{asset('images/frontend/services-section-title-graphic.svg')}}" class="ms-md-4" />
                         </h1>
@@ -95,9 +97,9 @@
             </div>
         </section>
         <section id="transformation" class="transformation-section bg-white">
-            <div class="container-sm">
+            <div class="container-sm overflow-hidden">
                 <div class="row">
-                    <div class="col-12 col-md-7 mx-auto">
+                    <div class="col-12 col-md-7 mx-auto" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <div class="d-flex justify-content-start align-items-center mb-4">
                             <img src="{{asset('images/frontend/services-section-title-graphic-2.svg')}}" class="me-1 me-md-4 title-graphic-2" />
                             <h1 class="services-section-title text-gradient text-center text-md-start">Transformation</h1>
@@ -111,19 +113,23 @@
                             <p class="services-section-desc text-black">From IT strategy development to risk management, we help you unlock sustainable value and competitive advantage.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-5 mx-auto">
-                        <img src="{{asset('images/frontend/services_section_2.png')}}" alt="" class="services-section-image" />
+                    <div class="col-12 col-md-5 mx-auto" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+                        <div class="services-section-image">
+                            <img src="{{asset('images/frontend/services_section_2.png')}}" alt="" class="services-section-img" />
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <section id="business" class="business-section py-40px bg-site-grey services-section-bg-grad">
-            <div class="container-sm">
+            <div class="container-sm overflow-hidden">
                 <div class="row">
-                    <div class="col-md-5">
-                        <img src="{{asset('images/frontend/services_section_3.png')}}" alt="" class="services-section-image" />
+                    <div class="col-md-5" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
+                        <div class="services-section-image">
+                            <img src="{{asset('images/frontend/services_section_3.png')}}" alt="" class="services-section-img" />
+                        </div>
                     </div>
-                    <div class="col-12 col-md-7 ps-md-5 mx-auto mt-4 mt-md-0">
+                    <div class="col-12 col-md-7 ps-md-5 mx-auto mt-4 mt-md-0" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <h1 class="services-section-title text-gradient mb-4 text-center text-md-start">Business Applications
                             <img src="{{asset('images/frontend/services-section-title-graphic.svg')}}" class="ms-md-4" />
                         </h1>
@@ -140,9 +146,9 @@
             </div>
         </section>
         <section id="ecommerce" class="ecommerce-section py-200px bg-white">
-            <div class="container-sm">
+            <div class="container-sm overflow-hidden">
                 <div class="row">
-                    <div class="col-12 col-md-7 mx-auto">
+                    <div class="col-12 col-md-7 mx-auto" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <div class="d-flex justify-content-start align-items-center mb-4">
                             <img src="{{asset('images/frontend/services-section-title-graphic-2.svg')}}" class="me-1 me-md-4 title-graphic-2" />
                             <h1 class="services-section-title text-gradient text-center text-md-start">eCommerce</h1>
@@ -156,8 +162,10 @@
                             <p class="services-section-desc text-black">From IT strategy development to risk management, we help you unlock sustainable value and competitive advantage.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-5 mx-auto">
-                        <img src="{{asset('images/frontend/services_section_4.png')}}" alt="" class="services-section-image" />
+                    <div class="col-12 col-md-5 mx-auto" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+                        <div class="services-section-image">
+                            <img src="{{asset('images/frontend/services_section_4.png')}}" alt="" class="services-section-img" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -183,8 +191,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-11 mx-auto" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
-                        <form>
+                    <div class="col-md-6 col-12 mx-auto" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+                        <form accept="" action="">
                             <div class="d-md-flex justify-content-between align-items-start w-100">
                                 <input type="text" name="" placeholder="First Name" class="contact-input contact-flex-input" />
                                 <input type="text" name="" placeholder="Last Name" class="contact-input contact-flex-input" />
