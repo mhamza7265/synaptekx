@@ -1,0 +1,21 @@
+:root {
+    --left-gradient: #fa582d;
+    --right-gradient: #ffc328;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.text-gradient {
+    background: linear-gradient(
+        to right,
+        var(--left-gradient),
+        var(--right-gradient)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

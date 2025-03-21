@@ -7,8 +7,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
-
-Auth::routes();
+use GuzzleHttp\Middleware;
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
@@ -16,17 +15,7 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 Route::get('storage-link', [AdminController::class, 'storageLink'])->name('storage.link');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], function () {
-    Route::get('/', [AdminController::class, 'index'])->name('index');
-
-    // profile
-    Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
-    Route::put('profile-update', [ProfileController::class, 'update'])->name('profile.update');
-    Route::get('change-password', [ProfileController::class, 'password'])->name('password.index');
-    Route::put('update-password', [ProfileController::class, 'updatePassword'])->name('password.update');
-
-    Route::resource('users', UserController::class);
-    Route::get('user-ban-unban/{id}/{status}', 'UserController@banUnban')->name('user.banUnban');
-    Route::resource('roles', RoleController::class);
-    Route::resource('permissions', PermissionController::class);
+Route::group(['middleware' => ['role:admin,superadmin']], function () {
+    Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('pages', [AdminController::class, 'pages'])->name('pages');
 });

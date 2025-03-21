@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [FrontendController::class, 'index']);
+// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+//     \UniSharp\LaravelFilemanager\Lfm::routes();
+// });
+
+// Route::get('storage-link', [FrontendController::class, 'storageLink'])->name('storage.link');
+
+Route::get('/', [FrontendController::class, 'index'])->name('home');
 
 Route::get('/services', [FrontendController::class, 'services'])->name('services');

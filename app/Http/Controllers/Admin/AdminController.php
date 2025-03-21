@@ -12,15 +12,12 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $count['users'] = User::count();
+        return view('admin.pages.index')->with('title', 'Dashboard');
+    }
 
-
-        $count['posts'] = 0;
-        $count['posts_read'] = 0;
-        $newPosts = 0;
-        $topPosts = 0;
-
-        return view('admin.index', compact('count'));
+    public function pages()
+    {
+        return view('admin.pages.pages')->with('title', 'Pages');
     }
 
     public function storageLink()

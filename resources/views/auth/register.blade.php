@@ -1,77 +1,113 @@
-@extends('layouts.app')
+@extends('admin.layouts.main')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+    @section('title', 'Register')
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+    @section('styles')
+        <!--  BEGIN CUSTOM STYLE FILE  -->
+        @vite(['resources/scss/light/assets/authentication/auth-cover.scss'])
+        @vite(['resources/scss/dark/assets/authentication/auth-cover.scss'])
+        <!--  END CUSTOM STYLE FILE  -->
+    @endsection
+    <!-- END GLOBAL MANDATORY STYLES -->
+    @section('content')
+    <div class="auth-container d-flex">
+        <div class="container mx-auto align-self-center">
+            <div class="row">
+                <div class="col-6 d-lg-flex d-none h-100 my-auto top-0 start-0 text-center justify-content-center flex-column">
+                    <div class="auth-cover-bg-image"></div>
+                    <div class="auth-overlay"></div>
+                        
+                    <div class="auth-cover">
+    
+                        <div class="position-relative">
+    
+                            <img src="{{Vite::asset('resources/images/auth-cover.svg')}}" alt="auth-img">
+    
+                            <h2 class="mt-5 text-white font-weight-bolder px-2">Join the community of expert developers</h2>
+                            <p class="text-white px-2">It is easy to setup with great customer experience. Start your 7-day free trial</p>
                         </div>
+                        
+                    </div>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
+
+                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-12 d-flex flex-column align-self-center ms-lg-auto me-lg-0 mx-auto pt-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="{{ route('register') }}" method="POST">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-12 mb-3">
+                                        
+                                        <h2>Sign Up</h2>
+                                        <p>Enter your email and password to register</p>
+                                        
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Name</label>
+                                            <input type="text" name="name" value="{{old('name')}}" class="form-control add-billing-address-input" required>
+                                            @error('name')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" name="email" value="{{old('email')}}" class="form-control" required>
+                                            @error('email')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Password</label>
+                                            <input type="password" name="password" class="form-control" required>
+                                            @error('password')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Confirm Password</label>
+                                            <input type="password" name="password_confirmation" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="col-12">
+                                        <div class="mb-3">
+                                            <div class="form-check form-check-primary form-check-inline">
+                                                <input class="form-check-input me-3" type="checkbox" id="form-check-default">
+                                                <label class="form-check-label" for="form-check-default">
+                                                    I agree the <a href="javascript:void(0);" class="text-primary">Terms and Conditions</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div> --}}
+                                    
+                                    <div class="col-12">
+                                        <div class="mb-4">
+                                            <button class="btn btn-secondary w-100">SIGN UP</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="text-center">
+                                            <p class="mb-0">Already have an account ? <a href="{{route('login')}}" class="text-warning">Sign in</a></p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
+            
         </div>
+
     </div>
-</div>
-@endsection
+    @endsection
