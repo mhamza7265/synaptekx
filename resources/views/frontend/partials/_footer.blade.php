@@ -1,27 +1,19 @@
 <footer class="site-footer relative">
     <div class="d-block d-md-flex justify-content-between align-items-start">
-        <div class="footer-links-container d-block d-md-flex mx-auto justify-content-between align-items-baseline">
+        <div class="footer-links-container d-block d-md-flex mx-auto justify-content-start align-items-baseline">
             <div>
                 <p class="footer-link-heading text-center text-md-start">Useful Links</p>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Home</a>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Services </a>
+                <a href="{{route('home')}}" class="d-block footer-link text-center text-md-start">Home</a>
+                <a href="{{route('services')}}" class="d-block footer-link text-center text-md-start">Services </a>
                 <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Industries </a>
                 <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Scalability Options</a>
                 <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Portfolio</a>
             </div>
-            <div>
+            <div class="ms-0 mt-4 mt-md-0 ms-md-5">
                 <p class="footer-link-heading text-center text-md-start">Useful Links</p>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Insights</a>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">About </a>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Contacts </a>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Blogs</a>
-            </div>
-            <div>
-                <p class="footer-link-heading text-center text-md-start">Useful Links</p>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Privacy</a>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Cookies </a>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Portfolio </a>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Terms & Conditions</a>
+                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Privacy Policy</a>
+                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Cookies Policy </a>
+                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Terms of Website use</a>
             </div>
         </div>
         <div>
@@ -38,7 +30,7 @@
     </div>
     <hr class="footer-divider mt-5">
     <div class="block d-md-flex justify-content-between align-items-center mt-4">
-        <p class="footer-bottom-text text-center text-md-left">1000 Innovation Suite 500 Ontario Canada</p>
-        <p class="footer-bottom-text text-center text-md-left">Synaptex © 2024</p>
+        <p class="footer-bottom-text text-center text-md-left">5 St John’s Lane, London, England, EC1M 4BH</p>
+        <p class="footer-bottom-text text-center text-md-left">Synaptex © <span id="current-year">2024</span></p>
     </div>
 </footer>

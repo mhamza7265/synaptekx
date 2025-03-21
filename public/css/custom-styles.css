@@ -299,7 +299,7 @@
 }
 
 .home-page {
-    padding: 20px 15px;
+    /* padding: 20px 15px; */
 }
 
 .mt-50 {
@@ -559,7 +559,7 @@
     content: "";
     position: absolute;
     top: 50%;
-    right: 104.76%;
+    right: 106.3%;
     transform: translateY(-50%);
     width: 12px;
     height: 12px;
@@ -569,7 +569,7 @@
         var(--left-gradient),
         var(--right-gradient)
     );
-    margin-right: 8px; /* Space between dot and text */
+    /*margin-right: 8px;*/ /* Space between dot and text */
     vertical-align: middle;
 }
 
@@ -729,7 +729,7 @@
 
 #partners-carousel {
     background-color: #ffffff33;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     padding: 25px 60px;
     height: 220px;
     display: flex;

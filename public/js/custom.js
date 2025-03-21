@@ -94,4 +94,6 @@ $(document).ready(function () {
         $(this).toggleClass("open");
         $("#mobile-navbar").toggleClass("bg-light");
     });
+
+    $("#current-year").text(new Date().getFullYear());
 });
