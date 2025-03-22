@@ -171,48 +171,7 @@
             </div>
         </section>
 
-        <section class="home-section-2 contact-section bg-white position-relative overflow-hidden" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
-            <div class="container contact-container br-16px" style="background-image: url('/images/frontend/bg-gradient_3.svg'); background-repeat: no-repeat; background-position: center center;">
-                <div class="row justify-content-between align-items-start">
-                    <div class="col-md-5 col-11 mx-auto">
-                        <div class="d-flex justify-content-start align-content-center">
-                            <img src="{{asset('images/frontend/contact_pill.svg')}}" />
-                        </div>
-                        <h1 class="home-sect-5-title text-black mt-4" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Ready to Transform Your Business with <span class="text-gradient">Synaptekx?</span></h1>
-                        <p class="contact-sec-desc mt-2" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">We give you a lot for your money. Big websites or small, we have a plan that fits your budget and gives you everything you need.</p>
-                        <div class="row justify-content-between mt-3 overflow-hidden">
-                            <div class="col-md-5 col-11 mx-auto" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
-                                <h1 class="home-sect-5-title text-black">Locate Us</h1>
-                                <p class="contact-sec-desc mt-2">1000 Innovation Suite 500 Ontario Canada</p>
-                            </div>
-                            <div class="col-md-5 col-11 mx-auto" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
-                                <h1 class="home-sect-5-title text-black">Contact</h1>
-                                <p class="contact-sec-desc mt-2">Info@Synaptex.com +1 235 6543 64</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-12 mx-auto" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
-                        <form accept="" action="">
-                            <div class="d-md-flex justify-content-between align-items-start w-100">
-                                <input type="text" name="" placeholder="First Name" class="contact-input contact-flex-input" />
-                                <input type="text" name="" placeholder="Last Name" class="contact-input contact-flex-input" />
-                            </div>
-                            <div class="d-md-flex justify-content-between align-items-start w-100 mt-2">
-                                <input type="text" name="" placeholder="Email" class="contact-input contact-flex-input" />
-                                <input type="text" name="" placeholder="Phone" class="contact-input contact-flex-input" />
-                            </div>
-                            <input type="text" name="" placeholder="Subject" class="contact-input mt-2 w-100" />
-                            <textarea name="" placeholder="Write your Message" class="contact-textarea mt-2 w-100"></textarea>
-
-                            <button type="submit" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4 contact-form-btn">
-                                <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                <span class="ms-3 fs-14 text-black">Send Request</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>    
-        </section> 
+        @include('frontend.partials._contact-form')
     </div>
 @endsection
 @section('scripts')

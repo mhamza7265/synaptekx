@@ -7,10 +7,8 @@
     @else
     <title>@yield('title')</title>
     @endif       
-    <link rel="icon" type="image/x-icon" href="{{Vite::asset('resources/images/favicon.ico')}}"/>
+    {{-- <link rel="icon" type="image/x-icon" href="{{Vite::asset('resources/images/favicon.ico')}}"/> --}}
     <link rel="stylesheet" href="{{asset('css/admin-custom-styles.css')}}">
-    <!-- Toastr CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://kit.fontawesome.com/df3b89b53b.js" crossorigin="anonymous"></script>
     @vite(['resources/scss/layouts/modern-light-menu/light/loader.scss'])
     @vite(['resources/layouts/modern-light-menu/loader.js'])
@@ -53,4 +51,6 @@
         box-sizing: border-box;
         }
     </style>
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>

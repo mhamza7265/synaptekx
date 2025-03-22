@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @include('admin.partials._head')
-<body style="overflow: {{ Request::routeIs('login') || Request::routeIs('password.request') ? 'hidden' : 'auto' }}">
+<body style="overflow: {{ Request::routeIs('login') || Request::routeIs('password.request')  ? 'hidden' : 'auto' }}">
 
 
     <!-- BEGIN LOADER -->
@@ -35,7 +35,7 @@
             !Request::routeIs('login')
         ) --}}
 
-        @if (!Request::routeIs('login') && !Request::routeIs('register') && !Request::routeIs('password.request'))
+        @if (!Request::routeIs('login') && !Request::routeIs('register') && !Request::routeIs('password.request') && !Request::routeIs('password.reset'))
             <!--  BEGIN NAVBAR  -->
             @include('admin.partials._navbar')
             {{-- <x-navbar.style-vertical-menu classes="{{($isBoxed ? 'container-xxl' : '')}}"/> --}}
@@ -49,7 +49,7 @@
             @include('admin.partials._overlay')
             <!--  END LOADER  -->
 
-            @if (!Request::routeIs('login') && !Request::routeIs('register') && !Request::routeIs('password.request')) 
+            @if (!Request::routeIs('login') && !Request::routeIs('register') && !Request::routeIs('password.request') && !Request::routeIs('password.reset')) 
                 <!--  BEGIN SIDEBAR  -->
                 @include('admin.partials._sidebar')
                 <!--  END SIDEBAR  --> 
@@ -58,7 +58,7 @@
             
             
             <!--  BEGIN CONTENT AREA  -->
-            <div id="content" class="main-content {{(Request::routeIs('login') || Request::routeIs('register') || Request::routeIs('password.request') ? 'ms-0 mt-0' : '')}}">
+            <div id="content" class="main-content {{(Request::routeIs('login') || Request::routeIs('register') || Request::routeIs('password.request') || Request::routeIs('password.reset') ? 'ms-0 mt-0' : '')}}">
                 <div class="layout-px-spacing">
                     <div class="middle-content container-xxl p-0">
                         @yield('content')
@@ -103,10 +103,23 @@
     @yield('scripts')
     <script>
         $(document).ready(function() {
-            @if (session('error'))
-                toastr.error("{{ session('error') }}");
-            @endif
+            setTimeout(function() {
+                @if (session('error'))
+                    toastr.error("{{ session('error') }}", "Error", {
+                        closeButton: true,
+                        progressBar: true
+                    });
+                @endif
+    
+                @if (session('status'))
+                    toastr.success("{{ session('status') }}", "Success", {
+                        closeButton: true,
+                        progressBar: true
+                    });
+                @endif
+            }, 500); // Delay for 500ms
         });
     </script>
+    
 </body>
 </html>
