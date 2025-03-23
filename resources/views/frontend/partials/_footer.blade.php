@@ -20,12 +20,34 @@
             <a href="/">
                 <img src="{{asset('images/frontend/synaptekx_logo.svg')}}" alt="logo" class="footer-logo" />
             </a>
-            <form class="footer-input-container d-flex justify-content-between mt-5">
+            {{-- <form class="footer-input-container d-flex justify-content-between mt-5">
                 <input type="text" placeholder="Your email" class="footer-input" />
                 <button type="submit" class="footer-button button-gradient">Subscribe
                     <img src="{{asset('images/frontend/arrow_diagonal.svg')}}" />
                 </button>
-            </form>
+            </form> --}}
+            <div class="d-flex justify-content-around align-items-center w-100 mt-5 px-5 px-md-4">
+                <div>
+                    <a href="javascript:void()">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:void()">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:void()">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:void()">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <hr class="footer-divider mt-5">

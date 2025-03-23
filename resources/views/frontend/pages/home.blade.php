@@ -236,10 +236,10 @@
                                         <li class="section-3-tab-detail-1"><strong>Business Applications – </strong>Embed AI-driven recommendations, analytics, and automation within ERP, CRM, and custom solutions. Optimize processes so teams can focus on strategic innovation over routine tasks.</li>
                                         <li class="section-3-tab-detail-1"><strong>eCommerce – </strong>Reinvent digital storefronts with AI personalization and real-time data analysis. From intelligent recommendations to dynamic pricing, we deliver seamless user experiences that boost conversions.</li>
                                     </ul>
-                                    {{-- <p class="section-3-tab-detail-1">By partnering with us, you’ll benefit from data-driven insights and a tailored strategy that maximizes your ROI.</p>
-                                    <div>
+                                    {{-- <p class="section-3-tab-detail-1">By partnering with us, you’ll benefit from data-driven insights and a tailored strategy that maximizes your ROI.</p> --}}
+                                    <div class="mt-4">
                                         <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
-                                    </div> --}}
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab-2">
                                     <h3 class="section-3-tab-heading-1 text-white">CLOUD</h3>
@@ -252,6 +252,9 @@
                                         <li class="section-3-tab-detail-1"><strong>Transformation – </strong>Move to cloud-native operations enriched by data-driven insights. From upskilling teams to refining governance, we ensure smooth, sustainable modernization.</li>
                                         <li class="section-3-tab-detail-1"><strong>Operations – </strong>Harness AI-enabled observability and automation for reliable, scalable CloudOps. Predictive issue detection and capacity planning let you focus on core innovation.</li>
                                     </ul>
+                                    <div class="mt-4">
+                                        <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab-3">
                                     <h3 class="section-3-tab-heading-1 text-white">DATA & AI </h3>
@@ -265,6 +268,9 @@
                                         <li class="section-3-tab-detail-1"><strong>Data Management – </strong>Implement AI-driven governance for real-time classification, security, and compliance. Automated cataloging and metadata management give you total control.</li>
                                         <li class="section-3-tab-detail-1"><strong>Generative AI – </strong>Automate complex tasks and spark creativity with advanced AI models. From virtual assistants to dynamic product suggestions, our solutions push the boundaries of innovation.</li>
                                     </ul>
+                                    <div class="mt-4">
+                                        <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab-4">
                                     <h3 class="section-3-tab-heading-1 text-white">MANAGED SERVICES</h3>
@@ -278,6 +284,9 @@
                                         <li class="section-3-tab-detail-1"><strong>DevSecOps – </strong>Embed AI-driven security at every stage of development. Predictive threat modeling and automated compliance processes drastically reduce exposure.</li>
                                         <li class="section-3-tab-detail-1"><strong>AppOps – </strong>Maintain mission-critical apps with AI-based diagnostics, fine-tuned performance, and proactive incident prevention—all while delivering seamless user experiences.</li>
                                     </ul>
+                                    <div class="mt-4">
+                                        <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab-5">
                                     <h3 class="section-3-tab-heading-1 text-white">SECURITY</h3>
@@ -290,6 +299,9 @@
                                         <li class="section-3-tab-detail-1"><strong>Compliance Adherence – </strong>Simplify audits and regulatory demands through AI-based checks and real-time monitoring, preserving trust and minimizing manual overhead.</li>
                                         <li class="section-3-tab-detail-1"><strong>Incident Response – </strong>Counter threats with automated detection and rapid containment, turning breaches into opportunities to bolster future security posture.</li>
                                     </ul>
+                                    <div class="mt-4">
+                                        <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab-6">
                                     <h3 class="section-3-tab-heading-1 text-white">TALENT ACQUISITION & SOURCING</h3>
@@ -303,6 +315,9 @@
                                         <li class="section-3-tab-detail-1"><strong>Software Development – </strong>Strengthen your development capabilities with coders proficient in AI frameworks, automation, and seamless integration. Achieve faster, higher-quality releases and excellent user experiences.</li>
                                         <li class="section-3-tab-detail-1"><strong>Product Development – </strong>Inspire product innovation with experts adept at AI-driven features, MVP prep, and user-centric design. Turn bold ideas into market-ready offerings that stand apart.</li>
                                     </ul>
+                                    <div class="mt-4">
+                                        <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
+                                    </div>
                                 </div>
                             </div>
                         </div>

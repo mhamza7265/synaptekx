@@ -971,6 +971,15 @@
     padding-bottom: 200px;
 }
 
+.fa-brands {
+    font-size: 38px;
+    color: #ffffff4d;
+}
+
+.fa-brands:hover {
+    color: #ffcb06;
+}
+
 @media (max-width: 460px) {
     .site-footer {
         height: auto;
@@ -1157,5 +1166,8 @@
     }
     #carouselExampleIndicators .carousel-indicators {
         display: none;
+    }
+    .fa-brands {
+        font-size: 26px;
     }
 }

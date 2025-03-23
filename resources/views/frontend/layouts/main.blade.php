@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     @include('frontend.partials._head')
-    <body class="site-body">
+    <body class="site-body" style="font-family: Outfit, sans-serif">
         @include('frontend.partials._header')
         <div class="content-container">
             @yield('content')
