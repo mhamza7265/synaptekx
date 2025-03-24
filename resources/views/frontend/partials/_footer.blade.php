@@ -1,13 +1,19 @@
 <footer class="site-footer relative">
-    <div class="d-block d-md-flex justify-content-between align-items-start">
+    <div class="d-block d-lg-flex justify-content-between align-items-start">
         <div class="footer-links-container d-block d-md-flex mx-auto justify-content-start align-items-baseline">
             <div>
                 <p class="footer-link-heading text-center text-md-start">Useful Links</p>
                 <a href="{{route('home')}}" class="d-block footer-link text-center text-md-start">Home</a>
                 <a href="{{route('services')}}" class="d-block footer-link text-center text-md-start">Services </a>
+                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Resources </a>
                 <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Industries </a>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Scalability Options</a>
-                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Portfolio</a>
+            </div>
+            <div class="ms-0 mt-4 mt-md-0 ms-md-5">
+                <p class="footer-link-heading text-center text-md-start">Useful Links</p>
+                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">About Us </a>
+                <a href="{{route('partners')}}" class="d-block footer-link text-center text-md-start">Partners </a>
+                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Careers</a>
+                <a href="javascript:void(0)" class="d-block footer-link text-center text-md-start">Contact</a>
             </div>
             <div class="ms-0 mt-4 mt-md-0 ms-md-5">
                 <p class="footer-link-heading text-center text-md-start">Useful Links</p>
@@ -17,7 +23,7 @@
             </div>
         </div>
         <div>
-            <a href="/">
+            <a href="{{route('home')}}">
                 <img src="{{asset('images/frontend/synaptekx_logo.svg')}}" alt="logo" class="footer-logo" />
             </a>
             {{-- <form class="footer-input-container d-flex justify-content-between mt-5">

@@ -28,3 +28,5 @@ Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/services', [FrontendController::class, 'services'])->name('services');
 
 Route::post('/contact', [FrontendController::class, 'sendContactEmail'])->name('contact');
+
+Route::get('/partners', [FrontendController::class, 'partners'])->name('partners');

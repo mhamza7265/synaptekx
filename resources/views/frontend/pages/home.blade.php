@@ -12,69 +12,73 @@
     <div class="home-page">
         <section class="home-hero-section position-relative">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
+                <div class="carousel-indicators home-hero-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="hero-section" style="background-image: url('/images/frontend/carousel_3.jpg')">
-                        <div class="container overflow-hidden">
-                            <div class="d-flex justify-content-start align-content-center">
-                                <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                    <div class="carousel-item active">
+                        <div class="hero-section hero-video">
+                            <video autoplay loop muted playsinline>
+                                <source src="{{asset('images/frontend/carousel_1.mp4')}}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="container overflow-hidden">
+                                <div class="d-flex justify-content-start align-content-center">
+                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                                </div>
+                                <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                    <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
+                                </div>
+                                <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                    <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                                </div>
+                                <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
+                                </a>
                             </div>
-                            <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
-                                <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
-                            </div>
-                            <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
-                                <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
-                            </div>
-                            <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                <span class="ms-3 fs-14 text-white">Find Out More</span>
-                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="hero-section" style="background-image: url('/images/frontend/carousel_2.jpg')">
-                        <div class="container overflow-hidden">
-                            <div class="d-flex justify-content-start align-content-center">
-                                <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                    <div class="carousel-item">
+                        <div class="hero-section" style="background-image: url('/images/frontend/carousel_2.jpg')">
+                            <div class="container overflow-hidden">
+                                <div class="d-flex justify-content-start align-content-center">
+                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                                </div>
+                                <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                    <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
+                                </div>
+                                <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                    <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                                </div>
+                                <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
+                                </a>
                             </div>
-                            <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
-                                <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
-                            </div>
-                            <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
-                                <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
-                            </div>
-                            <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                <span class="ms-3 fs-14 text-white">Find Out More</span>
-                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="hero-section" style="background-image: url('/images/frontend/carousel_3.jpg')">
-                        <div class="container overflow-hidden">
-                            <div class="d-flex justify-content-start align-content-center">
-                                <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                    <div class="carousel-item">
+                        <div class="hero-section" style="background-image: url('/images/frontend/carousel_3.jpg')">
+                            <div class="container overflow-hidden">
+                                <div class="d-flex justify-content-start align-content-center">
+                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                                </div>
+                                <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                    <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
+                                </div>
+                                <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                    <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                                </div>
+                                <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
+                                </a>
                             </div>
-                            <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
-                                <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
-                            </div>
-                            <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
-                                <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
-                            </div>
-                            <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                <span class="ms-3 fs-14 text-white">Find Out More</span>
-                            </a>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
             <div class="hero-brands">
@@ -128,7 +132,7 @@
         <section class="home-section-3 position-relative" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <img src="{{asset('images/frontend/graphic_element.svg')}}" class="div-graphic-element" />
 
-            <div id="partners-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div id="partners-carousel" class="carousel slide font-sf-pro" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="d-block d-md-flex justify-content-between align-content-center overflow-hidden">
@@ -326,7 +330,7 @@
             </div>
         </section>
 
-        <section class="home-section-2 bg-white position-relative overflow-hidden" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+        <section class="home-section-2 bg-white position-relative overflow-hidden font-sf-pro" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <div class="container py-35px">
                 <div class="col-md-12 mt-4">
                     <h1 class="home-sect-4-title text-black">The Digital <span class="text-gradient">Transformation</span> Journey</h1>
