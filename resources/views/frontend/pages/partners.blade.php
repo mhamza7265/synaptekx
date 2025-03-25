@@ -17,13 +17,13 @@
         </section>
         <section class="nav-section">
             <div class="d-block d-md-flex justify-content-between align-items-center px-110 py-5">
-                <a href="#nav-btn-1" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Elite Partners</a>
-                <a href="#nav-btn-2" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">All Partner</a>
-                <a href="#nav-btn-3" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Events & Webinars</a>
-                <a href="#nav-btn-4" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">Related Capabilities</a>
+                <a href="#elite-section" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Elite Partners</a>
+                <a href="#all-section" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">All Partner</a>
+                <a href="#event-webinars" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Events & Webinars</a>
+                <a href="#rel-cap" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">Related Capabilities</a>
             </div>
         </section>
-        <section id="nav-btn-1" class="empowering-section bg-white position-relative">
+        <section id="elite-section" class="empowering-section bg-white position-relative">
             <img src="{{asset('images/frontend/services_element.svg')}}" alt="graphic-element" class="services-graphic" style="left: 0 !important" />
             <div class="container-sm">
                 <h1>Elite <span class="text-gradient">Partners</span></h1>
@@ -112,7 +112,7 @@
                 
             </div>
         </section>
-        <section class="home-section-3 position-relative font-outfit" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+        <section id="all-section" class="home-section-3 position-relative font-outfit" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <img src="{{asset('images/frontend/graphic_element.svg')}}" class="div-graphic-element" />
 
             <div class="container py-90px overflow-hidden">
@@ -311,7 +311,7 @@
                 </div>
             </div>
         </section>
-        <section class="webinar-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+        <section id="event-webinars" class="webinar-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
             <div class="pt-5 bg-white">
                 <div class="container-sm mb-5">
                     <h1>
@@ -381,7 +381,7 @@
                 </div>
             </div>
         </section>
-        <section class="py-5" style="background-image: url('/images/frontend/bg-gradient_2.svg'); background-repeat: no-repeat; background-position: right top;">
+        <section id="rel-cap" class="py-5" style="background-image: url('/images/frontend/bg-gradient_2.svg'); background-repeat: no-repeat; background-position: right top;">
             <div class="container-sm py-5">
                 <div class="row justify-content-start">
                     <div class="col-12 col-md-4" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out">
