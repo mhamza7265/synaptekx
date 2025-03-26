@@ -26,7 +26,7 @@
                             </video>
                             <div class="container overflow-hidden">
                                 <div class="d-flex justify-content-start align-content-center">
-                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" draggable="false" />
                                 </div>
                                 <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
@@ -45,7 +45,7 @@
                         <div class="hero-section" style="background-image: url('/images/frontend/carousel_2.jpg')">
                             <div class="container overflow-hidden">
                                 <div class="d-flex justify-content-start align-content-center">
-                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" draggable="false" />
                                 </div>
                                 <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
@@ -64,7 +64,7 @@
                         <div class="hero-section" style="background-image: url('/images/frontend/carousel_3.jpg')">
                             <div class="container overflow-hidden">
                                 <div class="d-flex justify-content-start align-content-center">
-                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" />
+                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" draggable="false" />
                                 </div>
                                 <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
@@ -188,15 +188,11 @@
 
             <div class="container py-90px overflow-hidden">
                 <div class="d-flex justify-content-start align-content-center">
-                    <img src="{{asset('images/frontend/features_pill.svg')}}" />
+                    <img src="{{asset('images/frontend/features_pill.svg')}}" draggable="false" />
                 </div>
                 <div class="col-md-12 mt-4">
                     <h1 class="w-60-perc home-sect-2-title text-white" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out">Our Core Digital Services at <span class="text-gradient">SynaptekX</span></h1>
                 </div>
-                <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
-                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                    <span class="ms-3 fs-14 text-white">explore our platform</span>
-                </a>
 
                 <div class="home-sect-3-content-container d-flex justify-content-between align-items-start mt-5">
                     <div class="row w-100 m-auto overflow-hidden">
@@ -241,6 +237,10 @@
                                         <li class="section-3-tab-detail-1"><strong>eCommerce – </strong>Reinvent digital storefronts with AI personalization and real-time data analysis. From intelligent recommendations to dynamic pricing, we deliver seamless user experiences that boost conversions.</li>
                                     </ul>
                                     {{-- <p class="section-3-tab-detail-1">By partnering with us, you’ll benefit from data-driven insights and a tailored strategy that maximizes your ROI.</p> --}}
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                        <span class="ms-3 fs-14 text-white">explore our platform</span>
+                                    </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
                                     </div>
@@ -256,6 +256,10 @@
                                         <li class="section-3-tab-detail-1"><strong>Transformation – </strong>Move to cloud-native operations enriched by data-driven insights. From upskilling teams to refining governance, we ensure smooth, sustainable modernization.</li>
                                         <li class="section-3-tab-detail-1"><strong>Operations – </strong>Harness AI-enabled observability and automation for reliable, scalable CloudOps. Predictive issue detection and capacity planning let you focus on core innovation.</li>
                                     </ul>
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                        <span class="ms-3 fs-14 text-white">explore our platform</span>
+                                    </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
                                     </div>
@@ -272,6 +276,10 @@
                                         <li class="section-3-tab-detail-1"><strong>Data Management – </strong>Implement AI-driven governance for real-time classification, security, and compliance. Automated cataloging and metadata management give you total control.</li>
                                         <li class="section-3-tab-detail-1"><strong>Generative AI – </strong>Automate complex tasks and spark creativity with advanced AI models. From virtual assistants to dynamic product suggestions, our solutions push the boundaries of innovation.</li>
                                     </ul>
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                        <span class="ms-3 fs-14 text-white">explore our platform</span>
+                                    </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
                                     </div>
@@ -288,6 +296,10 @@
                                         <li class="section-3-tab-detail-1"><strong>DevSecOps – </strong>Embed AI-driven security at every stage of development. Predictive threat modeling and automated compliance processes drastically reduce exposure.</li>
                                         <li class="section-3-tab-detail-1"><strong>AppOps – </strong>Maintain mission-critical apps with AI-based diagnostics, fine-tuned performance, and proactive incident prevention—all while delivering seamless user experiences.</li>
                                     </ul>
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                        <span class="ms-3 fs-14 text-white">explore our platform</span>
+                                    </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
                                     </div>
@@ -303,6 +315,10 @@
                                         <li class="section-3-tab-detail-1"><strong>Compliance Adherence – </strong>Simplify audits and regulatory demands through AI-based checks and real-time monitoring, preserving trust and minimizing manual overhead.</li>
                                         <li class="section-3-tab-detail-1"><strong>Incident Response – </strong>Counter threats with automated detection and rapid containment, turning breaches into opportunities to bolster future security posture.</li>
                                     </ul>
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                        <span class="ms-3 fs-14 text-white">explore our platform</span>
+                                    </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
                                     </div>
@@ -319,6 +335,10 @@
                                         <li class="section-3-tab-detail-1"><strong>Software Development – </strong>Strengthen your development capabilities with coders proficient in AI frameworks, automation, and seamless integration. Achieve faster, higher-quality releases and excellent user experiences.</li>
                                         <li class="section-3-tab-detail-1"><strong>Product Development – </strong>Inspire product innovation with experts adept at AI-driven features, MVP prep, and user-centric design. Turn bold ideas into market-ready offerings that stand apart.</li>
                                     </ul>
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
+                                        <span class="ms-3 fs-14 text-white">explore our platform</span>
+                                    </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
                                     </div>
@@ -348,7 +368,7 @@
         <section class="home-section-2 bg-black position-relative relative overflow-hidden" style="background-image: url('/images/frontend/bg-gradient_2.svg'); background-repeat: no-repeat; background-position: right top;" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <div class="container py-90px">
                 <div class="d-flex justify-content-start align-content-center">
-                    <img src="{{asset('images/frontend/innovative_pill.svg')}}" />
+                    <img src="{{asset('images/frontend/innovative_pill.svg')}}" draggable="false" />
                 </div>
                 <div class="col-md-12 mt-4">
                     <h1 class="home-sect-2-title text-white"><span class="text-gradient">Digital Solutions</span> for Business Growth</h1>

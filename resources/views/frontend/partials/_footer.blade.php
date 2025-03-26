@@ -1,6 +1,6 @@
 <footer class="site-footer relative">
     <div class="d-block d-lg-flex justify-content-between align-items-start">
-        <div class="footer-links-container d-block d-md-flex mx-auto justify-content-start align-items-baseline">
+        <div class="footer-links-container d-block d-md-flex justify-content-start align-items-baseline">
             <div>
                 <p class="footer-link-heading text-center text-md-start">Useful Links</p>
                 <a href="{{route('home')}}" class="d-block footer-link text-center text-md-start">Home</a>

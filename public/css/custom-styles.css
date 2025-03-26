@@ -120,6 +120,7 @@
     border-radius: 100%;
     cursor: pointer;
     z-index: 1000;
+    transition: all 0.3s ease-in-out;
 }
 
 #scrollToTop:hover {
@@ -607,7 +608,7 @@
     content: "";
     position: absolute;
     top: 50%;
-    right: 106.3%;
+    left: -32px;
     transform: translateY(-50%);
     width: 12px;
     height: 12px;
@@ -846,6 +847,7 @@
 .page-nav-link {
     text-decoration: none;
     color: white;
+    transition: all 0.3s ease-in-out;
 }
 
 .page-nav-link:hover {
@@ -1026,6 +1028,7 @@
 .fa-brands {
     font-size: 38px;
     color: #ffffff4d;
+    transition: all 0.3s ease-in-out;
 }
 
 .fa-brands:hover {
@@ -1197,6 +1200,13 @@
     color: #ffffff99;
     text-decoration: none;
     display: block;
+}
+
+.nav-content .nav-section {
+    position: sticky;
+    top: 0;
+    z-index: 91;
+    background-color: #000;
 }
 
 @media (max-width: 992px) {

@@ -1,7 +1,7 @@
 
 
 <section class="home-section-2 contact-section bg-white position-relative overflow-hidden" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" style="font-family: Outfit, sans-serif;">
-    <div class="container contact-container br-16px" style="background-image: url('/images/frontend/bg-gradient_3.svg'); background-repeat: no-repeat; background-position: center center;">
+    <div class="container contact-container br-16px" style="background-image: url('/images/frontend/bg-gradient_3.svg'); background-repeat: no-repeat; background-position: center center; background-size: cover">
         <div class="row justify-content-between align-items-start">
             <div class="col-lg-5 col-12">
                 <div class="d-flex justify-content-start align-content-center">
@@ -16,7 +16,9 @@
                     </div>
                     <div class="col-md-5 col-12" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <h1 class="home-sect-5-title text-black">Contact</h1>
-                        <p class="contact-sec-desc mt-2">info@synaptekx.com +44 (20) 8156 0125</p>
+                        <span class="contact-sec-desc mt-2">info@synaptekx.com</span>
+                        <br>
+                        <span class="contact-sec-desc mt-2">+44 (20) 8156 0125</span>
                     </div>
                 </div>
             </div>

@@ -24,7 +24,6 @@
             <a href="{{route('partners')}}" id="partners-nav" data-menu="partners-menu" class="nav-item cursor-pointer">Partners <i class="fa-solid fa-caret-down ms-2"></i></a>
             <a href="javascript:void(0)" data-menu="" class="d-block nav-item">Careers</a>
             <a href="javascript:void(0)" data-menu="" class="d-block nav-item text-gradient">Contact us</a>
-            <a href="javascript:void(0)" data-menu="" class="d-block nav-item"><i class="fa-solid fa-magnifying-glass"></i></a>
         </div>
         <nav class="d-lg-none navbar navbar-light w-100" id="mobile-navbar">
             <div class="container w-100">
