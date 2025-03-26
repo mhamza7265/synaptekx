@@ -1209,6 +1209,7 @@
     background-color: #000;
 }
 
+/* responsive styles */
 @media (max-width: 992px) {
     .hero-section {
         height: auto;
