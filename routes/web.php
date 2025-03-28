@@ -32,3 +32,5 @@ Route::post('/contact', [FrontendController::class, 'sendContactEmail'])->name('
 Route::get('/partners', [FrontendController::class, 'partners'])->name('partners');
 
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact-page');
+
+Route::get('/about-us', [FrontendController::class, 'about'])->name('about');

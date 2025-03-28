@@ -20,7 +20,7 @@
             <a href="{{route('services')}}" id="services-nav" data-menu="services-menu" class="nav-item cursor-pointer">Services <i class="fa-solid fa-caret-down ms-2"></i></a>
             <span id="resources-nav" data-menu="resources-menu" class="nav-item cursor-pointer">Resources <i class="fa-solid fa-caret-down ms-2"></i></span>
             <span id="industries-nav" data-menu="industries-menu" class="nav-item cursor-pointer">Industries <i class="fa-solid fa-caret-down ms-2"></i></span>
-            <a href="javascript:void(0)" data-menu="" class="d-block nav-item">About Us</a>
+            <a href="{{route('about')}}" data-menu="" class="d-block nav-item">About Us</a>
             <a href="{{route('partners')}}" id="partners-nav" data-menu="partners-menu" class="nav-item cursor-pointer">Partners <i class="fa-solid fa-caret-down ms-2"></i></a>
             <a href="javascript:void(0)" data-menu="" class="d-block nav-item">Careers</a>
             <a href="{{route('contact-page')}}" data-menu="" class="d-block nav-item text-gradient">Contact us</a>
@@ -79,7 +79,7 @@
                             <a class="nav-link" href="#">Industries</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" href="{{route('about')}}">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('partners')}}">Partners</a>
