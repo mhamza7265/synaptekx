@@ -47,6 +47,10 @@
     font-size: 18px !important;
 }
 
+.fs-22 {
+    font-size: 22px !important;
+}
+
 .fs-32 {
     font-size: 32px !important;
 }
@@ -1383,6 +1387,13 @@
 .menu-list {
     list-style: none;
     padding: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.menu-list::-webkit-scrollbar {
+    display: none !important;
 }
 
 .menu-list li {
@@ -1412,10 +1423,18 @@
 } */
 
 /* Close & Back Buttons */
-.close-btn,
-.back-btn {
+.close-btn {
     position: absolute;
     top: 10px;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: #000;
+}
+
+.back-btn {
     font-size: 1.2rem;
     background: none;
     border: none;
