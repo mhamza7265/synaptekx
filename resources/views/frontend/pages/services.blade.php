@@ -176,15 +176,3 @@
         @include('frontend.partials._contact-form')
     </section>
 @endsection
-@section('scripts')
-    <script>
-       $(window).on("scroll", function () {
-            $(window).on("scroll", function () {
-                let scrollPercentage = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
-                let gradientPosition = (100 - (scrollPercentage % 100)) + "%";
-                
-                $(".empower-title").css("--gradient-position", gradientPosition);
-            });
-        });
-    </script>
-@endsection

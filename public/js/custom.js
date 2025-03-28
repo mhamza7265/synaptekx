@@ -96,4 +96,19 @@ $(document).ready(function () {
     });
 
     $("#current-year").text(new Date().getFullYear());
+
+    $(window).on("scroll", function () {
+        $(window).on("scroll", function () {
+            let scrollPercentage =
+                ($(window).scrollTop() /
+                    ($(document).height() - $(window).height())) *
+                3000;
+            let gradientPosition = 100 - (scrollPercentage % 100) + "%";
+
+            $(".empower-title, .sticky-gradient-text").css(
+                "--gradient-position",
+                gradientPosition
+            );
+        });
+    });
 });

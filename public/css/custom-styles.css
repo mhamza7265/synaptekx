@@ -13,6 +13,10 @@
     font-style: normal;
 }
 
+.color-site-gray {
+    color: #535353 !important;
+}
+
 .font-sf-pro {
     font-family: "SF Pro Display", sans-serif;
 }
@@ -71,6 +75,16 @@
 .px-110 {
     padding-left: 110px !important;
     padding-right: 110px !important;
+}
+
+.py-110 {
+    padding-top: 110px !important;
+    padding-bottom: 110px !important;
+}
+
+.py-140px {
+    padding-top: 140px !important;
+    padding-bottom: 140px !important;
 }
 
 .radius-24 {
@@ -326,7 +340,7 @@
     left: 0;
     width: 100%;
     background-color: transparent;
-    z-index: 9;
+    z-index: 92;
 }
 
 .content-container {
@@ -934,7 +948,7 @@
 
 #fixed-on-scroll {
     position: sticky;
-    top: 5.9375rem;
+    top: 8.9375rem;
 }
 
 .empower-right-texts-parent {
@@ -1237,6 +1251,83 @@
     color: #000;
 }
 
+.about-sticky-img {
+    width: 390px;
+    height: 390px;
+    object-fit: contain;
+}
+
+.sticky-gradient-text {
+    width: 60%;
+    font-size: 57px;
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+    color: white; /* White fallback */
+    z-index: 5;
+
+    /* Gradient overlay */
+    --gradient-position: 50%;
+    background: -webkit-linear-gradient(
+        308deg,
+        #ffffff 0%,
+        #ffffff 28.66%,
+        #fa582d 32.66%,
+        #ffffff 37%,
+        #ffffff 45%,
+        #fa582d 47.5%,
+        #ffffff 50.5%,
+        #ffffff 64%,
+        #fa582d 69%,
+        #ffffff 70%
+    );
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    background-position: var(--gradient-position) 50%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-graphic {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 350px;
+}
+
+.sticky-right-texts-parent {
+    border-left: 1px solid #fff;
+}
+
+.sticky-right-texts {
+    padding-top: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    padding-left: 65px;
+}
+
+.sticky-right-texts::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("/images/frontend/empower_text_before_element.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -22px;
+}
+
+.sticky-right-texts h5 {
+    color: #fff;
+    font-size: 22px;
+}
+
+.sticky-right-texts p {
+    color: #868686;
+}
+
 /* responsive styles */
 @media (max-width: 992px) {
     .hero-section {
@@ -1462,6 +1553,9 @@
     .fs-md-42px {
         font-size: 42px !important;
     }
+    .fs-57 {
+        font-size: 38px !important;
+    }
     .services-section-image {
         width: 100%;
         height: 400px;
@@ -1517,5 +1611,20 @@
     .container {
         padding-right: 10px;
         padding-left: 10px;
+    }
+    .sticky-right-texts {
+        width: 80%;
+        padding-top: 30px;
+        margin-bottom: 50px;
+        position: relative;
+        padding-left: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sticky-right-texts::before {
+        left: -60px;
+    }
+    .sticky-gradient-text {
+        width: 100%;
     }
 }
