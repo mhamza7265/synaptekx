@@ -15,13 +15,13 @@
         </section>
         <section class="nav-content">
             <section class="nav-section">
-                <div class="d-block d-lg-flex justify-content-between align-items-center px-5 py-5">
-                    <a href="#empower" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Empowering Business</a>
-                    <a href="#transformation-journey" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Transformation Journey</a>
-                    <a href="#consulting" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Consulting & Strategy</a>
-                    <a href="#transformation" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">Transformation</a>
-                    <a href="#business" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="400">Business Applications</a>
-                    <a href="#ecommerce" class="d-block page-nav-link fs-16 fw-600 text-center mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="500">eCommerce</a>
+                <div class="d-flex justify-content-between align-items-center px-5 py-5 overflow-x-auto white-space-nowrap">
+                    <a href="#empower" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Empowering Business</a>
+                    <a href="#transformation-journey" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Transformation Journey</a>
+                    <a href="#consulting" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Consulting & Strategy</a>
+                    <a href="#transformation" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">Transformation</a>
+                    <a href="#business" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="400">Business Applications</a>
+                    <a href="#ecommerce" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="500">eCommerce</a>
                 </div>
             </section>
             <section id="empower" class="empowering-section bg-white position-relative">

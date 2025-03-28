@@ -113,6 +113,10 @@
     padding-bottom: 200px !important;
 }
 
+.white-space-nowrap {
+    white-space: nowrap !important;
+}
+
 .bg-site-grey {
     background-color: #0d101b !important;
 }
@@ -1626,5 +1630,9 @@
     }
     .sticky-gradient-text {
         width: 100%;
+    }
+    .px-35 {
+        padding-left: 35px !important;
+        padding-right: 35px !important;
     }
 }

@@ -14,14 +14,14 @@
             </div>
         </section>
         <section class="nav-content">
-            <section class="nav-section px-5">
-                <div class="d-block d-lg-flex justify-content-between align-items-center px-5 py-5">
-                    <a href="#about" class="d-block page-nav-link fs-16 fw-600 text-start mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">About Synaptekx</a>
-                    <a href="#approach" class="d-block page-nav-link fs-16 fw-600 text-start mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Our Unique Approach</a>
-                    <a href="#mission" class="d-block page-nav-link fs-16 fw-600 text-start mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Our Mission</a>
-                    <a href="#why-synaptekx" class="d-block page-nav-link fs-16 fw-600 text-start mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">Why SynaptekX</a>
-                    <a href="#looking-ahead" class="d-block page-nav-link fs-16 fw-600 text-start mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="400">Looking Ahead</a>
-                    <a href="#join-us" class="d-block page-nav-link fs-16 fw-600 text-start mb-3 mb-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="500">Join Us</a>
+            <section class="nav-section px-lg-5">
+                <div class="d-flex justify-content-between align-items-center px-5 py-5 overflow-x-auto white-space-nowrap">
+                    <a href="#about" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">About Synaptekx</a>
+                    <a href="#approach" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Our Unique Approach</a>
+                    <a href="#mission" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Our Mission</a>
+                    <a href="#why-synaptekx" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">Why SynaptekX</a>
+                    <a href="#looking-ahead" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="400">Looking Ahead</a>
+                    <a href="#join-us" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="500">Join Us</a>
                 </div>
             </section>
             <section id="about" class="transformation-section bg-white py-140px">
