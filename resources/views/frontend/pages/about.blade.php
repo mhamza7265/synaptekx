@@ -46,7 +46,7 @@
             <section id="mission" class="py-110 bg-site-grey services-section-bg-grad">
                 <div class="container overflow-hidden">
                     <div class="row">
-                        <div class="col-12 col-lg-7 ps-md-5 mx-auto mt-4 mt-md-0" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+                        <div class="col-12 col-lg-7 ps-md-5 mx-auto mt-4 mt-md-0" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
                             <div class="w-88 mb-4">
                                 <h1 class="fs-57 fw-500 text-start text-white text-md-start">Our <span class="text-gradient ms-2">Mission</span></h1>
                             </div>
@@ -54,7 +54,7 @@
                                 <p class="services-section-desc">At SynaptekX, we’re driven by the mission to bridge the gap between ambitious ideas and real-world impact. Whether it’s accelerating digital transformation, fortifying cybersecurity, or developing cutting-edge software solutions, our approach remains rooted in partnership. We go beyond off-the-shelf fixes to truly immerse ourselves in our clients’ ecosystems—helping them harness intelligent automation and data-driven insights for sustainable, long-term growth.</p>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-5 mx-auto mt-4 mt-lg-0" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
+                        <div class="col-12 col-lg-5 mx-auto mt-4 mt-lg-0" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
                             <div class="services-section-image">
                                 <img src="{{asset('images/frontend/about_section_2.png')}}" alt="" class="services-section-img" />
                             </div>
@@ -138,7 +138,7 @@
             <section id="join-us" class="py-110 bg-site-grey services-section-bg-grad">
                 <div class="container overflow-hidden">
                     <div class="row">
-                        <div class="col-12 col-lg-7 ps-md-5 mx-auto mt-4 mt-md-0" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+                        <div class="col-12 col-lg-7 ps-md-5 mx-auto mt-4 mt-md-0" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
                             <div class="w-88 mb-4">
                                 <h1 class="fs-57 fw-500 text-start text-white text-md-start">Join<span class="text-gradient ms-2">Us</span></h1>
                             </div>
@@ -150,7 +150,7 @@
                                 <span class="ms-3 fs-14 text-white">Contact</span>
                             </a>
                         </div>
-                        <div class="col-12 col-lg-5 mx-auto mt-4 mt-lg-0" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
+                        <div class="col-12 col-lg-5 mx-auto mt-4 mt-lg-0" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
                             <div class="services-section-image">
                                 <img src="{{asset('images/frontend/about_section_5.png')}}" alt="" class="services-section-img" />
                             </div>
