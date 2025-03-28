@@ -59,6 +59,10 @@
     font-weight: 600 !important;
 }
 
+.decor-none {
+    text-decoration: none;
+}
+
 .px-50 {
     padding-left: 50px !important;
     padding-right: 50px !important;
@@ -1209,6 +1213,30 @@
     background-color: #000;
 }
 
+.contact-icons {
+    width: 50px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.border-b-1px {
+    border-bottom: 1px solid #000;
+    padding-bottom: 20px;
+    color: #535353;
+}
+
+.contact-content {
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 15px;
+    display: block;
+}
+
+.contact-content a {
+    text-decoration: none;
+    color: #000;
+}
+
 /* responsive styles */
 @media (max-width: 992px) {
     .hero-section {
@@ -1277,7 +1305,7 @@
 @media (max-width: 576px) {
     .site-footer {
         height: auto;
-        padding: 60px 40px;
+        padding: 60px 15px;
     }
     .footer-logo {
         width: 150px;
@@ -1482,5 +1510,12 @@
     }
     #webinar-carousel .text-content {
         width: 100%;
+    }
+    .section-3-tab-content {
+        padding: 46px 5px;
+    }
+    .container {
+        padding-right: 10px;
+        padding-left: 10px;
     }
 }

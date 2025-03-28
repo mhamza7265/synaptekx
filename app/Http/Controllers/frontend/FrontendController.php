@@ -51,4 +51,10 @@ class FrontendController extends Controller
         $title = "Partners";
         return view('frontend.pages.partners', compact('title'));
     }
+
+    public function contact()
+    {
+        $title = "Contact";
+        return view('frontend.pages.contact', compact('title'));
+    }
 }

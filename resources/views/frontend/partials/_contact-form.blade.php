@@ -16,9 +16,9 @@
                     </div>
                     <div class="col-md-5 col-12" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <h1 class="home-sect-5-title text-black">Contact</h1>
-                        <span class="contact-sec-desc mt-2">info@synaptekx.com</span>
+                        <span class="contact-sec-desc mt-2"><a href="mailto:info@synaptekx.com" class="decor-none" style="color: #535353ab">info@synaptekx.com</a></span>
                         <br>
-                        <span class="contact-sec-desc mt-2">+44 (20) 8156 0125</span>
+                        <span class="contact-sec-desc mt-2"><a href="tel:+44 20 8156 0125" class="decor-none" style="color: #535353ab">+44 (20) 8156 0125</a></span>
                     </div>
                 </div>
             </div>

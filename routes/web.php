@@ -30,3 +30,5 @@ Route::get('/services', [FrontendController::class, 'services'])->name('services
 Route::post('/contact', [FrontendController::class, 'sendContactEmail'])->name('contact');
 
 Route::get('/partners', [FrontendController::class, 'partners'])->name('partners');
+
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact-page');
