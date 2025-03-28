@@ -17,7 +17,7 @@
         </section>
         <section class="nav-content">
             <section class="nav-section">
-                <div class="d-flex justify-content-between align-items-center px-110 px-35 py-5 overflow-x-auto white-space-nowrap">
+                <div class="section-navbar d-flex justify-content-between align-items-center px-110 px-35 py-5 overflow-x-auto white-space-nowrap">
                     <a href="#elite-section" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Elite Partners</a>
                     <a href="#all-section" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">All Partner</a>
                     <a href="#event-webinars" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Events & Webinars</a>

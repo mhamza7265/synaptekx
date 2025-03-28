@@ -15,7 +15,7 @@
         </section>
         <section class="nav-content">
             <section class="nav-section px-lg-5">
-                <div class="d-flex justify-content-between align-items-center px-5 py-5 overflow-x-auto white-space-nowrap">
+                <div class="section-navbar d-flex justify-content-between align-items-center px-5 py-5 overflow-x-auto white-space-nowrap">
                     <a href="#about" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">About Synaptekx</a>
                     <a href="#approach" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Our Unique Approach</a>
                     <a href="#mission" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Our Mission</a>

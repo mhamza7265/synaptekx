@@ -1332,6 +1332,15 @@
     color: #868686;
 }
 
+.section-navbar::-webkit-scrollbar {
+    display: none;
+}
+
+.section-navbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
 /* responsive styles */
 @media (max-width: 992px) {
     .hero-section {
