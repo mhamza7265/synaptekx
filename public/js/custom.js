@@ -111,4 +111,28 @@ $(document).ready(function () {
             );
         });
     });
+
+    // Open Navigation Panel
+    $("#openNav").click(function () {
+        $("#navMenu").css("transform", "translateX(100%)");
+    });
+
+    // Close Navigation Panel
+    $("#closeNav").click(function () {
+        $("#navMenu").css("transform", "translateX(-100%)");
+    });
+
+    // Open Mega Menu & Close Nav Menu
+    $(".nav-link-item").click(function () {
+        let targetMenu = "#" + $(this).data("menu");
+        $("#navMenu").css("transform", "translateX(-100%)");
+        $(targetMenu).css("transform", "translateX(-100%)");
+    });
+
+    // Back to Navigation Menu
+    $(".back-btn").click(function () {
+        let targetBack = "#" + $(this).data("back");
+        $(".mega-menu-mobile").css("transform", "translateX(100%)");
+        $(targetBack).css("transform", "translateX(100%)");
+    });
 });

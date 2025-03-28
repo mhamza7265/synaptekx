@@ -117,6 +117,10 @@
     white-space: nowrap !important;
 }
 
+.white-space-nowrap a {
+    white-space: nowrap !important;
+}
+
 .bg-site-grey {
     background-color: #0d101b !important;
 }
@@ -1339,6 +1343,93 @@
 .section-navbar {
     scrollbar-width: none;
     -ms-overflow-style: none;
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+/* mobile navbar */
+.menu-panel,
+.mega-menu-mobile {
+    position: fixed;
+    top: 0;
+    width: 98%;
+    max-width: 98%;
+    height: 100%;
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.menu-panel {
+    left: -100%;
+}
+
+.mega-menu-mobile {
+    right: -100%;
+}
+
+.menu-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-list li {
+    margin-bottom: 10px;
+}
+
+.menu-list button,
+.menu-list a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #000;
+    cursor: pointer;
+}
+
+.menu-list a {
+    text-decoration: none;
+}
+
+/* .menu-list button:hover,
+.menu-list a:hover {
+    background: #343a40;
+} */
+
+/* Close & Back Buttons */
+.close-btn,
+.back-btn {
+    position: absolute;
+    top: 10px;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: #000;
+}
+
+.close-btn {
+    right: 10px;
+}
+
+.back-btn {
+    left: 10px;
 }
 
 /* responsive styles */

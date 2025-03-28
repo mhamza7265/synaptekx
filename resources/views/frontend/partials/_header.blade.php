@@ -25,6 +25,47 @@
             <a href="javascript:void(0)" data-menu="" class="d-block nav-item">Careers</a>
             <a href="{{route('contact-page')}}" data-menu="" class="d-block nav-item text-gradient">Contact us</a>
         </div>
+        {{-- <nav class="d-lg-none w-100" id="mobile-navbar">
+            <div class="container w-100">
+                <div class='d-flex justify-content-between align-items-center w-100'>
+                    <a href="/"><img src="{{asset("images/frontend/synaptekx_logo.svg")}}" alt="logo" class="header-logo" /></a>
+                    
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="openNav" class="nav-btn" type="button">
+                        <i class="fa-solid fa-bars text-gradient" style="font-size: 24px;"></i>
+                    </button>
+                </div>
+        
+                <div id="navMenu" class="menu-panel">
+                    <button id="closeNav" class="close-btn">✖</button>
+                    <h2 class="menu-title">Navigation</h2>
+                    <ul class="menu-list">
+                        <li><button class="nav-link-item" data-menu="megaMenu1">Category 1</button></li>
+                        <li><button class="nav-link-item" data-menu="megaMenu2">Category 2</button></li>
+                    </ul>
+                </div>
+
+                <!-- Mega Menu Panels -->
+                <div id="megaMenu1" class="mega-menu-mobile">
+                    <button class="back-btn" data-back="navMenu">← Back</button>
+                    <h2 class="menu-title">Category 1</h2>
+                    <ul class="menu-list">
+                        <li><a href="#">Subcategory 1</a></li>
+                        <li><a href="#">Subcategory 2</a></li>
+                    </ul>
+                </div>
+
+                <div id="megaMenu2" class="mega-menu-mobile">
+                    <button class="back-btn" data-back="navMenu">← Back</button>
+                    <h2 class="menu-title">Category 2</h2>
+                    <ul class="menu-list">
+                        <li><a href="#">Subcategory A</a></li>
+                        <li><a href="#">Subcategory B</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav> --}}
         <nav class="d-lg-none navbar navbar-light w-100" id="mobile-navbar">
             <div class="container w-100">
                 <div class='d-flex justify-content-between align-items-center w-100'>
