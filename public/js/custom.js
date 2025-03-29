@@ -115,11 +115,13 @@ $(document).ready(function () {
     // Open Navigation Panel
     $("#openNav").click(function () {
         $("#navMenu").css("transform", "translateX(100%)");
+        $("body").css("overflow-y", "hidden");
     });
 
     // Close Navigation Panel
     $("#closeNav").click(function () {
         $("#navMenu").css("transform", "translateX(-100%)");
+        $("body").css("overflow-y", "auto");
     });
 
     // Open Mega Menu & Close Nav Menu

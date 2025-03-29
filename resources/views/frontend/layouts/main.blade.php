@@ -6,7 +6,6 @@
         <div class="content-container">
             @yield('content')
         </div>
-        @include('frontend.partials._footer')
         <button id="scrollToTop">
             <i class="fa fa-chevron-up"></i>
         </button>        
