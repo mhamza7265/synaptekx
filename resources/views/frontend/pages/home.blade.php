@@ -34,7 +34,7 @@
                                 <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
                                 </div>
-                                <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                <a href="javascript:void(0)" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                     <span class="ms-3 fs-14 text-white">Find Out More</span>
                                 </a>
@@ -53,7 +53,7 @@
                                 <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
                                 </div>
-                                <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                <a href="javascript:void(0)" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                     <span class="ms-3 fs-14 text-white">Find Out More</span>
                                 </a>
@@ -72,7 +72,7 @@
                                 <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
                                 </div>
-                                <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                <a href="javascript:void(0)" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                     <span class="ms-3 fs-14 text-white">Find Out More</span>
                                 </a>
@@ -132,14 +132,14 @@
         <section class="home-section-3 position-relative" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <img src="{{asset('images/frontend/graphic_element.svg')}}" class="div-graphic-element" />
 
-            <div id="partners-carousel" class="carousel slide font-sf-pro" data-bs-ride="carousel">
+            <div id="partners-carousel" class="carousel slide font-sf-pro" data-bs-ride="false" data-bs-interval="false">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="d-block d-md-flex justify-content-between align-content-center overflow-hidden">
                             <img src="{{asset('images/frontend/aws_icon.svg')}}" alt="aws icon" class="partners-icon" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" />
                             <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
                                 <h5 class="text-white fs-16 fw-500">Amazon</h5>
-                                <p class="fs-16 text-white">Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                                <p class="partners-carousel-text fs-16 text-white">Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
                                 <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                     <span class="ms-3 fs-14 text-white">Send Request</span>
@@ -152,7 +152,7 @@
                             <img src="{{asset('images/frontend/cisco_logo.svg')}}" alt="aws icon" class="partners-icon" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" />
                             <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
                                 <h5 class="text-white fs-16 fw-500">Amazon</h5>
-                                <p class="fs-16 text-white">Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                                <p class="partners-carousel-text fs-16 text-white">Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
                                 <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                     <span class="ms-3 fs-14 text-white">Send Request</span>
@@ -165,7 +165,7 @@
                             <img src="{{asset('images/frontend/equinix_logo.svg')}}" alt="aws icon" class="partners-icon" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" />
                             <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
                                 <h5 class="text-white fs-16 fw-500">Amazon</h5>
-                                <p class="fs-16 text-white">Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
+                                <p class="partners-carousel-text fs-16 text-white">Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
                                 <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                     <span class="ms-3 fs-14 text-white">Send Request</span>
@@ -237,7 +237,7 @@
                                         <li class="section-3-tab-detail-1"><strong>eCommerce – </strong>Reinvent digital storefronts with AI personalization and real-time data analysis. From intelligent recommendations to dynamic pricing, we deliver seamless user experiences that boost conversions.</li>
                                     </ul>
                                     {{-- <p class="section-3-tab-detail-1">By partnering with us, you’ll benefit from data-driven insights and a tailored strategy that maximizes your ROI.</p> --}}
-                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5 mb-5 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">explore our platform</span>
                                     </a>
@@ -256,7 +256,7 @@
                                         <li class="section-3-tab-detail-1"><strong>Transformation – </strong>Move to cloud-native operations enriched by data-driven insights. From upskilling teams to refining governance, we ensure smooth, sustainable modernization.</li>
                                         <li class="section-3-tab-detail-1"><strong>Operations – </strong>Harness AI-enabled observability and automation for reliable, scalable CloudOps. Predictive issue detection and capacity planning let you focus on core innovation.</li>
                                     </ul>
-                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5 mb-5 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">explore our platform</span>
                                     </a>
@@ -276,7 +276,7 @@
                                         <li class="section-3-tab-detail-1"><strong>Data Management – </strong>Implement AI-driven governance for real-time classification, security, and compliance. Automated cataloging and metadata management give you total control.</li>
                                         <li class="section-3-tab-detail-1"><strong>Generative AI – </strong>Automate complex tasks and spark creativity with advanced AI models. From virtual assistants to dynamic product suggestions, our solutions push the boundaries of innovation.</li>
                                     </ul>
-                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5 mb-5 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">explore our platform</span>
                                     </a>
@@ -296,7 +296,7 @@
                                         <li class="section-3-tab-detail-1"><strong>DevSecOps – </strong>Embed AI-driven security at every stage of development. Predictive threat modeling and automated compliance processes drastically reduce exposure.</li>
                                         <li class="section-3-tab-detail-1"><strong>AppOps – </strong>Maintain mission-critical apps with AI-based diagnostics, fine-tuned performance, and proactive incident prevention—all while delivering seamless user experiences.</li>
                                     </ul>
-                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5 mb-5 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">explore our platform</span>
                                     </a>
@@ -315,7 +315,7 @@
                                         <li class="section-3-tab-detail-1"><strong>Compliance Adherence – </strong>Simplify audits and regulatory demands through AI-based checks and real-time monitoring, preserving trust and minimizing manual overhead.</li>
                                         <li class="section-3-tab-detail-1"><strong>Incident Response – </strong>Counter threats with automated detection and rapid containment, turning breaches into opportunities to bolster future security posture.</li>
                                     </ul>
-                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5 mb-5 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">explore our platform</span>
                                     </a>
@@ -335,7 +335,7 @@
                                         <li class="section-3-tab-detail-1"><strong>Software Development – </strong>Strengthen your development capabilities with coders proficient in AI frameworks, automation, and seamless integration. Achieve faster, higher-quality releases and excellent user experiences.</li>
                                         <li class="section-3-tab-detail-1"><strong>Product Development – </strong>Inspire product innovation with experts adept at AI-driven features, MVP prep, and user-centric design. Turn bold ideas into market-ready offerings that stand apart.</li>
                                     </ul>
-                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                                    <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5 mb-5 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">explore our platform</span>
                                     </a>

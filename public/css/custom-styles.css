@@ -822,6 +822,7 @@
 
 .partners-icon {
     width: 200px;
+    height: 200px;
 }
 
 .partner-carousel-content {
@@ -1570,7 +1571,7 @@
         font-weight: 400;
         color: #ffffff99;
         margin-top: 40px;
-        padding-bottom: 70px;
+        padding-bottom: 15px;
         width: 90%;
         line-height: 1.1;
     }
@@ -1772,5 +1773,14 @@
     .px-35 {
         padding-left: 35px !important;
         padding-right: 35px !important;
+    }
+    .partners-carousel-text {
+        height: 200px;
+    }
+    .hero-more-btn {
+        margin-bottom: 30px;
+    }
+    .hero-section > * {
+        padding-top: 100px;
     }
 }

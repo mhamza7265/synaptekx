@@ -10,10 +10,10 @@
             </div>
             <div class="ms-0 mt-4 mt-md-0 ms-md-5">
                 <p class="footer-link-heading text-left text-md-start">Useful Links</p>
-                <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">About Us </a>
+                <a href="{{route('about')}}" class="d-block footer-link text-left text-md-start">About Us </a>
                 <a href="{{route('partners')}}" class="d-block footer-link text-left text-md-start">Partners </a>
                 <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Careers</a>
-                <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Contact</a>
+                <a href="{{route('contact')}}" class="d-block footer-link text-left text-md-start">Contact</a>
             </div>
             <div class="ms-0 mt-4 mt-md-0 ms-md-5">
                 <p class="footer-link-heading text-left text-md-start">Useful Links</p>

@@ -17,7 +17,7 @@
 
         <div class="site-navbar d-none d-lg-flex justify-content-between align-items-center">
             <a href="/" data-menu="" class="d-block nav-item">Home</a>
-            <a href="{{route('services')}}" id="services-nav" data-menu="services-menu" class="nav-item cursor-pointer">Services <i class="fa-solid fa-caret-down ms-2"></i></a>
+            <span id="services-nav" data-menu="services-menu" class="nav-item cursor-pointer">Services <i class="fa-solid fa-caret-down ms-2"></i></span>
             <span id="resources-nav" data-menu="resources-menu" class="nav-item cursor-pointer">Resources <i class="fa-solid fa-caret-down ms-2"></i></span>
             <span id="industries-nav" data-menu="industries-menu" class="nav-item cursor-pointer">Industries <i class="fa-solid fa-caret-down ms-2"></i></span>
             <a href="{{route('about')}}" data-menu="" class="d-block nav-item">About Us</a>
@@ -46,7 +46,7 @@
                         <li><button class="nav-link-item mobile-nav-link d-flex justify-content-between align-items-center" data-menu="servicesMegaMenu"><span>Services</span><i class="fa-solid fa-arrow-right"></i></button></li>
                         <li><button class="nav-link-item mobile-nav-link d-flex justify-content-between align-items-center" data-menu="resourcesMegaMenu"><span>Resources</span><i class="fa-solid fa-arrow-right"></i></button></li>
                         <li><button class="nav-link-item mobile-nav-link d-flex justify-content-between align-items-center" data-menu="industriesMegaMenu"><span>Industries</span><i class="fa-solid fa-arrow-right"></i></button></li>
-                        <li><a class="nav-link mobile-nav-link" href="#">About Us</a></li>
+                        <li><a class="nav-link mobile-nav-link" href="{{route('about')}}">About Us</a></li>
                         <li><button class="nav-link-item mobile-nav-link d-flex justify-content-between align-items-center" data-menu="partnersMegaMenu"><span>Partners</span><i class="fa-solid fa-arrow-right"></i></button></li>
                         <li><a class="nav-link mobile-nav-link" href="#">Careers</a></li>
                         <li><a class="nav-link mobile-nav-link" href="{{route('contact')}}">Contact Us</a></li>

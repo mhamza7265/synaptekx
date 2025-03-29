@@ -14,7 +14,7 @@
                         <h1 class="home-sect-5-title text-black">Locate Us</h1>
                         <p class="contact-sec-desc mt-2">5 St John’s Lane, London, England, EC1M 4BH</p>
                     </div>
-                    <div class="col-md-5 col-12" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
+                    <div class="col-md-5 col-12 mb-4 mb-lg-0" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <h1 class="home-sect-5-title text-black">Contact</h1>
                         <span class="contact-sec-desc mt-2"><a href="mailto:info@synaptekx.com" class="decor-none" style="color: #535353ab">info@synaptekx.com</a></span>
                         <br>

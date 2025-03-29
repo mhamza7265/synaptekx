@@ -137,4 +137,10 @@ $(document).ready(function () {
         $(".mega-menu-mobile").css("transform", "translateX(100%)");
         $(targetBack).css("transform", "translateX(100%)");
     });
+
+    $(".mega-menu-mobile-link").click(function () {
+        $(".mega-menu-mobile").css("transform", "translateX(100%)");
+        $("#navMenu").css("transform", "translateX(-100%)");
+        $("body").css("overflow-y", "auto");
+    });
 });
