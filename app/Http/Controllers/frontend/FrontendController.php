@@ -63,4 +63,16 @@ class FrontendController extends Controller
         $title = "About Us";
         return view('frontend.pages.about', compact('title'));
     }
+
+    public function blogs()
+    {
+        $title = "Blogs";
+        return view('frontend.pages.blog', compact('title'));
+    }
+
+    public function blogsDetails()
+    {
+        $title = "Blogs Details";
+        return view('frontend.pages.blog-details', compact('title'));
+    }
 }

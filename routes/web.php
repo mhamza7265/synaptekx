@@ -34,3 +34,7 @@ Route::get('/partners', [FrontendController::class, 'partners'])->name('partners
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact-page');
 
 Route::get('/about-us', [FrontendController::class, 'about'])->name('about');
+
+Route::get('/blogs', [FrontendController::class, 'blogs'])->name('blogs');
+
+Route::get('/blogs-details', [FrontendController::class, 'blogsDetails'])->name('blogs-details');

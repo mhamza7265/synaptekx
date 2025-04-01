@@ -5,7 +5,7 @@
         <div class="row justify-content-between align-items-start">
             <div class="col-lg-5 col-12">
                 <div class="d-flex justify-content-start align-content-center">
-                    <img src="{{asset('images/frontend/contact_pill.svg')}}" />
+                    <img src="{{asset('images/frontend/contact_pill.svg')}}" draggable="false" />
                 </div>
                 <h1 class="home-sect-5-title text-black mt-4" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Let’s redefine what’s possible together</h1>
                 <p class="contact-sec-desc mt-2" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Get in touch, and discover how our AI-driven expertise can propel your next phase of digital growth.</p>

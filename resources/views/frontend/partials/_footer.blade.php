@@ -17,6 +17,7 @@
             </div>
             <div class="ms-0 mt-4 mt-md-0 ms-md-5">
                 <p class="footer-link-heading text-left text-md-start">Useful Links</p>
+                <a href="{{route('blogs')}}" class="d-block footer-link text-left text-md-start">Blogs</a>
                 <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Privacy Policy</a>
                 <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Cookies Policy </a>
                 <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Terms of Website use</a>

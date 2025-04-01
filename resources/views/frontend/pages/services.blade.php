@@ -16,7 +16,7 @@
         <section class="nav-content">
             <section class="nav-section">
                 <div class="section-navbar d-flex justify-content-between align-items-center px-5 py-5 overflow-x-auto white-space-nowrap">
-                    <a href="#empower" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Empowering Business</a>
+                    <a href="#empower" id="empower-link" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Empowering Business</a>
                     <a href="#transformation-journey" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Transformation Journey</a>
                     <a href="#consulting" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Consulting & Strategy</a>
                     <a href="#transformation" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">Transformation</a>
@@ -175,4 +175,17 @@
             @include('frontend.partials._footer')
         </section>
     </section>
+@endsection
+@section('scripts')
+{{-- <script>
+    $(document).ready(function(){
+        $('.page-nav-link').click(function(){
+            if (window.location.hash === "#empower") {
+                $('#empower-link').addClass("text-gradient");
+            }else{
+                $('#empower-link').removeClass("text-gradient");
+            }
+        })
+    })
+</script> --}}
 @endsection
