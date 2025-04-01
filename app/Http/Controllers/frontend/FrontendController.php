@@ -11,7 +11,7 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        $title = "Home Page | Synaptekx";
+        $title = "Home | Synaptekx";
         return view('frontend.pages.home', compact('title'));
     }
 
