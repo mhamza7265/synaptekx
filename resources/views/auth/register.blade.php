@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 
-    @section('title', 'Register')
+@section('title', 'Register | Synaptekx')
 
     @section('styles')
         <!--  BEGIN CUSTOM STYLE FILE  -->

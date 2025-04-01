@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 
-    @section('title', 'Login')
+    @section('title', 'Login | Synaptekx')
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     @section('styles')

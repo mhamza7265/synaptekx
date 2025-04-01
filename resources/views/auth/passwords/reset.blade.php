@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 
-    @section('title', 'Reset Password')
+    @section('title', 'Reset Password | Synaptekx')
 
     @section('styles')
         <!--  BEGIN CUSTOM STYLE FILE  -->

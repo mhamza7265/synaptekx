@@ -11,13 +11,13 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        $title = "Home Page";
+        $title = "Home Page | Synaptekx";
         return view('frontend.pages.home', compact('title'));
     }
 
     public function services()
     {
-        $title = "Services";
+        $title = "Services | Synaptekx";
         return view('frontend.pages.services', compact('title'));
     }
 
@@ -48,31 +48,31 @@ class FrontendController extends Controller
 
     public function partners()
     {
-        $title = "Partners";
+        $title = "Partners | Synaptekx";
         return view('frontend.pages.partners', compact('title'));
     }
 
     public function contact()
     {
-        $title = "Contact";
+        $title = "Contact | Synaptekx";
         return view('frontend.pages.contact', compact('title'));
     }
 
     public function about()
     {
-        $title = "About Us";
+        $title = "About Us | Synaptekx";
         return view('frontend.pages.about', compact('title'));
     }
 
     public function blogs()
     {
-        $title = "Blogs";
+        $title = "Blogs | Synaptekx";
         return view('frontend.pages.blog', compact('title'));
     }
 
     public function blogsDetails()
     {
-        $title = "Blogs Details";
+        $title = "Blogs Details | Synaptekx";
         return view('frontend.pages.blog-details', compact('title'));
     }
 }
