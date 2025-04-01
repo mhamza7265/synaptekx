@@ -37,4 +37,4 @@ Route::get('/about-us', [FrontendController::class, 'about'])->name('about');
 
 Route::get('/blogs', [FrontendController::class, 'blogs'])->name('blogs');
 
-Route::get('/blogs-details', [FrontendController::class, 'blogsDetails'])->name('blogs-details');
+Route::get('/blog-details', [FrontendController::class, 'blogsDetails'])->name('blogs-details');

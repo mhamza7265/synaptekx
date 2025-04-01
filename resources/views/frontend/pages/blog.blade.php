@@ -21,7 +21,7 @@
                 <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-easing="ease-in-out">
                     <div class="blog-card">
                         <img src="{{asset('images/frontend/blog_1.png')}}" alt="" class="blog-img" />
-                        <span class="fs-12 sub-title-1">Design Systems</span>
+                        <span class="fs-12 fw-500 sub-title-1">Design Systems</span>
                         <h5 class="fs-22 title">Lorem ipsum dolor sit amet consectetur. At tellus et.</h5>
                         <a href="{{route('blogs-details')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4 mb-5 mb-lg-0">
                             <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
@@ -33,7 +33,7 @@
                 <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="100">
                     <div class="blog-card">
                         <img src="{{asset('images/frontend/blog_2.png')}}" alt="" class="blog-img" />
-                        <span class="fs-12 sub-title-1">Design Systems</span>
+                        <span class="fs-12 fw-500 sub-title-1">Design Systems</span>
                         <h5 class="fs-22 title">Most popular design systems to learn from in 2022</h5>
                         <a href="{{route('blogs-details')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4 mb-5 mb-lg-0">
                             <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
@@ -45,7 +45,7 @@
                 <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="200">
                     <div class="blog-card">
                         <img src="{{asset('images/frontend/blog_3.jpg')}}" alt="" class="blog-img" />
-                        <span class="fs-12 sub-title-1">Design Systems</span>
+                        <span class="fs-12 fw-500 sub-title-1">Design Systems</span>
                         <h5 class="fs-22 title">Most popular design systems to learn from in 2022</h5>
                         <a href="{{route('blogs-details')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4 mb-5 mb-lg-0">
                             <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
@@ -57,7 +57,7 @@
                 <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-easing="ease-in-out">
                     <div class="blog-card">
                         <img src="{{asset('images/frontend/blog_4.png')}}" alt="" class="blog-img" />
-                        <span class="fs-12 sub-title-1">Design Systems</span>
+                        <span class="fs-12 fw-500 sub-title-1">Design Systems</span>
                         <h5 class="fs-22 title">Most popular design systems to learn from in 2022</h5>
                         <a href="{{route('blogs-details')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4 mb-5 mb-lg-0">
                             <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
@@ -69,7 +69,7 @@
                 <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="100">
                     <div class="blog-card">
                         <img src="{{asset('images/frontend/blog_5.png')}}" alt="" class="blog-img" />
-                        <span class="fs-12 sub-title-1">Design Systems</span>
+                        <span class="fs-12 fw-500 sub-title-1">Design Systems</span>
                         <h5 class="fs-22 title">Most popular design systems to learn from in 2022</h5>
                         <a href="{{route('blogs-details')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4 mb-5 mb-lg-0">
                             <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
@@ -81,7 +81,7 @@
                 <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="200">
                     <div class="blog-card">
                         <img src="{{asset('images/frontend/blog_6.png')}}" alt="" class="blog-img" />
-                        <span class="fs-12 sub-title-1">Design Systems</span>
+                        <span class="fs-12 fw-500 sub-title-1">Design Systems</span>
                         <h5 class="fs-22 title">Most popular design systems to learn from in 2022</h5>
                         <a href="{{route('blogs-details')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4 mb-5 mb-lg-0">
                             <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
