@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use GuzzleHttp\Middleware;
+use App\Http\Controllers\Admin\BlogController;
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
@@ -17,5 +18,6 @@ Route::get('storage-link', [AdminController::class, 'storageLink'])->name('stora
 
 Route::group(['middleware' => ['role:admin,superadmin']], function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
-    Route::get('pages', [AdminController::class, 'pages'])->name('pages');
+    Route::get('/pages', [AdminController::class, 'pages'])->name('pages');
+    Route::resource('/blogs', BlogController::class)->names('blogs');
 });

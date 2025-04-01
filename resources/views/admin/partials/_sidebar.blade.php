@@ -16,7 +16,7 @@
                     </div>
                 </a>
             </li>
-            <li class="menu {{ Request::is('pages') ? "active" : "" }}">
+            <li class="menu {{ request()->routeIs('admin.pages') ? "active" : "" }}">
                 <a href="{{route('admin.pages')}}" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <img src="{{asset('images/admin/pages.svg')}}" style="width: 24px; height: 24px" />
@@ -24,7 +24,29 @@
                     </div>
                 </a>
             </li>
-            <li class="menu {{ Request::is('*/dashboard/*') ? "active" : "" }}">
+            <li class="menu {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}">
+                <a href="#blogs" data-bs-toggle="collapse" aria-expanded="{{ request()->routeIs('admin.blogs.*') ? 'true' : 'false' }}" class="dropdown-toggle">
+                    <div>
+                        <img src="{{ asset('images/admin/blog.svg') }}" style="width: 24px; height: 24px" />
+                        <span>Blogs</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled {{ request()->routeIs('admin.blogs.*') ? 'show' : '' }}" id="blogs" data-bs-parent="#accordionExample">
+                    <li class="{{ request()->routeIs('admin.blogs.index') ? 'active' : '' }}">
+                        <a href="{{ route('admin.blogs.index') }}">Blogs List</a>
+                    </li>
+                    <li class="{{ request()->routeIs('admin.blogs.create') ? 'active' : '' }}">
+                        <a href="{{ route('admin.blogs.create') }}">Create New</a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="menu {{ request()->routeIs('*/dashboard/*') ? "active" : "" }}">
                 <a href="{{route('admin.dashboard')}}" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <img src="{{asset('images/admin/gears.svg')}}" style="width: 24px; height: 24px" />
