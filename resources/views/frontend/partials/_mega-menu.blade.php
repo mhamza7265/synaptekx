@@ -7,10 +7,18 @@
                     <p class="m-0 menu-head-1 font-menu-head">Digital</p>
                 </div>
                 <div>
-                    <a href="{{route('services') . "#consulting"}}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Consulting & Strategy</a>
-                    <a href="{{route('services') . "#transformation"}}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Transformation</a>
-                    <a href="{{route('services') . "#business"}}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Business Applications</a>
-                    <a href="{{route('services') . "#ecommerce"}}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>eCommerce</a>
+                    <a href="{{ route('services', ['name' => 'digital']) . '#consulting' }}" class="mega-menu-mobile-link d-block menu-link">
+                        <i class="fa-solid fa-arrow-right me-3"></i>Consulting & Strategy
+                    </a>
+                    <a href="{{ route('services', ['name' => 'digital']) . '#transformation' }}" class="mega-menu-mobile-link d-block menu-link">
+                        <i class="fa-solid fa-arrow-right me-3"></i>Transformation
+                    </a>
+                    <a href="{{ route('services', ['name' => 'digital']) . '#business' }}" class="mega-menu-mobile-link d-block menu-link">
+                        <i class="fa-solid fa-arrow-right me-3"></i>Business Applications
+                    </a>
+                    <a href="{{ route('services', ['name' => 'digital']) . '#ecommerce' }}" class="mega-menu-mobile-link d-block menu-link">
+                        <i class="fa-solid fa-arrow-right me-3"></i>eCommerce
+                    </a>                    
                 </div>
             </div>
             <div class="col-4">

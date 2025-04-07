@@ -25,7 +25,7 @@ Auth::routes();
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
 
-Route::get('/services', [FrontendController::class, 'services'])->name('services');
+Route::get('/services/{name}', [FrontendController::class, 'services'])->name('services');
 
 Route::post('/contact', [FrontendController::class, 'sendContactEmail'])->name('contact');
 

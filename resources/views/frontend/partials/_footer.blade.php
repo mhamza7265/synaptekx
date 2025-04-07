@@ -4,7 +4,7 @@
             <div>
                 <p class="footer-link-heading text-left text-md-start">Useful Links</p>
                 <a href="{{route('home')}}" class="d-block footer-link text-left text-md-start">Home</a>
-                <a href="{{route('services')}}" class="d-block footer-link text-left text-md-start">Services </a>
+                <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Services </a>
                 <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Resources </a>
                 <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Industries </a>
             </div>

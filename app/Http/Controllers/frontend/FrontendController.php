@@ -15,10 +15,31 @@ class FrontendController extends Controller
         return view('frontend.pages.home', compact('title'));
     }
 
-    public function services()
+    public function services($name)
     {
+        // Set the default title
         $title = "Services | Synaptekx";
-        return view('frontend.pages.services', compact('title'));
+
+        // Define a list of available services and their corresponding titles
+        $services = [
+            'digital' => "Digital Services | Synaptekx",
+            'cloud' => "Cloud Services | Synaptekx",
+            'security' => "Security Services | Synaptekx",
+            'data-ai' => "Data & AI Services | Synaptekx",
+            'managed-services' => "Managed Services | Synaptekx",
+            'talent-acquisition-and-sourcing' => "Talent Acquisition & Sourcing | Synaptekx"
+        ];
+
+        // Check if the requested service exists in the list and update the title accordingly
+        if (array_key_exists($name, $services)) {
+            $title = $services[$name];
+        }
+
+        // Ensure that the service name is sanitized to prevent invalid view loading
+        $viewName = 'frontend.pages.services.' . $name;
+
+        // Return the appropriate view with the title
+        return view($viewName, compact('title'));
     }
 
     public function sendContactEmail(Request $request)
