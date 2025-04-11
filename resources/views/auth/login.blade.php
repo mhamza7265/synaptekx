@@ -28,8 +28,14 @@
         
                                 {{-- <img src="{{Vite::asset('resources/images/auth-cover.svg')}}" alt="auth-img"> --}}
         
-                                <h2 class="mt-5 text-white font-weight-bolder px-2">Join the community of expert developers</h2>
-                                <p class="text-white px-2">It is easy to setup with great customer experience. Start your 7-day free trial</p>
+                                {{-- <h2 class="mt-5 text-white font-weight-bolder px-2">Join the community of expert developers</h2>
+                                <p class="text-white px-2">It is easy to setup with great customer experience. Start your 7-day free trial</p> --}}
+
+                                <div class="nav-logo">
+                                    <div class="nav-item theme-text">
+                                        <span style="font-size: 68px; font-weight: bold" class="text-gradient">Synaptekx <span style="letter-spacing: 12px; font-size: 30px; -webkit-text-fill-color: #fff">-CMS</span></span>
+                                    </div>
+                                </div>
                             </div>
                             
                         </div>
@@ -81,11 +87,11 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="col-12">
+                                        {{-- <div class="col-12">
                                             <div class="text-center">
                                                 <p class="mb-0">Dont't have an account ? <a href="{{route('register')}}" class="text-warning">Sign Up</a></p>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         
                                     </div>
                                     
