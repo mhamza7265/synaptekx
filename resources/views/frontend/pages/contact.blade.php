@@ -17,18 +17,18 @@
             <div class="row justify-content-between">
                 <div class="col-12 col-lg-3">
                     <img src="{{asset('images/frontend/location_pin.svg')}}" alt="" class="contact-icons" />
-                    <h4 class="fs-32 fw-500 mt-3 border-b-1px">Our address</h4>
-                    <span class="contact-content">1000 Innovation Suite 500 Ontario Canada</span>
+                    <h4 class="fs-32 fw-500 mt-3 border-b-1px">Our Address</h4>
+                    <span class="contact-content">5 St John’s Lane, London, England, EC1M 4BH</span>
                 </div>
                 <div class="col-12 col-lg-3 mt-5 mt-lg-0">
                     <img src="{{asset('images/frontend/support_icon.svg')}}" alt="" class="contact-icons" />
-                    <h4 class="fs-32 fw-500 mt-3 border-b-1px">Call our team</h4>
-                    <span class="contact-content"><a href="tel:+1 235 6543 64">+1 235 6543 64</a></span>
+                    <h4 class="fs-32 fw-500 mt-3 border-b-1px">Call our Team</h4>
+                    <span class="contact-content"><a href="tel:+442081560125">+44 (20) 8156 0125</a></span>
                 </div>
                 <div class="col-12 col-lg-3 mt-5 mt-lg-0">
                     <img src="{{asset('images/frontend/envelope_icon.svg')}}" alt="" class="contact-icons" />
-                    <h4 class="fs-32 fw-500 mt-3 border-b-1px">Our email</h4>
-                    <span class="contact-content"><a href="mailto:Info@Synaptex.com">Info@Synaptex.com</a></span>
+                    <h4 class="fs-32 fw-500 mt-3 border-b-1px">Our Email</h4>
+                    <span class="contact-content"><a href="mailto:info@synaptekx.com">info@synaptekx.com</a></span>
                 </div>
                 <div class="col-12 col-lg-3 mt-5 mt-lg-0">
                     <img src="{{asset('images/frontend/user_check_icon.svg')}}" alt="" class="contact-icons" />

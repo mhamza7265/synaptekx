@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="services-container font-sf-pro">
-        <section class="hero" style="background-image: url('{{asset('images/frontend/services_hero_2.jpg')}}');">
+        <section class="hero" style="background-image: url('{{asset('images/frontend/digital-bg.png')}}');">
             <div class="container services-hero-container">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <div class="services-hero-text-content" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
-                        <h1 class="services-hero-title text-white text-center">Revolutionize Your Business with Cutting-Edge <span class="text-gradient">Digital Solutions<span></h1>
+                        <h1 class="services-hero-title text-white text-center">Digital<span class="text-gradient"> Solutions<span></h1>
 
                         <p class="services-hero-subtitle text-white text-center fs-18">We deliver innovative digital strategies, business applications, and eCommerce solutions to help you scale your organization seamlessly in today’s digital-first world</p>
                     </div>
@@ -15,7 +15,7 @@
         </section>
         <section class="nav-content">
             <section class="nav-section">
-                <div class="section-navbar d-flex justify-content-between align-items-center px-5 py-5 overflow-x-auto white-space-nowrap">
+                <div class="section-navbar d-flex justify-content-between align-items-center px-5 py-4 overflow-x-auto white-space-nowrap">
                     <a href="#empower" id="empower-link" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Empowering Business</a>
                     <a href="#transformation-journey" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Transformation Journey</a>
                     <a href="#consulting" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Consulting & Strategy</a>
@@ -37,7 +37,7 @@
                                     <span class="gradient-band band-3"></span>
                                 </h1>
                                 
-                                <p class="empower-subtitle fs-16">We deliver innovative digital strategies, business applications, and eCommerce solutions to help you scale your organization seamlessly in today’s digital-first world</p>
+                                <!-- <p class="empower-subtitle fs-16">From a concept to digital reality</p> -->
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 empower-right-texts-parent mx-auto mt-4 mt-md-0">
@@ -86,12 +86,12 @@
                                 <img src="{{asset('images/frontend/services-section-title-graphic.svg')}}" class="ms-md-4" />
                             </h1>
                             <div class="mt-3">
-                                <h3 class="services-section-subtitle">Strategic Expertise to Drive Long-Term Succes</h3>
-                                <p class="services-section-desc">Gain a competitive edge with our in-depth analysis of market trends and emerging technologies. Our experts provide actionable insights that empower your strategic decisions and drive sustainable growth.</p>
+                                <h3 class="services-section-subtitle">Reimagine your business roadmap with AI-first insights</h3>
+                                <p class="services-section-desc">Our greatest differentiator is our people—their unmatched ability to deeply understand your goals and seamlessly align advanced AI solutions for transformative outcomes.</p>
                             </div>
                             <div class="mt-3">
                                 <h3 class="services-section-subtitle">Future-Proof Your Business with Data-Driven Insights</h3>
-                                <p class="services-section-desc">From IT strategy development to risk management, we help you unlock sustainable value and competitive advantage.</p>
+                                <p class="services-section-desc">We tailor data-driven growth plans that embed machine learning across processes, ensuring every initiative is rooted in real-time intelligence and agile decision-making.</p>
                             </div>
                         </div>
                     </div>
@@ -106,12 +106,12 @@
                                 <h1 class="services-section-title text-gradient text-center text-md-start">Transformation</h1>
                             </div>
                             <div class="mt-3 w-88 ps-md-5 mx-auto">
-                                <h3 class="services-section-subtitle text-black">Strategic Expertise to Drive Long-Term Succes</h3>
-                                <p class="services-section-desc text-black">Gain a competitive edge with our in-depth analysis of market trends and emerging technologies. Our experts provide actionable insights that empower your strategic decisions and drive sustainable growth.</p>
+                                <h3 class="services-section-subtitle text-black">AI-Powered Transformation for Smarter Operations</h3>
+                                <p class="services-section-desc text-black">Transform legacy operations into AI-powered ecosystems that drive faster innovation. Our integrated approach modernizes workflows, harnessing automation for tangible business impact.</p>
                             </div>
                             <div class="mt-3 w-88 ps-md-5 mx-auto">
-                                <h3 class="services-section-subtitle text-black">Future-Proof Your Business with Data-Driven Insights</h3>
-                                <p class="services-section-desc text-black">From IT strategy development to risk management, we help you unlock sustainable value and competitive advantage.</p>
+                                <h3 class="services-section-subtitle text-black">AI-Driven Culture for Growth & Innovation</h3>
+                                <p class="services-section-desc text-black">We facilitate cultural shifts that embrace AI, ensuring everyone from leadership to frontline teams adopts an insights-driven mindset—amplifying productivity and sparking new revenue channels.</p>
                             </div>
                         </div>
                         <div class="col-12 col-lg-5 mx-auto" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
@@ -135,12 +135,12 @@
                                 <img src="{{asset('images/frontend/services-section-title-graphic.svg')}}" class="ms-md-4" />
                             </h1>
                             <div class="mt-3">
-                                <h3 class="services-section-subtitle">Strategic Expertise to Drive Long-Term Succes</h3>
-                                <p class="services-section-desc">Gain a competitive edge with our in-depth analysis of market trends and emerging technologies. Our experts provide actionable insights that empower your strategic decisions and drive sustainable growth.</p>
+                                <h3 class="services-section-subtitle">Intelligent Enhancements for Enterprise Applications</h3>
+                                <p class="services-section-desc">Elevate your enterprise applications with intelligent features. We embed AI-driven recommendations, analytics, and automation within ERP, CRM, and custom solutions.</p>
                             </div>
                             <div class="mt-3">
-                                <h3 class="services-section-subtitle">Future-Proof Your Business with Data-Driven Insights</h3>
-                                <p class="services-section-desc">From IT strategy development to risk management, we help you unlock sustainable value and competitive advantage.</p>
+                                <h3 class="services-section-subtitle">Optimized Operations with Predictive Insights</h3>
+                                <p class="services-section-desc">By leveraging predictive modelling and real-time data, we enable continuous optimization of business processes—so your teams can focus on strategic innovation, not routine tasks.</p>
                             </div>
                         </div>
                     </div>
@@ -155,12 +155,12 @@
                                 <h1 class="services-section-title text-gradient text-center text-md-start">eCommerce</h1>
                             </div>
                             <div class="mt-3 w-88 ps-md-5 mx-auto">
-                                <h3 class="services-section-subtitle text-black">Strategic Expertise to Drive Long-Term Succes</h3>
-                                <p class="services-section-desc text-black">Gain a competitive edge with our in-depth analysis of market trends and emerging technologies. Our experts provide actionable insights that empower your strategic decisions and drive sustainable growth.</p>
+                                <h3 class="services-section-subtitle text-black">AI-Powered Personalization for Digital Commerce</h3>
+                                <p class="services-section-desc text-black">Reinvent digital storefronts with AI personalisation. From product recommendations to dynamic pricing, harness the power of machine learning to convert more shoppers.</p>
                             </div>
                             <div class="mt-3 w-88 ps-md-5 mx-auto">
-                                <h3 class="services-section-subtitle text-black">Future-Proof Your Business with Data-Driven Insights</h3>
-                                <p class="services-section-desc text-black">From IT strategy development to risk management, we help you unlock sustainable value and competitive advantage.</p>
+                                <h3 class="services-section-subtitle text-black">Real-Time Insights for Profitable Digital Experiences</h3>
+                                <p class="services-section-desc text-black">Our data-led approach analyses consumer behaviour in real time, optimizing every touchpoint—ensuring your online channels remain profitable, scalable, and delightful to navigate.</p>
                             </div>
                         </div>
                         <div class="col-12 col-lg-5 mx-auto" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">

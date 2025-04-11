@@ -103,7 +103,6 @@
             
         </div>
     </section>
-    @include('frontend.partials._contact-form')
     @include('frontend.partials._footer')
 </div>
 @endsection

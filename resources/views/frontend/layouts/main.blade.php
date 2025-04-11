@@ -26,6 +26,11 @@
                 }
                 @endif
             })
+            
+            $(document).ready(function() {
+                $('img').attr('draggable', 'false');
+            });
+            
         </script>
         @yield('scripts')
     </body>

@@ -2,25 +2,28 @@
     <div class="d-block d-lg-flex justify-content-between align-items-start">
         <div class="footer-links-container d-block d-md-flex justify-content-start align-items-baseline">
             <div>
-                <p class="footer-link-heading text-left text-md-start">Useful Links</p>
-                <a href="{{route('home')}}" class="d-block footer-link text-left text-md-start">Home</a>
-                <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Services </a>
-                <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Resources </a>
-                <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Industries </a>
+                <p class="footer-link-heading text-left text-md-start">Services</p>
+                <a href="{{ route('services', ['name' => 'digital']) }}" class="d-block footer-link text-left text-md-start">Digital</a>
+                <a href="{{ route('services', ['name' => 'cloud']) }}" class="d-block footer-link text-left text-md-start">Cloud</a>
+                <a href="{{ route('services', ['name' => 'data-ai']) }}" class="d-block footer-link text-left text-md-start">Data & AI</a>
+                <a href="{{ route('services', ['name' => 'managed-services']) }}" class="d-block footer-link text-left text-md-start">Managed Services</a>
+                <a href="{{ route('services', ['name' => 'security']) }}" class="d-block footer-link text-left text-md-start">Security</a>
+                <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" class="d-block footer-link text-left text-md-start">Talent Acquisition & Sourcing</a>
             </div>
+            
             <div class="ms-0 mt-4 mt-md-0 ms-md-5">
-                <p class="footer-link-heading text-left text-md-start">Useful Links</p>
+                <p class="footer-link-heading text-left text-md-start">Quick Links</p>
+                <a href="{{route('blogs')}}" class="d-block footer-link text-left text-md-start">Blogs</a>
                 <a href="{{route('about')}}" class="d-block footer-link text-left text-md-start">About Us </a>
                 <a href="{{route('partners')}}" class="d-block footer-link text-left text-md-start">Partners </a>
-                <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Careers</a>
                 <a href="{{route('contact')}}" class="d-block footer-link text-left text-md-start">Contact</a>
             </div>
+            
             <div class="ms-0 mt-4 mt-md-0 ms-md-5">
                 <p class="footer-link-heading text-left text-md-start">Useful Links</p>
-                <a href="{{route('blogs')}}" class="d-block footer-link text-left text-md-start">Blogs</a>
-                <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Privacy Policy</a>
-                <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Cookies Policy </a>
-                <a href="javascript:void(0)" class="d-block footer-link text-left text-md-start">Terms of Website use</a>
+                <a href="{{route('privacy-policy')}}" class="d-block footer-link text-left text-md-start">Privacy Policy</a>
+                <a href="{{route('cookie-policy')}}" class="d-block footer-link text-left text-md-start">Cookies Policy </a>
+                <a href="{{route('terms-of-website-use')}}" class="d-block footer-link text-left text-md-start">Terms of Website use</a>
             </div>
         </div>
         <div>
@@ -60,6 +63,6 @@
     <hr class="footer-divider mt-5">
     <div class="block d-md-flex justify-content-between align-items-center mt-4">
         <p class="footer-bottom-text text-center text-md-left">5 St John’s Lane, London, England, EC1M 4BH</p>
-        <p class="footer-bottom-text text-center text-md-left">Synaptex © <span id="current-year">2024</span></p>
+        <p class="footer-bottom-text text-center text-md-left">Synaptekx © <span id="current-year"></span></p>
     </div>
 </footer>

@@ -791,6 +791,10 @@
     width: 49%;
 }
 
+textarea{
+    resize: none;
+}
+
 .contact-textarea {
     padding: 10px 10px 10px 20px;
     height: 120px;
@@ -817,7 +821,7 @@
 #partners-carousel {
     background-color: #ffffff33;
     /* border-radius: 25px; */
-    padding: 25px 60px;
+    padding: 25px 60px 0 60px;
     height: 220px;
     display: flex;
     justify-content: center;
@@ -831,6 +835,7 @@
 .partners-icon {
     width: 200px;
     height: 200px;
+    margin-top: -25px;
 }
 
 .partner-carousel-content {
@@ -1586,6 +1591,9 @@
     }
     #webinar-carousel .text-content {
         width: 100%;
+    }
+    .partners-icon{
+        margin-top: auto;
     }
 }
 
