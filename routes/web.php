@@ -28,13 +28,15 @@ Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/services/{name}', [FrontendController::class, 'services'])->name('services');
 
 Route::post('/contact', [FrontendController::class, 'sendContactEmail'])->name('contact');
-
 Route::get('/partners', [FrontendController::class, 'partners'])->name('partners');
-
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact-page');
-
 Route::get('/about-us', [FrontendController::class, 'about'])->name('about');
 
 Route::get('/blogs', [FrontendController::class, 'blogs'])->name('blogs');
-
 Route::get('/blog-details', [FrontendController::class, 'blogsDetails'])->name('blogs-details');
+
+//Privacy Policy
+Route::get('/privacy-policy', [FrontendController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('/cookie-policy', [FrontendController::class, 'cookiePolicy'])->name('cookie-policy');
+Route::get('/terms-of-website-use', [FrontendController::class, 'termsOfWebsiteUse'])->name('terms-of-website-use');
+

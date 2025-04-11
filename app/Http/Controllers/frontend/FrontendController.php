@@ -96,4 +96,22 @@ class FrontendController extends Controller
         $title = "Blogs Details | Synaptekx";
         return view('frontend.pages.blog-details', compact('title'));
     }
+    
+    public function privacyPolicy()
+    {
+        $title = "Privacy Policy | Synaptekx";
+        return view('frontend.pages.privacy-pages.privacy-policy', compact('title'));
+    }
+    
+    public function cookiePolicy()
+    {
+        $title = "Cookie Policy | Synaptekx";
+        return view('frontend.pages.privacy-pages.cookie-policy', compact('title'));
+    }
+    
+    public function termsOfWebsiteUse()
+    {
+        $title = "Terms of Website Use | Synaptekx";
+        return view('frontend.pages.privacy-pages.terms-of-website-use', compact('title'));
+    }
 }

@@ -6,25 +6,25 @@
             <div class="container services-hero-container">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <div class="services-hero-text-content" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
-                        <h1 class="services-hero-title text-white text-center">Redefining IT Solutions for the Digital Age</h1>
+                        <h1 class="services-hero-title text-white text-center">About Us</h1>
 
-                        <p class="services-hero-subtitle text-white text-center fs-18">We deliver innovative digital strategies, business applications, and eCommerce solutions to help you scale your organization seamlessly in today’s digital-first world</p>
+                        <p class="services-hero-subtitle text-white text-center fs-18">Driven by a passion for digital transformation, we empower businesses to thrive in an increasingly connected world. Our team of experienced professionals specializes in crafting innovative digital strategies that enable organizations to adapt, grow, and succeed in the digital-first era.</p>
                     </div>
                 </div>
             </div>
         </section>
         <section class="nav-content">
             <section class="nav-section px-lg-5">
-                <div class="section-navbar d-flex justify-content-between align-items-center px-5 py-5 overflow-x-auto white-space-nowrap">
-                    <a href="#about" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">About Synaptekx</a>
-                    <a href="#approach" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Our Unique Approach</a>
-                    <a href="#mission" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Our Mission</a>
+                <div class="section-navbar d-flex justify-content-between align-items-center px-5 py-4 overflow-x-auto white-space-nowrap">
+                    <a href="#who-we-are" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Who We Are</a>
+                    <a href="#mission" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Our Mission</a>
+                    <a href="#approach" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Our Unique Approach</a>
                     <a href="#why-synaptekx" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">Why SynaptekX</a>
                     <a href="#looking-ahead" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="400">Looking Ahead</a>
                     <a href="#join-us" class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="500">Join Us</a>
                 </div>
             </section>
-            <section id="about" class="transformation-section bg-white py-140px">
+            <section id="who-we-are" class="transformation-section bg-white py-140px">
                 <div class="container overflow-hidden">
                     <div class="row">
                         <div class="col-12 col-lg-5 mx-auto" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-12 col-lg-7 mx-auto mt-4 mt-lg-0" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
                             <div class="w-88 ps-md-5 me-auto mx-lg-auto mb-4">
-                                <h1 class="fs-57 fw-500 text-start text-md-start">About<span class="text-gradient ms-2">Synaptekx</span></h1>
+                                <h1 class="fs-57 fw-500 text-start text-md-start">Who We<span class="text-gradient ms-2">Are</span></h1>
                             </div>
                             <div class="mt-3 w-88 ps-md-5 me-auto mx-lg-auto">
                                 <p class="services-section-desc color-site-gray">SynaptekX is the culmination of over two decades of IT leadership and strategic innovation. Our founders have led major initiatives across government, healthcare, security, and global service providers, tackling some of the most complex challenges in high-stakes environments. This breadth of expertise is the bedrock upon which SynaptekX is built—combining time-tested wisdom with a bold vision for the future of technology.</p>
@@ -97,20 +97,25 @@
                         </div>
                         <div class="col-12 col-lg-6 sticky-right-texts-parent mx-auto mt-4 mt-md-0">
                             <div class="sticky-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                                <h5 class="fs-22 fw-500">Innovative IT Services</h5>
-                                <p>Unlock potential with cutting-edge technology tailored to your business needs. Our solutions streamline operations, enhance security, and foster innovation, positioning you for success in a rapidly evolving digital landscape.</p>
+                                <h5 class="fs-22 fw-500">Deep Domain Expertise</h5>
+                                <p>Our leadership’s 20+ years of experience spans multiple industries, ensuring we can tackle challenges from multiple vantage points.</p>
                                 <div id="div-end-unfiix"></div>
                             </div>
                             
                             <div class="sticky-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
-                                <h5>Strategic Industry Insights</h5>
-                                <p>Gain a competitive edge with our in-depth analysis of market trends and emerging technologies. Our experts provide actionable insights that empower your strategic decisions and drive sustainable growth.</p>
+                                <h5>People-Powered Innovation</h5>
+                                <p>From solution architects to data scientists, our teams prioritize client objectives and cultural alignment—translating complex AI capabilities into everyday value.</p>
                             </div>
 
                             <div class="sticky-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
-                                <h5>Transformative Digital Experiences</h5>
-                                <p>Experience digital transformation that engages customers and revolutionizes your operations. We create seamless, user-centric digital interfaces that improve engagement and optimize user experience.</p>
+                                <h5>Holistic, Future-Ready Solutions</h5>
+                                <p>We integrate AI seamlessly into your existing workflows, laying a scalable, secure, and adaptable foundation that evolves with your business.</p>
                             </div>
+
+                            <div class="sticky-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="300">
+                                <h5>Enduring Partnerships</h5>
+                                <p>We measure our success by your success. Through close collaboration and ongoing support, we remain a trusted ally in your journey to stay ahead of rapidly changing markets.</p>
+                            </div>                            
                         </div>
                     </div>
                     
@@ -129,7 +134,7 @@
                                 <h1 class="fs-57 fw-500 text-start text-md-start">Looking<span class="text-gradient ms-2">Ahead</span></h1>
                             </div>
                             <div class="mt-3 w-88 ps-md-5 me-auto mx-lg-auto">
-                                <p class="services-section-desc color-site-gray">What sets us apart isn’t just our mastery of next-gen AI, cloud, and data solutions. Our greatest differentiator is our people: a team of seasoned professionals who take the time to deeply understand each client’s business goals before weaving advanced AI strategies into every facet of their operations. We believe that success comes from aligning tailor-made technology solutions with the pulse of an organization—empowering businesses to operate smarter, innovate faster, and thrive in competitive markets.</p>
+                                <p class="services-section-desc color-site-gray">As technological landscapes continue to evolve, we remain steadfast in our commitment to delivering meaningful outcomes for our clients. SynaptekX thrives on innovation, empathy, and excellence—a combination that not only solves today’s problems but also anticipates tomorrow’s opportunities.</p>
                             </div>
                         </div>
                     </div>
@@ -145,9 +150,9 @@
                             <div class="w-88 mt-3">
                                 <p class="services-section-desc">As we redefine what’s possible in the world of AI-driven transformation. Our promise is simple: to bring clarity, agility, and long-lasting results to every project we undertake—because at SynaptekX, your vision becomes our mission.</p>
                             </div>
-                            <a href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                            <a href="{{route('contact')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
                                 <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                <span class="ms-3 fs-14 text-white">Contact</span>
+                                <span class="ms-3 fs-14 text-white">Get in Touch</span>
                             </a>
                         </div>
                         <div class="col-12 col-lg-5 mx-auto mt-4 mt-lg-0" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">

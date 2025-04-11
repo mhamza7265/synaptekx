@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="services-container font-sf-pro">
-        <section class="hero" style="background-image: url('{{asset('images/frontend/parners_hero.jpg')}}');">
+        <section class="hero" style="background-image: url('{{asset('images/frontend/services_hero_2.jpg')}}');">
             <div class="container services-hero-container">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <div class="services-hero-text-content" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
@@ -17,7 +17,7 @@
         </section>
         <section class="nav-content">
             <section class="nav-section">
-                <div class="section-navbar d-flex justify-content-between align-items-center px-110 px-35 py-5 overflow-x-auto white-space-nowrap">
+                <div class="section-navbar d-flex justify-content-between align-items-center px-110 px-35 py-4 overflow-x-auto white-space-nowrap">
                     <a href="#elite-section" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Elite Partners</a>
                     <a href="#all-section" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">All Partner</a>
                     <a href="#event-webinars" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Events & Webinars</a>
@@ -31,24 +31,24 @@
                     <div class="row justify-content-between align-items-start">
                         <div id="fixed-on-scroll" class="col-12 col-md-6 mx-auto">
                             <div class="text-content partner-logo" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                                <img src="{{asset('images/frontend/cisco_icon.svg')}}" alt="elite-partners-logo" />
+                                <img src="{{asset('images/frontend/googlcloud_logo.svg')}}" alt="elite-partners-logo" />
                             </div>
                         </div>
                         <div class="col-12 col-md-6 sticky-section-right-texts-parent mx-auto mt-4 mt-md-0">
                             <div class="sticky-section-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                                <h5 class="fs-22 fw-500">Innovative IT Services</h5>
-                                <p>Unlock potential with cutting-edge technology tailored to your business needs. Our solutions streamline operations, enhance security, and foster innovation, positioning you for success in a rapidly evolving digital landscape.</p>
+                                <h5 class="fs-22 fw-500">Business Transformation</h5>
+                                <p>Our partnership with Google Cloud harnesses Vertex AI and BigQuery to unify fragmented data, deliver predictive analytics, and build agile AI ecosystems. Together, we empower businesses to anticipate trends, personalise customer interactions, and streamline operations—transforming raw data into actionable intelligence.</p>
                                 <div id="div-end-unfiix"></div>
                             </div>
                             
                             <div class="sticky-section-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
-                                <h5>Strategic Industry Insights</h5>
-                                <p>Gain a competitive edge with our in-depth analysis of market trends and emerging technologies. Our experts provide actionable insights that empower your strategic decisions and drive sustainable growth.</p>
+                                <h5>Use Cases</h5>
+                                <p>We offer real-time behavioral analytics for eCommerce, AI-powered demand forecasting for trend prediction, and modernization of legacy data lakes to support machine learning workloads, helping businesses make data-driven decisions more effectively.</p>
                             </div>
 
                             <div class="sticky-section-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
-                                <h5>Transformative Digital Experiences</h5>
-                                <p>Experience digital transformation that engages customers and revolutionizes your operations. We create seamless, user-centric digital interfaces that improve engagement and optimize user experience.</p>
+                                <h5>Customer Outcomes</h5>
+                                <p>Our solutions accelerate time-to-insight with automated workflows, boost customer retention through hyper-personalization, and ensure compliance with robust data governance frameworks.</p>
                             </div>
                         </div>
                     </div>
@@ -60,24 +60,24 @@
                     <div class="row justify-content-between align-items-start">
                         <div class="col-12 col-md-6 sticky-section-left-texts-parent mx-auto mt-4 mt-md-0">
                             <div class="sticky-section-left-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                                <h5 class="fs-22 fw-500">Innovative IT Services</h5>
-                                <p>Unlock potential with cutting-edge technology tailored to your business needs. Our solutions streamline operations, enhance security, and foster innovation, positioning you for success in a rapidly evolving digital landscape.</p>
+                                <h5 class="fs-22 fw-500">Business Transformation</h5>
+                                <p>SynaptekX and Cywift unite on distribution level to transform governance, risk, and compliance (GRC) through AI-driven automation and actionable insights for any cloud anywhere. Leveraging Cywift’s Unified Trust Management Platform, we automate controls assurance across 20+ industry frameworks, quantify cyber risks in financial terms, and monitor supply chain vulnerabilities in real time. This partnership empowers organisations to slash manual workloads by 90%, align security with business objectives, and build board-level confidence through data-driven resilience.</p>
                                 <div id="div-end-unfiix"></div>
                             </div>
                             
                             <div class="sticky-section-left-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
-                                <h5>Strategic Industry Insights</h5>
-                                <p>Gain a competitive edge with our in-depth analysis of market trends and emerging technologies. Our experts provide actionable insights that empower your strategic decisions and drive sustainable growth.</p>
+                                <h5>Use Cases</h5>
+                                <p>Our platform automates compliance across 20+ frameworks, quantifies cyber risks in financial terms, streamlines vendor risk management, and ensures continuous cloud security—reducing audit costs and enhancing threat detection.</p>
                             </div>
 
                             <div class="sticky-section-left-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
-                                <h5>Transformative Digital Experiences</h5>
-                                <p>Experience digital transformation that engages customers and revolutionizes your operations. We create seamless, user-centric digital interfaces that improve engagement and optimize user experience.</p>
+                                <h5>Customer Outcomes</h5>
+                                <p>Achieve 90% faster compliance with automated controls, cutting costs through AI-driven monitoring. Get board-ready insights by translating cyber risks into financial terms, and strengthen supply chain resilience with automated vendor onboarding and dynamic risk scoring.</p>
                             </div>
                         </div>
                         <div id="fixed-on-scroll" class="col-12 col-md-6 mx-auto overflow-x-hidden">
                             <div class="text-content partner-logo" data-aos="fade-left" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                                <img src="{{asset('images/frontend/equinix_icon.svg')}}" alt="elite-partners-logo" />
+                                <img src="{{asset('images/frontend/cywift_logo.svg')}}" alt="elite-partners-logo" />
                             </div>
                         </div>
                     </div>
@@ -94,19 +94,19 @@
                         </div>
                         <div class="col-12 col-md-6 sticky-section-right-texts-parent mx-auto mt-4 mt-md-0">
                             <div class="sticky-section-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                                <h5 class="fs-22 fw-500">Innovative IT Services</h5>
-                                <p>Unlock potential with cutting-edge technology tailored to your business needs. Our solutions streamline operations, enhance security, and foster innovation, positioning you for success in a rapidly evolving digital landscape.</p>
+                                <h5 class="fs-22 fw-500">Business Transformation</h5>
+                                <p>SynaptekX and Palo Alto Networks collaborate to deliver cutting edge Cortex (AI-driven) SOC transformational services platform to unify threat detection, automate response, from code to cloud. By leveraging Palo Alto’s Strata platform for network protection, and secure access, we deliver end-to-end zero-trust security architectures that safeguard hybrid environments while enabling agile innovation.</p>
                                 <div id="div-end-unfiix"></div>
                             </div>
                             
                             <div class="sticky-section-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
-                                <h5>Strategic Industry Insights</h5>
-                                <p>Gain a competitive edge with our in-depth analysis of market trends and emerging technologies. Our experts provide actionable insights that empower your strategic decisions and drive sustainable growth.</p>
+                                <h5>Use Cases</h5>
+                                <p>Enhance security with AI-driven threat detection, automated response, and Code to Cloud protection. Strengthen networks with Next-Gen Firewalls and enable secure, optimized remote access via Prisma SASE.</p>
                             </div>
 
                             <div class="sticky-section-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
-                                <h5>Transformative Digital Experiences</h5>
-                                <p>Experience digital transformation that engages customers and revolutionizes your operations. We create seamless, user-centric digital interfaces that improve engagement and optimize user experience.</p>
+                                <h5>Customer Outcomes</h5>
+                                <p>Achieve proactive threat mitigation with AI-driven 24/7 SOC operations, reduce cloud risks with automated governance, and strengthen network resilience against advanced threats. Enable secure, seamless access for distributed teams to drive business growth.</p>
                             </div>
                         </div>
                     </div>
@@ -184,10 +184,9 @@
                                             <li class="section-3-tab-detail-1">Leverage existing security investment with unified security posture management across cloud, endpoints, and networks.</li>
                                             <li class="section-3-tab-detail-1">Improved compliance adherence with automated documentation.</li>
                                         </ul>
-                                        {{-- <p class="section-3-tab-detail-1">By partnering with us, you’ll benefit from data-driven insights and a tailored strategy that maximizes your ROI.</p> --}}
-                                        <div class="mt-4">
+                                        <!-- <div class="mt-4">
                                             <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="tab-pane fade" id="tab-2">
                                         <h3 class="section-3-tab-heading-1 text-white">Cywift</h3>
@@ -209,9 +208,9 @@
                                             <li class="section-3-tab-detail-1"><strong>Board-Ready Insights:</strong> Communicate cyber risks in financial terms to align security with business strategy.</li>
                                             <li class="section-3-tab-detail-1"><strong>Supply Chain Resilience:</strong> Proactively mitigate third-party risks with automated vendor onboarding and dynamic risk scoring.</li>
                                         </ul>
-                                        <div class="mt-4">
+                                        <!-- <div class="mt-4">
                                             <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="tab-pane fade" id="tab-3">
                                         <h3 class="section-3-tab-heading-1 text-white">Microsoft</h3>
@@ -232,9 +231,9 @@
                                             <li class="section-3-tab-detail-1">Reduced downtime with intelligent automation.</li>
                                             <li class="section-3-tab-detail-1">Scalable, future-ready infrastructure for sustained growth.</li>
                                         </ul>
-                                        <div class="mt-4">
+                                        <!-- <div class="mt-4">
                                             <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="tab-pane fade" id="tab-4">
                                         <h3 class="section-3-tab-heading-1 text-white">Google Cloud</h3>
@@ -255,9 +254,9 @@
                                             <li class="section-3-tab-detail-1">Improved customer retention via hyper-personalisation.</li>
                                             <li class="section-3-tab-detail-1">Compliance-ready data governance frameworks.</li>
                                         </ul>
-                                        <div class="mt-4">
+                                        <!-- <div class="mt-4">
                                             <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="tab-pane fade" id="tab-5">
                                         <h3 class="section-3-tab-heading-1 text-white">AWS</h3>
@@ -278,9 +277,9 @@
                                             <li class="section-3-tab-detail-1">Accelerated innovation with scalable cloud-native platforms.</li>
                                             <li class="section-3-tab-detail-1">Enhanced agility to adapt to market demands.</li>
                                         </ul>
-                                        <div class="mt-4">
+                                        <!-- <div class="mt-4">
                                             <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="tab-pane fade" id="tab-6">
                                         <h3 class="section-3-tab-heading-1 text-white">Palo Alto Networks</h3>
@@ -302,9 +301,9 @@
                                             <li class="section-3-tab-detail-1">Resilient network infrastructure against advanced cyber threats.</li>
                                             <li class="section-3-tab-detail-1">Enhanced agility with secure, frictionless access for distributed teams that help scale your business.</li>
                                         </ul>
-                                        <div class="mt-4">
+                                        <!-- <div class="mt-4">
                                             <img src="{{asset('images/frontend/section_3_img.svg')}}" class="section-3-img" />
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -332,9 +331,9 @@
                                             <div class="text-content">
                                                 <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">The FOUNDER SUMMIT Deutschlands </h1>
                                                 <p data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">Unlock potential with cutting-edge technology tailored to your business needs. Our solutions streamline operations, enhance security, and foster innovation, positioning you for success in a rapidly evolving digital landscape.</p>
-                                                <a data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200" href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                                <a href="{{route('contact')}}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                                    <span class="ms-3 fs-14 text-black">Contact</span>
+                                                    <span class="ms-3 fs-14 text-black">Get in Touch</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -348,9 +347,9 @@
                                             <div class="text-content">
                                                 <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">The FOUNDER SUMMIT Deutschlands </h1>
                                                 <p data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">Unlock potential with cutting-edge technology tailored to your business needs. Our solutions streamline operations, enhance security, and foster innovation, positioning you for success in a rapidly evolving digital landscape.</p>
-                                                <a data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200" href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                                <a href="{{route('contact')}}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                                    <span class="ms-3 fs-14 text-black">Contact</span>
+                                                    <span class="ms-3 fs-14 text-black">Get in Touch</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -364,9 +363,9 @@
                                             <div class="text-content">
                                                 <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">The FOUNDER SUMMIT Deutschlands </h1>
                                                 <p data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">Unlock potential with cutting-edge technology tailored to your business needs. Our solutions streamline operations, enhance security, and foster innovation, positioning you for success in a rapidly evolving digital landscape.</p>
-                                                <a data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200" href="javascript:void(0)" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                                <a href="{{route('contact')}}" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                                    <span class="ms-3 fs-14 text-black">Contact</span>
+                                                    <span class="ms-3 fs-14 text-black">Get in Touch</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -389,19 +388,19 @@
                             <h1 class="fs-57 text-white" style="line-height: 1.3">Related <span class="text-gradient">Capabilities</span></h1>
                         </div>
                         <div class="col-12 col-md-3 ps-3 ps-md-5 mb-3 mb-md-0 mt-5 mt-md-0">
-                            <a href="javascript:void(0)" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                            <a href="{{ route('services', ['name' => 'digital']) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
                                 <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
                                 </svg>
                                 Digital
                             </a>
-                            <a href="javascript:void(0)" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
+                            <a href="{{ route('services', ['name' => 'data-ai']) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
                                 <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
                                 </svg>
                                 Data & AI
                             </a>
-                            <a href="javascript:void(0)" class="capability-link fs-32" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
+                            <a href="{{ route('services', ['name' => 'security']) }}" class="capability-link fs-32" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
                                 <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
                                 </svg>
@@ -409,19 +408,19 @@
                             </a>
                         </div>
                         <div class="col-12 col-md-5 ps-3">
-                            <a href="javascript:void(0)" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                            <a href="{{ route('services', ['name' => 'cloud']) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
                                 <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
                                 </svg>
                                 Cloud
                             </a>
-                            <a href="javascript:void(0)" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
+                            <a href="{{ route('services', ['name' => 'managed-services']) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
                                 <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
                                 </svg>
                                 Managed Services
                             </a>
-                            <a href="javascript:void(0)" class="capability-link fs-32" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
+                            <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" class="capability-link fs-32" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
                                 <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
                                 </svg>
