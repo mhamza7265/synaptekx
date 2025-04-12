@@ -41,7 +41,7 @@
     
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                 <a class="dropdown-item" href="{{route('home')}}" target="_blank">View</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                <a class="dropdown-item" href="{{route('admin.home-page.edit')}}">Edit</a>
                                             </div>
                                         </div>
                                     </td>

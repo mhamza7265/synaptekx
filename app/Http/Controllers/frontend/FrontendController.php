@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\contactEmail;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 
 class FrontendController extends Controller
 {
@@ -96,22 +98,38 @@ class FrontendController extends Controller
         $title = "Blogs Details | Synaptekx";
         return view('frontend.pages.blog-details', compact('title'));
     }
-    
+
     public function privacyPolicy()
     {
         $title = "Privacy Policy | Synaptekx";
         return view('frontend.pages.privacy-pages.privacy-policy', compact('title'));
     }
-    
+
     public function cookiePolicy()
     {
         $title = "Cookie Policy | Synaptekx";
         return view('frontend.pages.privacy-pages.cookie-policy', compact('title'));
     }
-    
+
     public function termsOfWebsiteUse()
     {
         $title = "Terms of Website Use | Synaptekx";
         return view('frontend.pages.privacy-pages.terms-of-website-use', compact('title'));
+    }
+
+    public function storageLink()
+    {
+        try {
+            if (File::exists(public_path('storage'))) {
+                File::delete(public_path('storage'));
+            }
+
+            Artisan::call('storage:link');
+            session()->flash('success', 'Storage linked successfully!');
+        } catch (\Exception $e) {
+            session()->flash('error', $e->getMessage());
+        }
+
+        return redirect()->back();
     }
 }

@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['register' => false]);
 
-// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-//     \UniSharp\LaravelFilemanager\Lfm::routes();
-// });
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 
-// Route::get('storage-link', [FrontendController::class, 'storageLink'])->name('storage.link');
+Route::post('storage-link', [FrontendController::class, 'storageLink'])->name('storage.link');
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
 
@@ -39,4 +39,3 @@ Route::get('/blog-details', [FrontendController::class, 'blogsDetails'])->name('
 Route::get('/privacy-policy', [FrontendController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/cookie-policy', [FrontendController::class, 'cookiePolicy'])->name('cookie-policy');
 Route::get('/terms-of-website-use', [FrontendController::class, 'termsOfWebsiteUse'])->name('terms-of-website-use');
-
