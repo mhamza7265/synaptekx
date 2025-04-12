@@ -5,17 +5,41 @@
         <div class="col-lg-12 layout-spacing">
             <div class="statbox widget box box-shadow">
                 <div class="widget-content widget-content-area icon-accordion-content">
+                    <h4 class="text-center pb-2">Home Page Content</h4>
                     <div id="withoutSpacing" class="no-outer-spacing accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingMeta2">
+                                <section class="mb-0 mt-0">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionMeta" aria-expanded="true" aria-controls="withoutSpacingAccordionMeta">
+                                        Page Metas  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <div id="withoutSpacingAccordionMeta" class="collapse show" aria-labelledby="headingMeta2" data-bs-parent="#withoutSpacing">
+                                <div class="container py-3">
+                                    <form>
+                                        <span class="d-block mt-3">Meta Title</span>
+                                        <input type="text" name="meta_title" class="form-control mt-2">
+
+                                        <span class="d-block mt-3">Meta Description</span>
+                                        <textarea name="meta_description" class="form-control mt-2" rows="3"></textarea>
+
+                                        <button class="btn btn-md btn-success mt-3">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card">
                             <div class="card-header" id="headingOne2">
                                 <section class="mb-0 mt-0">
-                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionOne" aria-expanded="true" aria-controls="withoutSpacingAccordionOne">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionOne" aria-expanded="false" aria-controls="withoutSpacingAccordionOne">
                                         Hero Section  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
 
-                            <div id="withoutSpacingAccordionOne" class="collapse show" aria-labelledby="headingOne2" data-bs-parent="#withoutSpacing">
+                            <div id="withoutSpacingAccordionOne" class="collapse" aria-labelledby="headingOne2" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
                                     <form>
                                         <div id="carousel-container">
@@ -274,7 +298,6 @@
             });
 
             function toggleAddButton() {
-                console.log('carouselIndex', $('#carousel-container .hero-carousel-item').length);
                 if($('#carousel-container .hero-carousel-item').length > 4){
                     $('#add-carousel').addClass('d-none');
                 }else{

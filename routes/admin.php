@@ -10,12 +10,9 @@ use App\Http\Controllers\Admin\UserController;
 use GuzzleHttp\Middleware;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\HomePageContentController;
-
-// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-//     \UniSharp\LaravelFilemanager\Lfm::routes();
-// });
-
-// Route::get('storage-link', [AdminController::class, 'storageLink'])->name('storage.link');
+use App\Http\Controllers\Admin\AboutPageContentController;
+use App\Http\Controllers\Admin\ContactPageContentController;
+use App\Http\Controllers\Admin\SettingsPageContentController;
 
 Route::group(['middleware' => ['role:admin,superadmin']], function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
@@ -23,4 +20,13 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
     Route::resource('/blogs', BlogController::class)->names('blogs');
     //home page cms routes
     Route::get('/home-page/edit', [HomePageContentController::class, 'edit'])->name('home-page.edit');
+
+    //about page cms routes
+    Route::get('/about-page/edit', [AboutPageContentController::class, 'edit'])->name('about-page.edit');
+
+    //contact page cms routes
+    Route::get('/contact-page/edit', [ContactPageContentController::class, 'edit'])->name('contact-page.edit');
+
+    //settings cms routes
+    Route::get('/site-settings/edit', [SettingsPageContentController::class, 'edit'])->name('settings.edit');
 });

@@ -46,8 +46,8 @@
                 </ul>
             </li>
             
-            <li class="menu {{ request()->routeIs('*/dashboard/*') ? "active" : "" }}">
-                <a href="{{route('admin.dashboard')}}" aria-expanded="false" class="dropdown-toggle">
+            <li class="menu {{ request()->routeIs('admin.settings.edit') ? "active" : "" }}">
+                <a href="{{route('admin.settings.edit')}}" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <img src="{{asset('images/admin/gears.svg')}}" style="width: 24px; height: 24px" />
                         <span>Settings</span>
