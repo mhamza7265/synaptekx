@@ -3,7 +3,7 @@
         <div class="row justify-content-between align-items-baseline">
             <div class="col-4">
                 <div class="d-flex justify-content-start align-items-center gap-3">
-                    <img src="{{asset('images/frontend/m-menu-1.svg')}}" />
+                    <img src="{{asset('images/frontend/digital_services.svg')}}" />
                     <p class="m-0 menu-head-1 font-menu-head">Digital</p>
                 </div>
                 <div>
@@ -23,7 +23,7 @@
             </div>
             <div class="col-4">
                 <div class="d-flex justify-content-start align-items-center gap-3">
-                    <img src="{{asset('images/frontend/m-menu-2.svg')}}" />
+                    <img src="{{asset('images/frontend/data_services.svg')}}" />
                     <p class="m-0 font-menu-head">Data & AI</p>
                 </div>
                 <div>
@@ -36,7 +36,7 @@
             </div>
             <div class="col-4">
                 <div class="d-flex justify-content-start align-items-center gap-3">
-                    <img src="{{asset('images/frontend/m-menu-3.svg')}}" />
+                    <img src="{{asset('images/frontend/security_services.svg')}}" />
                     <p class="m-0 font-menu-head">Security</p>
                 </div>
                 <div>
@@ -51,7 +51,7 @@
         <div class="row justify-content-between align-items-baseline mt-5">
             <div class="col-4">
                 <div class="d-flex justify-content-start align-items-center gap-3">
-                    <img src="{{asset('images/frontend/m-menu-4.svg')}}" />
+                    <img src="{{asset('images/frontend/cloud_services.svg')}}" />
                     <p class="m-0 font-menu-head">Cloud</p>
                 </div>
                 <div>
@@ -63,7 +63,7 @@
             </div>
             <div class="col-4">
                 <div class="d-flex justify-content-start align-items-center gap-3">
-                    <img src="{{asset('images/frontend/m-menu-5.svg')}}" />
+                    <img src="{{asset('images/frontend/managed_services.svg')}}" />
                     <p class="m-0 font-menu-head">Managed Services</p>
                 </div>
                 <div>
@@ -77,7 +77,7 @@
             </div>
             <div class="col-4">
                 <div class="d-flex justify-content-start align-items-center gap-3">
-                    <img src="{{asset('images/frontend/m-menu-6.svg')}}" />
+                    <img src="{{asset('images/frontend/talent_services.svg')}}" />
                     <p class="m-0 font-menu-head">Talent Acquisition & Sourcing</p>
                 </div>
                 <div>

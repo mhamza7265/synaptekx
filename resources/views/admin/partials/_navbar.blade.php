@@ -5,7 +5,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </a>
 
-            <div class="search-animated toggle-search">
+            {{-- <div class="search-animated toggle-search">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 <form class="form-inline search-full form-inline search" role="search">
                     <div class="search-bar">
@@ -14,9 +14,9 @@
                     </div>
                 </form>
                 <span class="badge badge-secondary">Ctrl + /</span>
-            </div>
+            </div> --}}
 
-            <ul class="navbar-item flex-row ms-lg-auto ms-0">
+            <ul class="navbar-item flex-row justify-content-between w-100">
 
                 {{-- <li class="nav-item dropdown language-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="language-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -160,11 +160,11 @@
                     
                 </li> --}}
 
-                <li class="nav-item dropdown user-profile-dropdown  order-lg-0 order-1">
+                {{-- <li class="nav-item dropdown user-profile-dropdown  order-lg-0 order-1">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="avatar-container">
                             <div class="avatar avatar-sm avatar-indicators avatar-online">
-                                {{-- <img alt="avatar" src="{{Vite::asset('resources/images/profile-30.png')}}" class="rounded-circle"> --}}
+                                <img alt="avatar" src="{{Vite::asset('resources/images/profile-30.png')}}" class="rounded-circle">
                             </div>
                         </div>
                     </a>
@@ -205,7 +205,7 @@
                             </form>
                         </div>
                     </div>
-                </li>
+                </li> --}}
             </ul>
         </header>
     </div>

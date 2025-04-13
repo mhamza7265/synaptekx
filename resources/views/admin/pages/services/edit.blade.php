@@ -5,7 +5,7 @@
         <div class="col-lg-12 layout-spacing">
             <div class="statbox widget box box-shadow">
                 <div class="widget-content widget-content-area icon-accordion-content">
-                    <h4 class="text-center pb-2">About Page Content</h4>
+                    <h4 class="text-center pb-2">Services Page Content</h4>
                     <div id="withoutSpacing" class="no-outer-spacing accordion">
                         <div class="card">
                             <div class="card-header" id="headingMeta2">
@@ -43,7 +43,7 @@
                                 <div class="container py-3">
                                     <form>
                                         <div id="carousel-container">
-                                            <div class="hero-carousel-item card-body border p-3 mb-3">
+                                            <div class="hero-carousel-item card-body border p-3 mb-3">                                        
                                                 <span>Select Background:</span>
                                                 <div class="input-group d-flex align-items-center mt-2">
                                                     <span class="input-group-btn">
@@ -68,118 +68,10 @@
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-header" id="headingTwo2">
-                                <section class="mb-0 mt-0">
-                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
-                                        Section One  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
-                                    </div>
-                                </section>
-                            </div>
-                            <div id="withoutSpacingAccordionTwo" class="collapse" aria-labelledby="headingTwo2" data-bs-parent="#withoutSpacing">
-                                <div class="container py-3">
-                                    <form>
-                                        <div class="card-body">
-                                            <span>Title:</span>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control mt-2" name="section_1_title" value="{{old('section_1_title')}}" >
-                                            </div>
-                                            
-                                            <span class="d-block mt-4">Description:</span>
-                                            <textarea name="section_1_desc" class="form-control mt-2">{{ old('section_1_desc') }}</textarea>
-
-                                            <span class="d-block mt-3">Select Image:</span>
-                                            <div class="input-group d-flex align-items-center mt-2">
-                                                <span class="input-group-btn">
-                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_1_thumbnail" data-preview="section_1_holder">
-                                                    <i class="fa fa-picture-o"></i> Choose
-                                                </a>
-                                                </span>
-                                                <input id="section_1_thumbnail" style="height: 36px" class="form-control" type="text" name="section_1_image">
-                                            </div>
-                                            <div id="section_1_holder" style="margin-top:15px; max-height:100px;"></div>
-                                        </div>
-                                        <button class="btn btn-md btn-success">Save</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree10">
-                                <section class="mb-0 mt-0">
-                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionThree" aria-expanded="false" aria-controls="withoutSpacingAccordionThree">
-                                        Section Two <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
-                                    </div>
-                                </section>
-                            </div>
-                            <div id="withoutSpacingAccordionThree" class="collapse" aria-labelledby="headingThree10" data-bs-parent="#withoutSpacing">
-                                <div class="container py-3">
-                                    <form>
-                                        <div class="card-body">
-                                            <span>Title:</span>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control mt-2" name="section_2_title" value="{{old('section_2_title')}}" >
-                                            </div>
-                                            
-                                            <span class="d-block mt-4">Description:</span>
-                                            <textarea name="section_2_desc" class="form-control mt-2">{{ old('section_2_desc') }}</textarea>
-
-                                            <span class="d-block mt-3">Select Image:</span>
-                                            <div class="input-group d-flex align-items-center mt-2">
-                                                <span class="input-group-btn">
-                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_2_thumbnail" data-preview="section_2_holder">
-                                                    <i class="fa fa-picture-o"></i> Choose
-                                                </a>
-                                                </span>
-                                                <input id="section_2_thumbnail" style="height: 36px" class="form-control" type="text" name="section_2_image">
-                                            </div>
-                                            <div id="section_2_holder" style="margin-top:15px; max-height:100px;"></div>
-                                        </div>
-                                        <button class="btn btn-md btn-success">Save</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingFour10">
-                                <section class="mb-0 mt-0">
-                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFour" aria-expanded="false" aria-controls="withoutSpacingAccordionFour">
-                                        Section Three <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
-                                    </div>
-                                </section>
-                            </div>
-                            <div id="withoutSpacingAccordionFour" class="collapse" aria-labelledby="headingFour10" data-bs-parent="#withoutSpacing">
-                                <div class="container py-3">
-                                    <form>
-                                        <div class="card-body">
-                                            <span>Title:</span>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control mt-2" name="section_3_title" value="{{old('section_3_title')}}" >
-                                            </div>
-                                            
-                                            <span class="d-block mt-4">Description:</span>
-                                            <textarea name="section_3_desc" class="form-control mt-2">{{ old('section_3_desc') }}</textarea>
-
-                                            <span class="d-block mt-3">Select Image:</span>
-                                            <div class="input-group d-flex align-items-center mt-2">
-                                                <span class="input-group-btn">
-                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_3_thumbnail" data-preview="section_3_holder">
-                                                    <i class="fa fa-picture-o"></i> Choose
-                                                </a>
-                                                </span>
-                                                <input id="section_3_thumbnail" style="height: 36px" class="form-control" type="text" name="section_3_image">
-                                            </div>
-                                            <div id="section_3_holder" style="margin-top:15px; max-height:100px;"></div>
-                                        </div>
-                                        <button class="btn btn-md btn-success">Save</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
                             <div class="card-header" id="headingFive10">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFive" aria-expanded="false" aria-controls="withoutSpacingAccordionFive">
-                                        Section Four <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                        Section One <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
@@ -189,7 +81,7 @@
                                         <div class="card-body">
                                             <span>Section Title:</span>
                                             <div class="form-group">
-                                                <input type="text" class="form-control mt-2" name="section_4_title" value="{{old('section_4_title')}}" >
+                                                <input type="text" class="form-control mt-2" name="section_1_title" value="{{old('section_1_title')}}" >
                                             </div>
 
                                             <hr>
@@ -211,6 +103,111 @@
                             </div>
                         </div>
                         <div class="card">
+                            <div class="card-header" id="headingTwo2">
+                                <section class="mb-0 mt-0">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
+                                        Section Two  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="withoutSpacingAccordionTwo" class="collapse" aria-labelledby="headingTwo2" data-bs-parent="#withoutSpacing">
+                                <div class="container py-3">
+                                    <form>
+                                        <div class="card-body">
+                                            <span class="d-block mt-3">Section Title:</span>
+                                            <div class="form-group">
+                                                <input class="form-control mt-2" name="transformation_title" >
+                                            </div>
+
+                                            <span class="d-block mt-3">Select Infograph:</span>
+                                            <div class="input-group d-flex align-items-center mt-2">
+                                                <span class="input-group-btn">
+                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="infograph_thumbnail" data-preview="infograph_holder">
+                                                    <i class="fa fa-picture-o"></i> Choose
+                                                </a>
+                                                </span>
+                                                <input id="infograph_thumbnail" style="height: 36px" class="form-control" type="text" name="infograph">
+                                            </div>
+                                            <div id="infograph_holder" style="margin-top:15px; max-height:100px;"></div>
+                                        </div>
+                                        <button class="btn btn-md btn-success">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree10">
+                                <section class="mb-0 mt-0">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionThree" aria-expanded="false" aria-controls="withoutSpacingAccordionThree">
+                                        Section Three <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="withoutSpacingAccordionThree" class="collapse" aria-labelledby="headingThree10" data-bs-parent="#withoutSpacing">
+                                <div class="container py-3">
+                                    <form>
+                                        <div class="card-body">
+                                            <span>Title:</span>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control mt-2" name="section_3_title" value="{{old('section_3_title')}}" >
+                                            </div>
+                                            
+                                            <span class="d-block mt-4">Description:</span>
+                                            <textarea name="section_3_desc" class="form-control summernote mt-2">{{ old('section_3_desc') }}</textarea>
+
+                                            <span class="d-block mt-3">Select Image:</span>
+                                            <div class="input-group d-flex align-items-center mt-2">
+                                                <span class="input-group-btn">
+                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_3_thumbnail" data-preview="section_3_holder">
+                                                    <i class="fa fa-picture-o"></i> Choose
+                                                </a>
+                                                </span>
+                                                <input id="section_3_thumbnail" style="height: 36px" class="form-control" type="text" name="section_3_image">
+                                            </div>
+                                            <div id="section_3_holder" style="margin-top:15px; max-height:100px;"></div>
+                                        </div>
+                                        <button class="btn btn-md btn-success">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFour10">
+                                <section class="mb-0 mt-0">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFour" aria-expanded="false" aria-controls="withoutSpacingAccordionFour">
+                                        Section Four <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="withoutSpacingAccordionFour" class="collapse" aria-labelledby="headingFour10" data-bs-parent="#withoutSpacing">
+                                <div class="container py-3">
+                                    <form>
+                                        <div class="card-body">
+                                            <span>Title:</span>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control mt-2" name="section_4_title" value="{{old('section_4_title')}}" >
+                                            </div>
+                                            
+                                            <span class="d-block mt-4">Description:</span>
+                                            <textarea name="section_4_desc" class="form-control summernote mt-2">{{ old('section_4_desc') }}</textarea>
+
+                                            <span class="d-block mt-3">Select Image:</span>
+                                            <div class="input-group d-flex align-items-center mt-2">
+                                                <span class="input-group-btn">
+                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_4_thumbnail" data-preview="section_4_holder">
+                                                    <i class="fa fa-picture-o"></i> Choose
+                                                </a>
+                                                </span>
+                                                <input id="section_4_thumbnail" style="height: 36px" class="form-control" type="text" name="section_4_image">
+                                            </div>
+                                            <div id="section_4_holder" style="margin-top:15px; max-height:100px;"></div>
+                                        </div>
+                                        <button class="btn btn-md btn-success">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
                             <div class="card-header" id="headingSix10">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionSix" aria-expanded="false" aria-controls="withoutSpacingAccordionSix">
@@ -228,7 +225,7 @@
                                             </div>
                                             
                                             <span class="d-block mt-4">Description:</span>
-                                            <textarea name="section_5_desc" class="form-control mt-2">{{ old('section_5_desc') }}</textarea>
+                                            <textarea name="section_5_desc" class="form-control summernote mt-2">{{ old('section_5_desc') }}</textarea>
 
                                             <span class="d-block mt-3">Select Image:</span>
                                             <div class="input-group d-flex align-items-center mt-2">
@@ -264,7 +261,7 @@
                                             </div>
                                             
                                             <span class="d-block mt-4">Description:</span>
-                                            <textarea name="section_6_desc" class="form-control mt-2">{{ old('section_6_desc') }}</textarea>
+                                            <textarea name="section_6_desc" class="form-control summernote mt-2">{{ old('section_6_desc') }}</textarea>
 
                                             <span class="d-block mt-3">Select Image:</span>
                                             <div class="input-group d-flex align-items-center mt-2">
@@ -320,5 +317,60 @@
 
             toggleAddButton();
         })
+    </script>
+    <script>
+        $(document).ready(function () {
+            function initializeSummernote(selector) {
+                $(selector).summernote({
+                    height: 200,
+                    toolbar: [
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['font', ['bold', 'clear']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['view', ['codeview']]
+                    ],
+                    callbacks: {
+                        onImageUpload: function (files) {
+                            uploadFile(files[0], this);
+                        },
+                        onMediaDelete: function (target) {
+                            deleteFile(target[0].src);
+                        }
+                    },
+                });
+            }
+
+            function uploadFile(file, editable) {
+                let data = new FormData();
+                data.append("upload", file);
+
+                $.ajax({
+                    url: '/laravel-filemanager/upload?type=Images&_token={{ csrf_token() }}',
+                    type: "POST",
+                    data: data,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        $(editable).summernote('insertImage', response.url);
+                    },
+                    error: function () {
+                        alert('Image upload failed');
+                    }
+                });
+            }
+
+            function deleteFile(src) {
+                $.post('/laravel-filemanager/delete', {
+                    src: src,
+                    _token: '{{ csrf_token() }}'
+                }, function (response) {
+                    console.log('Deleted');
+                });
+            }
+
+            // Initialize all existing editors
+            initializeSummernote('.summernote');
+        });
     </script>
 @endsection
