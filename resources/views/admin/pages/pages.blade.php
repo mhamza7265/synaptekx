@@ -34,8 +34,12 @@
                                     <td class="checkbox-column"> 1 </td>
                                     <td class="user-name">Home</td>
                                     <td class="text-center">
-                                        <a class="btn btn-sm btn-success" href="{{route('home')}}" target="_blank">View</a>
-                                        <a class="btn btn-sm btn-warning" href="{{route('admin.home-page.edit')}}">Edit</a>
+                                        <a class="btn btn-sm btn-success" href="{{route('home')}}" target="_blank">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-warning" href="{{route('admin.home-page.edit')}}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
                                         {{-- <div class="dropdown">
                                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
@@ -68,8 +72,12 @@
                                     <td class="checkbox-column"> 3 </td>
                                     <td class="user-name">About Us</td>
                                     <td class="text-center">
-                                        <a class="btn btn-sm btn-success" href="{{route('about')}}" target="_blank">View</a>
-                                        <a class="btn btn-sm btn-warning" href="{{route('admin.about-page.edit')}}">Edit</a>
+                                        <a class="btn btn-sm btn-success" href="{{route('about')}}" target="_blank">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-warning" href="{{route('admin.about-page.edit')}}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
                                         {{-- <div class="dropdown">
                                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
@@ -85,8 +93,12 @@
                                     <td class="checkbox-column"> 4 </td>
                                     <td class="user-name">Partners</td>
                                     <td class="text-center">
-                                        <a class="btn btn-sm btn-success" href="{{route('partners')}}" target="_blank">View</a>
-                                        <a class="btn btn-sm btn-warning" href="{{route('admin.partners-page.edit')}}">Edit</a>
+                                        <a class="btn btn-sm btn-success" href="{{route('partners')}}" target="_blank">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-warning" href="{{route('admin.partners-page.edit')}}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
                                         {{-- <div class="dropdown">
                                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
@@ -102,8 +114,12 @@
                                     <td class="checkbox-column"> 5 </td>
                                     <td class="user-name">Contact</td>
                                     <td class="text-center">
-                                        <a class="btn btn-sm btn-success" href="{{route('contact')}}" target="_blank">View</a>
-                                        <a class="btn btn-sm btn-warning" href="{{route('admin.contact-page.edit')}}">Edit</a>
+                                        <a class="btn btn-sm btn-success" href="{{route('contact')}}" target="_blank">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-warning" href="{{route('admin.contact-page.edit')}}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
                                         {{-- <div class="dropdown">
                                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
@@ -113,6 +129,54 @@
                                                 <a class="dropdown-item" href="{{route('admin.contact-page.edit')}}">Edit</a>
                                             </div>
                                         </div> --}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="checkbox-column"> 6 </td>
+                                    <td class="user-name">Privacy Policy</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-success" href="{{route('privacy-policy')}}" target="_blank">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-warning" href="{{route('admin.privacy-policy.edit')}}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="checkbox-column"> 7 </td>
+                                    <td class="user-name">Cookies Policy</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-success" href="{{route('cookie-policy')}}" target="_blank">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-warning" href="{{route('admin.cookies-policy.edit')}}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="checkbox-column"> 8 </td>
+                                    <td class="user-name">Terms of Website Use</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-success" href="{{route('terms-of-website-use')}}" target="_blank">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-warning" href="{{route('admin.terms-of-use.edit')}}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="checkbox-column"> 9 </td>
+                                    <td class="user-name">Blogs</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-success" href="{{route('blogs')}}" target="_blank">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-warning" href="{{route('admin.blogs-page.edit')}}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             </tbody>

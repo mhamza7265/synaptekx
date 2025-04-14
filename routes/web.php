@@ -37,7 +37,7 @@ Route::get('/contact', [FrontendController::class, 'contact'])->name('contact-pa
 Route::get('/about-us', [FrontendController::class, 'about'])->name('about');
 
 Route::get('/blogs', [FrontendController::class, 'blogs'])->name('blogs');
-Route::get('/blog-details', [FrontendController::class, 'blogsDetails'])->name('blogs-details');
+Route::get('/blog-details/{slug}', [FrontendController::class, 'blogsDetails'])->name('blogs-details');
 
 //Privacy Policy
 Route::get('/privacy-policy', [FrontendController::class, 'privacyPolicy'])->name('privacy-policy');

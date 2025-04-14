@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\contactEmail;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
+use App\Models\Blog;
 
 class FrontendController extends Controller
 {
@@ -90,13 +91,16 @@ class FrontendController extends Controller
     public function blogs()
     {
         $title = "Blogs | Synaptekx";
-        return view('frontend.pages.blog', compact('title'));
+        $blogs = Blog::where('status', 'published')->paginate(6);
+        return view('frontend.pages.blog', compact('title', 'blogs'));
     }
 
-    public function blogsDetails()
+    public function blogsDetails($slug)
     {
         $title = "Blogs Details | Synaptekx";
-        return view('frontend.pages.blog-details', compact('title'));
+        $blog = Blog::where('slug', $slug)->with('user')->first();
+        $blogs = Blog::where('status', 'published')->paginate(3);
+        return view('frontend.pages.blog-details', compact('title', 'blog', 'blogs'));
     }
 
     public function privacyPolicy()

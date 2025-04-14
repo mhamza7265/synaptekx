@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Blog;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
@@ -12,7 +14,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.blog.index');
+        $title = 'Blogs List';
+        $blogs = Blog::with('user')->get();
+        return view('admin.pages.blog.index', compact(['title', 'blogs']));
     }
 
     /**
@@ -20,7 +24,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.blog.create');
+        $title = 'Create Blog';
+        return view('admin.pages.blog.create', compact('title'));
     }
 
     /**
@@ -28,7 +33,31 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd(request()->all());
+        request()->validate([
+            'title' => 'required',
+            'slug' => 'required|unique:blogs,slug',
+            'status' => 'required',
+            'meta_description' => 'required',
+            'keywords' => 'required',
+            'thumbnail' => 'required|string',
+            'category' => 'required',
+            'blog_body' => 'required',
+        ]);
+
+        $blog = new Blog();
+        $blog->title = $request->title;
+        $blog->slug = $request->slug;
+        $blog->status = $request->status;
+        $blog->meta_description = $request->meta_description;
+        $blog->keywords = $request->keywords;
+        $blog->thumbnail = $request->thumbnail;
+        $blog->category = $request->category;
+        $blog->blog_body = $request->blog_body;
+        $blog->user_id = Auth::user()->id;
+        $blog->save();
+
+        return redirect()->route('admin.blogs.index')->with('success', 'Blog post created successfully.');
     }
 
     /**
@@ -42,9 +71,11 @@ class BlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $slug)
     {
-        //
+        $title = 'Edit Blog';
+        $blog = Blog::where('slug', $slug)->with('user')->first();
+        return view('admin.pages.blog.edit', compact('title', 'blog'));
     }
 
     /**
@@ -52,7 +83,30 @@ class BlogController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $blog = Blog::find($id);
+        request()->validate([
+            'title' => 'required',
+            'slug' => 'required|unique:blogs,slug,' . $id,
+            'status' => 'required',
+            'meta_description' => 'required',
+            'keywords' => 'required',
+            'thumbnail' => 'required|string',
+            'category' => 'required',
+            'blog_body' => 'required',
+        ]);
+
+        $blog->title = $request->title;
+        $blog->slug = $request->slug;
+        $blog->status = $request->status;
+        $blog->meta_description = $request->meta_description;
+        $blog->keywords = $request->keywords;
+        $blog->thumbnail = $request->thumbnail;
+        $blog->category = $request->category;
+        $blog->blog_body = $request->blog_body;
+        $blog->user_id = Auth::user()->id;
+        $blog->save();
+
+        return redirect()->route('admin.blogs.index')->with('success', 'Blog post updated successfully.');
     }
 
     /**
@@ -60,6 +114,9 @@ class BlogController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $blog = Blog::find($id);
+        if (!$blog) return redirect()->back()->with('error', 'Blog not found');
+        $blog->delete();
+        return redirect()->back()->with('success', 'Blog deleted successfully');
     }
 }
