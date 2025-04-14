@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card mt-2">
                             <div class="card-header" id="headingOne2">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionOne" aria-expanded="false" aria-controls="withoutSpacingAccordionOne">
@@ -73,7 +73,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card mt-2">
                             <div class="card-header" id="headingTwo2">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">

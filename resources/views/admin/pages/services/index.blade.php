@@ -7,13 +7,14 @@
 @endsection
 
 @section('content')
-    <div class="page-meta">
+    <div class="page-meta d-flex justify-content-between align-items-center w-100 mb-2">
         <nav class="breadcrumb-style-one" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 {{-- <li class="breadcrumb-item"><a href="#">Pages</a></li> --}}
                 <li class="breadcrumb-item active" aria-current="page">Services Pages</li>
             </ol>
         </nav>
+        <a href="{{route('admin.services.create')}}" class="btn btn-md btn-success d-block">Create New</a>
     </div>
 
     <div class="row layout-spacing">
@@ -33,7 +34,9 @@
                                 <td class="checkbox-column"> 1 </td>
                                 <td class="user-name">Digital</td>
                                 <td class="text-center">
-                                    <div class="dropdown">
+                                    <a class="btn btn-sm btn-success" href="{{route('services', 'digital')}}" target="_blank">View</a>
+                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'digital')}}">Edit</a>
+                                    {{-- <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                                         </a>
@@ -42,14 +45,16 @@
                                             <a class="dropdown-item" href="{{route('services', 'digital')}}" target="_blank">View</a>
                                             <a class="dropdown-item" href="{{route('admin.services.edit', 'digital')}}">Edit</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </td>
                             </tr>
                             <tr>
                                 <td class="checkbox-column"> 2 </td>
                                 <td class="user-name">Data & AI</td>
                                 <td class="text-center">
-                                    <div class="dropdown">
+                                    <a class="btn btn-sm btn-success" href="{{route('services', 'data-ai')}}" target="_blank">View</a>
+                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'data-ai')}}">Edit</a>
+                                    {{-- <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                                         </a>
@@ -57,14 +62,16 @@
                                             <a class="dropdown-item" href="{{route('services', 'data-ai')}}" target="_blank">View</a>
                                             <a class="dropdown-item" href="{{route('admin.services.edit', 'data-ai')}}">Edit</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </td>
                             </tr>
                             <tr>
                                 <td class="checkbox-column"> 3 </td>
                                 <td class="user-name">Security</td>
                                 <td class="text-center">
-                                    <div class="dropdown">
+                                    <a class="btn btn-sm btn-success" href="{{route('services', 'security')}}" target="_blank">View</a>
+                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'security')}}">Edit</a>
+                                    {{-- <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                                         </a>
@@ -72,14 +79,16 @@
                                             <a class="dropdown-item" href="{{route('services', 'security')}}" target="_blank">View</a>
                                             <a class="dropdown-item" href="{{route('admin.services.edit', 'security')}}">Edit</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </td>
                             </tr>
                             <tr>
                                 <td class="checkbox-column"> 4 </td>
                                 <td class="user-name">Cloud</td>
                                 <td class="text-center">
-                                    <div class="dropdown">
+                                    <a class="btn btn-sm btn-success" href="{{route('services', 'cloud')}}" target="_blank">View</a>
+                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'cloud')}}">Edit</a>
+                                    {{-- <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                                         </a>
@@ -87,14 +96,16 @@
                                             <a class="dropdown-item" href="{{route('services', 'cloud')}}" target="_blank">View</a>
                                             <a class="dropdown-item" href="{{route('admin.services.edit', 'cloud')}}">Edit</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </td>
                             </tr>
                             <tr>
                                 <td class="checkbox-column"> 5 </td>
                                 <td class="user-name">Managed Services</td>
                                 <td class="text-center">
-                                    <div class="dropdown">
+                                    <a class="btn btn-sm btn-success" href="{{route('services', 'managed-services')}}" target="_blank">View</a>
+                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'managed-services')}}">Edit</a>
+                                    {{-- <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                                         </a>
@@ -102,14 +113,16 @@
                                             <a class="dropdown-item" href="{{route('services', 'managed-services')}}" target="_blank">View</a>
                                             <a class="dropdown-item" href="{{route('admin.services.edit', 'managed-services')}}">Edit</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </td>
                             </tr>
                             <tr>
                                 <td class="checkbox-column"> 6 </td>
                                 <td class="user-name">Talent Acquisition & Sourcing</td>
                                 <td class="text-center">
-                                    <div class="dropdown">
+                                    <a class="btn btn-sm btn-success" href="{{route('services', 'talent-acquisition-and-sourcing')}}" target="_blank">View</a>
+                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'talent-acquisition-and-sourcing')}}">Edit</a>
+                                    {{-- <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                                         </a>
@@ -117,7 +130,7 @@
                                             <a class="dropdown-item" href="{{route('services', 'talent-acquisition-and-sourcing')}}" target="_blank">View</a>
                                             <a class="dropdown-item" href="{{route('admin.services.edit', 'talent-acquisition-and-sourcing')}}">Edit</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </td>
                             </tr>
                         </tbody>

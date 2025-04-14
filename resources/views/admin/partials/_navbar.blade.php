@@ -16,7 +16,7 @@
                 <span class="badge badge-secondary">Ctrl + /</span>
             </div> --}}
 
-            <ul class="navbar-item flex-row justify-content-between w-100">
+            <ul class="navbar-item flex-row justify-content-end w-100">
 
                 {{-- <li class="nav-item dropdown language-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="language-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,12 +31,12 @@
                     </div>
                 </li> --}}
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <form action="{{ route('storage.link') }}" method="POST">
                         @csrf
                         <button class="btn btn-sm btn-success">Storage Link</button>
                     </form>
-                </li>
+                </li> --}}
 
                 <li class="nav-item theme-toggle-item">
                     <a href="javascript:void(0);" class="nav-link theme-toggle">

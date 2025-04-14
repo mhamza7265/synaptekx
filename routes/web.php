@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes(['register' => false]);
+Route::post('logout', function () {
+    Auth::logout();
+    return redirect('/login');
+})->name('logout');
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();

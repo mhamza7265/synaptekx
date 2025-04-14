@@ -21,7 +21,8 @@ class ServicesPagesController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Create Service Page';
+        return view('admin.pages.services.create', compact('title'));
     }
 
     /**

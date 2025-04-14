@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card mt-2">
                             <div class="card-header" id="headingOne2">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionOne" aria-expanded="false" aria-controls="withoutSpacingAccordionOne">
@@ -43,7 +43,7 @@
                                 <div class="container py-3">
                                     <form>
                                         <div id="carousel-container">
-                                            <div class="hero-carousel-item card-body border p-3 mb-3">
+                                            <div class="hero-carousel-item card-body border p-3 mb-3 position-relative">
                                                 <span class="d-block mb-2">Select Background Type:</span>
                                                 <div class="d-flex align-items-center mb-3">
                                                     <span class="me-2">Image</span>
@@ -78,26 +78,30 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card mt-2">
                             <div class="card-header" id="headingTwo2">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
-                                        Digital Services  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                        Our Core Digital Services at SynaptekX  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
                             <div id="withoutSpacingAccordionTwo" class="collapse" aria-labelledby="headingTwo2" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
                                     <form>
-                                        <div id="digitalServicesContainer">
-                                            <div class="card-body">
-                                                <span>Title:</span>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control mt-2" name="digital_service_title[]" >
+                                        <div class="card-body">
+                                            <span>Section Title:</span>
+                                            <input type="text" class="form-control mb-2" name="services_list_section_title">
+                                            <div id="digitalServicesContainer">
+                                                <div class="border p-3 mb-3 position-relative">
+                                                    <span>Title:</span>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control mt-2" name="services_list_title[]" >
+                                                    </div>
+                                                    
+                                                    <span class="d-block mt-4">Content:</span>
+                                                    <textarea id="summernote-0" name="services_list_content[]" class="form-control summernote mt-2">{{ old('digital_service_content.0') }}</textarea>
                                                 </div>
-                                                
-                                                <span class="d-block mt-4">Content:</span>
-                                                <textarea id="summernote-0" name="digital_service_content[]" class="form-control summernote mt-2">{{ old('digital_service_content.0') }}</textarea>
                                             </div>
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
@@ -106,11 +110,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card mt-2">
                             <div class="card-header" id="headingThree10">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionThree" aria-expanded="false" aria-controls="withoutSpacingAccordionThree">
-                                        Transformation <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                        The Digital Transformation Journey <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
@@ -120,7 +124,7 @@
                                         <div class="card-body">
                                             <span class="d-block mt-3">Section Title:</span>
                                             <div class="form-group">
-                                                <input class="form-control mt-2" name="transformation_title" >
+                                                <input class="form-control mt-2" name="infographic_section_title" >
                                             </div>
 
                                             <span class="d-block mt-3">Select Infograph:</span>
@@ -139,11 +143,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card mt-2">
                             <div class="card-header" id="headingFour10">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFour" aria-expanded="false" aria-controls="withoutSpacingAccordionFour">
-                                        Features <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                        Empowering Growth Through Innovation & Agility <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
@@ -153,7 +157,7 @@
                                         <div class="card-body">
                                             <span class="d-block mt-3">Section Title:</span>
                                             <div class="form-group">
-                                                <input class="form-control mt-2" name="features_title" >
+                                                <input class="form-control mt-2" name="features_section_title" >
                                             </div>
 
                                             <hr>
@@ -270,26 +274,62 @@
             let carouselIndex = 1;
 
             $('#add-carousel').click(function () {
-                let newItem = $('.hero-carousel-item').first().clone();
+                // let newItem = $('.hero-carousel-item').first().clone();
+
+                let newItemHtml = `
+                                    <div class="hero-carousel-item card-body border p-3 mb-3 position-relative">
+                                        <button class="btn carousel-dlt-btn position-absolute" style="top:5px; right:5px;">
+                                            <i class="fa fa-trash text-danger"></i>
+                                        </button>
+                                        <span class="d-block mb-2">Select Background Type:</span>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <span class="me-2">Image</span>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" name="bg_type[]" value="video">
+                                            </div>
+                                            <span class="ms-3">Video</span>
+                                        </div>
+
+                                        <span>Select Background:</span>
+                                        <div class="input-group d-flex align-items-center mt-2">
+                                            <span class="input-group-btn">
+                                                <a class="lfm btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
+                                                    <i class="fa fa-picture-o"></i> Choose
+                                                </a>
+                                            </span>
+                                            <input id="thumbnail_0" style="height: 36px" class="form-control" type="text" name="filepath[]">
+                                        </div>
+                                        <div id="holder_0" style="margin-top:15px; max-height:100px;"></div>
+
+                                        <span class="d-block mt-3">Title</span>
+                                        <input type="text" class="form-control mb-2" name="hero_title[]">
+
+                                        <span class="d-block mt-2">Subtitle</span>
+                                        <textarea class="form-control" name="hero_subtitle[]" rows="2"></textarea>
+                                    </div>
+                                `;
+
+                // Convert HTML string to jQuery object
+                let $newItem = $(newItemHtml);
 
                 // Reset values
-                newItem.find('input, textarea').val('');
+                $newItem.find('input[type="text"], textarea').val('');
 
                 // Update file input + preview ID
-                newItem.find('.lfm').each(function () {
+                $newItem.find('.lfm').each(function () {
                     let inputId = 'thumbnail_' + carouselIndex;
                     let previewId = 'holder_' + carouselIndex;
 
                     $(this).attr('data-input', inputId).attr('data-preview', previewId);
                 });
 
-                newItem.find('input[name="filepath[]"]').attr('id', 'thumbnail_' + carouselIndex);
-                newItem.find('[id^="holder_"]').attr('id', 'holder_' + carouselIndex);
+                $newItem.find('input[name="filepath[]"]').attr('id', 'thumbnail_' + carouselIndex);
+                $newItem.find('[id^="holder_"]').attr('id', 'holder_' + carouselIndex);
 
                 carouselIndex++;
 
+                $('#carousel-container').append($newItem);
 
-                $('#carousel-container').append(newItem);
 
                 toggleAddButton();
 
@@ -306,6 +346,13 @@
             }
 
             toggleAddButton();
+
+            $(document).on('click', '.carousel-dlt-btn', function(){
+                if(confirm('Do you want to delete this?')){
+                    $(this).closest('.hero-carousel-item').remove();
+                    return;
+                }
+            })
         })
     </script>
 
@@ -384,19 +431,28 @@
             $('#add-services').click(function () {
                 const id = 'summernote-' + Date.now();
                 const html = `
-                    <div class="card-body">
-                        <span>Title:</span>
-                        <div class="form-group">
-                            <input type="text" class="form-control mt-2" name="digital_service_title[]">
-                        </div>
-
-                        <span class="d-block mt-4">Content:</span>
-                        <textarea id="${id}" name="digital_service_content[]" class="form-control summernote mt-2"></textarea>
+                <div class="services-container border p-3 mb-3 position-relative">
+                    <button class="btn services-dlt-btn position-absolute" style="top:5px; right:5px;">
+                        <i class="fa fa-trash text-danger"></i>
+                    </button>
+                    <span class="d-block mt-3">Title:</span>
+                    <div class="form-group">
+                        <input type="text" class="form-control mt-2" name="digital_service_title[]">
                     </div>
+
+                    <span class="d-block mt-4">Content:</span>
+                    <textarea id="${id}" name="digital_service_content[]" class="form-control summernote mt-2"></textarea>
+                </div>
                 `;
                 $("#digitalServicesContainer").append(html);
                 initializeSummernote(`#${id}`);
             });
+
+            $(document).on('click', '.services-dlt-btn', function () {
+                if(confirm('Do you want to delete this service?')) {
+                    $(this).closest('.services-container').remove();
+                }
+            })
         });
     </script>
 @endsection

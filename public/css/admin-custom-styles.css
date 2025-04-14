@@ -19,3 +19,21 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+#sidebar ul.menu-categories li.menu > form .dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 15px;
+    color: #191e3a;
+    padding: 10.2px 16px;
+    font-weight: 400;
+    transition: 0.6s;
+    letter-spacing: 1px;
+    margin: 2px 16px 0;
+    border-radius: 8px;
+}
+
+#sidebar ul.menu-categories li.menu > form .dropdown-toggle:hover {
+    color: #4361ee;
+}

@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\HomePageContentController;
 use App\Http\Controllers\Admin\AboutPageContentController;
 use App\Http\Controllers\Admin\ContactPageContentController;
+use App\Http\Controllers\Admin\PartnersPageContentController;
 use App\Http\Controllers\Admin\ServicesPagesController;
 use App\Http\Controllers\Admin\SettingsPageContentController;
 
@@ -27,6 +28,9 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
 
     //about page cms routes
     Route::get('/about-page/edit', [AboutPageContentController::class, 'edit'])->name('about-page.edit');
+
+    //partners page cms routes
+    Route::get('/partners-page/edit', [PartnersPageContentController::class, 'edit'])->name('partners-page.edit');
 
     //contact page cms routes
     Route::get('/contact-page/edit', [ContactPageContentController::class, 'edit'])->name('contact-page.edit');

@@ -6,4 +6,10 @@ $(document).ready(function () {
     const date = new Date();
     const year = date.getFullYear();
     $(".dynamic-year").html(year);
+
+    $("#logout-btn").click(function () {
+        if (confirm("Do you want to logout?")) {
+            $(this).closest("form").submit();
+        }
+    });
 });

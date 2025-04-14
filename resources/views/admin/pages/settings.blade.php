@@ -5,63 +5,102 @@
         <div class="col-lg-12 layout-spacing">
             <div class="statbox widget box box-shadow">
                 <div class="widget-content widget-content-area icon-accordion-content">
-                    <form>
-                        <h3 class="text-center pb-2">Site Settings</h3>
+                    <h3 class="text-center pb-2">Site Settings</h3>
+                    <div id="withoutSpacing" class="no-outer-spacing accordion">
                         <div class="card">
-                            <div class="container py-3">
-                                <span>Favicon:</span>
-                                <div class="input-group d-flex align-items-center mt-2">
-                                    <span class="input-group-btn">
-                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_1_thumbnail" data-preview="section_1_holder">
-                                        <i class="fa fa-picture-o"></i> Choose
-                                    </a>
-                                    </span>
-                                    <input id="section_1_thumbnail" style="height: 36px" class="form-control" type="text" name="favicon">
-                                </div>
-                                <div id="section_1_holder" style="margin-top:15px; max-height:100px;"></div>
+                            <div class="card-header" id="headingMeta2">
+                                <section class="mb-0 mt-0">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionMeta" aria-expanded="true" aria-controls="withoutSpacingAccordionMeta">
+                                        Appearance  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="withoutSpacingAccordionMeta" class="collapse show" aria-labelledby="headingMeta2" data-bs-parent="#withoutSpacing">
+                                <form>
+                                    <div class="container py-3">
+                                        <span>Favicon:</span>
+                                        <div class="input-group d-flex align-items-center mt-2">
+                                            <span class="input-group-btn">
+                                            <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_1_thumbnail" data-preview="section_1_holder">
+                                                <i class="fa fa-picture-o"></i> Choose
+                                            </a>
+                                            </span>
+                                            <input id="section_1_thumbnail" style="height: 36px" class="form-control" type="text" name="favicon">
+                                        </div>
+                                        <div id="section_1_holder" style="margin-top:15px; max-height:100px;"></div>
 
-                                <span class="d-block mt-3">Logo:</span>
-                                <div class="input-group d-flex align-items-center mt-2">
-                                    <span class="input-group-btn">
-                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="logo_thumbnail" data-preview="logo_holder">
-                                        <i class="fa fa-picture-o"></i> Choose
-                                    </a>
-                                    </span>
-                                    <input id="logo_thumbnail" style="height: 36px" class="form-control" type="text" name="site_logo">
-                                </div>
-                                <div id="logo_holder" style="margin-top:15px; max-height:100px;"></div>
+                                        <span class="d-block mt-3">Logo:</span>
+                                        <div class="input-group d-flex align-items-center mt-2">
+                                            <span class="input-group-btn">
+                                            <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="logo_thumbnail" data-preview="logo_holder">
+                                                <i class="fa fa-picture-o"></i> Choose
+                                            </a>
+                                            </span>
+                                            <input id="logo_thumbnail" style="height: 36px" class="form-control" type="text" name="site_logo">
+                                        </div>
+                                        <div id="logo_holder" style="margin-top:15px; max-height:100px;"></div>
+
+                                        <span class="d-block mt-3">Primary Site Color:</span>
+                                        <input type="color" name="primary_color" style="height: 35px" class="form-control mt-2" value="#007bff">
+
+                                        <span class="d-block mt-3">Secondary Site Color:</span>
+                                        <input type="color" name="secondary_color" style="height: 35px" class="form-control mt-2" value="#007bff">
+
+                                        <button class="btn btn-md btn-success mt-3">Save</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <div class="card mt-3">
-                            <div class="container py-3">
-                                <h5 class="text-center mt-3">Footer Settings</h5>
-                            
-                                <span class="d-block mt-3 text-center fw-bold">Social Links:</span>
-                                <span class="d-block mt-3">Instagram:</span>
-                                <input type="text" name="instagram_link" class="form-control mt-2">
+                        <div class="card mt-2">
+                            <div class="card-header" id="headingTwo2">
+                                <section class="mb-0 mt-0">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
+                                        Footer Settings  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="withoutSpacingAccordionTwo" class="collapse" aria-labelledby="headingTwo2" data-bs-parent="#withoutSpacing">
+                                <form>
+                                    <div class="container py-3">
+                                        <span class="d-block mt-3 text-center fw-bold">Social Links:</span>
+                                        <span class="d-block mt-3">Instagram:</span>
+                                        <input type="text" name="instagram_link" class="form-control mt-2">
 
-                                <span class="d-block mt-3">X:</span>
-                                <input type="text" name="x_link" class="form-control mt-2">
+                                        <span class="d-block mt-3">X:</span>
+                                        <input type="text" name="x_link" class="form-control mt-2">
 
-                                <span class="d-block mt-3">Facebook:</span>
-                                <input type="text" name="facebook_link" class="form-control mt-2">
+                                        <span class="d-block mt-3">Facebook:</span>
+                                        <input type="text" name="facebook_link" class="form-control mt-2">
 
-                                <span class="d-block mt-3">Linkedin:</span>
-                                <input type="text" name="linkedin_link" class="form-control mt-2">
+                                        <span class="d-block mt-3">Linkedin:</span>
+                                        <input type="text" name="linkedin_link" class="form-control mt-2">
+                                        <button class="btn btn-md btn-success mt-3">Save</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <div class="card mt-3">
-                            <div class="container py-3">
-                                <h5 class="text-center mt-3">Contact Form Content</h5>
-                                <span class="d-block mt-3">Title:</span>
-                                <input type="text" name="contact_form_title" class="form-control mt-2">
+                        <div class="card mt-2">
+                            <div class="card-header" id="headingThree10">
+                                <section class="mb-0 mt-0">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionThree" aria-expanded="false" aria-controls="withoutSpacingAccordionThree">
+                                        Contact Form Content <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="withoutSpacingAccordionThree" class="collapse" aria-labelledby="headingThree10" data-bs-parent="#withoutSpacing">
+                                <form>
+                                    <div class="container py-3">
+                                        <span class="d-block mt-3">Title:</span>
+                                        <input type="text" name="contact_form_title" class="form-control mt-2">
 
-                                <span class="d-block mt-3">Subtitle:</span>
-                                <input type="text" name="contact_form_subtitle" class="form-control mt-2">
+                                        <span class="d-block mt-3">Subtitle:</span>
+                                        <input type="text" name="contact_form_subtitle" class="form-control mt-2">
+                                        <button class="btn btn-md btn-success mt-3">Save</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <button class="btn btn-md btn-success mt-3">Save</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
