@@ -56,7 +56,7 @@
                                                 <span>Select Background:</span>
                                                 <div class="input-group d-flex align-items-center mt-2">
                                                     <span class="input-group-btn">
-                                                    <a class="lfm btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
+                                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
                                                         <i class="fa fa-picture-o"></i> Choose
                                                     </a>
                                                     </span>
