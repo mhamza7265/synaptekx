@@ -73,9 +73,14 @@
                         <div class="text-danger">{{ $message }}</div> 
                     @enderror
             
-                    <button type="submit" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4 contact-form-btn">
+                    {{-- <button type="submit" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4 contact-form-btn">
                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                         <span class="ms-3 fs-14 text-black">Send Request</span>
+                    </button> --}}
+
+                    <button type="submit" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                        <img src="{{asset('images/frontend/check.svg')}}" />
+                        <span class="ms-2 me-2 fs-14 text-black">Send Request</span>
                     </button>
                 </form>
             </div>

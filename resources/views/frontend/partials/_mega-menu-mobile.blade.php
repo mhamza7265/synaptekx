@@ -10,7 +10,7 @@
                 <div class="col-12">
                     <a href="{{ route('services', ['name' => 'digital']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/digital_services.svg')}}" />
-                        <p class="m-0 menu-head-1 font-menu-head">Digital</p>
+                        <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('name') === 'digital') ? 'text-gradient' : 'text-black' }}">Digital</p>
                     </a>
                     <div>
                         <a href="{{ route('services', ['name' => 'digital']) . '#consulting' }}" class="mega-menu-mobile-link d-block menu-link">
@@ -30,7 +30,7 @@
                 <div class="col-12 mt-4">
                     <a href="{{ route('services', ['name' => 'data-ai']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/data_services.svg')}}" />
-                        <p class="m-0 font-menu-head text-black">Data & AI</p>
+                        <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('name') === 'data-ai') ? 'text-gradient' : 'text-black' }}">Data & AI</p>
                     </a>
                     <div>
                         <a href="{{ route('services', ['name' => 'data-ai']) . '#consulting' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Data Integration</a>
@@ -43,7 +43,7 @@
                 <div class="col-12 mt-4">
                     <a href="{{ route('services', ['name' => 'security']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/security_services.svg')}}" />
-                        <p class="m-0 font-menu-head text-black">Security</p>
+                        <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('name') === 'security') ? 'text-gradient' : 'text-black' }}">Security</p>
                     </a>
                     <div>
                         <a href="{{ route('services', ['name' => 'security']) . '#consulting' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Security Architecture as a Service</a>
@@ -58,7 +58,7 @@
                 <div class="col-12 mt-4">
                     <a href="{{ route('services', ['name' => 'cloud']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/cloud_services.svg')}}" />
-                        <p class="m-0 font-menu-head text-black">Cloud</p>
+                        <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('name') === 'cloud') ? 'text-gradient' : 'text-black' }}">Cloud</p>
                     </a>
                     <div>
                         <a href="{{ route('services', ['name' => 'cloud']) . '#consulting' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Migration</a>
@@ -70,7 +70,7 @@
                 <div class="col-12 mt-4">
                     <a href="{{ route('services', ['name' => 'managed-services']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/managed_services.svg')}}" />
-                        <p class="m-0 font-menu-head text-black">Managed Services</p>
+                        <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('name') === 'managed-services') ? 'text-gradient' : 'text-black' }}">Managed Services</p>
                     </a>
                     <div>
                         <a href="{{ route('services', ['name' => 'managed-services']) . '#consulting' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>SOC</a>
@@ -84,7 +84,7 @@
                 <div class="col-12 mt-4">
                     <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/talent_services.svg')}}" />
-                        <p class="m-0 font-menu-head text-black">Talent Acquisition & Sourcing</p>
+                        <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('name') === 'talent-acquisition-and-sourcing') ? 'text-gradient' : 'text-black' }}">Talent Acquisition & Sourcing</p>
                     </a>
                     <div>
                         <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) . '#consulting' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Digital Transformation</a>

@@ -31,9 +31,13 @@
                                 <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
                                 </div>
-                                <a href="{{ route('services', ['name' => 'digital']) }}" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                {{-- <a href="{{ route('services', ['name' => 'digital']) }}" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                     <span class="ms-3 fs-14 text-white">Find Out More</span>
+                                </a> --}}
+                                <a href="{{ route('services', ['name' => 'digital']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/check.svg')}}" />
+                                    <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                 </a>
                             </div>
                         </div>
@@ -47,9 +51,13 @@
                                 <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <p class="hero-detail-text">At <span class="text-gradient">SynaptekX</span>, we are redefining how businesses navigate the digital era. As a trailblazing startup, we specialize in providing future-ready IT solutions that enable organizations to scale and adapt in a fast-paced world. Whether you need to optimize existing processes or create a completely new digital ecosystem, we’re here to bring innovative ideas to life. Our expert team offers everything from strategic advice to full-service digital transformations, ensuring that your business not only survives but thrives in the digital age.</p>
                                 </div>
-                                <a href="{{ route('services', ['name' => 'cloud']) }}" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                {{-- <a href="{{ route('services', ['name' => 'cloud']) }}" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                     <span class="ms-3 fs-14 text-white">Find Out More</span>
+                                </a> --}}
+                                <a href="{{ route('services', ['name' => 'cloud']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/check.svg')}}" />
+                                    <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                 </a>
                             </div>
                         </div>
@@ -63,9 +71,13 @@
                                 <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <p class="hero-detail-text"><span class="text-gradient">SynaptekX</span> is at the forefront of technological innovation, dedicated to helping businesses achieve long-term success. As a visionary startup, we offer tailored IT solutions that streamline operations and open doors to new growth opportunities. Our services cover every aspect of digital transformation, from strategic consulting to implementing cutting-edge technologies. We empower businesses to stay agile, competitive, and future-proof in a rapidly evolving digital world.</p>
                                 </div>
-                                <a href="{{ route('services', ['name' => 'security']) }}" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                {{-- <a href="{{ route('services', ['name' => 'security']) }}" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                     <span class="ms-3 fs-14 text-white">Find Out More</span>
+                                </a> --}}
+                                <a href="{{ route('services', ['name' => 'security']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/check.svg')}}" />
+                                    <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                 </a>
                             </div>
                         </div>
@@ -131,9 +143,9 @@
                             <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
                                 <h5 class="text-white fs-16 fw-500">Amazon</h5>
                                 <p class="partners-carousel-text fs-16 text-white">SynaptekX and AWS deliver AI-optimised cloud solutions, from intelligent migrations to self-healing architectures. Using Amazon SageMaker and EC2, we enable dynamic scalability, cost-efficient resource allocation, and seamless integration of machine learning into core business processes.</p>
-                                <a href="{{route('partners')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
+                                <a href="{{route('partners')}}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/check.svg')}}" />
+                                    <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                 </a>
                             </div>
                         </div>
@@ -144,9 +156,13 @@
                             <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
                                 <h5 class="text-white fs-16 fw-500">StrikeReady</h5>
                                 <p class="partners-carousel-text fs-16 text-white">SynaptekX and StrikeReady combine forces on distribution level to redefine security operations through AI-driven threat intelligence, automated incident response, and unified visibility.</p>
-                                <a href="{{route('partners')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                {{-- <a href="{{route('partners')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                     <span class="ms-3 fs-14 text-white">Find Out More</span>
+                                </a> --}}
+                                <a href="{{ route('partners') }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/check.svg')}}" />
+                                    <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                 </a>
                             </div>
                         </div>
@@ -157,9 +173,13 @@
                             <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
                                 <h5 class="text-white fs-16 fw-500">Cywift</h5>
                                 <p class="partners-carousel-text fs-16 text-white">SynaptekX and Cywift unite on distribution level to transform governance, risk, and compliance (GRC) through AI-driven automation and actionable insights for any cloud anywhere.</p>
-                                <a href="{{route('partners')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                {{-- <a href="{{route('partners')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                     <span class="ms-3 fs-14 text-white">Find Out More</span>
+                                </a> --}}
+                                <a href="{{ route('partners') }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <img src="{{asset('images/frontend/check.svg')}}" />
+                                    <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                 </a>
                             </div>
                         </div>
@@ -228,9 +248,13 @@
                                         <li class="section-3-tab-detail-1"><strong>eCommerce – </strong>Reinvent digital storefronts with AI personalization and real-time data analysis. From intelligent recommendations to dynamic pricing, we deliver seamless user experiences that boost conversions.</li>
                                     </ul>
                                     {{-- <p class="section-3-tab-detail-1">By partnering with us, you’ll benefit from data-driven insights and a tailored strategy that maximizes your ROI.</p> --}}
-                                    <a href="{{ route('services', ['name' => 'digital']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
+                                    {{-- <a href="{{ route('services', ['name' => 'digital']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">Explore</span>
+                                    </a> --}}
+                                    <a href="{{ route('services', ['name' => 'digital']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                        <img src="{{asset('images/frontend/check.svg')}}" />
+                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
                                     </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/home-digital.png')}}" class="section-3-img" />
@@ -247,9 +271,13 @@
                                         <li class="section-3-tab-detail-1 mb-2"><strong>Transformation – </strong>Move to cloud-native operations enriched by data-driven insights. From upskilling teams to refining governance, we ensure smooth, sustainable modernization.</li>
                                         <li class="section-3-tab-detail-1"><strong>Operations – </strong>Harness AI-enabled observability and automation for reliable, scalable CloudOps. Predictive issue detection and capacity planning let you focus on core innovation.</li>
                                     </ul>
-                                    <a href="{{ route('services', ['name' => 'cloud']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
+                                    {{-- <a href="{{ route('services', ['name' => 'cloud']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">Explore</span>
+                                    </a> --}}
+                                    <a href="{{ route('services', ['name' => 'cloud']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                        <img src="{{asset('images/frontend/check.svg')}}" />
+                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
                                     </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/home-cloud.png')}}" class="section-3-img" />
@@ -267,9 +295,13 @@
                                         <li class="section-3-tab-detail-1 mb-2"><strong>Data Management – </strong>Implement AI-driven governance for real-time classification, security, and compliance. Automated cataloging and metadata management give you total control.</li>
                                         <li class="section-3-tab-detail-1"><strong>Generative AI – </strong>Automate complex tasks and spark creativity with advanced AI models. From virtual assistants to dynamic product suggestions, our solutions push the boundaries of innovation.</li>
                                     </ul>
-                                    <a href="{{ route('services', ['name' => 'data-ai']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
+                                    {{-- <a href="{{ route('services', ['name' => 'data-ai']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">Explore</span>
+                                    </a> --}}
+                                    <a href="{{ route('services', ['name' => 'data-ai']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                        <img src="{{asset('images/frontend/check.svg')}}" />
+                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
                                     </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/home-data-ai.png')}}" class="section-3-img" />
@@ -287,9 +319,13 @@
                                         <li class="section-3-tab-detail-1 mb-2"><strong>DevSecOps – </strong>Embed AI-driven security at every stage of development. Predictive threat modeling and automated compliance processes drastically reduce exposure.</li>
                                         <li class="section-3-tab-detail-1"><strong>AppOps – </strong>Maintain mission-critical apps with AI-based diagnostics, fine-tuned performance, and proactive incident prevention—all while delivering seamless user experiences.</li>
                                     </ul>
-                                    <a href="{{ route('services', ['name' => 'managed-services']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
+                                    {{-- <a href="{{ route('services', ['name' => 'managed-services']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">Explore</span>
+                                    </a> --}}
+                                    <a href="{{ route('services', ['name' => 'managed-services']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                        <img src="{{asset('images/frontend/check.svg')}}" />
+                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
                                     </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/home-managed-services.png')}}" class="section-3-img" />
@@ -306,9 +342,13 @@
                                         <li class="section-3-tab-detail-1 mb-2"><strong>Compliance Adherence – </strong>Simplify audits and regulatory demands through AI-based checks and real-time monitoring, preserving trust and minimizing manual overhead.</li>
                                         <li class="section-3-tab-detail-1"><strong>Incident Response – </strong>Counter threats with automated detection and rapid containment, turning breaches into opportunities to bolster future security posture.</li>
                                     </ul>
-                                    <a href="{{ route('services', ['name' => 'security']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
+                                    {{-- <a href="{{ route('services', ['name' => 'security']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">Explore</span>
+                                    </a> --}}
+                                    <a href="{{ route('services', ['name' => 'security']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                        <img src="{{asset('images/frontend/check.svg')}}" />
+                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
                                     </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/home-security.png')}}" class="section-3-img" />
@@ -326,9 +366,13 @@
                                         <li class="section-3-tab-detail-1 mb-2"><strong>Software Development – </strong>Strengthen your development capabilities with coders proficient in AI frameworks, automation, and seamless integration. Achieve faster, higher-quality releases and excellent user experiences.</li>
                                         <li class="section-3-tab-detail-1"><strong>Product Development – </strong>Inspire product innovation with experts adept at AI-driven features, MVP prep, and user-centric design. Turn bold ideas into market-ready offerings that stand apart.</li>
                                     </ul>
-                                    <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
+                                    {{-- <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
                                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                         <span class="ms-3 fs-14 text-white">Explore</span>
+                                    </a> --}}
+                                    <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                        <img src="{{asset('images/frontend/check.svg')}}" />
+                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
                                     </a>
                                     <div class="mt-4">
                                         <img src="{{asset('images/frontend/home-talent-acquisition-and-sourcing.png')}}" class="section-3-img" />

@@ -311,7 +311,7 @@
                     </div>
                 </div>
             </section>
-            <section id="event-webinars" class="webinar-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+            {{-- <section id="event-webinars" class="webinar-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
                 <div class="pt-5 bg-white">
                     <div class="container mb-5">
                         <h1>
@@ -380,7 +380,56 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
+            {{-- <section id="rel-cap" class="py-5 bg-white">
+            <div class="container py-5">
+                <div class="row justify-content-start">
+                    <div class="col-12 col-md-4" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                        <h1 class="fs-57 text-black" style="line-height: 1.3">Related <span class="text-gradient">Capabilities</span></h1>
+                    </div>
+                    <div class="col-12 col-md-3 ps-3 ps-md-5 mb-3 mb-md-0 mt-5 mt-md-0">
+                        <a href="{{ route('services', ['name' => 'digital']) }}" class="capability-link-dark fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                            <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#000" stroke-opacity="1" stroke-width="3"/>
+                            </svg>
+                            Digital
+                        </a>
+                        <a href="{{ route('services', ['name' => 'data-ai']) }}" class="capability-link-dark fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
+                            <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#000" stroke-opacity="1" stroke-width="3"/>
+                            </svg>
+                            Data & AI
+                        </a>
+                        <a href="{{ route('services', ['name' => 'security']) }}" class="capability-link-dark fs-32" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
+                            <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#000" stroke-opacity="1" stroke-width="3"/>
+                            </svg>
+                            Security
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-5 ps-3">
+                        <a href="{{ route('services', ['name' => 'cloud']) }}" class="capability-link-dark fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                            <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#000" stroke-opacity="1" stroke-width="3"/>
+                            </svg>
+                            Cloud
+                        </a>
+                        <a href="{{ route('services', ['name' => 'managed-services']) }}" class="capability-link-dark fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
+                            <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#000" stroke-opacity="1" stroke-width="3"/>
+                            </svg>
+                            Managed Services
+                        </a>
+                        <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" class="capability-link-dark fs-32" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
+                            <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#000" stroke-opacity="1" stroke-width="3"/>
+                            </svg>
+                            Talent Acquisition & Sourcing
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </section> --}}
             <section id="rel-cap" class="py-5" style="background-image: url('/images/frontend/bg-gradient_2.svg'); background-repeat: no-repeat; background-position: right top;">
                 <div class="container py-5">
                     <div class="row justify-content-start">
@@ -455,6 +504,17 @@
                 function() {
                     $(this).css('color', '#ffffff99'); // Revert text color
                     $(this).find('svg path').attr('stroke', '#ffffff99'); // Revert SVG stroke color
+                }
+            );
+
+            $('.capability-link-dark').hover(
+                function() {
+                    $(this).css('color', '#FFC107'); // Change text color
+                    $(this).find('svg path').attr('stroke', '#FFC107'); // Change SVG stroke color
+                },
+                function() {
+                    $(this).css('color', '#000'); // Revert text color
+                    $(this).find('svg path').attr('stroke', '#000'); // Revert SVG stroke color
                 }
             );
         })

@@ -61,7 +61,7 @@
                     
                 </div>
             </section>
-            <section id="transformation-journey" class="transformation-journey-section bg-white py-5 py-md-0">
+            <section id="transformation-journey" class="transformation-journey-section py-110 bg-white py-5 py-md-0">
                 <div class="container">
                     <h1 class="fs-57 fs-md-42px fw-500 text-center text-md-start">The Digital <span class="text-gradient">Transformation</span> Journey</h1>
                     <div class="home_graphic mt-5" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
@@ -97,7 +97,7 @@
                     </div>
                 </div>
             </section>
-            <section id="transformation" class="transformation-section bg-white">
+            <section id="transformation" class="transformation-section py-110 bg-white">
                 <div class="container overflow-hidden">
                     <div class="row">
                         <div class="col-12 col-lg-7 mx-auto" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
@@ -146,7 +146,7 @@
                     </div>
                 </div>
             </section>
-            <section id="ecommerce" class="ecommerce-section py-200px bg-white">
+            <section id="ecommerce" class="ecommerce-section py-110 bg-white">
                 <div class="container overflow-hidden">
                     <div class="row">
                         <div class="col-12 col-lg-7 mx-auto" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">

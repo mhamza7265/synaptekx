@@ -150,9 +150,13 @@
                             <div class="w-88 mt-3">
                                 <p class="services-section-desc">As we redefine what’s possible in the world of AI-driven transformation. Our promise is simple: to bring clarity, agility, and long-lasting results to every project we undertake—because at SynaptekX, your vision becomes our mission.</p>
                             </div>
-                            <a href="{{route('contact')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
+                            {{-- <a href="{{route('contact')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-5">
                                 <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
                                 <span class="ms-3 fs-14 text-white">Get in Touch</span>
+                            </a> --}}
+                            <a href="{{ route('contact') }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                <img src="{{asset('images/frontend/check.svg')}}" />
+                                <span class="ms-2 me-2 fs-14 text-white">Get in Touch</span>
                             </a>
                         </div>
                         <div class="col-12 col-lg-5 mx-auto mt-4 mt-lg-0" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
