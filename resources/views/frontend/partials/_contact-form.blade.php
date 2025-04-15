@@ -26,15 +26,52 @@
                 <form method="post" action="{{route('contact')}}">
                     @csrf
                     <div class="d-md-flex justify-content-between align-items-start w-100">
-                        <input type="text" name="first_name" placeholder="First Name" class="contact-input contact-flex-input" required />
-                        <input type="text" name="last_name" placeholder="Last Name" class="contact-input contact-flex-input" required />
+                        <div class="form-group" style="width: 49%">
+                            <input type="text" name="first_name" placeholder="First Name" class="contact-input contact-flex-input w-100" required />
+                            @error('first_name')
+                                <div class="text-danger">{{ $message }}</div>                            
+                            @enderror
+                        </div>
+                        <div class="form-group" style="width: 49%">
+                            <input type="text" name="last_name" placeholder="Last Name" class="contact-input contact-flex-input w-100" required />
+                            @error('last_name')
+                                <div class="text-danger">{{ $message }}</div>                            
+                            @enderror
+                        </div>
+                        
                     </div>
                     <div class="d-md-flex justify-content-between align-items-start w-100 mt-2">
-                        <input type="text" name="email" placeholder="Email" class="contact-input contact-flex-input" required />
-                        <input type="text" name="phone" placeholder="Phone" class="contact-input contact-flex-input" required />
+                        <div class="form-group" style="width: 49%">
+                            <input type="text" name="email" placeholder="Email" class="contact-input contact-flex-input w-100" required />
+                            @error('email')
+                                <div class="text-danger">{{ $message }}</div>                            
+                            @enderror
+                        </div>
+                        <div class="form-group" style="width: 49%">
+                            <input type="text" name="phone" placeholder="Phone" class="contact-input contact-flex-input w-100" required />
+                            @error('phone')
+                                <div class="text-danger">{{ $message }}</div>                            
+                            @enderror
+                        </div>
                     </div>
-                    <input type="text" name="subject" placeholder="Subject" class="contact-input mt-2 w-100" required />
-                    <textarea name="message" placeholder="Write your Message" class="contact-textarea mt-2 w-100" required></textarea>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" class="contact-input mt-2 w-100" required />
+                        @error('subject')
+                            <div class="text-danger">{{ $message }}</div>                            
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Write your Message" class="contact-textarea mt-2 w-100" required></textarea>
+                        @error('message')
+                            <div class="text-danger">{{ $message }}</div>                            
+                        @enderror
+                    </div>
+
+                    <!-- Google reCAPTCHA -->
+                    <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
+                    @error('g-recaptcha-response') 
+                        <div class="text-danger">{{ $message }}</div> 
+                    @enderror
             
                     <button type="submit" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4 contact-form-btn">
                         <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />

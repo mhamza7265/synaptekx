@@ -8,10 +8,10 @@
         <div class="container p-0">
             <div class="row justify-content-between align-items-baseline">
                 <div class="col-12">
-                    <div class="d-lg-flex justify-content-start align-items-center gap-3">
+                    <a href="{{ route('services', ['name' => 'digital']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/digital_services.svg')}}" />
                         <p class="m-0 menu-head-1 font-menu-head">Digital</p>
-                    </div>
+                    </a>
                     <div>
                         <a href="{{ route('services', ['name' => 'digital']) . '#consulting' }}" class="mega-menu-mobile-link d-block menu-link">
                             <i class="fa-solid fa-arrow-right me-3"></i>Consulting & Strategy
@@ -28,71 +28,71 @@
                     </div>
                 </div>
                 <div class="col-12 mt-4">
-                    <div class="d-lg-flex justify-content-start align-items-center gap-3">
+                    <a href="{{ route('services', ['name' => 'data-ai']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/data_services.svg')}}" />
-                        <p class="m-0 font-menu-head">Data & AI</p>
-                    </div>
+                        <p class="m-0 font-menu-head text-black">Data & AI</p>
+                    </a>
                     <div>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Data Integration</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Data Modernisation</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>API Economy</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Data Management</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Generative AI</a>
+                        <a href="{{ route('services', ['name' => 'data-ai']) . '#consulting' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Data Integration</a>
+                        <a href="{{ route('services', ['name' => 'data-ai']) . '#transformation' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Data Modernisation</a>
+                        <a href="{{ route('services', ['name' => 'data-ai']) . '#business' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>API Economy</a>
+                        <a href="{{ route('services', ['name' => 'data-ai']) . '#ecommerce' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Data Management</a>
+                        <a href="{{ route('services', ['name' => 'data-ai']) . '#generative-ai' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Generative AI</a>
                     </div>
                 </div>
                 <div class="col-12 mt-4">
-                    <div class="d-lg-flex justify-content-start align-items-center gap-3">
+                    <a href="{{ route('services', ['name' => 'security']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/security_services.svg')}}" />
-                        <p class="m-0 font-menu-head">Security</p>
-                    </div>
+                        <p class="m-0 font-menu-head text-black">Security</p>
+                    </a>
                     <div>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Security Architecture as a Service</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Managed SOC Operations</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>vCISO</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Compliance Adherence</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Incident Response</a>
+                        <a href="{{ route('services', ['name' => 'security']) . '#consulting' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Security Architecture as a Service</a>
+                        <a href="{{ route('services', ['name' => 'security']) . '#transformation' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Managed SOC Operations</a>
+                        <a href="{{ route('services', ['name' => 'security']) . '#business' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>vCISO</a>
+                        <a href="{{ route('services', ['name' => 'security']) . '#ecommerce' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Compliance Adherence</a>
+                        <a href="{{ route('services', ['name' => 'security']) . '#generative-ai' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Incident Response</a>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-between align-items-baseline mt-5">
                 <div class="col-12 mt-4">
-                    <div class="d-lg-flex justify-content-start align-items-center gap-3">
+                    <a href="{{ route('services', ['name' => 'cloud']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/cloud_services.svg')}}" />
-                        <p class="m-0 font-menu-head">Cloud</p>
-                    </div>
+                        <p class="m-0 font-menu-head text-black">Cloud</p>
+                    </a>
                     <div>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Migration</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Modernisation</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Economy</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Transformation</a>
+                        <a href="{{ route('services', ['name' => 'cloud']) . '#consulting' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Migration</a>
+                        <a href="{{ route('services', ['name' => 'cloud']) . '#transformation' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Modernisation</a>
+                        <a href="{{ route('services', ['name' => 'cloud']) . '#business' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Economy</a>
+                        <a href="{{ route('services', ['name' => 'cloud']) . '#ecommerce' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Transformation</a>
                     </div>
                 </div>
                 <div class="col-12 mt-4">
-                    <div class="d-lg-flex justify-content-start align-items-center gap-3">
+                    <a href="{{ route('services', ['name' => 'managed-services']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/managed_services.svg')}}" />
-                        <p class="m-0 font-menu-head">Managed Services</p>
-                    </div>
+                        <p class="m-0 font-menu-head text-black">Managed Services</p>
+                    </a>
                     <div>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>SOC</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>CloudOps</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>DevOps</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>MLOps</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>DevSecOps</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>AppOps</a>
+                        <a href="{{ route('services', ['name' => 'managed-services']) . '#consulting' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>SOC</a>
+                        <a href="{{ route('services', ['name' => 'managed-services']) . '#transformation' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>CloudOps</a>
+                        <a href="{{ route('services', ['name' => 'managed-services']) . '#business' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>DevOps</a>
+                        <a href="{{ route('services', ['name' => 'managed-services']) . '#ecommerce' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>MLOps</a>
+                        <a href="{{ route('services', ['name' => 'managed-services']) . '#generative-ai' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>DevSecOps</a>
+                        <a href="{{ route('services', ['name' => 'managed-services']) . '#AppOps' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>AppOps</a>
                     </div>
                 </div>
                 <div class="col-12 mt-4">
-                    <div class="d-lg-flex justify-content-start align-items-center gap-3">
+                    <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
                         <img src="{{asset('images/frontend/talent_services.svg')}}" />
-                        <p class="m-0 font-menu-head">Talent Acquisition & Sourcing</p>
-                    </div>
+                        <p class="m-0 font-menu-head text-black">Talent Acquisition & Sourcing</p>
+                    </a>
                     <div>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Digital Transformation</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Cloud</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Data & AI</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Security</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Software Development</a>
-                        <a href="javascript:void(0)" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Product Development</a>
+                        <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) . '#consulting' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Digital Transformation</a>
+                        <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) . '#transformation' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Cloud</a>
+                        <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) . '#business' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Data & AI</a>
+                        <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) . '#ecommerce' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Security</a>
+                        <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) . '#generative-ai' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Software Development</a>
+                        <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) . '#AppOps' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Product Development</a>
                     </div>
                 </div>
             </div>

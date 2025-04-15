@@ -18,7 +18,7 @@
         <section class="nav-content">
             <section class="nav-section">
                 <div class="section-navbar d-flex justify-content-between align-items-center px-110 px-35 py-4 overflow-x-auto white-space-nowrap">
-                    <a href="#elite-section" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Elite Partners</a>
+                    <a href="#elite-section" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Scaled Partners</a>
                     <a href="#all-section" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">All Partner</a>
                     <a href="#event-webinars" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">Events & Webinars</a>
                     <a href="#rel-cap" class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">Related Capabilities</a>
@@ -27,7 +27,7 @@
             <section id="elite-section" class="empowering-section bg-white position-relative">
                 <img src="{{asset('images/frontend/services_element.svg')}}" alt="graphic-element" class="services-graphic" style="left: 0 !important" />
                 <div class="container">
-                    <h1>Elite <span class="text-gradient">Partners</span></h1>
+                    <h1>Scaled <span class="text-gradient">Partners</span></h1>
                     <div class="row justify-content-between align-items-start">
                         <div id="fixed-on-scroll" class="col-12 col-md-6 mx-auto">
                             <div class="text-content partner-logo" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out">

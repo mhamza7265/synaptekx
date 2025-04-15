@@ -25,9 +25,6 @@
                                 Your browser does not support the video tag.
                             </video>
                             <div class="container overflow-hidden">
-                                <div class="d-flex justify-content-start align-content-center">
-                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" draggable="false" />
-                                </div>
                                 <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <h1 class="hero-title-text">Redefining IT Solutions for the <span class="text-gradient">Digital Age</span></h1>
                                 </div>
@@ -44,9 +41,6 @@
                     <div class="carousel-item">
                         <div class="hero-section" style="background-image: url('/images/frontend/carousel_2.jpg')">
                             <div class="container overflow-hidden">
-                                <div class="d-flex justify-content-start align-content-center">
-                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" draggable="false" />
-                                </div>
                                 <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <h1 class="hero-title-text">Transforming Businesses with Next-Gen <span class="text-gradient">IT Solutions</span></h1>
                                 </div>
@@ -63,9 +57,6 @@
                     <div class="carousel-item">
                         <div class="hero-section" style="background-image: url('/images/frontend/carousel_3.jpg')">
                             <div class="container overflow-hidden">
-                                <div class="d-flex justify-content-start align-content-center">
-                                    <img src="{{asset('images/frontend/synaptekx-pill.svg')}}" draggable="false" />
-                                </div>
                                 <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <h1 class="hero-title-text">Future Proofing Your Business Through <span class="text-gradient">Technology</span></h1>
                                 </div>
@@ -142,7 +133,7 @@
                                 <p class="partners-carousel-text fs-16 text-white">SynaptekX and AWS deliver AI-optimised cloud solutions, from intelligent migrations to self-healing architectures. Using Amazon SageMaker and EC2, we enable dynamic scalability, cost-efficient resource allocation, and seamless integration of machine learning into core business processes.</p>
                                 <a href="{{route('partners')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                    <span class="ms-3 fs-14 text-white">Send Request</span>
+                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
                                 </a>
                             </div>
                         </div>
@@ -155,7 +146,7 @@
                                 <p class="partners-carousel-text fs-16 text-white">SynaptekX and StrikeReady combine forces on distribution level to redefine security operations through AI-driven threat intelligence, automated incident response, and unified visibility.</p>
                                 <a href="{{route('partners')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                    <span class="ms-3 fs-14 text-white">Send Request</span>
+                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
                                 </a>
                             </div>
                         </div>
@@ -168,7 +159,7 @@
                                 <p class="partners-carousel-text fs-16 text-white">SynaptekX and Cywift unite on distribution level to transform governance, risk, and compliance (GRC) through AI-driven automation and actionable insights for any cloud anywhere.</p>
                                 <a href="{{route('partners')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                    <span class="ms-3 fs-14 text-white">Send Request</span>
+                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
                                 </a>
                             </div>
                         </div>
@@ -231,9 +222,9 @@
                                     <p class="section-3-tab-detail-1">Elevate your organization with AI-first digital solutions that drive efficiency, innovation, and growth. Our expert teams blend strategy, data, and automation to future-proof your operations in a rapidly evolving landscape.</p>
                                     <h3 class="section-3-tab-heading-2 text-white mt-3">Our Digital Services </h3>
                                     <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1"><strong>Consulting & Strategy – </strong>Reimagine your business roadmap with AI-focused insights. We align advanced analytics to your goals, ensuring every initiative is rooted in real-time intelligence.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Transformation – </strong>Modernize legacy systems into AI-powered ecosystems for faster innovation. We embed automation and facilitate cultural shifts that maximize productivity and profitability.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Business Applications – </strong>Embed AI-driven recommendations, analytics, and automation within ERP, CRM, and custom solutions. Optimize processes so teams can focus on strategic innovation over routine tasks.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Consulting & Strategy – </strong>Reimagine your business roadmap with AI-focused insights. We align advanced analytics to your goals, ensuring every initiative is rooted in real-time intelligence.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Transformation – </strong>Modernize legacy systems into AI-powered ecosystems for faster innovation. We embed automation and facilitate cultural shifts that maximize productivity and profitability.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Business Applications – </strong>Embed AI-driven recommendations, analytics, and automation within ERP, CRM, and custom solutions. Optimize processes so teams can focus on strategic innovation over routine tasks.</li>
                                         <li class="section-3-tab-detail-1"><strong>eCommerce – </strong>Reinvent digital storefronts with AI personalization and real-time data analysis. From intelligent recommendations to dynamic pricing, we deliver seamless user experiences that boost conversions.</li>
                                     </ul>
                                     {{-- <p class="section-3-tab-detail-1">By partnering with us, you’ll benefit from data-driven insights and a tailored strategy that maximizes your ROI.</p> --}}
@@ -250,10 +241,10 @@
                                     <p class="section-3-tab-detail-1">Accelerate innovation and optimize resources with AI-driven cloud solutions. Our comprehensive services empower you to migrate, modernize, and operate seamlessly in the ever-evolving cloud landscape. </p>
                                     <h3 class="section-3-tab-heading-2 text-white mt-3">Our Cloud Services</h3>
                                     <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1"><strong>Migration – </strong>Migrate applications to the cloud with AI-assisted planning for minimal downtime and cost. Intelligent workload assessments pave the way for a secure, agile environment. </li>
-                                        <li class="section-3-tab-detail-1"><strong>Modernisation – </strong>Revamp legacy systems through containerization, self-healing infrastructures, and predictive maintenance, ensuring future-ready adaptability and cost efficiency.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Economy – </strong>Optimize cloud spend with dynamic, AI-based resource allocation. Intelligent scaling and performance tracking keep budgets tight and growth prospects unlimited.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Transformation – </strong>Move to cloud-native operations enriched by data-driven insights. From upskilling teams to refining governance, we ensure smooth, sustainable modernization.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Migration – </strong>Migrate applications to the cloud with AI-assisted planning for minimal downtime and cost. Intelligent workload assessments pave the way for a secure, agile environment. </li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Modernisation – </strong>Revamp legacy systems through containerization, self-healing infrastructures, and predictive maintenance, ensuring future-ready adaptability and cost efficiency.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Economy – </strong>Optimize cloud spend with dynamic, AI-based resource allocation. Intelligent scaling and performance tracking keep budgets tight and growth prospects unlimited.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Transformation – </strong>Move to cloud-native operations enriched by data-driven insights. From upskilling teams to refining governance, we ensure smooth, sustainable modernization.</li>
                                         <li class="section-3-tab-detail-1"><strong>Operations – </strong>Harness AI-enabled observability and automation for reliable, scalable CloudOps. Predictive issue detection and capacity planning let you focus on core innovation.</li>
                                     </ul>
                                     <a href="{{ route('services', ['name' => 'cloud']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
@@ -269,11 +260,11 @@
                                     <p class="section-3-tab-detail-1">Elevate your data strategy with next-generation AI solutions. Our end-to-end capabilities—spanning integration, modernization, API-driven services, AI agents, governance, and generative intelligence—empower you to harness today’s most advanced machine learning breakthroughs.</p>
                                     <h3 class="section-3-tab-heading-2 text-white mt-3">Our Data & AI Services </h3>
                                     <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1"><strong>Data Integration – </strong>Unify scattered sources into an AI-ready platform for accurate, high-speed insights. ML-enhanced ETL pipelines detect anomalies and fuel advanced analytics.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Data Modernisation – </strong>Migrate to next-gen architectures optimized for large-scale analytics and machine learning workloads, reducing latency and boosting real-time capabilities.</li>
-                                        <li class="section-3-tab-detail-1"><strong>API Economy – </strong>Monetize insights by turning data into AI-driven APIs. Secure interfaces, usage analytics, and robust developer ecosystems extend your reach and revenue.</li>
-                                        <li class="section-3-tab-detail-1"><strong>AI Agents – </strong>Leverage autonomous agents that iterate, learn, and act independently, executing complex tasks with minimal human intervention. Harness state-of-the-art large language models and self-improving pipelines for continuous operational gains.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Data Management – </strong>Implement AI-driven governance for real-time classification, security, and compliance. Automated cataloging and metadata management give you total control.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Data Integration – </strong>Unify scattered sources into an AI-ready platform for accurate, high-speed insights. ML-enhanced ETL pipelines detect anomalies and fuel advanced analytics.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Data Modernisation – </strong>Migrate to next-gen architectures optimized for large-scale analytics and machine learning workloads, reducing latency and boosting real-time capabilities.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>API Economy – </strong>Monetize insights by turning data into AI-driven APIs. Secure interfaces, usage analytics, and robust developer ecosystems extend your reach and revenue.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>AI Agents – </strong>Leverage autonomous agents that iterate, learn, and act independently, executing complex tasks with minimal human intervention. Harness state-of-the-art large language models and self-improving pipelines for continuous operational gains.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Data Management – </strong>Implement AI-driven governance for real-time classification, security, and compliance. Automated cataloging and metadata management give you total control.</li>
                                         <li class="section-3-tab-detail-1"><strong>Generative AI – </strong>Automate complex tasks and spark creativity with advanced AI models. From virtual assistants to dynamic product suggestions, our solutions push the boundaries of innovation.</li>
                                     </ul>
                                     <a href="{{ route('services', ['name' => 'data-ai']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
@@ -289,11 +280,11 @@
                                     <p class="section-3-tab-detail-1">Empower your operations with intelligent managed services that automate workflows, enhance security, and streamline development lifecycles. Our AI-driven approach ensures you stay resilient, agile, and ready to seize new opportunities.</p>
                                     <h3 class="section-3-tab-heading-2 text-white mt-3">Our Managed Services</h3>
                                     <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1"><strong>SOC (Security Operations Center) – </strong>Stay ahead of emerging threats with AI-augmented monitoring, rapid incident containment, and continuous learning that keeps you protected 24/7.</li>
-                                        <li class="section-3-tab-detail-1"><strong>CloudOps – </strong>Automate your cloud environment through predictive analytics and intelligent orchestration, freeing teams to focus on high-impact innovation.</li>
-                                        <li class="section-3-tab-detail-1"><strong>DevOps – </strong>Speed up software releases by reinforcing CI/CD pipelines with AI insights, eradicating bottlenecks, and delivering reliably at scale.</li>
-                                        <li class="section-3-tab-detail-1"><strong>MLOps – </strong>Ensure your machine learning models stay robust and up to date. Our streamlined MLOps unifies data prep, deployment, and ongoing optimization.</li>
-                                        <li class="section-3-tab-detail-1"><strong>DevSecOps – </strong>Embed AI-driven security at every stage of development. Predictive threat modeling and automated compliance processes drastically reduce exposure.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>SOC (Security Operations Center) – </strong>Stay ahead of emerging threats with AI-augmented monitoring, rapid incident containment, and continuous learning that keeps you protected 24/7.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>CloudOps – </strong>Automate your cloud environment through predictive analytics and intelligent orchestration, freeing teams to focus on high-impact innovation.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>DevOps – </strong>Speed up software releases by reinforcing CI/CD pipelines with AI insights, eradicating bottlenecks, and delivering reliably at scale.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>MLOps – </strong>Ensure your machine learning models stay robust and up to date. Our streamlined MLOps unifies data prep, deployment, and ongoing optimization.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>DevSecOps – </strong>Embed AI-driven security at every stage of development. Predictive threat modeling and automated compliance processes drastically reduce exposure.</li>
                                         <li class="section-3-tab-detail-1"><strong>AppOps – </strong>Maintain mission-critical apps with AI-based diagnostics, fine-tuned performance, and proactive incident prevention—all while delivering seamless user experiences.</li>
                                     </ul>
                                     <a href="{{ route('services', ['name' => 'managed-services']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
@@ -309,10 +300,10 @@
                                     <p class="section-3-tab-detail-1">Stay ahead of cyber threats with proactive, AI-driven security strategies tailored to your unique risk landscape. Our integrated approach ensures you remain resilient in the face of rapidly evolving threats, regulatory pressures, and dynamic business demands.</p>
                                     <h3 class="section-3-tab-heading-2 text-white mt-3">Our Security Services</h3>
                                     <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1"><strong>Security Architecture as a Service – </strong>Build adaptive, AI-infused frameworks that evolve alongside emerging threats, from zero-trust policies to automated detection.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Managed SOC Operations – </strong>Rely on 24/7 AI-enhanced monitoring and swift incident containment, reducing false positives and safeguarding critical assets.</li>
-                                        <li class="section-3-tab-detail-1"><strong>vCISO – </strong>Gain executive-level security guidance fortified by predictive insights—without the overhead of a full-time hire.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Compliance Adherence – </strong>Simplify audits and regulatory demands through AI-based checks and real-time monitoring, preserving trust and minimizing manual overhead.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Security Architecture as a Service – </strong>Build adaptive, AI-infused frameworks that evolve alongside emerging threats, from zero-trust policies to automated detection.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Managed SOC Operations – </strong>Rely on 24/7 AI-enhanced monitoring and swift incident containment, reducing false positives and safeguarding critical assets.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>vCISO – </strong>Gain executive-level security guidance fortified by predictive insights—without the overhead of a full-time hire.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Compliance Adherence – </strong>Simplify audits and regulatory demands through AI-based checks and real-time monitoring, preserving trust and minimizing manual overhead.</li>
                                         <li class="section-3-tab-detail-1"><strong>Incident Response – </strong>Counter threats with automated detection and rapid containment, turning breaches into opportunities to bolster future security posture.</li>
                                     </ul>
                                     <a href="{{ route('services', ['name' => 'security']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
@@ -328,11 +319,11 @@
                                     <p class="section-3-tab-detail-1">Power your organization with specialized, AI-savvy talent. Our curated pipeline ensures the right cultural and technical fit, propelling innovation, agility, and security in every corner of your enterprise.</p>
                                     <h3 class="section-3-tab-heading-2 text-white mt-3">Our Talent Acquisition & Sourcing Services</h3>
                                     <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1"><strong>Digital Transformation – </strong>Build teams versed in next-gen digital strategies and AI integration. We match your culture with professionals who excel at data-driven methods—fuelling smarter, smoother transformations.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Cloud – </strong>Secure certified experts in cloud architecture, migration, and AI-accelerated operations. Optimize performance and governance, making the cloud a true engine of innovation.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Data & AI – </strong>Onboard data scientists, ML engineers, and analytics pros who excel at predictive modelling and insight generation. Uncover new revenue streams and achieve data-driven breakthroughs at scale.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Security – </strong>Guard your digital assets with AI-led threat intelligence, incident response, and cutting-edge cybersecurity expertise—ensuring robust defences in an ever-evolving threat landscape.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Software Development – </strong>Strengthen your development capabilities with coders proficient in AI frameworks, automation, and seamless integration. Achieve faster, higher-quality releases and excellent user experiences.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Digital Transformation – </strong>Build teams versed in next-gen digital strategies and AI integration. We match your culture with professionals who excel at data-driven methods—fuelling smarter, smoother transformations.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Cloud – </strong>Secure certified experts in cloud architecture, migration, and AI-accelerated operations. Optimize performance and governance, making the cloud a true engine of innovation.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Data & AI – </strong>Onboard data scientists, ML engineers, and analytics pros who excel at predictive modelling and insight generation. Uncover new revenue streams and achieve data-driven breakthroughs at scale.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Security – </strong>Guard your digital assets with AI-led threat intelligence, incident response, and cutting-edge cybersecurity expertise—ensuring robust defences in an ever-evolving threat landscape.</li>
+                                        <li class="section-3-tab-detail-1 mb-2"><strong>Software Development – </strong>Strengthen your development capabilities with coders proficient in AI frameworks, automation, and seamless integration. Achieve faster, higher-quality releases and excellent user experiences.</li>
                                         <li class="section-3-tab-detail-1"><strong>Product Development – </strong>Inspire product innovation with experts adept at AI-driven features, MVP prep, and user-centric design. Turn bold ideas into market-ready offerings that stand apart.</li>
                                     </ul>
                                     <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">

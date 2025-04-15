@@ -33,7 +33,7 @@
 
                                 <div class="nav-logo">
                                     <div class="nav-item theme-text">
-                                        <span style="font-size: 68px; font-weight: bold" class="text-gradient">Synaptekx <span style="letter-spacing: 12px; font-size: 30px; -webkit-text-fill-color: #fff">-CMS</span></span>
+                                        <span style="font-size: 68px; font-weight: bold" class="text-gradient">Synaptekx</span>
                                     </div>
                                 </div>
                             </div>

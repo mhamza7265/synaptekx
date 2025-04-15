@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </section>
-            <section id="consulting" class="consulting-section bg-site-grey services-section-bg-grad">
+            <section id="consulting" class="consulting-section py-110 bg-site-grey services-section-bg-grad">
                 <div class="container overflow-hidden">
                     <div class="row">
                         <div class="col-12 col-lg-5 mx-auto" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </section>
-            <section id="business" class="business-section py-40px bg-site-grey services-section-bg-grad">
+            <section id="business" class="business-section py-110 bg-site-grey services-section-bg-grad">
                 <div class="container overflow-hidden">
                     <div class="row">
                         <div class="col-lg-5" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
