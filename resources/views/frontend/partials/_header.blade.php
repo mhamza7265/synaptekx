@@ -1,7 +1,10 @@
 <header class="site-header-main font-pt-sans">
     <div id="frontend-site-header" class="site-header d-flex justify-content-between align-items-center position-relative">
+        @php
+            $settings = \App\Models\Setting::first();
+        @endphp
         <a class="d-none d-lg-block" href="/">
-            <img src="{{asset("images/frontend/synaptekx_logo.svg")}}" alt="logo" class="header-logo d-none d-md-block" />
+            <img src="{{$settings->site_logo}}" alt="logo" class="header-logo d-none d-md-block" />
         </a>
         {{-- <div class="site-navbar d-none d-md-flex justify-content-between align-items-center">
             <a href="/" data-menu="" class="d-block nav-item">Home</a>

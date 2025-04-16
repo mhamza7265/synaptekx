@@ -18,12 +18,19 @@
 
                             <div id="withoutSpacingAccordionMeta" class="collapse show" aria-labelledby="headingMeta2" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form>
+                                    <form method="post" action="{{ route('admin.page-meta.update', ['slug' => $page->slug]) }}">
+                                        @csrf 
                                         <span class="d-block mt-3">Meta Title</span>
-                                        <input type="text" name="meta_title" class="form-control mt-2">
+                                        <input type="text" name="meta_title" value="{{$page->meta_title}}" class="form-control mt-2">
+                                        @error('meta_title')
+                                            <div class="text-danger">{{ $message }}</div>                                            
+                                        @enderror
 
                                         <span class="d-block mt-3">Meta Description</span>
-                                        <textarea name="meta_description" class="form-control mt-2" rows="3"></textarea>
+                                        <textarea name="meta_description" class="form-control mt-2" rows="3">{{$page->meta_description}}</textarea>
+                                        @error('meta_description')
+                                            <div class="text-danger">{{ $message }}</div>                                            
+                                        @enderror
 
                                         <button class="btn btn-md btn-success mt-3">Save</button>
                                     </form>
@@ -41,31 +48,33 @@
 
                             <div id="withoutSpacingAccordionOne" class="collapse" aria-labelledby="headingOne2" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form>
+                                    <form method="post" action="{{ route('admin.contact-page.hero.update')}}">
+                                        @csrf
                                         <div id="carousel-container">
-                                            <div class="hero-carousel-item card-body border p-3 mb-3">
-                                                {{-- <span class="d-block mb-2">Select Background Type:</span>
-                                                <div class="d-flex align-items-center mb-3">
-                                                    <span class="me-2">Image</span>
-                                                    <div class="form-check form-switch">
-                                                        <input class="form-check-input" type="checkbox" name="bg_type" value="video">
-                                                    </div>
-                                                    <span class="ms-3">Video</span>
-                                                </div> --}}
-                                        
+                                            <div class="hero-carousel-item card-body border p-3 mb-3">                                       
                                                 <span>Select Background:</span>
                                                 <div class="input-group d-flex align-items-center mt-2">
                                                     <span class="input-group-btn">
-                                                    <a class="lfm btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
+                                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
                                                         <i class="fa fa-picture-o"></i> Choose
                                                     </a>
                                                     </span>
-                                                    <input id="thumbnail_0" style="height: 36px" class="form-control" type="text" name="bg_file">
+                                                    <input id="thumbnail_0" style="height: 36px" value="{{ $page->sections['hero']['hero_image'] ?? '' }}" class="form-control" type="text" name="bg_file">
                                                 </div>
-                                                <div id="holder_0" style="margin-top:15px; max-height:100px;"></div>
+                                                <div id="holder_0" style="margin-top:15px; max-height:100px;">
+                                                    @if (!empty($page->sections['hero']['hero_image'] ?? null))
+                                                        <img src="{{ asset($page->sections['hero']['hero_image']) }}" style="height: 5rem;">
+                                                    @endif
+                                                </div>
+                                                @error('bg_file')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
                                         
                                                 <span class="d-block mt-3">Title</span>
-                                                <input type="text" class="form-control mb-2" name="hero_title">
+                                                <input type="text" value="{{ $page->sections['hero']['hero_title'] ?? '' }}" class="form-control mb-2" name="hero_title">
+                                                @error('hero_title')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
@@ -83,22 +92,26 @@
                             </div>
                             <div id="withoutSpacingAccordionTwo" class="collapse" aria-labelledby="headingTwo2" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form>
+                                    <form method="post" action="{{ route('admin.contact-page.details.update')}}">
+                                        @csrf
                                         <div class="card-body">
                                             <span>Address:</span>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control mt-2" name="address" value="{{old('address')}}" >
-                                            </div>
+                                            <input type="text" class="form-control mt-2" name="address" value="{{ $page->sections['details']['address'] ?? '' }}" >
+                                            @error('address')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
 
                                             <span class="d-block mt-3">Contact No:</span>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control mt-2" name="phone" value="{{old('phone')}}" >
-                                            </div>
+                                            <input type="text" class="form-control mt-2" name="phone" value="{{ $page->sections['details']['phone'] ?? '' }}" >
+                                            @error('phone')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
 
                                             <span class="d-block mt-3">Email:</span>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control mt-2" name="email" value="{{old('email')}}" >
-                                            </div>
+                                            <input type="text" class="form-control mt-2" name="email" value="{{ $page->sections['details']['email'] ?? '' }}" >
+                                            @error('email')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
@@ -116,8 +129,8 @@
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
         $(document).ready(function() {
-            $('#lfm').filemanager('file');
-            $('.lfm_file').filemanager('file');
+            $('#lfm').filemanager('image');
+            $('.lfm_file').filemanager('image');
 
             $('#add-feature').click(function () {
                 const html = `

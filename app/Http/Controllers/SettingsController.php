@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use Illuminate\Http\Request;
-use App\Models\Page;
 
-class HomePageContentController extends Controller
+class SettingsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +34,7 @@ class HomePageContentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Setting $setting)
     {
         //
     }
@@ -43,17 +42,15 @@ class HomePageContentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
+    public function edit(Setting $setting)
     {
-        $title = 'Edit Home Page Content';
-        $page = Page::where('slug', 'home')->first();
-        return view('admin.pages.home.edit', compact('title', 'page'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Setting $setting)
     {
         //
     }
@@ -61,7 +58,7 @@ class HomePageContentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Setting $setting)
     {
         //
     }

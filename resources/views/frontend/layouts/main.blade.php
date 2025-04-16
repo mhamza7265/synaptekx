@@ -31,6 +31,8 @@
             
             $(document).ready(function() {
                 $('img').attr('draggable', 'false');
+
+                // $('.hero-title').
             });
             
         </script>

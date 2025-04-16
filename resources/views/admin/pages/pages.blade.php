@@ -40,16 +40,6 @@
                                         <a class="btn btn-sm btn-warning" href="{{route('admin.home-page.edit')}}">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        {{-- <div class="dropdown">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                                            </a>
-    
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                <a class="btn btn-sm btn-success" href="{{route('home')}}" target="_blank">View</a>
-                                                <a class="btn btn-sm btn-warning" href="{{route('admin.home-page.edit')}}">Edit</a>
-                                            </div>
-                                        </div> --}}
                                     </td>
                                 </tr>
                                 <tr>
@@ -58,14 +48,6 @@
                                     <td class="text-center">
                                         <a class="btn btn-sm btn-success" href="{{route('admin.services.index')}}">Details</a>
                                         <a href="{{route('admin.services.create')}}" class="btn btn-sm btn-success">Create New</a>
-                                        {{-- <div class="dropdown">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                                <a class="dropdown-item" href="{{route('admin.services.index')}}">Details</a>
-                                            </div>
-                                        </div> --}}
                                     </td>
                                 </tr>
                                 <tr>
@@ -78,15 +60,6 @@
                                         <a class="btn btn-sm btn-warning" href="{{route('admin.about-page.edit')}}">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        {{-- <div class="dropdown">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                                <a class="dropdown-item" href="{{route('about')}}" target="_blank">View</a>
-                                                <a class="dropdown-item" href="{{route('admin.about-page.edit')}}">Edit</a>
-                                            </div>
-                                        </div> --}}
                                     </td>
                                 </tr>
                                 <tr>
@@ -99,15 +72,6 @@
                                         <a class="btn btn-sm btn-warning" href="{{route('admin.partners-page.edit')}}">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        {{-- <div class="dropdown">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                                <a class="dropdown-item" href="{{route('about')}}" target="_blank">View</a>
-                                                <a class="dropdown-item" href="{{route('admin.about-page.edit')}}">Edit</a>
-                                            </div>
-                                        </div> --}}
                                     </td>
                                 </tr>
                                 <tr>
@@ -120,15 +84,6 @@
                                         <a class="btn btn-sm btn-warning" href="{{route('admin.contact-page.edit')}}">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        {{-- <div class="dropdown">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                                <a class="dropdown-item" href="{{route('contact')}}" target="_blank">View</a>
-                                                <a class="dropdown-item" href="{{route('admin.contact-page.edit')}}">Edit</a>
-                                            </div>
-                                        </div> --}}
                                     </td>
                                 </tr>
                                 <tr>

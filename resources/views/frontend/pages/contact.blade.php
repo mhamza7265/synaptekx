@@ -1,12 +1,24 @@
 @extends('frontend.layouts.main')
 @section('content')
 <div class="services-container font-sf-pro bg-white">
-    <section class="hero" style="background-image: url('{{asset('images/frontend/contact_hero.png')}}');">
+    <section class="hero" style="background-image: url('{{$page->sections['hero']['hero_image'] ?? ''}}');">
         <div style="background-image: url('{{asset('images/frontend/bg_gradient_contact.svg')}}'); background-position: bottom; background-size: 100% 100%; height: 100%; width: 100%">
             <div class="container services-hero-container">
                 <div class="d-flex justify-content-center align-items-center h-100">
+                    @php
+                        $rawTitle = $page->sections['hero']['hero_title'] ?? '';
+                        $words = preg_split('/\s+/', trim($rawTitle));
+
+                        if (count($words) > 5) {
+                            $before = implode(' ', array_slice($words, 0, -2));
+                            $lastTwo = implode(' ', array_slice($words, -2));
+                            $formattedTitle = e($before) . ' <span class="text-gradient">' . e($lastTwo) . '</span>';
+                        } else {
+                            $formattedTitle = e($rawTitle);
+                        }
+                    @endphp
                     <div class="services-hero-text-content" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
-                        <h1 class="services-hero-title text-white text-center">Get in touch with us for expert <span class="text-gradient">consultation solution<span></h1>
+                        <h1 class="hero-title services-hero-title text-white text-center">{!! $formattedTitle !!}</h1>
                     </div>
                 </div>
             </div>
@@ -18,17 +30,17 @@
                 <div class="col-12 col-lg-3">
                     <img src="{{asset('images/frontend/location_pin.svg')}}" alt="" class="contact-icons" />
                     <h4 class="fs-32 fw-500 mt-3 border-b-1px">Our Address</h4>
-                    <span class="contact-content">5 St John’s Lane, London, England, EC1M 4BH</span>
+                    <span class="contact-content">{{$page->sections['details']['address'] ?? ''}}</span>
                 </div>
                 <div class="col-12 col-lg-3 mt-5 mt-lg-0">
                     <img src="{{asset('images/frontend/support_icon.svg')}}" alt="" class="contact-icons" />
                     <h4 class="fs-32 fw-500 mt-3 border-b-1px">Call our Team</h4>
-                    <span class="contact-content"><a href="tel:+442081560125">+44 (20) 8156 0125</a></span>
+                    <span class="contact-content"><a href="tel:+442081560125">{{$page->sections['details']['phone'] ?? ''}}</a></span>
                 </div>
                 <div class="col-12 col-lg-3 mt-5 mt-lg-0">
                     <img src="{{asset('images/frontend/envelope_icon.svg')}}" alt="" class="contact-icons" />
                     <h4 class="fs-32 fw-500 mt-3 border-b-1px">Our Email</h4>
-                    <span class="contact-content"><a href="mailto:info@synaptekx.com">info@synaptekx.com</a></span>
+                    <span class="contact-content"><a href="mailto:info@synaptekx.com">{{$page->sections['details']['email'] ?? ''}}</a></span>
                 </div>
                 {{-- <div class="col-12 col-lg-3 mt-5 mt-lg-0">
                     <img src="{{asset('images/frontend/user_check_icon.svg')}}" alt="" class="contact-icons" />

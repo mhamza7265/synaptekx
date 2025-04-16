@@ -7,18 +7,22 @@
                 <div class="d-flex justify-content-start align-content-center">
                     <img src="{{asset('images/frontend/contact_pill.svg')}}" draggable="false" />
                 </div>
-                <h1 class="home-sect-5-title text-black mt-4" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">Let’s redefine what’s possible together</h1>
-                <p class="contact-sec-desc mt-2" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">Get in touch, and discover how our AI-driven expertise can propel your next phase of digital growth.</p>
+                @php
+                    $settings = App\Models\Setting::first();
+                    $page = App\Models\Page::where('slug', 'contact-us')->first();
+                @endphp
+                <h1 class="home-sect-5-title text-black mt-4" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">{{$settings->contact_form_title}}</h1>
+                <p class="contact-sec-desc mt-2" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">{{$settings->contact_form_subtitle}}</p>
                 <div class="row justify-content-between mt-3 overflow-hidden">
                     <div class="col-md-5 col-12" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <h1 class="home-sect-5-title text-black">Locate Us</h1>
-                        <p class="contact-sec-desc mt-2">5 St John’s Lane, London, England, EC1M 4BH</p>
+                        <p class="contact-sec-desc mt-2">{{$page->sections['details']['address'] ?? ''}}</p>
                     </div>
                     <div class="col-md-5 col-12 mb-4 mb-lg-0" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
                         <h1 class="home-sect-5-title text-black">Contact</h1>
-                        <span class="contact-sec-desc mt-2"><a href="mailto:info@synaptekx.com" class="decor-none" style="color: #535353ab">info@synaptekx.com</a></span>
+                        <span class="contact-sec-desc mt-2"><a href="mailto:{{$page->sections['details']['email'] ?? ''}}" class="decor-none" style="color: #535353ab">{{$page->sections['details']['email'] ?? ''}}</a></span>
                         <br>
-                        <span class="contact-sec-desc mt-2"><a href="tel:+44 20 8156 0125" class="decor-none" style="color: #535353ab">+44 (20) 8156 0125</a></span>
+                        <span class="contact-sec-desc mt-2"><a href="tel:{{$page->sections['details']['phone'] ?? ''}}" class="decor-none" style="color: #535353ab">{{$page->sections['details']['phone'] ?? ''}}</a></span>
                     </div>
                 </div>
             </div>

@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\AboutPageContentController;
 use App\Http\Controllers\Admin\BlogsPageContentController;
 use App\Http\Controllers\Admin\ContactPageContentController;
 use App\Http\Controllers\Admin\LegalPagesContentController;
+use App\Http\Controllers\Admin\PagesMetaContentController;
 use App\Http\Controllers\Admin\PartnersPageContentController;
 use App\Http\Controllers\Admin\ServicesPagesController;
 use App\Http\Controllers\Admin\SettingsPageContentController;
@@ -41,12 +42,21 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
 
     //contact page cms routes
     Route::get('/contact-page/edit', [ContactPageContentController::class, 'edit'])->name('contact-page.edit');
+    Route::post('/contact-page/hero/update', [ContactPageContentController::class, 'updateHero'])->name('contact-page.hero.update');
+    Route::post('/contact-page/details/update', [ContactPageContentController::class, 'updateDetails'])->name('contact-page.details.update');
 
     //settings cms routes
     Route::get('/site-settings/edit', [SettingsPageContentController::class, 'edit'])->name('settings.edit');
+    Route::post('/site-settings/appearance/update', [SettingsPageContentController::class, 'updateAppearance'])->name('settings.appearance.update');
+    Route::post('/site-settings/socials/update', [SettingsPageContentController::class, 'updateSocials'])->name('settings.socials.update');
+    Route::post('/site-settings/contact-form/update', [SettingsPageContentController::class, 'updateContactForm'])->name('settings.contact-form.update');
+
 
     //legal cms routes
     Route::get('/privacy-policy/edit', [LegalPagesContentController::class, 'privacyPolicy'])->name('privacy-policy.edit');
     Route::get('/cookies-policy/edit', [LegalPagesContentController::class, 'cookiesPolicy'])->name('cookies-policy.edit');
     Route::get('/terms-of-use/edit', [LegalPagesContentController::class, 'terms'])->name('terms-of-use.edit');
+
+    //pages meta route
+    Route::post('/page-meta/{slug}', [PagesMetaContentController::class, 'update'])->name('page-meta.update');
 });

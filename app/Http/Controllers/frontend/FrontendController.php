@@ -9,19 +9,25 @@ use App\Mail\contactEmail;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use App\Models\Blog;
+use App\Models\Setting;
+use App\Models\Page;
 
 class FrontendController extends Controller
 {
     public function index()
     {
-        $title = "Home | Synaptekx";
-        return view('frontend.pages.home', compact('title'));
+        $settings = Setting::first();
+        $page = Page::where('slug', 'home')->first();
+        $title = "$page->meta_title | $settings->site_title";
+        $description = "$page->meta_description";
+        return view('frontend.pages.home', compact('title', 'description'));
     }
 
     public function services($name)
     {
+        $settings = Setting::first();
         // Set the default title
-        $title = "Services | Synaptekx";
+        $title = "Services | $settings->site_title";
 
         // Define a list of available services and their corresponding titles
         $services = [
@@ -73,32 +79,45 @@ class FrontendController extends Controller
 
     public function partners()
     {
-        $title = "Partners | Synaptekx";
-        return view('frontend.pages.partners', compact('title'));
+        $settings = Setting::first();
+        $page = Page::where('slug', 'partners')->first();
+        $title = "$page->meta_title | $settings->site_title";
+        $description = "$page->meta_description";
+        return view('frontend.pages.partners', compact('title', 'description'));
     }
 
     public function contact()
     {
-        $title = "Contact | Synaptekx";
-        return view('frontend.pages.contact', compact('title'));
+        $settings = Setting::first();
+        $page = Page::where('slug', 'contact-us')->first();
+        $title = "$page->meta_title | $settings->site_title";
+        $description = "$page->meta_description";
+        return view('frontend.pages.contact', compact('title', 'description', 'page'));
     }
 
     public function about()
     {
-        $title = "About Us | Synaptekx";
-        return view('frontend.pages.about', compact('title'));
+        $settings = Setting::first();
+        $page = Page::where('slug', 'about-us')->first();
+        $title = "$page->meta_title | $settings->site_title";
+        $description = "$page->meta_description";
+        return view('frontend.pages.about', compact('title', 'description'));
     }
 
     public function blogs()
     {
-        $title = "Blogs | Synaptekx";
+        $settings = Setting::first();
+        $page = Page::where('slug', 'blogs')->first();
+        $title = "$page->meta_title | $settings->site_title";
+        $description = "$page->meta_description";
         $blogs = Blog::where('status', 'published')->paginate(6);
-        return view('frontend.pages.blog', compact('title', 'blogs'));
+        return view('frontend.pages.blog', compact('title', 'description', 'blogs'));
     }
 
     public function blogsDetails($slug)
     {
-        $title = "Blogs Details | Synaptekx";
+        $settings = Setting::first();
+        $title = "Blogs Details | $settings->site_title";
         $blog = Blog::where('slug', $slug)->with('user')->first();
         $blogs = Blog::where('status', 'published')->paginate(3);
         return view('frontend.pages.blog-details', compact('title', 'blog', 'blogs'));
@@ -106,20 +125,29 @@ class FrontendController extends Controller
 
     public function privacyPolicy()
     {
-        $title = "Privacy Policy | Synaptekx";
-        return view('frontend.pages.privacy-pages.privacy-policy', compact('title'));
+        $settings = Setting::first();
+        $page = Page::where('slug', 'privacy-policy')->first();
+        $title = "$page->meta_title | $settings->site_title";
+        $description = "$page->meta_description";
+        return view('frontend.pages.privacy-pages.privacy-policy', compact('title', 'description'));
     }
 
     public function cookiePolicy()
     {
-        $title = "Cookie Policy | Synaptekx";
-        return view('frontend.pages.privacy-pages.cookie-policy', compact('title'));
+        $settings = Setting::first();
+        $page = Page::where('slug', 'cookies-policy')->first();
+        $title = "$page->meta_title | $settings->site_title";
+        $description = "$page->meta_description";
+        return view('frontend.pages.privacy-pages.cookie-policy', compact('title', 'description'));
     }
 
     public function termsOfWebsiteUse()
     {
-        $title = "Terms of Website Use | Synaptekx";
-        return view('frontend.pages.privacy-pages.terms-of-website-use', compact('title'));
+        $settings = Setting::first();
+        $page = Page::where('slug', 'terms-of-website-use')->first();
+        $title = "$page->meta_title | $settings->site_title";
+        $description = "$page->meta_description";
+        return view('frontend.pages.privacy-pages.terms-of-website-use', compact('title', 'description'));
     }
 
     public function storageLink()

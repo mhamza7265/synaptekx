@@ -5,17 +5,47 @@
         <div class="col-lg-12 layout-spacing">
             <div class="statbox widget box box-shadow">
                 <div class="widget-content widget-content-area icon-accordion-content">
-                    <h3 class="text-center pb-2">Edit Privacy Policy Page</h3>
+                    <h3 class="text-center pb-2">Edit Terms of Website Use Page</h3>
                     <div id="withoutSpacing" class="no-outer-spacing accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingMeta5">
+                                <section class="mb-0 mt-0">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionMeta5" aria-expanded="true" aria-controls="withoutSpacingAccordionMeta5">
+                                        Page Metas  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <div id="withoutSpacingAccordionMeta5" class="collapse show" aria-labelledby="headingMeta5" data-bs-parent="#withoutSpacing">
+                                <div class="container py-3">
+                                    <form method="post" action="{{ route('admin.page-meta.update', ['slug' => $page->slug]) }}">
+                                        @csrf 
+                                        <span class="d-block mt-3">Meta Title</span>
+                                        <input type="text" name="meta_title" value="{{$page->meta_title}}" class="form-control mt-2">
+                                        @error('meta_title')
+                                            <div class="text-danger">{{ $message }}</div>                                            
+                                        @enderror
+
+                                        <span class="d-block mt-3">Meta Description</span>
+                                        <textarea name="meta_description" class="form-control mt-2" rows="3">{{$page->meta_description}}</textarea>
+                                        @error('meta_description')
+                                            <div class="text-danger">{{ $message }}</div>                                            
+                                        @enderror
+
+                                        <button class="btn btn-md btn-success mt-3">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card">
                             <div class="card-header" id="headingMeta2">
                                 <section class="mb-0 mt-0">
-                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionMeta" aria-expanded="true" aria-controls="withoutSpacingAccordionMeta">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionMeta" aria-expanded="false" aria-controls="withoutSpacingAccordionMeta">
                                         Hero Section  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
-                            <div id="withoutSpacingAccordionMeta" class="collapse show" aria-labelledby="headingMeta2" data-bs-parent="#withoutSpacing">
+                            <div id="withoutSpacingAccordionMeta" class="collapse" aria-labelledby="headingMeta2" data-bs-parent="#withoutSpacing">
                                 <form>
                                     <div class="container py-3">
                                         <span>Background Image:</span>
