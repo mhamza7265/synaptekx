@@ -20,7 +20,7 @@ class FrontendController extends Controller
         $page = Page::where('slug', 'home')->first();
         $title = "$page->meta_title | $settings->site_title";
         $description = "$page->meta_description";
-        return view('frontend.pages.home', compact('title', 'description'));
+        return view('frontend.pages.home', compact('title', 'description', 'page'));
     }
 
     public function services($name)
@@ -83,7 +83,7 @@ class FrontendController extends Controller
         $page = Page::where('slug', 'partners')->first();
         $title = "$page->meta_title | $settings->site_title";
         $description = "$page->meta_description";
-        return view('frontend.pages.partners', compact('title', 'description'));
+        return view('frontend.pages.partners', compact('title', 'description', 'page'));
     }
 
     public function contact()
@@ -101,7 +101,7 @@ class FrontendController extends Controller
         $page = Page::where('slug', 'about-us')->first();
         $title = "$page->meta_title | $settings->site_title";
         $description = "$page->meta_description";
-        return view('frontend.pages.about', compact('title', 'description'));
+        return view('frontend.pages.about', compact('title', 'description', 'page'));
     }
 
     public function blogs()
@@ -111,7 +111,7 @@ class FrontendController extends Controller
         $title = "$page->meta_title | $settings->site_title";
         $description = "$page->meta_description";
         $blogs = Blog::where('status', 'published')->paginate(6);
-        return view('frontend.pages.blog', compact('title', 'description', 'blogs'));
+        return view('frontend.pages.blog', compact('title', 'description', 'blogs', 'page'));
     }
 
     public function blogsDetails($slug)
@@ -129,7 +129,7 @@ class FrontendController extends Controller
         $page = Page::where('slug', 'privacy-policy')->first();
         $title = "$page->meta_title | $settings->site_title";
         $description = "$page->meta_description";
-        return view('frontend.pages.privacy-pages.privacy-policy', compact('title', 'description'));
+        return view('frontend.pages.privacy-pages.privacy-policy', compact('title', 'description', 'page'));
     }
 
     public function cookiePolicy()
@@ -138,7 +138,7 @@ class FrontendController extends Controller
         $page = Page::where('slug', 'cookies-policy')->first();
         $title = "$page->meta_title | $settings->site_title";
         $description = "$page->meta_description";
-        return view('frontend.pages.privacy-pages.cookie-policy', compact('title', 'description'));
+        return view('frontend.pages.privacy-pages.cookie-policy', compact('title', 'description', 'page'));
     }
 
     public function termsOfWebsiteUse()
@@ -147,7 +147,7 @@ class FrontendController extends Controller
         $page = Page::where('slug', 'terms-of-website-use')->first();
         $title = "$page->meta_title | $settings->site_title";
         $description = "$page->meta_description";
-        return view('frontend.pages.privacy-pages.terms-of-website-use', compact('title', 'description'));
+        return view('frontend.pages.privacy-pages.terms-of-website-use', compact('title', 'description', 'page'));
     }
 
     public function storageLink()

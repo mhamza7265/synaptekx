@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card mt-2">
                             <div class="card-header" id="headingMeta2">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionMeta" aria-expanded="false" aria-controls="withoutSpacingAccordionMeta">
@@ -46,7 +46,8 @@
                                 </section>
                             </div>
                             <div id="withoutSpacingAccordionMeta" class="collapse" aria-labelledby="headingMeta2" data-bs-parent="#withoutSpacing">
-                                <form>
+                                <form method="post" action="{{ route('admin.legal.hero.update', ['slug' => 'terms-of-website-use'])}}">
+                                    @csrf
                                     <div class="container py-3">
                                         <span>Background Image:</span>
                                         <div class="input-group d-flex align-items-center mt-2">
@@ -55,12 +56,22 @@
                                                 <i class="fa fa-picture-o"></i> Choose
                                             </a>
                                             </span>
-                                            <input id="section_1_thumbnail" style="height: 36px" class="form-control" type="text" name="bg_image">
+                                            <input id="section_1_thumbnail" value="{{$page->sections['hero']['hero_image'] ?? ''}}" style="height: 36px" class="form-control" type="text" name="bg_image">
                                         </div>
-                                        <div id="section_1_holder" style="margin-top:15px; max-height:100px;"></div>
+                                        <div id="section_1_holder" style="margin-top:15px; max-height:100px;">
+                                            @if (!empty($page->sections['hero']['hero_image'] ?? null))
+                                                <img src="{{ asset($page->sections['hero']['hero_image'] ?? '') }}" style="height: 5rem;">
+                                            @endif
+                                        </div>
+                                        @error('bg_image')
+                                            <div class="text-danger">{{ $message }}</div>                                            
+                                        @enderror
 
                                         <span class="d-block mt-3">Title:</span>
-                                        <input type="text" name="title" class="form-control mt-2">
+                                        <input type="text" name="title" value="{{$page->sections['hero']['hero_title'] ?? ''}}" class="form-control mt-2">
+                                        @error('title')
+                                            <div class="text-danger">{{ $message }}</div>                                            
+                                        @enderror
 
                                         <button class="btn btn-md btn-success mt-3">Save</button>
                                     </div>
@@ -76,10 +87,16 @@
                                 </section>
                             </div>
                             <div id="withoutSpacingAccordionTwo" class="collapse" aria-labelledby="headingTwo2" data-bs-parent="#withoutSpacing">
-                                <form>
+                                <form method="post" action="{{ route('admin.legal.content.update', ['slug' => 'terms-of-website-use'])}}">
+                                    @csrf
                                     <div class="container py-3">
                                         <span class="d-block mt-4">Content:</span>
-                                        <textarea id="summernote-0" name="terms_of_use_content" class="form-control summernote mt-2"></textarea>
+                                        <textarea id="summernote-0" name="terms_of_use_content"  class="form-control summernote mt-2">{{$page->sections['content'] ?? ''}}</textarea>
+                                        @error('terms_of_use_content')
+                                            <div class="text-danger">{{ $message }}</div>                                            
+                                        @enderror
+
+                                        <button class="btn btn-md btn-success mt-3">Save</button>
                                     </div>
                                 </form>
                             </div>
@@ -95,8 +112,8 @@
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
         $(document).ready(function() {
-            $('#lfm').filemanager('file');
-            $('.lfm_file').filemanager('file');
+            $('#lfm').filemanager('image');
+            $('.lfm_file').filemanager('image');
 
             function initializeSummernote(selector) {
                 $(selector).summernote({
@@ -109,6 +126,7 @@
                         ['para', ['ul', 'ol', 'paragraph']],
                         ['view', ['codeview']]
                     ],
+                    fontSizes: ['8', '10', '12', '14', '16', '18', '20', '24', '28', '32', '36', '48', '64', '72'],
                     callbacks: {
                         onImageUpload: function (files) {
                             uploadFile(files[0], this);
@@ -117,25 +135,6 @@
                             deleteFile(target[0].src);
                         }
                     },
-                    // buttons: {
-                    //     lfm: function (context) {
-                    //         var ui = $.summernote.ui;
-                    //         var button = ui.button({
-                    //             contents: '<i class="note-icon-picture"></i>',
-                    //             tooltip: 'Insert image with LFM',
-                    //             click: function () {
-                    //                 window.open('/laravel-filemanager?type=Images', 'lfm', 'width=900,height=600');
-                    //                 window.SetUrl = function (items) {
-                    //                     items.forEach(function (item) {
-                    //                         const html = '<p><img src="' + item.url + '" style="display:block;"></p><p><br></p>';
-                    //                         context.invoke('pasteHTML', html);
-                    //                     });
-                    //                 };
-                    //             }
-                    //         });
-                    //         return button.render();
-                    //     }
-                    // }
                 });
             }
 

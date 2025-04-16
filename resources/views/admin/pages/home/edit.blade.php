@@ -48,35 +48,76 @@
 
                             <div id="withoutSpacingAccordionOne" class="collapse" aria-labelledby="headingOne2" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form>
+                                    <form method="post" action="{{ route('admin.home-page.hero.update') }}">
+                                        @csrf
                                         <div id="carousel-container">
-                                            <div class="hero-carousel-item card-body border p-3 mb-3 position-relative">
-                                                <span class="d-block mb-2">Select Background Type:</span>
-                                                <div class="d-flex align-items-center mb-3">
-                                                    <span class="me-2">Image</span>
-                                                    <div class="form-check form-switch">
-                                                        <input class="form-check-input" type="checkbox" name="bg_type[]" value="video">
+                                            @if (isset($page->sections['hero_sections']) && count($page->sections['hero_sections']) > 0)
+                                                @foreach ($page->sections['hero_sections'] as $section)
+                                                    <div class="hero-carousel-item card-body border p-3 mb-3 position-relative">
+                                                        <span class="d-block mb-2">Select Background Type:</span>
+                                                        <div class="d-flex align-items-center mb-3">
+                                                            <span class="me-2">Image</span>
+                                                            <div class="form-check form-switch">
+                                                                <input type="hidden" name="bg_type[]" value="image" class="bg-type-input">
+                                                                <input type="checkbox" {{$section['bg_type'] == 'video' ? 'checked' : ''}} class="form-check-input bg-type-toggle">
+                                                            </div>
+                                                            <span class="ms-3">Video</span>
+                                                        </div>
+                                                
+                                                        <span>Select Background:</span>
+                                                        <div class="input-group d-flex align-items-center mt-2">
+                                                            <span class="input-group-btn">
+                                                            <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_{{$loop->iteration}}" data-preview="holder_{{$loop->iteration}}">
+                                                                <i class="fa fa-picture-o"></i> Choose
+                                                            </a>
+                                                            </span>
+                                                            <input id="thumbnail_{{$loop->iteration}}" style="height: 36px" value="{{$section['bg_file']}}" class="form-control" type="text" name="bg_file[]">
+                                                        </div>
+                                                        <div id="holder_{{$loop->iteration}}" style="margin-top:15px; max-height:100px;">
+                                                            @if (!empty($section['bg_file']))
+                                                                <img src="{{ asset($section['bg_file']) }}" style="height: 5rem;">
+                                                            @endif
+                                                        </div>
+                                                
+                                                        <span class="d-block mt-3">Title</span>
+                                                        <input type="text" class="form-control mb-2" value="{{$section['hero_title']}}" name="hero_title[]">
+                                                
+                                                        <span class="d-block mt-2">Subtitle</span>
+                                                        <textarea class="form-control" name="hero_subtitle[]" rows="2">{{$section['hero_subtitle']}}</textarea>
                                                     </div>
-                                                    <span class="ms-3">Video</span>
+                                                @endforeach
+                                            @else
+                                                <div class="hero-carousel-item card-body border p-3 mb-3 position-relative">
+                                                    <span class="d-block mb-2">Select Background Type:</span>
+                                                    <div class="d-flex align-items-center mb-3">
+                                                        <span class="me-2">Image</span>
+                                                        <div class="form-check form-switch">
+                                                            <input type="hidden" name="bg_type[]" value="image" class="bg-type-input">
+                                                            <input type="checkbox" class="form-check-input bg-type-toggle">
+                                                        </div>
+                                                        <span class="ms-3">Video</span>
+                                                    </div>
+                                            
+                                                    <span>Select Background:</span>
+                                                    <div class="input-group d-flex align-items-center mt-2">
+                                                        <span class="input-group-btn">
+                                                        <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
+                                                            <i class="fa fa-picture-o"></i> Choose
+                                                        </a>
+                                                        </span>
+                                                        <input id="thumbnail_0" style="height: 36px" class="form-control" type="text" name="bg_file[]">
+                                                    </div>
+                                                    <div id="holder_0" style="margin-top:15px; max-height:100px;"></div>
+                                            
+                                                    <span class="d-block mt-3">Title</span>
+                                                    <input type="text" class="form-control mb-2" name="hero_title[]">
+                                            
+                                                    <span class="d-block mt-2">Subtitle</span>
+                                                    <textarea class="form-control" name="hero_subtitle[]" rows="2"></textarea>
                                                 </div>
-                                        
-                                                <span>Select Background:</span>
-                                                <div class="input-group d-flex align-items-center mt-2">
-                                                    <span class="input-group-btn">
-                                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
-                                                        <i class="fa fa-picture-o"></i> Choose
-                                                    </a>
-                                                    </span>
-                                                    <input id="thumbnail_0" style="height: 36px" class="form-control" type="text" name="filepath[]">
-                                                </div>
-                                                <div id="holder_0" style="margin-top:15px; max-height:100px;"></div>
-                                        
-                                                <span class="d-block mt-3">Title</span>
-                                                <input type="text" class="form-control mb-2" name="hero_title[]">
-                                        
-                                                <span class="d-block mt-2">Subtitle</span>
-                                                <textarea class="form-control" name="hero_subtitle[]" rows="2"></textarea>
-                                            </div>
+                                            @endif
+                                            
+                                            
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
@@ -95,19 +136,20 @@
                             </div>
                             <div id="withoutSpacingAccordionTwo" class="collapse" aria-labelledby="headingTwo2" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form>
+                                    <form action="{{route('admin.home-page.services.update')}}" method="post">
+                                        @csrf
                                         <div class="card-body">
                                             <span>Section Title:</span>
-                                            <input type="text" class="form-control mb-2" name="services_list_section_title">
+                                            <input type="text" class="form-control mb-2" name="section_title">
                                             <div id="digitalServicesContainer">
                                                 <div class="border p-3 mb-3 position-relative">
                                                     <span>Title:</span>
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control mt-2" name="services_list_title[]" >
+                                                        <input type="text" class="form-control mt-2" name="list_title[]" >
                                                     </div>
                                                     
                                                     <span class="d-block mt-4">Content:</span>
-                                                    <textarea id="summernote-0" name="services_list_content[]" class="form-control summernote mt-2">{{ old('digital_service_content.0') }}</textarea>
+                                                    <textarea id="summernote-0" name="list_content[]" class="form-control summernote mt-2">{{ old('digital_service_content.0') }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -283,6 +325,8 @@
             $('#add-carousel').click(function () {
                 // let newItem = $('.hero-carousel-item').first().clone();
 
+                let randomValue = Math.floor(Math.random() * 1000000);
+
                 let newItemHtml = `
                                     <div class="hero-carousel-item card-body border p-3 mb-3 position-relative">
                                         <button class="btn carousel-dlt-btn position-absolute" style="top:5px; right:5px;">
@@ -292,7 +336,8 @@
                                         <div class="d-flex align-items-center mb-3">
                                             <span class="me-2">Image</span>
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" name="bg_type[]" value="video">
+                                                <input type="hidden" name="bg_type[]" value="image" class="bg-type-input">
+                                                <input type="checkbox" class="form-check-input bg-type-toggle">
                                             </div>
                                             <span class="ms-3">Video</span>
                                         </div>
@@ -300,19 +345,19 @@
                                         <span>Select Background:</span>
                                         <div class="input-group d-flex align-items-center mt-2">
                                             <span class="input-group-btn">
-                                                <a class="lfm btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
+                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_${randomValue}" data-preview="holder_${randomValue}">
                                                     <i class="fa fa-picture-o"></i> Choose
                                                 </a>
                                             </span>
-                                            <input id="thumbnail_0" style="height: 36px" class="form-control" type="text" name="filepath[]">
+                                            <input id="thumbnail_${randomValue}" style="height: 36px" class="form-control" type="text" name="bg_file[]" required>
                                         </div>
-                                        <div id="holder_0" style="margin-top:15px; max-height:100px;"></div>
+                                        <div id="holder_${randomValue}" style="margin-top:15px; max-height:100px;"></div>
 
                                         <span class="d-block mt-3">Title</span>
-                                        <input type="text" class="form-control mb-2" name="hero_title[]">
+                                        <input type="text" class="form-control mb-2" name="hero_title[]" required>
 
                                         <span class="d-block mt-2">Subtitle</span>
-                                        <textarea class="form-control" name="hero_subtitle[]" rows="2"></textarea>
+                                        <textarea class="form-control" name="hero_subtitle[]" rows="2" required></textarea>
                                     </div>
                                 `;
 
@@ -322,17 +367,6 @@
                 // Reset values
                 $newItem.find('input[type="text"], textarea').val('');
 
-                // Update file input + preview ID
-                $newItem.find('.lfm').each(function () {
-                    let inputId = 'thumbnail_' + carouselIndex;
-                    let previewId = 'holder_' + carouselIndex;
-
-                    $(this).attr('data-input', inputId).attr('data-preview', previewId);
-                });
-
-                $newItem.find('input[name="filepath[]"]').attr('id', 'thumbnail_' + carouselIndex);
-                $newItem.find('[id^="holder_"]').attr('id', 'holder_' + carouselIndex);
-
                 carouselIndex++;
 
                 $('#carousel-container').append($newItem);
@@ -341,7 +375,7 @@
                 toggleAddButton();
 
                 // Re-init file manager
-                $('.lfm').filemanager('image');
+                $('.lfm_file').filemanager('file');
             });
 
             function toggleAddButton() {
@@ -370,9 +404,19 @@
                     height: 200,
                     toolbar: [
                         ['insert', ['lfm']],
+                        ['font', ['bold']],
+                        ['fontsize', ['fontsize']],
+                        ['style', ['style']],
+                        ['color', ['color']],
+                        ['insert', ['link']],
                         ['para', ['ul', 'ol', 'paragraph']],
                         ['view', ['codeview']]
                     ],
+                    fontSizes: ['8', '10', '12', '14', '16', '18', '20', '24', '28', '32', '36', '48', '64', '72'],
+                    colors: [
+                        ['#FFFFFF', '#F0F0F0'], // Plain white and soft off-white
+                    ],
+                    colorNames: ['White', 'Soft White'],
                     callbacks: {
                         onImageUpload: function (files) {
                             uploadFile(files[0], this);
@@ -400,6 +444,10 @@
                             return button.render();
                         }
                     }
+                })
+                $('.note-color .note-color-btn').each(function(index) {
+                    const tooltips = ['White', 'Soft White']; // order must match your colors
+                    $(this).attr('title', tooltips[index]);
                 });
             }
 
@@ -444,11 +492,11 @@
                     </button>
                     <span class="d-block mt-3">Title:</span>
                     <div class="form-group">
-                        <input type="text" class="form-control mt-2" name="digital_service_title[]">
+                        <input type="text" class="form-control mt-2" name="list_content[]">
                     </div>
 
                     <span class="d-block mt-4">Content:</span>
-                    <textarea id="${id}" name="digital_service_content[]" class="form-control summernote mt-2"></textarea>
+                    <textarea id="${id}" name="list_content[]" class="form-control summernote mt-2"></textarea>
                 </div>
                 `;
                 $("#digitalServicesContainer").append(html);
@@ -460,6 +508,27 @@
                     $(this).closest('.services-container').remove();
                 }
             })
+
+            $(document).on('change', '.bg-type-toggle', function () {
+                const $wrapper = $(this).closest('.form-check');
+                const $hiddenInput = $wrapper.find('.bg-type-input');
+
+                $hiddenInput.val($(this).is(':checked') ? 'video' : 'image');
+            });
+
+            $('.bg-type-toggle').trigger('change');
+
+            @if ($errors->any())
+                $(document).ready(function(){
+                    // Ensure error messages are passed in correctly to toastr
+                    @foreach ($errors->all() as $error)
+                    toastr.error("{{ $error }}", "Error", {
+                        closeButton: true,
+                        progressBar: true
+                    });
+                    @endforeach
+                })
+            @endif
         });
     </script>
 @endsection

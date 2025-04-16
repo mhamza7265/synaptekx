@@ -1,11 +1,23 @@
 @extends('frontend.layouts.main')
 @section('content')
 <div class="services-container font-sf-pro bg-white">
-    <section class="hero" style="background-image: url('{{asset('images/frontend/blog_hero.png')}}');">
+    <section class="hero" style="background-image: url('{{$page->sections['hero']['hero_image'] ?? ''}}');">
         <div class="container services-hero-container">
             <div class="d-flex justify-content-center align-items-center h-100">
+                @php
+                    $rawTitle = $page->sections['hero']['hero_title'] ?? '';
+                    $words = preg_split('/\s+/', trim($rawTitle));
+
+                    if (count($words) > 5) {
+                        $before = implode(' ', array_slice($words, 0, -2));
+                        $lastTwo = implode(' ', array_slice($words, -2));
+                        $formattedTitle = e($before) . ' <span class="text-gradient">' . e($lastTwo) . '</span>';
+                    } else {
+                        $formattedTitle = e($rawTitle);
+                    }
+                @endphp
                 <div class="services-hero-text-content" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
-                    <h1 class="services-hero-title text-white text-center">Tech experts' latest: Innovations in <span class="text-gradient">digital enterprise</span></h1>
+                    <h1 class="services-hero-title text-white text-center">{!! $formattedTitle !!}</span></h1>
                 </div>
             </div>
         </div>
@@ -15,7 +27,21 @@
             <div class="d-flex justify-content-start align-content-center">
                 <img src="{{asset('images/frontend/blogs_pill.svg')}}" draggable="false" />
             </div>
-            <h1 class="mt-4 fs-64"><span class="text-gradient">SynaptekX</span> Latest Tech Insight For You</h1>
+            @php
+                $rawTitle = $page->sections['section_title'] ?? '';
+                
+                if (stripos($rawTitle, 'synaptekx') !== false) {
+                    $highlighted = preg_replace(
+                        '/(synaptekx)/i',
+                        '<span class="text-gradient">$1</span>',
+                        e($rawTitle)
+                    );
+                    $formattedTitle = $highlighted;
+                } else {
+                    $formattedTitle = e($rawTitle);
+                }
+            @endphp
+            <h1 class="mt-4 fs-64">{!! $formattedTitle !!}</h1>
 
             <div class="blogs-container row justify-content-start align-items-baseline mt-5">
                 @foreach($blogs as $blog)

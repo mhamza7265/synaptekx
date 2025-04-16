@@ -61,6 +61,9 @@ return [
                 'application/pdf',
                 'text/plain',
                 'image/svg+xml',
+                'video/mp4',
+                'video/avi',
+                'video/quicktime',
             ],
         ],
         'image' => [

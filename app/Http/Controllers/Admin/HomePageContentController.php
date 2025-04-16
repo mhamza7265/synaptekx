@@ -8,41 +8,6 @@ use App\Models\Page;
 
 class HomePageContentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit()
     {
         $title = 'Edit Home Page Content';
@@ -50,19 +15,59 @@ class HomePageContentController extends Controller
         return view('admin.pages.home.edit', compact('title', 'page'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function updateHero(Request $request)
     {
-        //
+        // dd($request->all());
+        // Clean up empty values in arrays before validation
+        $request->merge([
+            'bg_type' => array_filter($request->input('bg_type', [])),
+            'bg_file' => array_filter($request->input('bg_file', [])),
+            'hero_title' => array_filter($request->input('hero_title', [])),
+            'hero_subtitle' => array_filter($request->input('hero_subtitle', [])),
+        ]);
+
+        $request->validate([
+            'bg_type' => 'required|array|min:1',
+            'bg_file' => 'required|array|min:1',
+            'hero_title' => 'required|array|min:1',
+            'hero_subtitle' => 'required|array|min:1',
+        ]);
+
+        $page = Page::where('slug', 'home')->first();
+
+        $heroSections = [];
+
+        foreach ($request->hero_title as $key => $value) {
+            $bgType = $request->bg_type[$key];
+            $bgFile = $request->bg_file[$key];
+            $heroSubtitle = $request->hero_subtitle[$key];
+            $heroSections[$key] = [
+                'bg_type' => $bgType,
+                'bg_file' => $bgFile,
+                'hero_title' => $value,
+                'hero_subtitle' => $heroSubtitle,
+            ];
+        }
+
+        $hero = [
+            'hero_sections' => $heroSections,
+        ];
+
+        // Decode existing sections or start with an empty array
+        $sections = $page->sections ?? [];
+
+        // Overwrite or add the 'hero' section
+        $sections['hero_sections'] = $hero['hero_sections'];
+
+        // Update and save
+        $page->sections = $sections;
+        $page->save();
+
+        return redirect()->back()->with('success', 'Hero section(s) updated.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function updateServices(Request $request)
     {
-        //
+        dd($request->all());
     }
 }

@@ -13,12 +13,66 @@
         <section class="home-hero-section position-relative">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators home-hero-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    @foreach ($page->sections['hero_sections'] as $section)
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$loop->index}}" @if($loop->first) class="active" aria-current="true" @endif aria-label="Slide {{$loop->iteration}}"></button>
+                    @endforeach
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    @foreach ($page->sections['hero_sections'] as $section)
+                        <div class="carousel-item {{$loop->first ? 'active' : ''}}" 
+                            @if ($section['bg_type'] == 'image') 
+                                style="background-image: url('{{ $section['bg_file'] ?? '' }}'); background-position: center center; background-size: cover" 
+                            @endif>
+                            >
+                            <div class="hero-section hero-video">
+                                @if ($section['bg_type'] == 'video')
+                                    <video autoplay loop muted playsinline>
+                                        <source src="{{$section['bg_file'] ?? ''}}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                @endif                               
+                                <div class="container overflow-hidden">
+                                    @php
+                                        $rawTitle = $section['hero_title'] ?? '';
+                                        $words = preg_split('/\s+/', trim($rawTitle));
+
+                                        if (count($words) > 5) {
+                                            $before = implode(' ', array_slice($words, 0, -2));
+                                            $lastTwo = implode(' ', array_slice($words, -2));
+                                            $formattedTitle = e($before) . ' <span class="text-gradient">' . e($lastTwo) . '</span>';
+                                        } else {
+                                            $formattedTitle = e($rawTitle);
+                                        }
+                                    @endphp
+                                    <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                        <h1 class="hero-title-text">{!!$formattedTitle!!}</h1>
+                                    </div>
+                                    @php
+                                        $rawTitle = $section['hero_subtitle'] ?? '';
+                                        
+                                        if (stripos($rawTitle, 'synaptekx') !== false) {
+                                            $highlighted = preg_replace(
+                                                '/(synaptekx)/i',
+                                                '<span class="text-gradient">$1</span>',
+                                                e($rawTitle)
+                                            );
+                                            $formattedSubtitle = $highlighted;
+                                        } else {
+                                            $formattedSubtitle = e($rawTitle);
+                                        }
+                                    @endphp
+                                    <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                                        <p class="hero-detail-text">{!!$formattedSubtitle!!}</p>
+                                    </div>
+                                    <a href="{{ route('services', ['name' => 'digital']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                        <img src="{{asset('images/frontend/check.svg')}}" />
+                                        <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    {{-- <div class="carousel-item active">
                         <div class="hero-section hero-video">
                             <video autoplay loop muted playsinline>
                                 <source src="{{asset('images/frontend/carousel_1.mp4')}}" type="video/mp4">
@@ -31,10 +85,6 @@
                                 <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <p class="hero-detail-text">Welcome to <span class="text-gradient">SynaptekX</span> where cutting-edge technology meets innovative thinking. As a startup committed to delivering exceptional value, we specialize in transforming businesses through our comprehensive suite of digital services. Whether you’re looking to optimize your current operations or build a robust digital infrastructure, we are here to make your vision a reality. Our expertise lies in providing strategic consulting, end-to-end digital transformation, and tailored IT solutions that help businesses thrive in a rapidly evolving digital landscape.</p>
                                 </div>
-                                {{-- <a href="{{ route('services', ['name' => 'digital']) }}" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
-                                </a> --}}
                                 <a href="{{ route('services', ['name' => 'digital']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/check.svg')}}" />
                                     <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
@@ -51,10 +101,6 @@
                                 <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <p class="hero-detail-text">At <span class="text-gradient">SynaptekX</span>, we are redefining how businesses navigate the digital era. As a trailblazing startup, we specialize in providing future-ready IT solutions that enable organizations to scale and adapt in a fast-paced world. Whether you need to optimize existing processes or create a completely new digital ecosystem, we’re here to bring innovative ideas to life. Our expert team offers everything from strategic advice to full-service digital transformations, ensuring that your business not only survives but thrives in the digital age.</p>
                                 </div>
-                                {{-- <a href="{{ route('services', ['name' => 'cloud']) }}" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
-                                </a> --}}
                                 <a href="{{ route('services', ['name' => 'cloud']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/check.svg')}}" />
                                     <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
@@ -71,17 +117,13 @@
                                 <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                     <p class="hero-detail-text"><span class="text-gradient">SynaptekX</span> is at the forefront of technological innovation, dedicated to helping businesses achieve long-term success. As a visionary startup, we offer tailored IT solutions that streamline operations and open doors to new growth opportunities. Our services cover every aspect of digital transformation, from strategic consulting to implementing cutting-edge technologies. We empower businesses to stay agile, competitive, and future-proof in a rapidly evolving digital world.</p>
                                 </div>
-                                {{-- <a href="{{ route('services', ['name' => 'security']) }}" class="hero-more-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
-                                </a> --}}
                                 <a href="{{ route('services', ['name' => 'security']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/check.svg')}}" />
                                     <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="hero-brands">

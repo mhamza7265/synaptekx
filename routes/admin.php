@@ -22,14 +22,20 @@ use App\Http\Controllers\Admin\SettingsPageContentController;
 Route::group(['middleware' => ['role:admin,superadmin']], function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
     Route::get('/pages', [AdminController::class, 'pages'])->name('pages');
+
     // blog routes
     Route::resource('/blogs', BlogController::class)->names('blogs');
+
     //blog cms routes
     Route::get('/blogs-page/edit', [BlogsPageContentController::class, 'edit'])->name('blogs-page.edit');
+    Route::post('/blogs-page/hero/update', [BlogsPageContentController::class, 'updateBlogsHero'])->name('blogs-page.hero.update');
+    Route::post('/blogs-page/detail/update', [BlogsPageContentController::class, 'updateBlogsDetails'])->name('blogs-page.details.update');
     Route::get('/blogs-page/detail/edit', [BlogsPageContentController::class, 'detailEdit'])->name('blogs-page.detail.edit');
 
     //home page cms routes
     Route::get('/home-page/edit', [HomePageContentController::class, 'edit'])->name('home-page.edit');
+    Route::post('/home-page/hero/update', [HomePageContentController::class, 'updateHero'])->name('home-page.hero.update');
+    Route::post('/home-page/services/update', [HomePageContentController::class, 'updateServices'])->name('home-page.services.update');
 
     //services cms routes
     Route::resource('/services', ServicesPagesController::class)->names('services');
@@ -56,6 +62,8 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
     Route::get('/privacy-policy/edit', [LegalPagesContentController::class, 'privacyPolicy'])->name('privacy-policy.edit');
     Route::get('/cookies-policy/edit', [LegalPagesContentController::class, 'cookiesPolicy'])->name('cookies-policy.edit');
     Route::get('/terms-of-use/edit', [LegalPagesContentController::class, 'terms'])->name('terms-of-use.edit');
+    Route::post('/legal/hero/update/{slug}', [LegalPagesContentController::class, 'updateHero'])->name('legal.hero.update');
+    Route::post('/legal/content/update/{slug}', [LegalPagesContentController::class, 'updateContent'])->name('legal.content.update');
 
     //pages meta route
     Route::post('/page-meta/{slug}', [PagesMetaContentController::class, 'update'])->name('page-meta.update');

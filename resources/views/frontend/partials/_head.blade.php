@@ -1,5 +1,9 @@
 <head>
     <title>{{$title}}</title>
+    @php
+        $settings = \App\Models\Setting::first();
+    @endphp
+    <link rel="icon" type="image/x-icon" href="{{$settings->favicon}}">
     <meta charset="UTF-8">
     <meta name="description" content="{{$description ?? ''}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">

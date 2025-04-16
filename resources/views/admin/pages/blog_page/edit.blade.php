@@ -48,23 +48,34 @@
 
                             <div id="withoutSpacingAccordionOne" class="collapse" aria-labelledby="headingOne2" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form>
+                                    <form method="post" action="{{ route('admin.blogs-page.hero.update')}}">
+                                        @csrf
                                         <div id="carousel-container">
                                             <div class="hero-carousel-item card-body border p-3 mb-3">
                                         
                                                 <span>Select Background:</span>
                                                 <div class="input-group d-flex align-items-center mt-2">
                                                     <span class="input-group-btn">
-                                                    <a class="lfm btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
+                                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
                                                         <i class="fa fa-picture-o"></i> Choose
                                                     </a>
                                                     </span>
-                                                    <input id="thumbnail_0" style="height: 36px" class="form-control" type="text" name="bg_image">
+                                                    <input id="thumbnail_0" style="height: 36px" class="form-control" value="{{$page->sections['hero']['hero_image'] ?? ''}}" type="text" name="bg_image">
                                                 </div>
-                                                <div id="holder_0" style="margin-top:15px; max-height:100px;"></div>
+                                                <div id="holder_0" style="margin-top:15px; max-height:100px;">
+                                                    @if (!empty($page->sections['hero']['hero_image'] ?? null))
+                                                        <img src="{{ asset($page->sections['hero']['hero_image']) }}" style="height: 5rem;">
+                                                    @endif
+                                                </div>
+                                                @error('bg_image')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
                                         
                                                 <span class="d-block mt-3">Title</span>
-                                                <input type="text" class="form-control mb-2" name="hero_title">
+                                                <input type="text" class="form-control mb-2" value="{{$page->sections['hero']['hero_title'] ?? ''}}" name="hero_title">
+                                                @error('hero_title')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
@@ -76,17 +87,22 @@
                             <div class="card-header" id="headingTwo2">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
-                                        SynaptekX Latest Tech Insight For You  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                        {{$page->sections['section_title'] ?? ''}}  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
                             <div id="withoutSpacingAccordionTwo" class="collapse" aria-labelledby="headingTwo2" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form>
+                                    <form method="post" action="{{ route('admin.blogs-page.details.update')}}">
+                                        @csrf
                                         <div class="card-body">
                                             <span>Section Title:</span>
-                                            <input type="text" class="form-control mt-2" name="section_title" >
+                                            <input type="text" class="form-control mt-2"  value="{{$page->sections['section_title'] ?? ''}}" name="section_title" >
                                         </div>
+                                        @error('section_title')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
                                 </div>
@@ -98,4 +114,10 @@
         </div>
     </div>
 </div>
+@endsection
+@section('scripts')
+<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script>
+    $('.lfm_file').filemanager('image');
+</script>
 @endsection

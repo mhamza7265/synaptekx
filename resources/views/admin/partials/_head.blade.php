@@ -6,8 +6,15 @@
     <title>{{$title}}</title>
     @else
     <title>@yield('title')</title>
-    @endif       
-    {{-- <link rel="icon" type="image/x-icon" href="{{Vite::asset('resources/images/favicon.ico')}}"/> --}}
+    @endif     
+    @php
+        $settings = \App\Models\Setting::first();
+    @endphp
+    <link rel="icon" type="image/x-icon" href="{{$settings->favicon}}">  
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
+
     <link rel="stylesheet" href="{{asset('css/admin-custom-styles.css')}}">
     <script src="https://kit.fontawesome.com/df3b89b53b.js" crossorigin="anonymous"></script>
     @vite(['resources/scss/layouts/modern-light-menu/light/loader.scss'])
