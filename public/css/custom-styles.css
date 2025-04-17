@@ -191,8 +191,9 @@
     background-position: top right;
     background-size: cover;
     background-blend-mode: exclusion;
-    height: 400px;
+    /* height: 400px; */
     padding: 60px 90px;
+    padding-bottom: 10px;
 }
 
 .gradient-div {

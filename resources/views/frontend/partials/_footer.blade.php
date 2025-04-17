@@ -65,7 +65,10 @@
     </div>
     <hr class="footer-divider mt-5">
     <div class="block d-md-flex justify-content-between align-items-center mt-4">
-        <p class="footer-bottom-text text-center text-md-left">5 St John’s Lane, London, England, EC1M 4BH</p>
-        <p class="footer-bottom-text text-center text-md-left">Synaptekx © <span id="current-year"></span></p>
+        @php
+            $page = \App\Models\Page::where('slug', 'contact-us')->first();
+        @endphp
+        <p class="footer-bottom-text text-center text-md-left">{{$page->sections['details']['address']}}</p>
+        <p class="footer-bottom-text text-center text-md-left">{{$settings->site_title}} © <span id="current-year"></span></p>
     </div>
 </footer>
