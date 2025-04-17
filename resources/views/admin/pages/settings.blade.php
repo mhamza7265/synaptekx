@@ -166,8 +166,8 @@
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
         $(document).ready(function() {
-            $('#lfm').filemanager('file');
-            $('.lfm_file').filemanager('file');
+            $('#lfm').filemanager('image');
+            $('.lfm_file').filemanager('image');
 
             $('#add-feature').click(function () {
                 const html = `
