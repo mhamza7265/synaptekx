@@ -1902,4 +1902,10 @@ textarea {
     .sticky-section-right-texts-parent::before {
         content: none;
     }
+    .sticky-section-left-texts-parent {
+        border-right: none;
+    }
+    .sticky-section-left-texts-parent::before {
+        content: none;
+    }
 }
