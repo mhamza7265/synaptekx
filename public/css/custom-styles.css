@@ -901,6 +901,7 @@ textarea {
 .empowering-section {
     padding-top: 80px;
     padding-bottom: 80px;
+    overflow: hidden;
 }
 
 .text-content.fixed-on-scroll {
