@@ -21,8 +21,8 @@
                     @foreach ($page->sections['hero_sections'] as $section)
                         <div class="carousel-item {{$loop->first ? 'active' : ''}}" 
                             @if ($section['bg_type'] == 'image') 
-                                style="background-image: url('{{ $section['bg_file'] ?? '' }}'); background-position: center center; background-size: cover" 
-                            @endif>
+                                style="background-image: url('{{ $section['bg_file'] ?? '' }}'); background-size: cover" 
+                            @endif
                             >
                             <div class="hero-section hero-video">
                                 @if ($section['bg_type'] == 'video')

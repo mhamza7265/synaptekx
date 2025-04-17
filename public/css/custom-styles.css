@@ -1559,6 +1559,10 @@ textarea {
     width: 49%;
 }
 
+/* .home-hero-section .carousel-item {
+    height: 800px !important;
+} */
+
 /* responsive styles */
 @media (max-width: 992px) {
     .hero-section {
