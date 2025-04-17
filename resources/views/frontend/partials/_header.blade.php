@@ -33,7 +33,7 @@
         <nav class="d-lg-none w-100" id="mobile-navbar">
             <div class="container w-100">
                 <div class='d-flex justify-content-between align-items-center w-100'>
-                    <a href="/"><img src="{{asset("images/frontend/synaptekx_logo.svg")}}" alt="logo" class="header-logo" /></a>
+                    <a href="/"><img src="{{$settings->site_logo}}" alt="logo" class="header-logo" /></a>
                     
                     <!-- Mobile Menu Toggle Button -->
                     <button id="openNav" class="nav-btn" type="button">
@@ -44,7 +44,7 @@
                 <div id="navMenu" class="menu-panel">
                     <div class="pb-3" style="padding-left: 15px; padding-right: 15px">
                         <button id="closeNav" class="close-btn">✖</button>
-                        <img src="{{asset("images/frontend/synaptekx_logo.svg")}}" alt="logo" class="header-logo" />
+                        <img src="{{$settings->site_logo}}" alt="logo" class="header-logo" />
                     </div>
                     <ul class="menu-list">
                         <li><a class="nav-link mobile-nav-link {{request()->routeIs('home') ? 'text-gradient' : 'text-black'}}" href="{{route('home')}}">Home</a></li>

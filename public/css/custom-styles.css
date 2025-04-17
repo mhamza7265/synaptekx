@@ -1896,4 +1896,10 @@ textarea {
     .w-49 {
         width: 100% !important;
     }
+    .sticky-section-right-texts-parent {
+        border-left: none;
+    }
+    .sticky-section-right-texts-parent::before {
+        content: none;
+    }
 }

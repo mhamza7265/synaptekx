@@ -1,7 +1,7 @@
 @extends('frontend.layouts.main')
 
 @section('content')
-    <div class="services-container font-sf-pro">
+    <div class="services-container font-sf-pro" style="overflow: hidden">
         <section class="hero" style="background-image: url('{{asset('images/frontend/services_hero_2.jpg')}}');">
             <div class="container services-hero-container">
                 <div class="d-flex justify-content-center align-items-center h-100">
