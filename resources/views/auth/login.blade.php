@@ -32,8 +32,14 @@
                                 <p class="text-white px-2">It is easy to setup with great customer experience. Start your 7-day free trial</p> --}}
 
                                 <div class="nav-logo">
-                                    <div class="nav-item theme-text">
+                                    @php
+                                        $settings = \App\Models\Setting::first();
+                                    @endphp
+                                    {{-- <div class="nav-item theme-text">
                                         <span style="font-size: 68px; font-weight: bold" class="text-gradient">Synaptekx</span>
+                                    </div> --}}
+                                    <div class="nav-item theme-text">
+                                        <img src="{{$settings->site_logo}}" alt="logo" class="header-logo" style="width: 70%" />
                                     </div>
                                 </div>
                             </div>
