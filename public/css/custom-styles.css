@@ -1555,6 +1555,10 @@ textarea {
     border-radius: 18px;
 }
 
+.w-49 {
+    width: 49%;
+}
+
 /* responsive styles */
 @media (max-width: 992px) {
     .hero-section {
@@ -1883,5 +1887,8 @@ textarea {
     }
     .blog-details-img {
         height: 230px;
+    }
+    .w-49 {
+        width: 100% !important;
     }
 }

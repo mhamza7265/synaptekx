@@ -30,13 +30,13 @@
                 <form method="post" action="{{route('contact')}}">
                     @csrf
                     <div class="d-md-flex justify-content-between align-items-start w-100">
-                        <div class="form-group" style="width: 49%">
+                        <div class="form-group w-49">
                             <input type="text" name="first_name" placeholder="First Name" class="contact-input contact-flex-input w-100" required />
                             @error('first_name')
                                 <div class="text-danger">{{ $message }}</div>                            
                             @enderror
                         </div>
-                        <div class="form-group" style="width: 49%">
+                        <div class="form-group w-49">
                             <input type="text" name="last_name" placeholder="Last Name" class="contact-input contact-flex-input w-100" required />
                             @error('last_name')
                                 <div class="text-danger">{{ $message }}</div>                            
@@ -45,13 +45,13 @@
                         
                     </div>
                     <div class="d-md-flex justify-content-between align-items-start w-100 mt-2">
-                        <div class="form-group" style="width: 49%">
+                        <div class="form-group w-49">
                             <input type="text" name="email" placeholder="Email" class="contact-input contact-flex-input w-100" required />
                             @error('email')
                                 <div class="text-danger">{{ $message }}</div>                            
                             @enderror
                         </div>
-                        <div class="form-group" style="width: 49%">
+                        <div class="form-group w-49">
                             <input type="text" name="phone" placeholder="Phone" class="contact-input contact-flex-input w-100" required />
                             @error('phone')
                                 <div class="text-danger">{{ $message }}</div>                            
