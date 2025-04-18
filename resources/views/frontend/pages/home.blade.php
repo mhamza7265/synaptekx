@@ -244,7 +244,21 @@
                 <!--    <img src="{{asset('images/frontend/features_pill.svg')}}" draggable="false" />-->
                 <!--</div>-->
                 <div class="col-md-12 mt-4">
-                    <h1 class="w-60-perc home-sect-2-title text-white" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out">Our Core Digital Services at <span class="text-gradient">SynaptekX</span></h1>
+                    @php
+                        $rawTitle = $page->sections['services_section']['section_title'] ?? '';
+                        
+                        if (stripos($rawTitle, 'synaptekx') !== false) {
+                            $highlighted = preg_replace(
+                                '/(synaptekx)/i',
+                                '<span class="text-gradient">$1</span>',
+                                e($rawTitle)
+                            );
+                            $formattedTitle = $highlighted;
+                        } else {
+                            $formattedTitle = e($rawTitle);
+                        }
+                    @endphp
+                    <h1 class="w-60-perc home-sect-2-title text-white" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out">{!!$formattedTitle!!}</h1>
                 </div>
 
                 <div class="home-sect-3-content-container d-flex justify-content-between align-items-start mt-5">
@@ -255,171 +269,30 @@
                                 <img src="{{asset('images/frontend/divider_gradient.svg')}}" />
                             </div> --}}
                             <div class="nav flex-column nav-pills tab-border-left" id="v-pills-tab" role="tablist">
-                                <button class="nav-link active" id="tab-btn-1" data-bs-toggle="pill" data-bs-target="#tab-1" type="button">
-                                    DIGITAL
-                                </button>
-                                <button class="nav-link" id="tab-btn-2" data-bs-toggle="pill" data-bs-target="#tab-2" type="button">
-                                    CLOUD
-                                </button>
-                                <button class="nav-link" id="tab-btn-3" data-bs-toggle="pill" data-bs-target="#tab-3" type="button">
-                                    DATA & AI
-                                </button>
-                                <button class="nav-link" id="tab-btn-4" data-bs-toggle="pill" data-bs-target="#tab-4" type="button">
-                                    MANAGED SERVICES
-                                </button>
-                                <button class="nav-link" id="tab-btn-5" data-bs-toggle="pill" data-bs-target="#tab-5" type="button">
-                                    SECURITY
-                                </button>
-                                <button class="nav-link" id="tab-btn-6" data-bs-toggle="pill" data-bs-target="#tab-6" type="button">
-                                    TALENT ACQUISITION & SOURCING
-                                </button>
+                                @if (isset($page->sections['services_section']['services']) && count($page->sections['services_section']['services']) > 0 )
+                                    @foreach ($page->sections['services_section']['services'] as $service)
+                                        <button class="nav-link {{$loop->first ? 'active' : ''}}" id="tab-btn-{{$loop->iteration}}" data-bs-toggle="pill" data-bs-target="#tab-{{$loop->iteration}}" type="button">
+                                            {{\Illuminate\Support\Str::upper($service['list_title'])}}
+                                        </button>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                 
                         <!-- Right Side - Tab Content -->
                         <div class="col-md-8 col-12" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
                             <div class="tab-content section-3-tab-content" id="v-pills-tabContent">
-                                <div class="tab-pane fade show active" id="tab-1">
-                                    <h3 class="section-3-tab-heading-1 text-white">DIGITAL</h3>
-                                    <p class="section-3-tab-detail-1">Elevate your organization with AI-first digital solutions that drive efficiency, innovation, and growth. Our expert teams blend strategy, data, and automation to future-proof your operations in a rapidly evolving landscape.</p>
-                                    <h3 class="section-3-tab-heading-2 text-white mt-3">Our Digital Services </h3>
-                                    <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Consulting & Strategy – </strong>Reimagine your business roadmap with AI-focused insights. We align advanced analytics to your goals, ensuring every initiative is rooted in real-time intelligence.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Transformation – </strong>Modernize legacy systems into AI-powered ecosystems for faster innovation. We embed automation and facilitate cultural shifts that maximize productivity and profitability.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Business Applications – </strong>Embed AI-driven recommendations, analytics, and automation within ERP, CRM, and custom solutions. Optimize processes so teams can focus on strategic innovation over routine tasks.</li>
-                                        <li class="section-3-tab-detail-1"><strong>eCommerce – </strong>Reinvent digital storefronts with AI personalization and real-time data analysis. From intelligent recommendations to dynamic pricing, we deliver seamless user experiences that boost conversions.</li>
-                                    </ul>
-                                    {{-- <p class="section-3-tab-detail-1">By partnering with us, you’ll benefit from data-driven insights and a tailored strategy that maximizes your ROI.</p> --}}
-                                    {{-- <a href="{{ route('services', ['name' => 'digital']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
-                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                        <span class="ms-3 fs-14 text-white">Explore</span>
-                                    </a> --}}
-                                    <a href="{{ route('services', ['name' => 'digital']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                        <img src="{{asset('images/frontend/check.svg')}}" />
-                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
-                                    </a>
-                                    <div class="mt-4">
-                                        <img src="{{asset('images/frontend/home-digital.png')}}" class="section-3-img" />
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="tab-2">
-                                    <h3 class="section-3-tab-heading-1 text-white">CLOUD</h3>
-                                    <p class="section-3-tab-detail-1">Accelerate innovation and optimize resources with AI-driven cloud solutions. Our comprehensive services empower you to migrate, modernize, and operate seamlessly in the ever-evolving cloud landscape. </p>
-                                    <h3 class="section-3-tab-heading-2 text-white mt-3">Our Cloud Services</h3>
-                                    <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Migration – </strong>Migrate applications to the cloud with AI-assisted planning for minimal downtime and cost. Intelligent workload assessments pave the way for a secure, agile environment. </li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Modernisation – </strong>Revamp legacy systems through containerization, self-healing infrastructures, and predictive maintenance, ensuring future-ready adaptability and cost efficiency.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Economy – </strong>Optimize cloud spend with dynamic, AI-based resource allocation. Intelligent scaling and performance tracking keep budgets tight and growth prospects unlimited.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Transformation – </strong>Move to cloud-native operations enriched by data-driven insights. From upskilling teams to refining governance, we ensure smooth, sustainable modernization.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Operations – </strong>Harness AI-enabled observability and automation for reliable, scalable CloudOps. Predictive issue detection and capacity planning let you focus on core innovation.</li>
-                                    </ul>
-                                    {{-- <a href="{{ route('services', ['name' => 'cloud']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
-                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                        <span class="ms-3 fs-14 text-white">Explore</span>
-                                    </a> --}}
-                                    <a href="{{ route('services', ['name' => 'cloud']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                        <img src="{{asset('images/frontend/check.svg')}}" />
-                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
-                                    </a>
-                                    <div class="mt-4">
-                                        <img src="{{asset('images/frontend/home-cloud.png')}}" class="section-3-img" />
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="tab-3">
-                                    <h3 class="section-3-tab-heading-1 text-white">DATA & AI </h3>
-                                    <p class="section-3-tab-detail-1">Elevate your data strategy with next-generation AI solutions. Our end-to-end capabilities—spanning integration, modernization, API-driven services, AI agents, governance, and generative intelligence—empower you to harness today’s most advanced machine learning breakthroughs.</p>
-                                    <h3 class="section-3-tab-heading-2 text-white mt-3">Our Data & AI Services </h3>
-                                    <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Data Integration – </strong>Unify scattered sources into an AI-ready platform for accurate, high-speed insights. ML-enhanced ETL pipelines detect anomalies and fuel advanced analytics.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Data Modernisation – </strong>Migrate to next-gen architectures optimized for large-scale analytics and machine learning workloads, reducing latency and boosting real-time capabilities.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>API Economy – </strong>Monetize insights by turning data into AI-driven APIs. Secure interfaces, usage analytics, and robust developer ecosystems extend your reach and revenue.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>AI Agents – </strong>Leverage autonomous agents that iterate, learn, and act independently, executing complex tasks with minimal human intervention. Harness state-of-the-art large language models and self-improving pipelines for continuous operational gains.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Data Management – </strong>Implement AI-driven governance for real-time classification, security, and compliance. Automated cataloging and metadata management give you total control.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Generative AI – </strong>Automate complex tasks and spark creativity with advanced AI models. From virtual assistants to dynamic product suggestions, our solutions push the boundaries of innovation.</li>
-                                    </ul>
-                                    {{-- <a href="{{ route('services', ['name' => 'data-ai']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
-                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                        <span class="ms-3 fs-14 text-white">Explore</span>
-                                    </a> --}}
-                                    <a href="{{ route('services', ['name' => 'data-ai']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                        <img src="{{asset('images/frontend/check.svg')}}" />
-                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
-                                    </a>
-                                    <div class="mt-4">
-                                        <img src="{{asset('images/frontend/home-data-ai.png')}}" class="section-3-img" />
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="tab-4">
-                                    <h3 class="section-3-tab-heading-1 text-white">MANAGED SERVICES</h3>
-                                    <p class="section-3-tab-detail-1">Empower your operations with intelligent managed services that automate workflows, enhance security, and streamline development lifecycles. Our AI-driven approach ensures you stay resilient, agile, and ready to seize new opportunities.</p>
-                                    <h3 class="section-3-tab-heading-2 text-white mt-3">Our Managed Services</h3>
-                                    <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>SOC (Security Operations Center) – </strong>Stay ahead of emerging threats with AI-augmented monitoring, rapid incident containment, and continuous learning that keeps you protected 24/7.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>CloudOps – </strong>Automate your cloud environment through predictive analytics and intelligent orchestration, freeing teams to focus on high-impact innovation.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>DevOps – </strong>Speed up software releases by reinforcing CI/CD pipelines with AI insights, eradicating bottlenecks, and delivering reliably at scale.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>MLOps – </strong>Ensure your machine learning models stay robust and up to date. Our streamlined MLOps unifies data prep, deployment, and ongoing optimization.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>DevSecOps – </strong>Embed AI-driven security at every stage of development. Predictive threat modeling and automated compliance processes drastically reduce exposure.</li>
-                                        <li class="section-3-tab-detail-1"><strong>AppOps – </strong>Maintain mission-critical apps with AI-based diagnostics, fine-tuned performance, and proactive incident prevention—all while delivering seamless user experiences.</li>
-                                    </ul>
-                                    {{-- <a href="{{ route('services', ['name' => 'managed-services']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
-                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                        <span class="ms-3 fs-14 text-white">Explore</span>
-                                    </a> --}}
-                                    <a href="{{ route('services', ['name' => 'managed-services']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                        <img src="{{asset('images/frontend/check.svg')}}" />
-                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
-                                    </a>
-                                    <div class="mt-4">
-                                        <img src="{{asset('images/frontend/home-managed-services.png')}}" class="section-3-img" />
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="tab-5">
-                                    <h3 class="section-3-tab-heading-1 text-white">SECURITY</h3>
-                                    <p class="section-3-tab-detail-1">Stay ahead of cyber threats with proactive, AI-driven security strategies tailored to your unique risk landscape. Our integrated approach ensures you remain resilient in the face of rapidly evolving threats, regulatory pressures, and dynamic business demands.</p>
-                                    <h3 class="section-3-tab-heading-2 text-white mt-3">Our Security Services</h3>
-                                    <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Security Architecture as a Service – </strong>Build adaptive, AI-infused frameworks that evolve alongside emerging threats, from zero-trust policies to automated detection.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Managed SOC Operations – </strong>Rely on 24/7 AI-enhanced monitoring and swift incident containment, reducing false positives and safeguarding critical assets.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>vCISO – </strong>Gain executive-level security guidance fortified by predictive insights—without the overhead of a full-time hire.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Compliance Adherence – </strong>Simplify audits and regulatory demands through AI-based checks and real-time monitoring, preserving trust and minimizing manual overhead.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Incident Response – </strong>Counter threats with automated detection and rapid containment, turning breaches into opportunities to bolster future security posture.</li>
-                                    </ul>
-                                    {{-- <a href="{{ route('services', ['name' => 'security']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
-                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                        <span class="ms-3 fs-14 text-white">Explore</span>
-                                    </a> --}}
-                                    <a href="{{ route('services', ['name' => 'security']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                        <img src="{{asset('images/frontend/check.svg')}}" />
-                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
-                                    </a>
-                                    <div class="mt-4">
-                                        <img src="{{asset('images/frontend/home-security.png')}}" class="section-3-img" />
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="tab-6">
-                                    <h3 class="section-3-tab-heading-1 text-white">TALENT ACQUISITION & SOURCING</h3>
-                                    <p class="section-3-tab-detail-1">Power your organization with specialized, AI-savvy talent. Our curated pipeline ensures the right cultural and technical fit, propelling innovation, agility, and security in every corner of your enterprise.</p>
-                                    <h3 class="section-3-tab-heading-2 text-white mt-3">Our Talent Acquisition & Sourcing Services</h3>
-                                    <ul style="padding-left: 1rem">
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Digital Transformation – </strong>Build teams versed in next-gen digital strategies and AI integration. We match your culture with professionals who excel at data-driven methods—fuelling smarter, smoother transformations.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Cloud – </strong>Secure certified experts in cloud architecture, migration, and AI-accelerated operations. Optimize performance and governance, making the cloud a true engine of innovation.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Data & AI – </strong>Onboard data scientists, ML engineers, and analytics pros who excel at predictive modelling and insight generation. Uncover new revenue streams and achieve data-driven breakthroughs at scale.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Security – </strong>Guard your digital assets with AI-led threat intelligence, incident response, and cutting-edge cybersecurity expertise—ensuring robust defences in an ever-evolving threat landscape.</li>
-                                        <li class="section-3-tab-detail-1 mb-2"><strong>Software Development – </strong>Strengthen your development capabilities with coders proficient in AI frameworks, automation, and seamless integration. Achieve faster, higher-quality releases and excellent user experiences.</li>
-                                        <li class="section-3-tab-detail-1"><strong>Product Development – </strong>Inspire product innovation with experts adept at AI-driven features, MVP prep, and user-centric design. Turn bold ideas into market-ready offerings that stand apart.</li>
-                                    </ul>
-                                    {{-- <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" class="d-flex justify-content-start align-items-center text-decoration-none text-black my-4 mb-lg-0">
-                                        <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                        <span class="ms-3 fs-14 text-white">Explore</span>
-                                    </a> --}}
-                                    <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                        <img src="{{asset('images/frontend/check.svg')}}" />
-                                        <span class="ms-2 me-2 fs-14 text-white">Explore</span>
-                                    </a>
-                                    <div class="mt-4">
-                                        <img src="{{asset('images/frontend/home-talent-acquisition-and-sourcing.png')}}" class="section-3-img" />
-                                    </div>
-                                </div>
+                                @if (isset($page->sections['services_section']['services']) && count($page->sections['services_section']['services']) > 0 )
+                                    @foreach ($page->sections['services_section']['services'] as $service)
+                                        <div class="tab-pane fade show {{$loop->first ? 'active' : 's'}}" id="tab-{{$loop->iteration}}">
+                                            {!!$service['list_content']!!}
+                                            <a href="{{ route('services', ['name' => 'digital']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                                <img src="{{asset('images/frontend/check.svg')}}" />
+                                                <span class="ms-2 me-2 fs-14 text-white">Explore</span>
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -430,12 +303,26 @@
         <section class="home-section-2 bg-white position-relative overflow-hidden font-sf-pro" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <div class="container py-35px">
                 <div class="col-md-12 mt-4">
-                    <h1 class="home-sect-4-title text-black">The Digital <span class="text-gradient">Transformation</span> Journey</h1>
+                    @php
+                        $rawTransformTitle = $page->sections['transform_section']['section_title'] ?? '';
+                        
+                        if (stripos($rawTransformTitle, 'transformation') !== false) {
+                            $highlightedTitle = preg_replace(
+                                '/(Transformation)/i',
+                                '<span class="text-gradient">$1</span>',
+                                e($rawTransformTitle)
+                            );
+                            $formattedTransformTitle = $highlightedTitle;
+                        } else {
+                            $formattedTransformTitle = e($rawTransformTitle);
+                        }
+                    @endphp
+                    <h1 class="home-sect-4-title text-black">{!!$formattedTransformTitle!!}</h1>
                 </div>
                 <div class="home_graphic mt-5" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
                     {{-- <img src="{{asset('images/frontend/home_graphic_1.svg')}}" class="home-graphic-1 object-fit-cover w-100" /> --}}
                     <video autoplay loop muted playsinline class="w-100">
-                        <source src="{{asset('images/frontend/transformation.mp4')}}" type="video/mp4">
+                        <source src="{{$page->sections['transform_section']['infograph'] ?? ''}}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -448,37 +335,32 @@
                     <img src="{{asset('images/frontend/innovative_pill.svg')}}" draggable="false" />
                 </div> -->
                 <div class="col-md-12 mt-4">
-                    <h1 class="home-sect-2-title text-white"><span class="text-gradient">Empowering Growth</span> Through Innovation & Agility</h1>
+                    @php
+                        $rawTitle = $page->sections['features_section']['section_title'] ?? '';
+                        $words = preg_split('/\s+/', trim($rawTitle));
+                    
+                        if (count($words) >= 4) {
+                            $firstTwo = implode(' ', array_slice($words, 0, 2));
+                            $rest = implode(' ', array_slice($words, 2));
+                            $formattedTitle = '<span class="text-gradient">' . e($firstTwo) . '</span> ' . e($rest);
+                        } else {
+                            $formattedTitle = e($rawTitle);
+                        }
+                    @endphp
+                    <h1 class="home-sect-2-title text-white">{!!$formattedTitle!!}</h1>
                 </div>
                 <div class="row justify-content-center align-items-start mt-5 pt-md-5 overflow-hidden">
-                    <div class="innovative-sec-table col-lg-3 col-md-4 col-12" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">
-                        <img src="{{asset('images/frontend/innovative_icon_1.svg')}}" style="width: 50px" />
-                        <div class="text-div">
-                            <h5 class="innovative-sec-table-title">Startup Agility</h5>
-                            <p class="innovative-sec-table-desc">We accelerate solutions with a rapid, nimble approach that delivers immediate impact.</p>
-                        </div>
-                    </div>
-                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100">
-                        <img src="{{asset('images/frontend/innovative_icon_2.svg')}}" style="width: 50px" />
-                        <div class="text-div">
-                            <h5 class="innovative-sec-table-title">Customer-Centric Approach</h5>
-                            <p class="innovative-sec-table-desc">Every engagement is tailored to your objectives, ensuring alignment and measurable results.</p>
-                        </div>
-                    </div>
-                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200">
-                        <img src="{{asset('images/frontend/innovative_icon_3.svg')}}" style="width: 50px" />
-                        <div class="text-div">
-                            <h5 class="innovative-sec-table-title">Industry Expertise</h5>
-                            <p class="innovative-sec-table-desc">Our cross-sector experience equips you with proven strategies and deep domain insights.</p>
-                        </div>
-                    </div>
-                    <div class="innovative-sec-table col-lg-3 col-md-3 col-12" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="300">
-                        <img src="{{asset('images/frontend/innovative_icon_4.svg')}}" style="width: 50px" />
-                        <div class="text-div">
-                            <h5 class="innovative-sec-table-title">Commitment to Innovation</h5>
-                            <p class="innovative-sec-table-desc">We continuously integrate cutting-edge AI, data, and cloud advancements to keep you ahead.</p>
-                        </div>
-                    </div>
+                    @if (isset($page->sections['features_section']['features']) && count($page->sections['features_section']['features']) > 0)
+                        @foreach ($page->sections['features_section']['features'] as $feature)
+                            <div class="innovative-sec-table col-lg-3 col-md-4 col-12" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="{{$loop->index}}00">
+                                <img src="{{ $feature['feature_icon'] ?? '' }}" style="width: 50px" />
+                                <div class="text-div">
+                                    <h5 class="innovative-sec-table-title">{{$feature['feature_title'] ?? ''}}</h5>
+                                    <p class="innovative-sec-table-desc">{{$feature['feature_subtitle'] ?? ''}}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
             <img src="{{asset('images/frontend/graphic_element_1.svg')}}" class="div-graphic-element-1" />
