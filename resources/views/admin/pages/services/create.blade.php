@@ -8,9 +8,43 @@
                     <h4 class="text-center pb-2">Create New Service Page</h4>
                     <div class="card">
                         <div class="container py-3">
-                            <form>
+                            <form action="{{ route('admin.services.store') }}" method="POST">
+                                @csrf
                                 <span class="d-block mt-3">Page Title:</span>
-                                <input type="text" name="service_page_title" class="form-control mt-2">
+                                <input type="text" name="name" class="form-control mt-2" required>
+                                @error('name')
+                                    <div class="text-danger">{{$message}}</div>
+                                @enderror
+
+                                <span class="d-block mt-3">Meta Title:</span>
+                                <input type="text" name="meta_title" class="form-control mt-2" required>
+                                @error('meta_title')
+                                    <div class="text-danger">{{$message}}</div>
+                                @enderror
+
+                                <span class="d-block mt-3">Meta Description:</span>
+                                <textarea name="meta_description" class="form-control my-2" rows="3" required></textarea>
+                                @error('meta_description')
+                                    <div class="text-danger">{{$message}}</div>
+                                @enderror
+
+                                <span>Select Page Icon:</span>
+                                <div class="input-group d-flex align-items-center mt-2">
+                                    <span class="input-group-btn">
+                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
+                                        <i class="fa fa-picture-o"></i> Choose
+                                    </a>
+                                    </span>
+                                    <input id="thumbnail_0" style="height: 36px" value="" class="form-control" type="text" name="page_icon" required>
+                                </div>
+                                <div id="holder_0" style="margin-top:15px; max-height:100px;">
+                                    {{-- @if (!empty($page->sections['hero_section']['bg_image'] ?? ''))
+                                        <img src="{{ $page->sections['hero_section']['bg_image'] ?? '' }}" style="height: 5rem;">
+                                    @endif --}}
+                                </div>
+                                @error('page_icon')
+                                    <div class="text-danger">{{$message}}</div>
+                                @enderror
 
                                 <button class="btn btn-md btn-success mt-3">Save</button>
                             </form>
@@ -26,87 +60,7 @@
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
         $(document).ready(function() {
-            $('#lfm').filemanager('file');
-            $('.lfm_file').filemanager('file');
-
-            $('#add-feature').click(function () {
-                const html = `
-                    <div class="feature_detail">
-                        <span class="d-block mt-4">Feature Title:</span>
-                        <input type="text" class="form-control" name="detail_title[]">
-                        <span class="d-block mt-4">Feature Description:</span>
-                        <textarea name="detail_description[]" class="form-control mt-2" rows="3"></textarea>
-                        <hr>
-                    </div>
-                `;
-                $("#details-section").append(html);
-                toggleAddButton();
-            });
-
-            function toggleAddButton() {
-                if($('#details-section .feature_detail').length > 4){
-                    $('#add-feature').addClass('d-none');
-                }else{
-                    $('#add-feature').removeClass('d-none');
-                }
-            }
-
-            toggleAddButton();
+            $('.lfm_file').filemanager('image');
         })
-    </script>
-    <script>
-        $(document).ready(function () {
-            function initializeSummernote(selector) {
-                $(selector).summernote({
-                    height: 200,
-                    toolbar: [
-                        ['fontsize', ['fontsize']],
-                        ['color', ['color']],
-                        ['font', ['bold', 'clear']],
-                        ['para', ['ul', 'ol', 'paragraph']],
-                        ['view', ['codeview']]
-                    ],
-                    callbacks: {
-                        onImageUpload: function (files) {
-                            uploadFile(files[0], this);
-                        },
-                        onMediaDelete: function (target) {
-                            deleteFile(target[0].src);
-                        }
-                    },
-                });
-            }
-
-            function uploadFile(file, editable) {
-                let data = new FormData();
-                data.append("upload", file);
-
-                $.ajax({
-                    url: '/laravel-filemanager/upload?type=Images&_token={{ csrf_token() }}',
-                    type: "POST",
-                    data: data,
-                    contentType: false,
-                    processData: false,
-                    success: function (response) {
-                        $(editable).summernote('insertImage', response.url);
-                    },
-                    error: function () {
-                        alert('Image upload failed');
-                    }
-                });
-            }
-
-            function deleteFile(src) {
-                $.post('/laravel-filemanager/delete', {
-                    src: src,
-                    _token: '{{ csrf_token() }}'
-                }, function (response) {
-                    console.log('Deleted');
-                });
-            }
-
-            // Initialize all existing editors
-            initializeSummernote('.summernote');
-        });
     </script>
 @endsection

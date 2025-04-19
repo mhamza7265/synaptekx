@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Services;
+use Illuminate\Support\Str;
 
 class ServicesPagesController extends Controller
 {
@@ -13,7 +15,8 @@ class ServicesPagesController extends Controller
     public function index()
     {
         $title = 'Services Pages';
-        return view('admin.pages.services.index', compact('title'));
+        $services = Services::all();
+        return view('admin.pages.services.index', compact('title', 'services'));
     }
 
     /**
@@ -30,7 +33,23 @@ class ServicesPagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'meta_title' => 'required',
+            'meta_description' => 'required',
+            'page_icon' => 'required',
+        ]);
+
+        $services = new Services;
+
+        $services->name = $request->name;
+        $services->meta_title = $request->meta_title;
+        $services->meta_description = $request->meta_description;
+        $services->page_icon = $request->page_icon;
+        $services->slug = Str::Slug($request->name);
+        $services->save();
+
+        return redirect()->route('admin.services.index')->with('success', 'Service Page Created Successfully !');
     }
 
     /**
@@ -47,7 +66,8 @@ class ServicesPagesController extends Controller
     public function edit(string $id)
     {
         $title = 'Edit Services Page';
-        return view('admin.pages.services.edit', compact('title'));
+        $service = Services::find($id);
+        return view('admin.pages.services.edit', compact('title', 'service'));
     }
 
     /**

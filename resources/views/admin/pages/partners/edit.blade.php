@@ -103,6 +103,9 @@
                                                 'partners' => [
                                                     [
                                                         'partner_logo' => '',
+                                                        'partner_name' => '',
+                                                        'partner_description' => '',
+                                                        'partner_link' => '',
                                                         'details' => [
                                                             ['detail_title' => '', 'detail_subtitle' => '']
                                                         ]
@@ -155,6 +158,12 @@
                                                                     <img src="{{ asset($partner['partner_logo']) }}" style="height: 5rem;">
                                                                 @endif
                                                             </div>
+
+                                                            <span>Partner Name:</span>
+                                                            <input type="text" class="form-control mb-2" name="partner_name[{{ $pIndex }}]" value="{{ $partner['partner_name'] ?? '' }}">
+
+                                                            <span>Partner Description:</span>
+                                                            <textarea class="form-control mb-2" name="partner_description[{{ $pIndex }}]">{{ $partner['partner_description'] ?? '' }}</textarea>
 
                                                             {{-- Partner Details --}}
                                                             <div class="elite_partner_details">
@@ -447,6 +456,12 @@
                             <input id="partner_${partnerCount}_thumbnail" style="height: 36px" class="form-control" type="text" name="partner_logo[${partnerCount}]">
                         </div>
                         <div id="partner_${partnerCount}_holder" style="margin-top:15px; max-height:100px;"></div>
+
+                        <span>Partner Name:</span>
+                        <input type="text" class="form-control mb-2" name="partner_name[]" value="{{ $partner['partner_name'] ?? '' }}">
+
+                        <span>Partner Description:</span>
+                        <textarea class="form-control mb-2" name="partner_description[]">{{ $partner['partner_description'] ?? '' }}</textarea>
 
                         <div class="elite_partner_details">
                             <div class="elite_partner_detail border p-3 mb-3 position-relative" data-detail-index="0">

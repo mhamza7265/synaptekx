@@ -18,18 +18,60 @@
 
                             <div id="withoutSpacingAccordionMeta5" class="collapse show" aria-labelledby="headingMeta5" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form method="post" action="{{ route('admin.page-meta.update', ['slug' => $page->slug]) }}">
+                                    <form method="post" action="{{ route('admin.page-meta.update', ['slug' => $service->slug]) }}">
                                         @csrf 
                                         <span class="d-block mt-3">Meta Title</span>
-                                        <input type="text" name="meta_title" value="{{$page->meta_title}}" class="form-control mt-2">
+                                        <input type="text" name="meta_title" value="{{$service->meta_title}}" class="form-control mt-2">
                                         @error('meta_title')
                                             <div class="text-danger">{{ $message }}</div>                                            
                                         @enderror
 
                                         <span class="d-block mt-3">Meta Description</span>
-                                        <textarea name="meta_description" class="form-control mt-2" rows="3">{{$page->meta_description}}</textarea>
+                                        <textarea name="meta_description" class="form-control mt-2" rows="3">{{$service->meta_description}}</textarea>
                                         @error('meta_description')
                                             <div class="text-danger">{{ $message }}</div>                                            
+                                        @enderror
+
+                                        <button class="btn btn-md btn-success mt-3">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-2">
+                            <div class="card-header" id="headingFour">
+                                <section class="mb-0 mt-0">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordion44" aria-expanded="false" aria-controls="withoutSpacingAccordion44">
+                                        Page Data  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <div id="withoutSpacingAccordion44" class="collapse" aria-labelledby="headingFour" data-bs-parent="#withoutSpacing">
+                                <div class="container py-3">
+                                    <form method="POST" action="{{ route('admin.service-page.update', $service->id) }}">
+                                        @csrf
+                                        <span class="d-block mt-3">Page Title:</span>
+                                        <input type="text" name="name" value="{{$service->name}}" class="form-control mt-2" required>
+                                        @error('name')
+                                            <div class="text-danger">{{$message}}</div>
+                                        @enderror
+
+                                        <span class="d-block mt-3">Select Page Icon:</span>
+                                        <div class="input-group d-flex align-items-center mt-2">
+                                            <span class="input-group-btn">
+                                            <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
+                                                <i class="fa fa-picture-o"></i> Choose
+                                            </a>
+                                            </span>
+                                            <input id="thumbnail_0" style="height: 36px" value="{{$service->page_icon}}" class="form-control" type="text" name="page_icon" required>
+                                        </div>
+                                        <div id="holder_0" style="margin-top:15px; max-height:100px;">
+                                            @if (!empty($service->page_icon ?? ''))
+                                                <img src="{{ $service->page_icon ?? '' }}" style="height: 5rem;">
+                                            @endif
+                                        </div>
+                                        @error('page_icon')
+                                            <div class="text-danger">{{$message}}</div>
                                         @enderror
 
                                         <button class="btn btn-md btn-success mt-3">Save</button>
@@ -48,25 +90,30 @@
 
                             <div id="withoutSpacingAccordionOne" class="collapse" aria-labelledby="headingOne2" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form>
+                                    <form method="POST" action="{{ route('admin.service-page.hero.update', $service->id) }}">
+                                        @csrf
                                         <div id="carousel-container">
                                             <div class="hero-carousel-item card-body border p-3 mb-3">                                        
                                                 <span>Select Background:</span>
                                                 <div class="input-group d-flex align-items-center mt-2">
                                                     <span class="input-group-btn">
-                                                    <a class="lfm btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_0" data-preview="holder_0">
+                                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="thumbnail_bg" data-preview="holder_bg">
                                                         <i class="fa fa-picture-o"></i> Choose
                                                     </a>
                                                     </span>
-                                                    <input id="thumbnail_0" style="height: 36px" class="form-control" type="text" name="bg_file">
+                                                    <input id="thumbnail_bg" style="height: 36px" value="{{$service->sections['hero_section']['bg_image'] ?? ''}}" class="form-control" type="text" name="bg_image">
                                                 </div>
-                                                <div id="holder_0" style="margin-top:15px; max-height:100px;"></div>
+                                                <div id="holder_bg" style="margin-top:15px; max-height:100px;">
+                                                    @if (!empty($service->sections['hero_section']['bg_image'] ?? ''))
+                                                        <img src="{{ $service->sections['hero_section']['bg_image'] ?? '' }}" style="height: 5rem;">
+                                                    @endif
+                                                </div>
                                         
                                                 <span class="d-block mt-3">Title</span>
-                                                <input type="text" class="form-control mb-2" name="hero_title">
+                                                <input type="text" class="form-control mb-2" value="{{$service->sections['hero_section']['hero_title'] ?? ''}}" name="hero_title">
                                         
                                                 <span class="d-block mt-2">Subtitle</span>
-                                                <textarea class="form-control" name="hero_subtitle" rows="2"></textarea>
+                                                <textarea class="form-control" name="hero_subtitle" rows="2">{{$service->sections['hero_section']['hero_subtitle'] ?? ''}}</textarea>
                                             </div>
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
@@ -78,33 +125,45 @@
                             <div class="card-header" id="headingFive10">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFive" aria-expanded="false" aria-controls="withoutSpacingAccordionFive">
-                                        Empowering Businesses to Transform & Grow <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                        @foreach ($service->sections['all'] as $section)
+                                            @if ($section['type'] == 'repeating'&& $section['group'] == 'features')
+                                            {{$section['title']}} @endif @endforeach <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
                             <div id="withoutSpacingAccordionFive" class="collapse" aria-labelledby="headingFive10" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form>
-                                        <div class="card-body">
-                                            <span>Section Title:</span>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control mt-2" name="section_1_title" value="{{old('section_1_title')}}" >
-                                            </div>
-
-                                            <hr>
-
-                                            <div id="details-section">
-                                                <div class="feature_detail border p-3 mb-3 position-relative">
-                                                    <span class="d-block mt-4">Feature Title:</span>
-                                                    <input type="text" class="form-control" name="detail_title[]">
-                                                    <span class="d-block mt-4">Feature Description:</span>
-                                                    <textarea name="detail_description[]" class="form-control mt-2" rows="3"></textarea>
+                                    <form method="POST" action="{{ route('admin.service-page.feature.update', $service->id) }}">
+                                        @csrf
+                                        @foreach ($service->sections['all'] as $section)
+                                            @if ($section['type'] == 'repeating'&& $section['group'] == 'features')
+                                                <div class="card-body">
+                                                    <span>Section Title:</span>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control mt-2" name="section_title" value="{{$section['title']}}" >
+                                                    </div>
+        
+                                                    <hr>
+        
+                                                    <div id="details-section">
+                                                        @foreach ($section['data']['details'] as $detail)
+                                                            <div class="feature_detail border p-3 mb-3 position-relative">
+                                                                <button type="button" class="btn feature-detail-dlt-button position-absolute" data-index="{{$loop->index}}" data-service="{{$service->id}}" style="top:5px; right:5px;">
+                                                                    <i class="fa fa-trash text-danger"></i>
+                                                                </button>
+                                                                <span class="d-block mt-4">Detail Title:</span>
+                                                                <input type="text" class="form-control" value="{{$detail['detail_title']}}" name="detail_title[]">
+                                                                <span class="d-block mt-4">Detail Description:</span>
+                                                                <textarea name="detail_description[]" class="form-control mt-2" rows="3">{{$detail['detail_description']}}</textarea>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            @endif
+                                        @endforeach
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
-                                    <button type="button" class="btn btn-success mt-3 mx-auto d-block" id="add-feature">Add Feature Detail</button>
+                                    <button type="button" class="btn btn-success mt-3 mx-auto d-block" id="add-feature">Add Detail</button>
                                 </div>
                             </div>
                         </div>
@@ -112,30 +171,41 @@
                             <div class="card-header" id="headingTwo2">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
-                                        The Digital Transformation Journey  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                        @foreach ($service->sections['all'] as $section)
+                                            @if ($section['type'] == 'single' && $section['group'] == 'transform')
+                                            {{$section['title'] ?? ''}} @endif @endforeach  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
                             <div id="withoutSpacingAccordionTwo" class="collapse" aria-labelledby="headingTwo2" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form>
-                                        <div class="card-body">
-                                            <span class="d-block mt-3">Section Title:</span>
-                                            <div class="form-group">
-                                                <input class="form-control mt-2" name="transformation_title" >
-                                            </div>
-
-                                            <span class="d-block mt-3">Select Infograph:</span>
-                                            <div class="input-group d-flex align-items-center mt-2">
-                                                <span class="input-group-btn">
-                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="infograph_thumbnail" data-preview="infograph_holder">
-                                                    <i class="fa fa-picture-o"></i> Choose
-                                                </a>
-                                                </span>
-                                                <input id="infograph_thumbnail" style="height: 36px" class="form-control" type="text" name="infograph">
-                                            </div>
-                                            <div id="infograph_holder" style="margin-top:15px; max-height:100px;"></div>
-                                        </div>
+                                    <form method="POST" action="{{ route('admin.service-page.transform.update', $service->id) }}">
+                                        @csrf
+                                        @foreach ($service->sections['all'] as $section)
+                                            @if ($section['type'] == 'single' && $section['group'] == 'transform')
+                                                <div class="card-body">
+                                                    <span class="d-block mt-3">Section Title:</span>
+                                                    <div class="form-group">
+                                                        <input class="form-control mt-2" value="{{$section['title'] ?? ''}}" name="section_title" >
+                                                    </div>
+        
+                                                    <span class="d-block mt-3">Select Infograph:</span>
+                                                    <div class="input-group d-flex align-items-center mt-2">
+                                                        <span class="input-group-btn">
+                                                        <a class="lfm btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="infograph_thumbnail" data-preview="infograph_holder">
+                                                            <i class="fa fa-picture-o"></i> Choose
+                                                        </a>
+                                                        </span>
+                                                        <input id="infograph_thumbnail" style="height: 36px" class="form-control" value="{{$section['data']['infograph'] ?? ''}}" type="text" name="infograph">
+                                                    </div>
+                                                    <div id="infograph_holder" style="margin-top:15px; max-height:100px;">
+                                                        @if (!empty($section['data']['infograph'] ?? ''))
+                                                            <img src="{{ $section['data']['infograph'] ?? '' }}" style="height: 5rem;">
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endforeach
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
                                 </div>
@@ -151,28 +221,41 @@
                             </div>
                             <div id="withoutSpacingAccordionThree" class="collapse" aria-labelledby="headingThree10" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form>
-                                        <div id="feature-sections">
-                                            <div class="card-body border p-3 mb-3 position-relative">
-                                                <span>Title:</span>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control mt-2" name="feature_section_title[]" >
-                                                </div>
-                                                
-                                                <span class="d-block mt-4">Description:</span>
-                                                <textarea name="feature_section_desc[]" class="form-control summernote mt-2"></textarea>
-
-                                                <span class="d-block mt-3">Select Image:</span>
-                                                <div class="input-group d-flex align-items-center mt-2">
-                                                    <span class="input-group-btn">
-                                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_3_thumbnail" data-preview="section_3_holder">
-                                                        <i class="fa fa-picture-o"></i> Choose
-                                                    </a>
-                                                    </span>
-                                                    <input id="section_3_thumbnail" style="height: 36px" class="form-control" type="text" name="feature_section_image[]">
-                                                </div>
-                                                <div id="section_3_holder" style="margin-top:15px; max-height:100px;"></div>
-                                            </div>
+                                    <form method="POST" action="{{ route('admin.service-page.repeating.update', $service->id) }}">
+                                        @csrf
+                                        <div id="feature-sections" class="feature-sections-service">
+                                            @foreach ($service->sections['all'] as $section)
+                                                @if ($section['type'] == 'repeating' && $section['group'] == 'repeating_blocks')
+                                                    <div class="card-body border p-3 mb-3 position-relative">
+                                                        <button type="button" class="btn section-dlt-button position-absolute" data-index="{{$loop->index}}" style="top:5px; right:5px;">
+                                                            <i class="fa fa-trash text-danger"></i>
+                                                        </button>
+        
+                                                        <span>Title:</span>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control mt-2" value="{{$section['title'] ?? ''}}" name="section_title[]" >
+                                                        </div>
+                                                        
+                                                        <span class="d-block mt-4">Description:</span>
+                                                        <textarea name="section_desc[]" class="form-control summernote mt-2">{{$section['data']['description'] ?? ''}}</textarea>
+        
+                                                        <span class="d-block mt-3">Select Image:</span>
+                                                        <div class="input-group d-flex align-items-center mt-2">
+                                                            <span class="input-group-btn">
+                                                            <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_3_thumbnail" data-preview="section_3_holder">
+                                                                <i class="fa fa-picture-o"></i> Choose
+                                                            </a>
+                                                            </span>
+                                                            <input id="section_3_thumbnail" style="height: 36px" class="form-control" value="{{$section['data']['image'] ?? ''}}" type="text" name="section_image[]">
+                                                        </div>
+                                                        <div id="section_3_holder" style="margin-top:15px; max-height:100px;">
+                                                            @if (!empty($section['data']['image'] ?? ''))
+                                                                <img src="{{ $section['data']['image'] ?? '' }}" style="height: 5rem;">
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            @endforeach
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
@@ -185,14 +268,18 @@
             </div>
         </div>
     </div>
+    <form id="delete-feature-section-form" method="POST" style="display: none;">
+        @csrf
+        @method('DELETE')
+    </form>
 </div>
 @endsection
 @section('scripts')
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
         $(document).ready(function() {
-            $('#lfm').filemanager('file');
-            $('.lfm_file').filemanager('file');
+            $('.lfm').filemanager('file');
+            $('.lfm_file').filemanager('image');
 
             $('#add-feature').click(function () {
                 const html = `
@@ -234,11 +321,18 @@
                 $(selector).summernote({
                     height: 200,
                     toolbar: [
+                        ['insert', ['lfm']],
+                        ['font', ['bold']],
                         ['fontsize', ['fontsize']],
+                        ['style', ['style']],
                         ['color', ['color']],
-                        ['font', ['bold', 'clear']],
+                        ['insert', ['link']],
                         ['para', ['ul', 'ol', 'paragraph']],
                         ['view', ['codeview']]
+                    ],
+                    fontSizes: ['8', '10', '12', '14', '16', '18', '20', '22', '24', '26', '28', '32', '36', '48', '64', '72'],
+                    colors: [
+                        ['#000', '#FFFFFF', '#cccccc'],
                     ],
                     callbacks: {
                         onImageUpload: function (files) {
@@ -293,11 +387,11 @@
 
                         <span>Title:</span>
                         <div class="form-group">
-                            <input type="text" class="form-control mt-2" name="feature_section_title[]">
+                            <input type="text" class="form-control mt-2" name="section_title[]">
                         </div>
 
                         <span class="d-block mt-4">Description:</span>
-                        <textarea name="feature_section_desc[]" class="form-control summernote mt-2"></textarea>
+                        <textarea name="section_desc[]" class="form-control summernote mt-2"></textarea>
 
                         <span class="d-block mt-3">Select Image:</span>
                         <div class="input-group d-flex align-items-center mt-2">
@@ -307,7 +401,7 @@
                                     <i class="fa fa-picture-o"></i> Choose
                                 </a>
                             </span>
-                            <input id="thumbnail_${randomValue}" style="height: 36px" class="form-control" type="text" name="feature_section_image[]">
+                            <input id="thumbnail_${randomValue}" style="height: 36px" class="form-control" type="text" name="section_image[]">
                         </div>
                         <div id="holder_${randomValue}" style="margin-top:15px; max-height:100px;"></div>
                     </div>
@@ -333,6 +427,16 @@
             $(document).on('click', '.section-dlt-btn', function(){
                 if(confirm('Do you want to delete this section?')){
                     $(this).closest('.card-body').remove();
+                }
+            })
+
+            $(document).on('click', '.feature-detail-dlt-button', function(){
+                if(confirm('Do you want to delete this?')){
+                    let index = $(this).data('index');
+                    let serviceId = $(this).data('service');
+                    let dltForm = $('#delete-feature-section-form');
+                    dltForm.attr('action', `/admin/service-page/feature/detail/delete/${serviceId}/${index}`);
+                    dltForm.submit();
                 }
             })
         });

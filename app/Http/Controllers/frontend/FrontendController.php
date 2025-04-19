@@ -18,9 +18,10 @@ class FrontendController extends Controller
     {
         $settings = Setting::first();
         $page = Page::where('slug', 'home')->first();
+        $partners = Page::where('slug', 'partners')->first();
         $title = "$page->meta_title | $settings->site_title";
         $description = "$page->meta_description";
-        return view('frontend.pages.home', compact('title', 'description', 'page'));
+        return view('frontend.pages.home', compact('title', 'description', 'page', 'partners'));
     }
 
     public function services($name)

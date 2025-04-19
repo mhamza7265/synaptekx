@@ -80,9 +80,11 @@ class PartnersPageContentController extends Controller
     public function updateScaledPartners(Request $request)
     {
         $request->merge([
-            'partner_logo'    => array_filter($request->input('partner_logo', [])),
-            'detail_title'    => array_filter($request->input('detail_title', [])),
-            'detail_subtitle' => array_filter($request->input('detail_subtitle', [])),
+            'partner_logo'        => array_filter($request->input('partner_logo', [])),
+            'partner_name'        => array_filter($request->input('partner_name', [])),
+            'partner_description' => array_filter($request->input('partner_description', [])),
+            'detail_title'        => array_filter($request->input('detail_title', [])),
+            'detail_subtitle'     => array_filter($request->input('detail_subtitle', [])),
         ]);
 
         $validated = $request->validate([
@@ -95,6 +97,20 @@ class PartnersPageContentController extends Controller
                 }
             }],
             'partner_logo.*'  => 'nullable|string',
+
+            'partner_name'    => ['required', 'array', function ($attribute, $value, $fail) {
+                if (empty(array_filter($value))) {
+                    $fail('At least one partner name is required.');
+                }
+            }],
+            'partner_name.*'  => 'nullable|string',
+
+            'partner_description' => ['required', 'array', function ($attribute, $value, $fail) {
+                if (empty(array_filter($value))) {
+                    $fail('At least one partner description is required.');
+                }
+            }],
+            'partner_description.*' => 'nullable|string',
 
             'detail_title'    => ['required', 'array', function ($attribute, $value, $fail) {
                 $flattened = array_merge(...array_values($value));
@@ -118,19 +134,20 @@ class PartnersPageContentController extends Controller
         $heroSection = $sections['hero_section'] ?? null;
         $allSections = $sections['all'] ?? [];
 
-        $partnerLogos = $validated['partner_logo'];
-        $detailTitles = $validated['detail_title'];
-        $detailSubtitles = $validated['detail_subtitle'];
+        $partnerLogos        = $validated['partner_logo'];
+        $partnerNames        = $validated['partner_name'];
+        $partnerDescriptions = $validated['partner_description'];
+        $detailTitles        = $validated['detail_title'];
+        $detailSubtitles     = $validated['detail_subtitle'];
 
         $partners = [];
 
         // Build the partners array
         foreach ($partnerLogos as $pIndex => $logo) {
-            $titles = $detailTitles[$pIndex] ?? [];
+            $titles    = $detailTitles[$pIndex] ?? [];
             $subtitles = $detailSubtitles[$pIndex] ?? [];
 
             $details = [];
-
             foreach ($titles as $dIndex => $title) {
                 $details[] = [
                     'detail_title'    => $title,
@@ -139,8 +156,10 @@ class PartnersPageContentController extends Controller
             }
 
             $partners[] = [
-                'partner_logo' => $logo,
-                'details'      => $details,
+                'partner_logo'        => $logo,
+                'partner_name'        => $partnerNames[$pIndex] ?? '',
+                'partner_description' => $partnerDescriptions[$pIndex] ?? '',
+                'details'             => $details,
             ];
         }
 
@@ -158,7 +177,6 @@ class PartnersPageContentController extends Controller
             }
         }
 
-        // If section doesn't exist, add a new one inside 'all'
         if (! $updated) {
             $allSections[] = [
                 'type'  => 'repeating',
@@ -170,16 +188,16 @@ class PartnersPageContentController extends Controller
             ];
         }
 
-        // Save the sections with hero_section and all
         $page->sections = [
-            'hero_section' => $heroSection, // Ensure hero_section is saved separately
-            'all' => array_values($allSections), // All other sections inside 'all'
+            'hero_section' => $heroSection,
+            'all'          => array_values($allSections),
         ];
 
         $page->save();
 
         return back()->with('success', 'Section updated successfully!');
     }
+
 
 
 

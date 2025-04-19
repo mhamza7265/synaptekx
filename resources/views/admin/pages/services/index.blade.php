@@ -30,133 +30,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="checkbox-column"> 1 </td>
-                                <td class="user-name">Digital</td>
-                                <td class="text-center">
-                                    <a class="btn btn-sm btn-success" href="{{route('services', 'digital')}}" target="_blank">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
-                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'digital')}}">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    {{-- <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                            @foreach ($services as $service)
+                                <tr>
+                                    <td class="checkbox-column"> {{$loop->iteration}} </td>
+                                    <td class="user-name">{{$service->name}}</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-success" href="{{route('services', 'digital')}}" target="_blank">
+                                            <i class="fa fa-eye"></i>
                                         </a>
-
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                            <a class="dropdown-item" href="{{route('services', 'digital')}}" target="_blank">View</a>
-                                            <a class="dropdown-item" href="{{route('admin.services.edit', 'digital')}}">Edit</a>
-                                        </div>
-                                    </div> --}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="checkbox-column"> 2 </td>
-                                <td class="user-name">Data & AI</td>
-                                <td class="text-center">
-                                    <a class="btn btn-sm btn-success" href="{{route('services', 'data-ai')}}" target="_blank">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
-                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'data-ai')}}">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    {{-- <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                                        <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', $service->id)}}">
+                                            <i class="fa fa-edit"></i>
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                            <a class="dropdown-item" href="{{route('services', 'data-ai')}}" target="_blank">View</a>
-                                            <a class="dropdown-item" href="{{route('admin.services.edit', 'data-ai')}}">Edit</a>
-                                        </div>
-                                    </div> --}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="checkbox-column"> 3 </td>
-                                <td class="user-name">Security</td>
-                                <td class="text-center">
-                                    <a class="btn btn-sm btn-success" href="{{route('services', 'security')}}" target="_blank">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
-                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'security')}}">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    {{-- <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                            <a class="dropdown-item" href="{{route('services', 'security')}}" target="_blank">View</a>
-                                            <a class="dropdown-item" href="{{route('admin.services.edit', 'security')}}">Edit</a>
-                                        </div>
-                                    </div> --}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="checkbox-column"> 4 </td>
-                                <td class="user-name">Cloud</td>
-                                <td class="text-center">
-                                    <a class="btn btn-sm btn-success" href="{{route('services', 'cloud')}}" target="_blank">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
-                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'cloud')}}">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    {{-- <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                            <a class="dropdown-item" href="{{route('services', 'cloud')}}" target="_blank">View</a>
-                                            <a class="dropdown-item" href="{{route('admin.services.edit', 'cloud')}}">Edit</a>
-                                        </div>
-                                    </div> --}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="checkbox-column"> 5 </td>
-                                <td class="user-name">Managed Services</td>
-                                <td class="text-center">
-                                    <a class="btn btn-sm btn-success" href="{{route('services', 'managed-services')}}" target="_blank">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
-                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'managed-services')}}">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    {{-- <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                            <a class="dropdown-item" href="{{route('services', 'managed-services')}}" target="_blank">View</a>
-                                            <a class="dropdown-item" href="{{route('admin.services.edit', 'managed-services')}}">Edit</a>
-                                        </div>
-                                    </div> --}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="checkbox-column"> 6 </td>
-                                <td class="user-name">Talent Acquisition & Sourcing</td>
-                                <td class="text-center">
-                                    <a class="btn btn-sm btn-success" href="{{route('services', 'talent-acquisition-and-sourcing')}}" target="_blank">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
-                                    <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', 'talent-acquisition-and-sourcing')}}">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    {{-- <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                            <a class="dropdown-item" href="{{route('services', 'talent-acquisition-and-sourcing')}}" target="_blank">View</a>
-                                            <a class="dropdown-item" href="{{route('admin.services.edit', 'talent-acquisition-and-sourcing')}}">Edit</a>
-                                        </div>
-                                    </div> --}}
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\ContactPageContentController;
 use App\Http\Controllers\Admin\LegalPagesContentController;
 use App\Http\Controllers\Admin\PagesMetaContentController;
 use App\Http\Controllers\Admin\PartnersPageContentController;
+use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\ServicesPagesController;
 use App\Http\Controllers\Admin\SettingsPageContentController;
 
@@ -43,6 +44,13 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
 
     //services cms routes
     Route::resource('/services', ServicesPagesController::class)->names('services');
+    Route::post('/service-page/update/{id}', [ServicesController::class, 'updatePageData'])->name('service-page.update');
+    Route::post('/service-page/hero/update/{id}', [ServicesController::class, 'updateHero'])->name('service-page.hero.update');
+    Route::post('/service-page/feature/update/{id}', [ServicesController::class, 'updateFeatureSection'])->name('service-page.feature.update');
+    Route::delete('/service-page/feature/detail/delete/{serviceId}/{detailIndex}', [ServicesController::class, 'deleteFeatureDetail'])->name('service-page.feature.detail.delete');
+    Route::post('/service-page/transform/update/{id}', [ServicesController::class, 'updateTransformSection'])->name('service-page.transform.update');
+    Route::post('/service-page/repeating/update/{id}', [ServicesController::class, 'updateRepeatingSections'])->name('service-page.repeating.update');
+
 
     //about page cms routes
     Route::get('/about-page/edit', [AboutPageContentController::class, 'edit'])->name('about-page.edit');

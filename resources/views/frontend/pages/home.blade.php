@@ -179,7 +179,26 @@
 
             <div id="partners-carousel" class="carousel slide font-sf-pro" data-bs-ride="false" data-bs-interval="false">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    @foreach ($partners->sections['all'] as $section)
+                        @if ($section['type'] == 'repeating' && $section['group'] == 'scaled_partners')
+                            @foreach ($section['data']['partners'] as $partner)
+                                <div class="carousel-item {{$loop->first ? 'active' : ''}}">
+                                    <div class="d-block d-md-flex justify-content-between align-content-center overflow-hidden">
+                                        <img src="{{$partner['partner_logo']}}" alt="aws icon" class="partners-icon" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" />
+                                        <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
+                                            <h5 class="text-white fs-16 fw-500">{{$partner['partner_name']}}</h5>
+                                            <p class="partners-carousel-text fs-16 text-white">{{$partner['partner_description']}}</p>
+                                            <a href="{{route('partners')}}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                                <img src="{{asset('images/frontend/check.svg')}}" />
+                                                <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                    @endforeach
+                    {{-- <div class="carousel-item active">
                         <div class="d-block d-md-flex justify-content-between align-content-center overflow-hidden">
                             <img src="{{asset('images/frontend/aws_icon.svg')}}" alt="aws icon" class="partners-icon" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" />
                             <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
@@ -198,10 +217,6 @@
                             <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
                                 <h5 class="text-white fs-16 fw-500">StrikeReady</h5>
                                 <p class="partners-carousel-text fs-16 text-white">SynaptekX and StrikeReady combine forces on distribution level to redefine security operations through AI-driven threat intelligence, automated incident response, and unified visibility.</p>
-                                {{-- <a href="{{route('partners')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
-                                </a> --}}
                                 <a href="{{ route('partners') }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/check.svg')}}" />
                                     <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
@@ -215,17 +230,13 @@
                             <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
                                 <h5 class="text-white fs-16 fw-500">Cywift</h5>
                                 <p class="partners-carousel-text fs-16 text-white">SynaptekX and Cywift unite on distribution level to transform governance, risk, and compliance (GRC) through AI-driven automation and actionable insights for any cloud anywhere.</p>
-                                {{-- <a href="{{route('partners')}}" class="d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                    <img src="{{asset('images/frontend/arrow_left_filled.svg')}}" />
-                                    <span class="ms-3 fs-14 text-white">Find Out More</span>
-                                </a> --}}
                                 <a href="{{ route('partners') }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                     <img src="{{asset('images/frontend/check.svg')}}" />
                                     <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#partners-carousel" data-bs-slide="prev">
                     {{-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> --}}

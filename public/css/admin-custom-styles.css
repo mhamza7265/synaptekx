@@ -46,6 +46,10 @@ body {
     background-color: dimgray;
 }
 
+.feature-sections-service .note-editing-area {
+    background-color: rgb(189, 185, 185);
+}
+
 #digitalServicesContainer .note-editable ul li,
 #digitalServicesContainer .note-editable ol li {
     color: #ffffffab;
