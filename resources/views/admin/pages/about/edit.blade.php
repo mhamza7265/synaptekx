@@ -111,13 +111,13 @@
                                                             <span class="d-block mt-3">Select Image:</span>
                                                             <div class="input-group d-flex align-items-center mt-2">
                                                                 <span class="input-group-btn">
-                                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_1_thumbnail" data-preview="section_1_holder">
+                                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_{{$loop->iteration}}_thumbnail" data-preview="section_{{$loop->iteration}}_holder">
                                                                     <i class="fa fa-picture-o"></i> Choose
                                                                 </a>
                                                                 </span>
-                                                                <input id="section_1_thumbnail" style="height: 36px" class="form-control" type="text" value="{{$section['data']['section_image'] ?? ''}}" name="section_image[]">
+                                                                <input id="section_{{$loop->iteration}}_thumbnail" style="height: 36px" class="form-control" type="text" value="{{$section['data']['section_image'] ?? ''}}" name="section_image[]">
                                                             </div>
-                                                            <div id="section_1_holder" style="margin-top:15px; max-height:100px;">
+                                                            <div id="section_{{$loop->iteration}}_holder" style="margin-top:15px; max-height:100px;">
                                                                 @if (!empty($section['data']['section_image'] ?? ''))
                                                                     <img src="{{ $section['data']['section_image'] ?? '' }}" style="height: 5rem;">
                                                                 @endif
@@ -221,13 +221,13 @@
                                                             <span class="d-block mt-3">Select Image:</span>
                                                             <div class="input-group d-flex align-items-center mt-2">
                                                                 <span class="input-group-btn">
-                                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="feat_1_thumbnail" data-preview="feat_1_holder">
+                                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="feat_{{$loop->iteration}}_thumbnail" data-preview="feat_{{$loop->iteration}}_holder">
                                                                     <i class="fa fa-picture-o"></i> Choose
                                                                 </a>
                                                                 </span>
-                                                                <input id="feat_1_thumbnail" style="height: 36px" class="form-control" value="{{$section['data']['section_image'] ?? ''}}" type="text" name="feat_image[]">
+                                                                <input id="feat_{{$loop->iteration}}_thumbnail" style="height: 36px" class="form-control" value="{{$section['data']['section_image'] ?? ''}}" type="text" name="feat_image[]">
                                                             </div>
-                                                            <div id="feat_1_holder" style="margin-top:15px; max-height:100px;">
+                                                            <div id="feat_{{$loop->iteration}}_holder" style="margin-top:15px; max-height:100px;">
                                                                 @if (!empty($section['data']['section_image'] ?? ''))
                                                                     <img src="{{$section['data']['section_image'] ?? ''}}" style="height: 5rem;">
                                                                 @endif
