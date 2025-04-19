@@ -64,14 +64,14 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
     Route::post('/about-page/feature-two/update', [AboutPageContentController::class, 'updateFeaturesTwo'])->name('about-page.feature-two.update');
 
     //partners page cms routes
-    Route::get('/our-partners-page/edit', [PartnersPageContentController::class, 'edit'])->name('partners-page.edit');
-    Route::post('/our-partners-page/hero/update', [PartnersPageContentController::class, 'updateHero'])->name('partners-page.hero.update');
-    Route::post('/our-partners-page/scaled/update', [PartnersPageContentController::class, 'updateScaledPartners'])->name('partners-page.scaled-partners.update');
+    Route::get('/associate/edit', [PartnersPageContentController::class, 'edit'])->name('partners-page.edit');
+    Route::post('/associate/hero/update', [PartnersPageContentController::class, 'updateHero'])->name('partners-page.hero.update');
+    Route::post('/associate/scaled/update', [PartnersPageContentController::class, 'updateScaledPartners'])->name('partners-page.scaled-partners.update');
     Route::delete('/partners-page/scaled/delete/{partnerIndex}', [PartnersPageContentController::class, 'deletePartner'])->name('partners-page.scaled-partners.delete');
     Route::delete('/partners-page/scaled-partners/detail/delete/{partnerIndex}/{detailIndex}', [PartnersPageContentController::class, 'deletePartnerDetail'])->name('partners-page.scaled-partners.detail.delete');
-    Route::post('/our-partners-page/all/update', [PartnersPageContentController::class, 'updateAllPartners'])->name('partners-page.all-partners.update');
+    Route::post('/associate/all/update', [PartnersPageContentController::class, 'updateAllPartners'])->name('partners-page.all-partners.update');
     Route::delete('/partners-page/all-partners/detail/delete/{partnerIndex}', [PartnersPageContentController::class, 'deleteAllPartner'])->name('partners-page.all-partners.detail.delete');
-    Route::post('/our-partners-page/capabilities/update', [PartnersPageContentController::class, 'updateCapabilities'])->name('partners-page.capabilities.update');
+    Route::post('/associate/capabilities/update', [PartnersPageContentController::class, 'updateCapabilities'])->name('partners-page.capabilities.update');
 
     //contact page cms routes
     Route::get('/contact-page/edit', [ContactPageContentController::class, 'edit'])->name('contact-page.edit');
