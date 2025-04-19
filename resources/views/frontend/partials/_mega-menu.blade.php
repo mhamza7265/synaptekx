@@ -2,26 +2,36 @@
     <div class="container p-0">
         <div class="row justify-content-between align-items-baseline">
             <div class="col-4">
-                <a href="{{ route('services', ['name' => 'digital']) }}" style="text-decoration: none" class="d-flex justify-content-start align-items-center gap-3">
-                    <img src="{{asset('images/frontend/digital_services.svg')}}" />
-                    <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('name') === 'digital') ? 'text-gradient' : 'text-black' }}">Digital</p>
-                </a>
-                <div>
-                    <a href="{{ route('services', ['name' => 'digital']) . '#consulting' }}" class="mega-menu-mobile-link d-block menu-link">
-                        <i class="fa-solid fa-arrow-right me-3"></i>Consulting & Strategy
+                @php
+                    $services = \App\Models\Services::all();
+                @endphp
+                @foreach ($services as $service)
+                    <a href="{{ route('services', ['id' => $service->id]) }}" style="text-decoration: none" class="d-flex justify-content-start align-items-center gap-3">
+                        <img src="{{$service->page_icon}}" />
+                        <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('id') == $service->id) ? 'text-gradient' : 'text-black' }}">{{$service->name}}</p>
                     </a>
-                    <a href="{{ route('services', ['name' => 'digital']) . '#transformation' }}" class="mega-menu-mobile-link d-block menu-link">
-                        <i class="fa-solid fa-arrow-right me-3"></i>Transformation
-                    </a>
-                    <a href="{{ route('services', ['name' => 'digital']) . '#business' }}" class="mega-menu-mobile-link d-block menu-link">
-                        <i class="fa-solid fa-arrow-right me-3"></i>Business Applications
-                    </a>
-                    <a href="{{ route('services', ['name' => 'digital']) . '#ecommerce' }}" class="mega-menu-mobile-link d-block menu-link">
-                        <i class="fa-solid fa-arrow-right me-3"></i>eCommerce
-                    </a>                    
-                </div>
+                    <div>
+                        @foreach ($service->sections['all'] as $section)
+                            <a href="{{ route('services', ['id' => $service->id]) . '#' . \Illuminate\Support\Str::slug($section['title'] ?? '') }}" class="mega-menu-mobile-link d-block menu-link">
+                                <i class="fa-solid fa-arrow-right me-3"></i>{{$section['display_title'] ?? ''}}
+                            </a>
+                        @endforeach
+                        {{-- <a href="{{ route('services', ['name' => 'digital']) . '#consulting' }}" class="mega-menu-mobile-link d-block menu-link">
+                            <i class="fa-solid fa-arrow-right me-3"></i>Consulting & Strategy
+                        </a>
+                        <a href="{{ route('services', ['name' => 'digital']) . '#transformation' }}" class="mega-menu-mobile-link d-block menu-link">
+                            <i class="fa-solid fa-arrow-right me-3"></i>Transformation
+                        </a>
+                        <a href="{{ route('services', ['name' => 'digital']) . '#business' }}" class="mega-menu-mobile-link d-block menu-link">
+                            <i class="fa-solid fa-arrow-right me-3"></i>Business Applications
+                        </a>
+                        <a href="{{ route('services', ['name' => 'digital']) . '#ecommerce' }}" class="mega-menu-mobile-link d-block menu-link">
+                            <i class="fa-solid fa-arrow-right me-3"></i>eCommerce
+                        </a>                     --}}
+                    </div>
+                @endforeach
             </div>
-            <div class="col-4">
+            {{-- <div class="col-4">
                 <a href="{{ route('services', ['name' => 'data-ai']) }}" style="text-decoration: none" class="d-flex justify-content-start align-items-center gap-3">
                     <img src="{{asset('images/frontend/data_services.svg')}}" />
                     <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('name') === 'data-ai') ? 'text-gradient' : 'text-black' }}">Data & AI</p>
@@ -46,9 +56,9 @@
                     <a href="{{ route('services', ['name' => 'security']) . '#ecommerce' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Compliance Adherence</a>
                     <a href="{{ route('services', ['name' => 'security']) . '#generative-ai' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Incident Response</a>
                 </div>
-            </div>
+            </div> --}}
         </div>
-        <div class="row justify-content-between align-items-baseline mt-5">
+        {{-- <div class="row justify-content-between align-items-baseline mt-5">
             <div class="col-4">
                 <a href="{{ route('services', ['name' => 'cloud']) }}" style="text-decoration: none" class="d-flex justify-content-start align-items-center gap-3">
                     <img src="{{asset('images/frontend/cloud_services.svg')}}" />
@@ -89,7 +99,7 @@
                     <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) . '#AppOps' }}" class="d-block menu-link"><i class="fa-solid fa-arrow-right me-3"></i>Product Development</a>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 

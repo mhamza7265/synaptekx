@@ -50,6 +50,8 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
     Route::delete('/service-page/feature/detail/delete/{serviceId}/{detailIndex}', [ServicesController::class, 'deleteFeatureDetail'])->name('service-page.feature.detail.delete');
     Route::post('/service-page/transform/update/{id}', [ServicesController::class, 'updateTransformSection'])->name('service-page.transform.update');
     Route::post('/service-page/repeating/update/{id}', [ServicesController::class, 'updateRepeatingSections'])->name('service-page.repeating.update');
+    Route::delete('/service-page/repeating/delete/{serviceId}/{index}', [ServicesController::class, 'deleteRepeatingBlock'])->name('service-page.repeating.delete');
+    Route::post('/service-page/description/update/{id}', [ServicesController::class, 'updatePageDescription'])->name('service-page.description.update');
 
 
     //about page cms routes

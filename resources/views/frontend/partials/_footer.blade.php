@@ -2,16 +2,14 @@
     <div class="d-block d-lg-flex justify-content-between align-items-start">
         @php
             $settings = \App\Models\Setting::first();
+            $services = \App\Models\Services::all();
         @endphp
         <div class="footer-links-container d-block d-md-flex justify-content-start align-items-baseline">
             <div>
                 <p class="footer-link-heading text-left text-md-start text-nowrap">Services</p>
-                <a href="{{ route('services', ['name' => 'digital']) }}" class="d-block footer-link text-left text-md-start">Digital</a>
-                <a href="{{ route('services', ['name' => 'cloud']) }}" class="d-block footer-link text-left text-md-start">Cloud</a>
-                <a href="{{ route('services', ['name' => 'data-ai']) }}" class="d-block footer-link text-left text-md-start">Data & AI</a>
-                <a href="{{ route('services', ['name' => 'managed-services']) }}" class="d-block footer-link text-left text-md-start">Managed Services</a>
-                <a href="{{ route('services', ['name' => 'security']) }}" class="d-block footer-link text-left text-md-start">Security</a>
-                <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" class="d-block footer-link text-left text-md-start">Talent Acquisition & Sourcing</a>
+                @foreach ($services as $service)
+                    <a href="{{ route('services', ['id' => $service->id]) }}" class="d-block footer-link text-left text-md-start">{{$service->name}}</a>
+                @endforeach
             </div>
             
             <div class="ms-0 mt-4 mt-md-0 ms-md-5">

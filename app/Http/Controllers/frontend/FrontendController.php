@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\File;
 use App\Models\Blog;
 use App\Models\Setting;
 use App\Models\Page;
+use App\Models\Services;
 
 class FrontendController extends Controller
 {
@@ -19,37 +20,22 @@ class FrontendController extends Controller
         $settings = Setting::first();
         $page = Page::where('slug', 'home')->first();
         $partners = Page::where('slug', 'partners')->first();
+        $services = Services::all();
         $title = "$page->meta_title | $settings->site_title";
         $description = "$page->meta_description";
-        return view('frontend.pages.home', compact('title', 'description', 'page', 'partners'));
+        return view('frontend.pages.home', compact('title', 'description', 'page', 'partners', 'services'));
     }
 
-    public function services($name)
+    public function services($id)
     {
         $settings = Setting::first();
         // Set the default title
-        $title = "Services | $settings->site_title";
+        $service = Services::findOrFail($id);
 
-        // Define a list of available services and their corresponding titles
-        $services = [
-            'digital' => "Digital Services | Synaptekx",
-            'cloud' => "Cloud Services | Synaptekx",
-            'security' => "Security Services | Synaptekx",
-            'data-ai' => "Data & AI Services | Synaptekx",
-            'managed-services' => "Managed Services | Synaptekx",
-            'talent-acquisition-and-sourcing' => "Talent Acquisition & Sourcing | Synaptekx"
-        ];
-
-        // Check if the requested service exists in the list and update the title accordingly
-        if (array_key_exists($name, $services)) {
-            $title = $services[$name];
-        }
-
-        // Ensure that the service name is sanitized to prevent invalid view loading
-        $viewName = 'frontend.pages.services.' . $name;
+        $title = "$service->meta_title | $settings->site_title";
 
         // Return the appropriate view with the title
-        return view($viewName, compact('title'));
+        return view('frontend.pages.services.service', compact('title', 'service'));
     }
 
     public function sendContactEmail(Request $request)
@@ -82,9 +68,10 @@ class FrontendController extends Controller
     {
         $settings = Setting::first();
         $page = Page::where('slug', 'partners')->first();
+        $services = Services::take(6)->get();
         $title = "$page->meta_title | $settings->site_title";
         $description = "$page->meta_description";
-        return view('frontend.pages.partners', compact('title', 'description', 'page'));
+        return view('frontend.pages.partners', compact('title', 'description', 'page', 'services'));
     }
 
     public function contact()

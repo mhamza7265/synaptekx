@@ -312,45 +312,19 @@
                                     @endphp
                                     <h1 class="fs-57 text-white" style="line-height: 1.3">{!!$formattedTitle!!}</h1>
                                 </div>
-                                <div class="col-12 col-md-3 ps-3 ps-md-5 mb-3 mb-md-0 mt-5 mt-md-0">
-                                    <a href="{{ route('services', ['name' => 'digital']) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                                        <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
-                                        </svg>
-                                        Digital
-                                    </a>
-                                    <a href="{{ route('services', ['name' => 'data-ai']) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
-                                        <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
-                                        </svg>
-                                        Data & AI
-                                    </a>
-                                    <a href="{{ route('services', ['name' => 'security']) }}" class="capability-link fs-32" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
-                                        <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
-                                        </svg>
-                                        Security
-                                    </a>
-                                </div>
-                                <div class="col-12 col-md-5 ps-3">
-                                    <a href="{{ route('services', ['name' => 'cloud']) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                                        <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
-                                        </svg>
-                                        Cloud
-                                    </a>
-                                    <a href="{{ route('services', ['name' => 'managed-services']) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="100">
-                                        <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
-                                        </svg>
-                                        Managed Services
-                                    </a>
-                                    <a href="{{ route('services', ['name' => 'talent-acquisition-and-sourcing']) }}" class="capability-link fs-32" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="200">
-                                        <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
-                                        </svg>
-                                        Talent Acquisition & Sourcing
-                                    </a>
+                                <div class="col-12 col-md-6 ps-3 ps-md-5 mb-3 mb-md-0 mt-5 mt-md-0">
+                                    <div class="row">
+                                        @foreach ($services as $service)
+                                            <div class="col-12 col-md-6">
+                                                <a href="{{ route('services', ['id' => $service->id]) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="{{$loop->index}}00">
+                                                    <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
+                                                    </svg>
+                                                    {{$service->name}}
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                    </div>
                                 </div>
                             </div>
                         </div>

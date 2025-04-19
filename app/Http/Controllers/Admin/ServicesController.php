@@ -60,6 +60,7 @@ class ServicesController extends Controller
     {
         $request->validate([
             'section_title' => 'required|string',
+            'display_title' => 'required',
             'detail_title' => ['required', 'array', 'min:1'],
             'detail_description' => ['required', 'array', 'min:1'],
         ]);
@@ -90,6 +91,7 @@ class ServicesController extends Controller
                 ($section['group'] ?? '') === 'features'
             ) {
                 $allSections[$i]['title'] = $request->section_title;
+                $allSections[$i]['display_title'] = $request->display_title;
                 $allSections[$i]['data']['details'] = $details;
                 $updated = true;
                 break;
@@ -101,6 +103,7 @@ class ServicesController extends Controller
                 'type'  => 'repeating',
                 'group' => 'features',
                 'title' => $request->section_title,
+                'display_title' => $request->display_title,
                 'data'  => [
                     'details' => $details,
                 ],
@@ -160,6 +163,7 @@ class ServicesController extends Controller
     {
         $request->validate([
             'section_title' => 'required|string',
+            'display_title' => 'required|string',
             'infograph'     => 'required|string',
         ]);
 
@@ -177,6 +181,7 @@ class ServicesController extends Controller
                 ($section['group'] ?? '') === 'transform'
             ) {
                 $allSections[$i]['title'] = $request->section_title;
+                $allSections[$i]['display_title'] = $request->display_title;
                 $allSections[$i]['data']['infograph'] = $request->infograph;
                 $updated = true;
                 break;
@@ -188,6 +193,7 @@ class ServicesController extends Controller
                 'type'  => 'single',
                 'group' => 'transform',
                 'title' => $request->section_title,
+                'display_title' => $request->display_title,
                 'data'  => [
                     'infograph' => $request->infograph,
                 ],
@@ -208,6 +214,7 @@ class ServicesController extends Controller
     {
         $request->validate([
             'section_title'  => 'required|array|min:1',
+            'display_title'  => 'required|array|min:1',
             'section_desc'   => 'required|array|min:1',
             'section_image'  => 'required|array|min:1',
         ]);
@@ -218,22 +225,24 @@ class ServicesController extends Controller
         $heroSection = $sections['hero_section'] ?? null;
         $existingSections = $sections['all'] ?? [];
 
-        $titles = $request->input('section_title', []);
-        $descriptions = $request->input('section_desc', []);
-        $images = $request->input('section_image', []);
+        $titles         = $request->input('section_title', []);
+        $displayTitles  = $request->input('display_title', []);
+        $descriptions   = $request->input('section_desc', []);
+        $images         = $request->input('section_image', []);
 
         // Remove previously added repeating_blocks from `all`
         $filteredSections = array_filter($existingSections, function ($section) {
             return ($section['group'] ?? '') !== 'repeating_blocks';
         });
 
-        // Build each block as a separate section at root level of `all`
+        // Add each block as a separate repeating section at root level of `all`
         foreach ($titles as $i => $title) {
             $filteredSections[] = [
-                'type'  => 'repeating',
-                'group' => 'repeating_blocks',
-                'title' => $title,
-                'data'  => [
+                'type'          => 'repeating',
+                'group'         => 'repeating_blocks',
+                'title'         => $title,
+                'display_title' => $displayTitles[$i] ?? '',
+                'data'          => [
                     'description' => $descriptions[$i] ?? '',
                     'image'       => $images[$i] ?? '',
                 ],
@@ -247,6 +256,42 @@ class ServicesController extends Controller
 
         $service->save();
 
-        return back()->with('success', 'Repeating sections updated successfully!');
+        return back()->with('success', 'Sections updated successfully!');
+    }
+
+
+    public function deleteRepeatingBlock($serviceId, $index)
+    {
+        $service = Services::findOrFail($serviceId);
+        $sections = $service->sections ?? [];
+
+        if (!isset($sections['all'][$index])) {
+            return redirect()->back()->with('success', 'Section not found');
+        }
+
+        if (
+            ($sections['all'][$index]['type'] ?? '') === 'repeating' &&
+            ($sections['all'][$index]['group'] ?? '') === 'repeating_blocks'
+        ) {
+            array_splice($sections['all'], $index, 1); // Remove item at index
+            $service->sections = $sections;
+            $service->save();
+
+            return redirect()->back()->with('success', 'Section deleted!');
+        }
+
+        return redirect()->back()->with('success', 'Invalid section type');
+    }
+
+    public function updatePageDescription(Request $request, $id)
+    {
+        $service = Services::findOrFail($id);
+        $request->validate([
+            'service_description' => 'required',
+        ]);
+        $service->service_description = $request->service_description;
+        $service->save();
+
+        return back()->with('success', 'Service description updated successfully!');
     }
 }

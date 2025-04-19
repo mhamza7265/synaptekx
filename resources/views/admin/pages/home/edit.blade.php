@@ -148,7 +148,7 @@
                                         <div class="card-body">
                                             <span>Section Title:</span>
                                             <input type="text" class="form-control mb-2" value="{{$page->sections['services_section']['section_title'] ?? ''}}" name="section_title">
-                                            <div id="digitalServicesContainer">
+                                            {{-- <div id="digitalServicesContainer">
                                                 @if (isset($page->sections['services_section']['services']) && count($page->sections['services_section']['services']) > 0)
                                                     @foreach ($page->sections['services_section']['services']  as $service)
                                                         <div class="border p-3 mb-3 position-relative">
@@ -171,7 +171,7 @@
                                                         <textarea id="summernote-0" name="list_content[]" class="form-control summernote mt-2"></textarea>
                                                     </div>
                                                 @endif
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
@@ -179,7 +179,7 @@
                                         @csrf
                                         @method('DELETE')
                                     </form>
-                                    <button type="button" class="btn btn-success mt-3 mx-auto d-block" id="add-services">Add Service</button>
+                                    {{-- <button type="button" class="btn btn-success mt-3 mx-auto d-block" id="add-services">Add Service</button> --}}
                                 </div>
                             </div>
                         </div>

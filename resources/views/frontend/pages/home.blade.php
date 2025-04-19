@@ -64,7 +64,7 @@
                                     <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
                                         <p class="hero-detail-text">{!!$formattedSubtitle!!}</p>
                                     </div>
-                                    <a href="{{ route('services', ['name' => 'digital']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <a href="{{ route('services', ['id' => 1]) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                         <img src="{{asset('images/frontend/check.svg')}}" />
                                         <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                     </a>
@@ -280,30 +280,26 @@
                                 <img src="{{asset('images/frontend/divider_gradient.svg')}}" />
                             </div> --}}
                             <div class="nav flex-column nav-pills tab-border-left" id="v-pills-tab" role="tablist">
-                                @if (isset($page->sections['services_section']['services']) && count($page->sections['services_section']['services']) > 0 )
-                                    @foreach ($page->sections['services_section']['services'] as $service)
-                                        <button class="nav-link {{$loop->first ? 'active' : ''}}" id="tab-btn-{{$loop->iteration}}" data-bs-toggle="pill" data-bs-target="#tab-{{$loop->iteration}}" type="button">
-                                            {{\Illuminate\Support\Str::upper($service['list_title'])}}
-                                        </button>
-                                    @endforeach
-                                @endif
+                                @foreach ($services as $service)
+                                    <button class="nav-link {{$loop->first ? 'active' : ''}}" id="tab-btn-{{$loop->iteration}}" data-bs-toggle="pill" data-bs-target="#tab-{{$loop->iteration}}" type="button">
+                                        {{\Illuminate\Support\Str::upper($service->name)}}
+                                    </button>
+                                @endforeach
                             </div>
                         </div>
                 
                         <!-- Right Side - Tab Content -->
                         <div class="col-md-8 col-12" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
                             <div class="tab-content section-3-tab-content" id="v-pills-tabContent">
-                                @if (isset($page->sections['services_section']['services']) && count($page->sections['services_section']['services']) > 0 )
-                                    @foreach ($page->sections['services_section']['services'] as $service)
-                                        <div class="tab-pane fade show {{$loop->first ? 'active' : 's'}}" id="tab-{{$loop->iteration}}">
-                                            {!!$service['list_content']!!}
-                                            <a href="{{ route('services', ['name' => 'digital']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                                <img src="{{asset('images/frontend/check.svg')}}" />
-                                                <span class="ms-2 me-2 fs-14 text-white">Explore</span>
-                                            </a>
-                                        </div>
-                                    @endforeach
-                                @endif
+                                @foreach ($services as $service)
+                                    <div class="tab-pane fade show {{$loop->first ? 'active' : ''}}" id="tab-{{$loop->iteration}}">
+                                        {!!$service->service_description!!}
+                                        <a href="{{ route('services', ['id' => $service->id]) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                            <img src="{{asset('images/frontend/check.svg')}}" />
+                                            <span class="ms-2 me-2 fs-14 text-white">Explore</span>
+                                        </a>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

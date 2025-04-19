@@ -79,34 +79,62 @@ class HomePageContentController extends Controller
         return redirect()->back()->with('success', 'Hero section deleted successfully!');
     }
 
+    // public function updateServices(Request $request)
+    // {
+    //     // dd($request->all());
+    //     $request->merge([
+    //         'list_title' => array_filter($request->input('list_title', [])),
+    //         'list_content' => array_filter($request->input('list_content', [])),
+    //     ]);
+
+    //     $request->validate([
+    //         'section_title' => 'required',
+    //         'list_title' => 'required|array|min:1',
+    //         'list_content' => 'required|array|min:1',
+    //     ]);
+
+    //     $page = Page::where('slug', 'home')->first();
+
+    //     $servicesSections = [];
+
+    //     foreach ($request->list_title as $key => $value) {
+    //         $listContent = $request->list_content[$key];
+    //         $servicesSections[$key] = [
+    //             'list_title' => $value,
+    //             'list_content' => $listContent,
+    //         ];
+    //     }
+
+    //     $services = [
+    //         'services_section' => ["section_title" => $request->section_title, "services" => $servicesSections],
+    //     ];
+
+    //     // Decode existing sections or start with an empty array
+    //     $sections = $page->sections ?? [];
+
+    //     // Overwrite or add the 'hero' section
+    //     $sections['services_section'] = $services['services_section'];
+
+    //     // Update and save
+    //     $page->sections = $sections;
+    //     $page->save();
+
+    //     return redirect()->back()->with('success', 'Section updated successfully!');
+    // }
+
     public function updateServices(Request $request)
     {
-        // dd($request->all());
-        $request->merge([
-            'list_title' => array_filter($request->input('list_title', [])),
-            'list_content' => array_filter($request->input('list_content', [])),
-        ]);
 
         $request->validate([
             'section_title' => 'required',
-            'list_title' => 'required|array|min:1',
-            'list_content' => 'required|array|min:1',
         ]);
 
         $page = Page::where('slug', 'home')->first();
 
         $servicesSections = [];
 
-        foreach ($request->list_title as $key => $value) {
-            $listContent = $request->list_content[$key];
-            $servicesSections[$key] = [
-                'list_title' => $value,
-                'list_content' => $listContent,
-            ];
-        }
-
         $services = [
-            'services_section' => ["section_title" => $request->section_title, "services" => $servicesSections],
+            'services_section' => ["section_title" => $request->section_title,],
         ];
 
         // Decode existing sections or start with an empty array

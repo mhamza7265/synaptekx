@@ -122,6 +122,28 @@
                             </div>
                         </div>
                         <div class="card mt-2">
+                            <div class="card-header" id="headingSix80">
+                                <section class="mb-0 mt-0">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFiveFive" aria-expanded="false" aria-controls="withoutSpacingAccordionFiveFive">
+                                        Service Description <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="withoutSpacingAccordionFiveFive" class="collapse" aria-labelledby="headingSix80" data-bs-parent="#withoutSpacing">
+                                <div class="container py-3">
+                                    <form method="POST" action="{{ route('admin.service-page.description.update', $service->id) }}">
+                                        @csrf
+                                        <div id="service-description">
+                                            <span class="d-block mt-4">Content:</span>
+                                            <textarea name="service_description" class="form-control summernote mt-2" required>{{$service->service_description}}</textarea>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-md btn-success mt-3">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-2">
                             <div class="card-header" id="headingFive10">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFive" aria-expanded="false" aria-controls="withoutSpacingAccordionFive">
@@ -139,9 +161,10 @@
                                             @if ($section['type'] == 'repeating'&& $section['group'] == 'features')
                                                 <div class="card-body">
                                                     <span>Section Title:</span>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control mt-2" name="section_title" value="{{$section['title']}}" >
-                                                    </div>
+                                                    <input type="text" class="form-control mt-2" name="section_title" value="{{$section['title']}}" >
+
+                                                    <span class="d-block mt-3">Display Title:</span>
+                                                    <input class="form-control mt-2" value="{{$section['display_title'] ?? ''}}" name="display_title" >
         
                                                     <hr>
         
@@ -185,9 +208,10 @@
                                             @if ($section['type'] == 'single' && $section['group'] == 'transform')
                                                 <div class="card-body">
                                                     <span class="d-block mt-3">Section Title:</span>
-                                                    <div class="form-group">
-                                                        <input class="form-control mt-2" value="{{$section['title'] ?? ''}}" name="section_title" >
-                                                    </div>
+                                                    <input class="form-control mt-2" value="{{$section['title'] ?? ''}}" name="section_title" >
+
+                                                    <span class="d-block mt-3">Display Title:</span>
+                                                    <input class="form-control mt-2" value="{{$section['display_title'] ?? ''}}" name="display_title" >
         
                                                     <span class="d-block mt-3">Select Infograph:</span>
                                                     <div class="input-group d-flex align-items-center mt-2">
@@ -227,14 +251,15 @@
                                             @foreach ($service->sections['all'] as $section)
                                                 @if ($section['type'] == 'repeating' && $section['group'] == 'repeating_blocks')
                                                     <div class="card-body border p-3 mb-3 position-relative">
-                                                        <button type="button" class="btn section-dlt-button position-absolute" data-index="{{$loop->index}}" style="top:5px; right:5px;">
+                                                        <button type="button" class="btn section-dlt-button position-absolute" data-index="{{$loop->index}}" data-service="{{$service->id}}" style="top:5px; right:5px;">
                                                             <i class="fa fa-trash text-danger"></i>
                                                         </button>
         
                                                         <span>Title:</span>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control mt-2" value="{{$section['title'] ?? ''}}" name="section_title[]" >
-                                                        </div>
+                                                        <input type="text" class="form-control mt-2" value="{{$section['title'] ?? ''}}" name="section_title[]" >
+
+                                                        <span class="d-block mt-3">Display Title:</span>
+                                                        <input class="form-control mt-2" value="{{$section['display_title'] ?? ''}}" name="display_title[]" >
                                                         
                                                         <span class="d-block mt-4">Description:</span>
                                                         <textarea name="section_desc[]" class="form-control summernote mt-2">{{$section['data']['description'] ?? ''}}</textarea>
@@ -386,9 +411,10 @@
                         </button>
 
                         <span>Title:</span>
-                        <div class="form-group">
-                            <input type="text" class="form-control mt-2" name="section_title[]">
-                        </div>
+                        <input type="text" class="form-control mt-2" name="section_title[]">
+
+                        <span class="d-block mt-3">Display Title:</span>
+                        <input class="form-control mt-2" name="display_title[]" >
 
                         <span class="d-block mt-4">Description:</span>
                         <textarea name="section_desc[]" class="form-control summernote mt-2"></textarea>
@@ -436,6 +462,16 @@
                     let serviceId = $(this).data('service');
                     let dltForm = $('#delete-feature-section-form');
                     dltForm.attr('action', `/admin/service-page/feature/detail/delete/${serviceId}/${index}`);
+                    dltForm.submit();
+                }
+            })
+
+            $(document).on('click', '.section-dlt-button', function(){
+                if(confirm('Do you want to delete this section?')){
+                    let index = $(this).data('index');
+                    let serviceId = $(this).data('service');
+                    let dltForm = $('#delete-feature-section-form');
+                    dltForm.attr('action', `/admin/service-page/repeating/delete/${serviceId}/${index}`);
                     dltForm.submit();
                 }
             })
