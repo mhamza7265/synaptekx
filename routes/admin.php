@@ -55,6 +55,13 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
 
     //partners page cms routes
     Route::get('/partners-page/edit', [PartnersPageContentController::class, 'edit'])->name('partners-page.edit');
+    Route::post('/partners-page/hero/update', [PartnersPageContentController::class, 'updateHero'])->name('partners-page.hero.update');
+    Route::post('/partners-page/scaled-partners/update', [PartnersPageContentController::class, 'updateScaledPartners'])->name('partners-page.scaled-partners.update');
+    Route::delete('/partners-page/scaled-partners/delete/{partnerIndex}', [PartnersPageContentController::class, 'deletePartner'])->name('partners-page.scaled-partners.delete');
+    Route::delete('/partners-page/scaled-partners/detail/delete/{partnerIndex}/{detailIndex}', [PartnersPageContentController::class, 'deletePartnerDetail'])->name('partners-page.scaled-partners.detail.delete');
+    Route::post('/partners-page/all-partners/update', [PartnersPageContentController::class, 'updateAllPartners'])->name('partners-page.all-partners.update');
+    Route::delete('/partners-page/all-partners/detail/delete/{partnerIndex}', [PartnersPageContentController::class, 'deleteAllPartner'])->name('partners-page.all-partners.detail.delete');
+    Route::post('/partners-page/capabilities/update', [PartnersPageContentController::class, 'updateCapabilities'])->name('partners-page.capabilities.update');
 
     //contact page cms routes
     Route::get('/contact-page/edit', [ContactPageContentController::class, 'edit'])->name('contact-page.edit');

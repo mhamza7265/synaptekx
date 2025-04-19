@@ -909,7 +909,7 @@ textarea {
 .empowering-section {
     padding-top: 80px;
     padding-bottom: 80px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .sticky-section {

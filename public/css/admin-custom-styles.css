@@ -42,11 +42,19 @@ body {
     background-color: dimgray;
 }
 
+#allPartnersContainer .note-editing-area {
+    background-color: dimgray;
+}
+
 #digitalServicesContainer .note-editable ul li,
 #digitalServicesContainer .note-editable ol li {
     color: #ffffffab;
 }
 
 #digitalServicesContainer .note-editable ul li::marker {
+    color: #ffffffab; /* or any dynamic color */
+}
+
+.partner-container .note-editable ul li::marker {
     color: #ffffffab; /* or any dynamic color */
 }
