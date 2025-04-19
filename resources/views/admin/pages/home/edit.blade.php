@@ -187,7 +187,7 @@
                             <div class="card-header" id="headingThree10">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionThree" aria-expanded="false" aria-controls="withoutSpacingAccordionThree">
-                                        The Digital Transformation Journey <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                        {{$page->sections['transform_section']['section_title'] ?? ''}} <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
@@ -198,7 +198,7 @@
                                         <div class="card-body">
                                             <span class="d-block mt-3">Section Title:</span>
                                             <div class="form-group">
-                                                <input class="form-control mt-2" name="section_title" required>
+                                                <input class="form-control mt-2" value="{{$page->sections['transform_section']['section_title'] ?? ''}}" name="section_title" required>
                                             </div>
 
                                             <span class="d-block mt-3">Select Infograph:</span>
@@ -208,9 +208,13 @@
                                                     <i class="fa fa-picture-o"></i> Choose
                                                 </a>
                                                 </span>
-                                                <input id="infograph_thumbnail" style="height: 36px" class="form-control" type="text" name="infograph" required>
+                                                <input id="infograph_thumbnail" style="height: 36px" class="form-control" value="{{$page->sections['transform_section']['infograph'] ?? ''}}" type="text" name="infograph" required>
                                             </div>
-                                            <div id="infograph_holder" style="margin-top:15px; max-height:100px;"></div>
+                                            <div id="infograph_holder" style="margin-top:15px; max-height:100px;">
+                                                @if (!empty($page->sections['transform_section']['infograph'] ?? ''))
+                                                    <img src="{{ asset($page->sections['transform_section']['infograph'] ?? '') }}" style="height: 5rem;">
+                                                @endif
+                                            </div>
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
