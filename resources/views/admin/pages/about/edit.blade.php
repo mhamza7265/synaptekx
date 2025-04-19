@@ -94,7 +94,7 @@
                                         <div id="about-feature-sections">
                                             @if (isset($page->sections['all']))
                                                 @foreach ($page->sections['all'] as $section)
-                                                    @if ($section['type'] == 'repeating')
+                                                    @if ($section['type'] == 'repeating' && $section['group'] == 'features')
                                                         <div class="card-body border p-3 mb-3 position-relative">
                                                             <button type="button" class="btn section-dlt-btn-two position-absolute" data-index="{{$loop->index}}" style="top:5px; right:5px;">
                                                                 <i class="fa fa-trash text-danger"></i>
@@ -122,27 +122,6 @@
                                                                     <img src="{{ $section['data']['section_image'] ?? '' }}" style="height: 5rem;">
                                                                 @endif
                                                             </div>
-                                                        </div>
-                                                    @else
-                                                        <div class="card-body border p-3 mb-3 position-relative">
-                                                            <span>Title:</span>
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control mt-2" name="section_title[]" >
-                                                            </div>
-                                                            
-                                                            <span class="d-block mt-4">Description:</span>
-                                                            <textarea name="section_desc[]" class="form-control mt-2"></textarea>
-            
-                                                            <span class="d-block mt-3">Select Image:</span>
-                                                            <div class="input-group d-flex align-items-center mt-2">
-                                                                <span class="input-group-btn">
-                                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_1_thumbnail" data-preview="section_1_holder">
-                                                                    <i class="fa fa-picture-o"></i> Choose
-                                                                </a>
-                                                                </span>
-                                                                <input id="section_1_thumbnail" style="height: 36px" class="form-control" type="text" name="section_image[]">
-                                                            </div>
-                                                            <div id="section_1_holder" style="margin-top:15px; max-height:100px;"></div>
                                                         </div>
                                                     @endif
                                                 @endforeach
@@ -226,7 +205,7 @@
                                         <div id="about-feature-sections-two">
                                             @if (isset($page->sections['all']))
                                                 @foreach ($page->sections['all'] as $section)
-                                                    @if ($section['type'] == 'repeating_2')
+                                                    @if ($section['type'] == 'repeating_2' && $section['group'] == 'features_2')
                                                         <div class="card-body border p-3 mb-3 position-relative">
                                                             <button type="button" class="btn section-two-dlt-btn-two position-absolute" data-index="{{$loop->index}}" style="top:5px; right:5px;">
                                                                 <i class="fa fa-trash text-danger"></i>
