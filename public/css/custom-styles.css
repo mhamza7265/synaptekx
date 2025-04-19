@@ -912,6 +912,11 @@ textarea {
     overflow: hidden;
 }
 
+.sticky-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
 .text-content.fixed-on-scroll {
     width: 500px;
     background-color: #fff;

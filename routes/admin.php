@@ -36,12 +36,9 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
     Route::get('/home-page/edit', [HomePageContentController::class, 'edit'])->name('home-page.edit');
     Route::post('/home-page/hero/update', [HomePageContentController::class, 'updateHero'])->name('home-page.hero.update');
     Route::delete('/home-page/hero/delete/{index}', [HomePageContentController::class, 'deleteHero'])->name('home-page.hero.delete');
-
     Route::post('/home-page/services/update', [HomePageContentController::class, 'updateServices'])->name('home-page.services.update');
     Route::delete('/home-page/services/delete/{index}', [HomePageContentController::class, 'deleteService'])->name('home-page.services.delete');
-
     Route::post('/home-page/transformation/update', [HomePageContentController::class, 'updateTransformSection'])->name('home-page.transformation.update');
-
     Route::post('/home-page/features/update', [HomePageContentController::class, 'updateFeaturesSection'])->name('home-page.features.update');
 
     //services cms routes
@@ -49,6 +46,12 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
 
     //about page cms routes
     Route::get('/about-page/edit', [AboutPageContentController::class, 'edit'])->name('about-page.edit');
+    Route::post('/about-page/hero/update', [AboutPageContentController::class, 'updateHero'])->name('about-page.hero.update');
+    Route::post('/about-page/feature/update', [AboutPageContentController::class, 'updateFeatures'])->name('about-page.feature.update');
+    Route::delete('/about-page/feature/delete/{index}', [AboutPageContentController::class, 'deleteFeatureSection'])->name('about-page.feature.delete');
+    Route::post('/about-page/sticky-section/update', [AboutPageContentController::class, 'updateStickySection'])->name('about-page.sticky-section.update');
+    Route::delete('/about-page/sticky-section/delete/{index}', [AboutPageContentController::class, 'deleteDetail'])->name('about-page.sticky-section.delete');
+    Route::post('/about-page/feature-two/update', [AboutPageContentController::class, 'updateFeaturesTwo'])->name('about-page.feature-two.update');
 
     //partners page cms routes
     Route::get('/partners-page/edit', [PartnersPageContentController::class, 'edit'])->name('partners-page.edit');
