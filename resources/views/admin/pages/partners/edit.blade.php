@@ -119,7 +119,7 @@
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
                                         @foreach ($sections as $sIndex => $section)
                                             @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'scaled_partners')
-                                            {{ data_get($section, 'title', '') }}
+                                            {{ data_get($section, 'title', 'Scaled Partners') }}
                                         @endif
                                         @endforeach  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
@@ -129,8 +129,14 @@
                                 <div class="container py-3">
                                      <form method="post" action="{{ route('admin.partners-page.scaled-partners.update') }}">
                                         @csrf
+                                        @php
+                                            $hasScaled = false;
+                                        @endphp
                                         @foreach ($sections as $sIndex => $section)
                                             @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'scaled_partners')
+                                                @php
+                                                    $hasScaled = true;
+                                                @endphp
                                                 <input type="hidden" name="section_index" value="{{ $sIndex }}">
                                                 <span>Section Title:</span>
                                                 <input type="text" class="form-control mb-2" name="section_title" value="{{ data_get($section, 'title', '') }}" required>
@@ -186,6 +192,44 @@
                                                 </div>
                                             @endif
                                         @endforeach
+                                        @if (!$hasScaled)
+                                            <input type="hidden" name="section_index" value="1">
+                                            <span>Section Title:</span>
+                                            <input type="text" class="form-control mb-2" name="section_title" required>
+
+                                            <div id="elite-partners-section" class="mt-3">
+                                                <div class="card-body border p-3 mb-3 position-relative partner-wrapper" data-partner-index="0">
+                                                    <span class="d-block mt-3">Select Logo:</span>
+                                                    <div class="input-group d-flex align-items-center mt-2">
+                                                        <span class="input-group-btn">
+                                                            <a class="lfm_file btn btn-primary" data-input="partner_new_thumbnail" data-preview="partner_new_holder">
+                                                                <i class="fa fa-picture-o"></i> Choose
+                                                            </a>
+                                                        </span>
+                                                        <input id="partner_new_thumbnail" class="form-control" type="text" name="partner_logo[0]" required>
+                                                    </div>
+                                                    <div id="partner_new_holder" style="margin-top:15px; max-height:100px;"></div>
+
+                                                    <span>Partner Name:</span>
+                                                    <input type="text" class="form-control mb-2" name="partner_name[]">
+
+                                                    <span>Partner Description:</span>
+                                                    <textarea class="form-control mb-2" name="partner_description[]" required></textarea>
+
+                                                    {{-- Partner Details --}}
+                                                    <div class="elite_partner_details">
+                                                        <div class="elite_partner_detail border p-3 mb-3 position-relative">
+                                                            <span>Title:</span>
+                                                            <input type="text" class="form-control mt-2" name="detail_title[0][]" required>
+
+                                                            <span class="d-block mt-3">Description:</span>
+                                                            <textarea name="detail_subtitle[0][]" class="form-control mt-2" required></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="add-partner-detail btn btn-success mt-3 mx-auto d-block" data-partner-index="0">Add Partner Detail</button>
+                                                </div>
+                                            </div>
+                                        @endif
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
                                     <button type="button" class="btn btn-success mt-3 mx-auto d-block" id="add-elite-partner">Add Elite Partner</button>
@@ -225,7 +269,7 @@
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFive" aria-expanded="false" aria-controls="withoutSpacingAccordionFive">
                                         @foreach ($sections as $sIndex => $section)
                                             @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'all_partners')
-                                                {{ data_get($section, 'title', '') }}
+                                                {{ data_get($section, 'title', 'All Partners') }}
                                             @endif
                                         @endforeach
 
@@ -362,7 +406,7 @@
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFeature1" aria-expanded="false" aria-controls="withoutSpacingAccordionFeature1">
                                         @foreach ($sections as $sIndex => $section)
                                             @if (data_get($section, 'type') === 'text' && data_get($section, 'group') === 'capabilities')
-                                                {{ data_get($section, 'title', '') }}
+                                                {{ data_get($section, 'title', 'Capabilities') }}
                                             @endif
                                         @endforeach
  
@@ -680,6 +724,18 @@
                     dltForm.submit();
                 }
             })
+
+            @if ($errors->any())
+                $(document).ready(function(){
+                    // Ensure error messages are passed in correctly to toastr
+                    @foreach ($errors->all() as $error)
+                    toastr.error("{{ $error }}", "Error", {
+                        closeButton: true,
+                        progressBar: true
+                    });
+                    @endforeach
+                })
+            @endif
         })
     </script>
 @endsection

@@ -149,7 +149,7 @@
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFive" aria-expanded="false" aria-controls="withoutSpacingAccordionFive">
                                         @foreach (data_get($service, 'sections.all', []) as $section)
                                             @if ($section['type'] === 'repeating' && $section['group'] === 'features')
-                                                <div>{{ data_get($section, 'title', '') }}</div>
+                                                <div>{{ data_get($section, 'title', 'Sticky Gradient Section') }}</div>
                                             @endif
                                         @endforeach
 
@@ -161,8 +161,14 @@
                                 <div class="container py-3">
                                     <form method="POST" action="{{ route('admin.service-page.feature.update', $service->id) }}">
                                         @csrf
+                                        @php
+                                            $hasSticky = false;
+                                        @endphp
                                         @foreach (data_get($service, 'sections.all', []) as $section)
                                             @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'features')
+                                                @php
+                                                    $hasSticky = true;
+                                                @endphp
                                                 <div class="card-body">
                                                     <label for="section_title">Section Title:</label>
                                                     <input type="text" class="form-control mt-2" name="section_title" value="{{ data_get($section, 'title') }}" required>
@@ -190,6 +196,27 @@
                                                 </div>
                                             @endif
                                         @endforeach
+                                        @if (!$hasSticky)
+                                            <div class="card-body">
+                                                <label for="section_title">Section Title:</label>
+                                                <input type="text" class="form-control mt-2" name="section_title" required>
+
+                                                <label for="display_title" class="d-block mt-3">Display Title:</label>
+                                                <input class="form-control mt-2" name="display_title" required>
+
+                                                <hr>
+
+                                                <div id="details-section">
+                                                    <div class="feature_detail border p-3 mb-3 position-relative">
+                                                        <label for="detail_title_new" class="d-block mt-4">Detail Title:</label>
+                                                        <input type="text" id="detail_title_new" class="form-control" name="detail_title[]" required>
+
+                                                        <label for="detail_description_new" class="d-block mt-4">Detail Description:</label>
+                                                        <textarea id="detail_description_new" name="detail_description[]" class="form-control mt-2" rows="3" required></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
                                     <button type="button" class="btn btn-success mt-3 mx-auto d-block" id="add-feature">Add Detail</button>
@@ -202,7 +229,7 @@
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
                                         @foreach (data_get($service, 'sections.all', []) as $section)
                                             @if (data_get($section, 'type') === 'single' && data_get($section, 'group') === 'transform')
-                                                {{ data_get($section, 'title', '') }}
+                                                {{ data_get($section, 'title', 'Transformation Journey') }}
                                             @endif
                                         @endforeach
 
@@ -214,8 +241,14 @@
                                 <div class="container py-3">
                                     <form method="POST" action="{{ route('admin.service-page.transform.update', $service->id) }}">
                                         @csrf
+                                        @php
+                                            $hasTransformSection = false;
+                                        @endphp
                                         @foreach (data_get($service, 'sections.all', []) as $section)
                                             @if (data_get($section, 'type') === 'single' && data_get($section, 'group') === 'transform')
+                                                @php
+                                                    $hasTransformSection = true;
+                                                @endphp
                                                 <div class="card-body">
                                                     <div class="form-group">
                                                         <label for="section_title" class="d-block mt-3">Section Title:</label>
@@ -244,6 +277,32 @@
                                                 </div>
                                             @endif
                                         @endforeach
+                                        @if (!$hasTransformSection)
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                                    <label for="section_title" class="d-block mt-3">Section Title:</label>
+                                                    <input id="section_title" class="form-control mt-2" value="" name="section_title" required>
+
+                                                    <label for="display_title" class="d-block mt-3">Display Title:</label>
+                                                    <input id="display_title" class="form-control mt-2" value="" name="display_title" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="infograph" class="d-block mt-3">Select Infograph:</label>
+                                                    <div class="input-group d-flex align-items-center mt-2">
+                                                        <span class="input-group-btn">
+                                                            <a class="lfm btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="infograph_thumbnail" data-preview="infograph_holder">
+                                                                <i class="fa fa-picture-o"></i> Choose
+                                                            </a>
+                                                        </span>
+                                                        <input id="infograph_thumbnail" class="form-control" value="" type="text" name="infograph" required>
+                                                    </div>
+                                                    <div id="infograph_holder" style="margin-top:15px; max-height:100px;">
+                                                        <p>No infograph selected.</p> <!-- Display empty message or empty state -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
                                 </div>
@@ -262,8 +321,14 @@
                                     <form method="POST" action="{{ route('admin.service-page.repeating.update', $service->id) }}">
                                         @csrf
                                         <div id="feature-sections" class="feature-sections-service">
+                                            @php
+                                                $hasRepeating = false;
+                                            @endphp
                                             @foreach (data_get($service, 'sections.all', []) as $index => $section)
                                                 @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'repeating_blocks')
+                                                    @php
+                                                        $hasRepeating = true;
+                                                    @endphp
                                                     <div class="card-body border p-3 mb-3 position-relative">
                                                         <button type="button" class="btn section-dlt-button position-absolute" data-index="{{ $index }}" data-service="{{ $service->id }}" style="top:5px; right:5px;">
                                                             <i class="fa fa-trash text-danger"></i>
@@ -303,6 +368,37 @@
                                                     </div>
                                                 @endif
                                             @endforeach
+                                            @if (!$hasRepeating)
+                                                <div class="card-body border p-3 mb-3 position-relative">
+                                                    <div class="form-group">
+                                                        <label for="section_title-new" class="d-block">Title:</label>
+                                                        <input id="section_title-new" class="form-control mt-2" name="section_title[]" required>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="display_title-new" class="d-block mt-3">Display Title:</label>
+                                                        <input id="display_title-new" class="form-control mt-2" name="display_title[]" required>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="section_desc-new" class="d-block mt-4">Description:</label>
+                                                        <textarea id="section_desc-new" name="section_desc[]" class="form-control summernote mt-2" required></textarea>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="section_image-new" class="d-block mt-3">Select Image:</label>
+                                                        <div class="input-group d-flex align-items-center mt-2">
+                                                            <span class="input-group-btn">
+                                                                <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section-new_thumbnail" data-preview="section-new_holder">
+                                                                    <i class="fa fa-picture-o"></i> Choose
+                                                                </a>
+                                                            </span>
+                                                            <input id="section-new_thumbnail" class="form-control" style="height: 36px" type="text" name="section_image[]" required>
+                                                        </div>
+                                                        <div id="section-new_holder" style="margin-top:15px; max-height:100px;"></div>
+                                                    </div>
+                                                </div>
+                                            @endif
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
@@ -516,6 +612,18 @@
                     dltForm.submit();
                 }
             })
+
+            @if ($errors->any())
+                $(document).ready(function(){
+                    // Ensure error messages are passed in correctly to toastr
+                    @foreach ($errors->all() as $error)
+                    toastr.error("{{ $error }}", "Error", {
+                        closeButton: true,
+                        progressBar: true
+                    });
+                    @endforeach
+                })
+            @endif
         });
     </script>
 @endsection

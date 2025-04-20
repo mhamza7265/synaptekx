@@ -92,9 +92,19 @@
                                     <form method="post" action="{{ route('admin.about-page.feature.update')}}">
                                         @csrf
                                         <div id="about-feature-sections">
+                                            @php
+                                                $hasAll = false;
+                                                $hasFeatureTwo = false;
+                                            @endphp
                                             @if (($sections = data_get($page, 'sections.all')) && is_array($sections))
+                                                @php
+                                                    $hasAll = true;
+                                                @endphp
                                                 @foreach ($sections as $section)
                                                     @if (data_get($section, 'type') === 'repeating_2' && data_get($section, 'group') === 'features_2')
+                                                        @php
+                                                            $hasFeatureTwo = true;
+                                                        @endphp
                                                         <div class="card-body border p-3 mb-3 position-relative">
                                                             <button type="button" class="btn section-two-dlt-btn-two position-absolute" data-index="{{$loop->index}}" style="top:5px; right:5px;">
                                                                 <i class="fa fa-trash text-danger"></i>
@@ -125,7 +135,31 @@
                                                     @endif
                                                 @endforeach
                                             @endif
+                                            @if (!$hasAll || !$hasFeatureTwo)
+                                                <div class="card-body border p-3 mb-3 position-relative">
+                                                    <button type="button" class="btn section-two-dlt-btn-two position-absolute" style="top:5px; right:5px;">
+                                                        <i class="fa fa-trash text-danger"></i>
+                                                    </button>
+                                                    <span>Title:</span>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control mt-2" name="section_title[]" required>
+                                                    </div>
 
+                                                    <span class="d-block mt-4">Description:</span>
+                                                    <textarea name="section_desc[]" class="form-control mt-2" required></textarea>
+
+                                                    <span class="d-block mt-3">Select Image:</span>
+                                                    <div class="input-group d-flex align-items-center mt-2">
+                                                        <span class="input-group-btn">
+                                                            <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="feat_new_thumbnail" data-preview="feat_new_holder">
+                                                                <i class="fa fa-picture-o"></i> Choose
+                                                            </a>
+                                                        </span>
+                                                        <input id="feat_new_thumbnail" style="height: 36px" class="form-control" type="text" name="feat_image[]" required>
+                                                    </div>
+                                                    <div id="feat_new_holder" style="margin-top:15px; max-height:100px;"></div>
+                                                </div>
+                                            @endif
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
                                     </form>
@@ -145,7 +179,7 @@
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFive" aria-expanded="false" aria-controls="withoutSpacingAccordionFive">
                                         @foreach (data_get($page, 'sections.all', []) as $section)
                                             @if (is_array($section) && data_get($section, 'type') === 'unique')
-                                                {{ data_get($section, 'title', '') }}
+                                                {{ data_get($section, 'title', 'Sticky Gradient Section') }}
                                             @endif
                                         @endforeach
                                         <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
@@ -158,8 +192,14 @@
                                         @csrf
                                         <div class="card-body">
                                             @if ($sections = data_get($page, 'sections.all'))
+                                                @php
+                                                    $hasUnique = false;
+                                                @endphp
                                                 @foreach ($sections as $section)
                                                     @if (is_array($section) && data_get($section, 'type') === 'unique')
+                                                        @php
+                                                            $hasUnique = true;
+                                                        @endphp
                                                         <span>Section Title:</span>
                                                         <input type="text" class="form-control mt-2" value="{{ data_get($section, 'title', '') }}" name="section_title" required>
 
@@ -181,6 +221,22 @@
                                                         </div>
                                                     @endif
                                                 @endforeach
+                                                @if(!$hasUnique)
+                                                    <span>Section Title:</span>
+                                                    <input type="text" class="form-control mt-2" name="section_title" required>
+
+                                                    <hr>
+
+                                                    <div id="details-section">
+                                                        <div class="feature_detail position-relative pt-1">
+                                                            <span class="d-block mt-4">Feature Title:</span>
+                                                            <input type="text" class="form-control" name="detail_title[]" required>
+                                                            <span class="d-block mt-4">Feature Description:</span>
+                                                            <textarea name="detail_description[]" class="form-control mt-2" rows="3" required></textarea>
+                                                            <hr>
+                                                        </div>
+                                                    </div>
+                                                @endif
                                             @endif
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
@@ -202,9 +258,19 @@
                                     <form method="POST" action="{{route('admin.about-page.feature-two.update')}}">
                                         @csrf
                                         <div id="about-feature-sections-two">
+                                            @php
+                                                $hasAll = false;
+                                                $hasFeatureTwo = false;
+                                            @endphp
                                             @if ($sections = data_get($page, 'sections.all'))
+                                                @php
+                                                    $hasAll = true;
+                                                @endphp
                                                 @foreach ($sections as $section)
                                                     @if (data_get($section, 'type') === 'repeating_2' && data_get($section, 'group') === 'features_2')
+                                                        @php
+                                                            $hasFeatureTwo = true;
+                                                        @endphp
                                                         <div class="card-body border p-3 mb-3 position-relative">
                                                             <button type="button" class="btn section-two-dlt-btn-two position-absolute" data-index="{{$loop->index}}" style="top:5px; right:5px;">
                                                                 <i class="fa fa-trash text-danger"></i>
@@ -234,6 +300,28 @@
                                                         </div>
                                                     @endif
                                                 @endforeach
+                                            @endif
+                                            @if (!$hasAll || !$hasFeatureTwo)
+                                                <div class="card-body border p-3 mb-3 position-relative">
+                                                    <span>Title:</span>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control mt-2" name="section_title[]" required>
+                                                    </div>
+
+                                                    <span class="d-block mt-4">Description:</span>
+                                                    <textarea name="section_desc[]" class="form-control mt-2" required></textarea>
+
+                                                    <span class="d-block mt-3">Select Image:</span>
+                                                    <div class="input-group d-flex align-items-center mt-2">
+                                                        <span class="input-group-btn">
+                                                            <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="feat_new_thumbnail" data-preview="feat_new_holder">
+                                                                <i class="fa fa-picture-o"></i> Choose
+                                                            </a>
+                                                        </span>
+                                                        <input id="feat_new_thumbnail" style="height: 36px" class="form-control" type="text" name="feat_image[]" required>
+                                                    </div>
+                                                    <div id="feat_new_holder" style="margin-top:15px; max-height:100px;"></div>
+                                                </div>
                                             @endif
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
@@ -420,6 +508,17 @@
                 $form.find('input[name="group"]').val('features_2');
                 $form.submit();
             }
+            @if ($errors->any())
+                $(document).ready(function(){
+                    // Ensure error messages are passed in correctly to toastr
+                    @foreach ($errors->all() as $error)
+                    toastr.error("{{ $error }}", "Error", {
+                        closeButton: true,
+                        progressBar: true
+                    });
+                    @endforeach
+                })
+            @endif
         });
     </script>
 @endsection

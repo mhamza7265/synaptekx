@@ -118,6 +118,19 @@
 @section('scripts')
 <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 <script>
-    $('.lfm_file').filemanager('image');
+    $(document).ready(function () {
+        $('.lfm_file').filemanager('image');
+        @if ($errors->any())
+            $(document).ready(function(){
+                // Ensure error messages are passed in correctly to toastr
+                @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}", "Error", {
+                    closeButton: true,
+                    progressBar: true
+                });
+                @endforeach
+            })
+        @endif
+    })
 </script>
 @endsection

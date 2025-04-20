@@ -51,8 +51,8 @@
                                     <form method="post" action="{{ route('admin.home-page.hero.update') }}">
                                         @csrf
                                         <div id="carousel-container">
-                                            @if (isset($page->sections['hero_sections']) && count($page->sections['hero_sections']) > 0)
-                                                @foreach ($page->sections['hero_sections'] as $section)
+                                            @if (data_get($page->sections, 'hero_sections', []) && count(data_get($page->sections, 'hero_sections', [])) > 0)
+                                                @foreach (data_get($page->sections, 'hero_sections', []) as $section)
                                                     <div class="hero-carousel-item card-body border p-3 mb-3 position-relative">
                                                         <button type="button" class="btn carousel-dlt-btn position-absolute delete-hero-section" data-index="{{ $loop->index }}" style="top:5px; right:5px;">
                                                             <i class="fa fa-trash text-danger"></i>

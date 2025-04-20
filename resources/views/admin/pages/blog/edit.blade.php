@@ -165,6 +165,18 @@
 
             // Initialize all existing editors
             initializeSummernote('.summernote');
+
+            @if ($errors->any())
+                $(document).ready(function(){
+                    // Ensure error messages are passed in correctly to toastr
+                    @foreach ($errors->all() as $error)
+                    toastr.error("{{ $error }}", "Error", {
+                        closeButton: true,
+                        progressBar: true
+                    });
+                    @endforeach
+                })
+            @endif
         })
     </script>
     @endsection
