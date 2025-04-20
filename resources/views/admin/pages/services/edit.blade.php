@@ -147,11 +147,12 @@
                             <div class="card-header" id="headingFive10">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFive" aria-expanded="false" aria-controls="withoutSpacingAccordionFive">
-                                        @foreach ($service->sections['all'] as $section)
+                                        @foreach (data_get($service, 'sections.all', []) as $section)
                                             @if ($section['type'] === 'repeating' && $section['group'] === 'features')
-                                                <div>{{ $section['title'] }}</div>
+                                                <div>{{ data_get($section, 'title', '') }}</div>
                                             @endif
                                         @endforeach
+
                                         <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
@@ -160,29 +161,29 @@
                                 <div class="container py-3">
                                     <form method="POST" action="{{ route('admin.service-page.feature.update', $service->id) }}">
                                         @csrf
-                                        @foreach ($service->sections['all'] as $section)
-                                            @if ($section['type'] === 'repeating' && $section['group'] === 'features')
+                                        @foreach (data_get($service, 'sections.all', []) as $section)
+                                            @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'features')
                                                 <div class="card-body">
                                                     <label for="section_title">Section Title:</label>
-                                                    <input type="text" class="form-control mt-2" name="section_title" value="{{ $section['title'] }}" required>
+                                                    <input type="text" class="form-control mt-2" name="section_title" value="{{ data_get($section, 'title') }}" required>
 
                                                     <label for="display_title" class="d-block mt-3">Display Title:</label>
-                                                    <input class="form-control mt-2" name="display_title" value="{{ $section['display_title'] ?? '' }}" required>
+                                                    <input class="form-control mt-2" name="display_title" value="{{ data_get($section, 'display_title', '') }}" required>
 
                                                     <hr>
 
                                                     <div id="details-section">
-                                                        @foreach ($section['data']['details'] as $detail)
+                                                        @foreach (data_get($section, 'data.details', []) as $detail)
                                                             <div class="feature_detail border p-3 mb-3 position-relative">
                                                                 <button type="button" class="btn feature-detail-dlt-button position-absolute" data-index="{{ $loop->index }}" data-service="{{ $service->id }}" style="top:5px; right:5px;">
                                                                     <i class="fa fa-trash text-danger"></i>
                                                                 </button>
 
                                                                 <label for="detail_title_{{ $loop->index }}" class="d-block mt-4">Detail Title:</label>
-                                                                <input type="text" id="detail_title_{{ $loop->index }}" class="form-control" value="{{ $detail['detail_title'] }}" name="detail_title[]" required>
+                                                                <input type="text" id="detail_title_{{ $loop->index }}" class="form-control" value="{{ data_get($detail, 'detail_title') }}" name="detail_title[]" required>
 
                                                                 <label for="detail_description_{{ $loop->index }}" class="d-block mt-4">Detail Description:</label>
-                                                                <textarea id="detail_description_{{ $loop->index }}" name="detail_description[]" class="form-control mt-2" rows="3" required>{{ $detail['detail_description'] }}</textarea>
+                                                                <textarea id="detail_description_{{ $loop->index }}" name="detail_description[]" class="form-control mt-2" rows="3" required>{{ data_get($detail, 'detail_description') }}</textarea>
                                                             </div>
                                                         @endforeach
                                                     </div>
@@ -199,11 +200,12 @@
                             <div class="card-header" id="headingTwo2">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
-                                        @foreach ($service->sections['all'] as $section)
-                                            @if ($section['type'] === 'single' && $section['group'] === 'transform')
-                                                {{ $section['title'] ?? '' }}
+                                        @foreach (data_get($service, 'sections.all', []) as $section)
+                                            @if (data_get($section, 'type') === 'single' && data_get($section, 'group') === 'transform')
+                                                {{ data_get($section, 'title', '') }}
                                             @endif
                                         @endforeach
+
                                         <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
@@ -212,15 +214,15 @@
                                 <div class="container py-3">
                                     <form method="POST" action="{{ route('admin.service-page.transform.update', $service->id) }}">
                                         @csrf
-                                        @foreach ($service->sections['all'] as $section)
-                                            @if ($section['type'] === 'single' && $section['group'] === 'transform')
+                                        @foreach (data_get($service, 'sections.all', []) as $section)
+                                            @if (data_get($section, 'type') === 'single' && data_get($section, 'group') === 'transform')
                                                 <div class="card-body">
                                                     <div class="form-group">
                                                         <label for="section_title" class="d-block mt-3">Section Title:</label>
-                                                        <input id="section_title" class="form-control mt-2" value="{{ $section['title'] ?? '' }}" name="section_title" required>
+                                                        <input id="section_title" class="form-control mt-2" value="{{ data_get($section, 'title', '') }}" name="section_title" required>
 
                                                         <label for="display_title" class="d-block mt-3">Display Title:</label>
-                                                        <input id="display_title" class="form-control mt-2" value="{{ $section['display_title'] ?? '' }}" name="display_title" required>
+                                                        <input id="display_title" class="form-control mt-2" value="{{ data_get($section, 'display_title', '') }}" name="display_title" required>
                                                     </div>
 
                                                     <div class="form-group">
@@ -231,11 +233,11 @@
                                                                     <i class="fa fa-picture-o"></i> Choose
                                                                 </a>
                                                             </span>
-                                                            <input id="infograph_thumbnail" class="form-control" value="{{ $section['data']['infograph'] ?? '' }}" type="text" name="infograph" required>
+                                                            <input id="infograph_thumbnail" class="form-control" value="{{ data_get($section, 'data.infograph', '') }}" type="text" name="infograph" required>
                                                         </div>
                                                         <div id="infograph_holder" style="margin-top:15px; max-height:100px;">
-                                                            @if (!empty($section['data']['infograph'] ?? ''))
-                                                                <img src="{{ $section['data']['infograph'] }}" style="height: 5rem;">
+                                                            @if (!empty(data_get($section, 'data.infograph')))
+                                                                <img src="{{ data_get($section, 'data.infograph') }}" style="height: 5rem;">
                                                             @endif
                                                         </div>
                                                     </div>
@@ -260,41 +262,41 @@
                                     <form method="POST" action="{{ route('admin.service-page.repeating.update', $service->id) }}">
                                         @csrf
                                         <div id="feature-sections" class="feature-sections-service">
-                                            @foreach ($service->sections['all'] as $section)
-                                                @if ($section['type'] === 'repeating' && $section['group'] === 'repeating_blocks')
+                                            @foreach (data_get($service, 'sections.all', []) as $index => $section)
+                                                @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'repeating_blocks')
                                                     <div class="card-body border p-3 mb-3 position-relative">
-                                                        <button type="button" class="btn section-dlt-button position-absolute" data-index="{{ $loop->index }}" data-service="{{ $service->id }}" style="top:5px; right:5px;">
+                                                        <button type="button" class="btn section-dlt-button position-absolute" data-index="{{ $index }}" data-service="{{ $service->id }}" style="top:5px; right:5px;">
                                                             <i class="fa fa-trash text-danger"></i>
                                                         </button>
 
                                                         <div class="form-group">
-                                                            <label for="section_title_{{ $loop->index }}" class="d-block">Title:</label>
-                                                            <input id="section_title_{{ $loop->index }}" class="form-control mt-2" value="{{ $section['title'] ?? '' }}" name="section_title[]" required>
+                                                            <label for="section_title_{{ $index }}" class="d-block">Title:</label>
+                                                            <input id="section_title_{{ $index }}" class="form-control mt-2" value="{{ data_get($section, 'title', '') }}" name="section_title[]" required>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="display_title_{{ $loop->index }}" class="d-block mt-3">Display Title:</label>
-                                                            <input id="display_title_{{ $loop->index }}" class="form-control mt-2" value="{{ $section['display_title'] ?? '' }}" name="display_title[]" required>
+                                                            <label for="display_title_{{ $index }}" class="d-block mt-3">Display Title:</label>
+                                                            <input id="display_title_{{ $index }}" class="form-control mt-2" value="{{ data_get($section, 'display_title', '') }}" name="display_title[]" required>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="section_desc_{{ $loop->index }}" class="d-block mt-4">Description:</label>
-                                                            <textarea id="section_desc_{{ $loop->index }}" name="section_desc[]" class="form-control summernote mt-2" required>{{ $section['data']['description'] ?? '' }}</textarea>
+                                                            <label for="section_desc_{{ $index }}" class="d-block mt-4">Description:</label>
+                                                            <textarea id="section_desc_{{ $index }}" name="section_desc[]" class="form-control summernote mt-2" required>{{ data_get($section, 'data.description', '') }}</textarea>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="section_image_{{ $loop->index }}" class="d-block mt-3">Select Image:</label>
+                                                            <label for="section_image_{{ $index }}" class="d-block mt-3">Select Image:</label>
                                                             <div class="input-group d-flex align-items-center mt-2">
                                                                 <span class="input-group-btn">
-                                                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_{{ $loop->index }}_thumbnail" data-preview="section_{{ $loop->index }}_holder">
+                                                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_{{ $index }}_thumbnail" data-preview="section_{{ $index }}_holder">
                                                                         <i class="fa fa-picture-o"></i> Choose
                                                                     </a>
                                                                 </span>
-                                                                <input id="section_{{ $loop->index }}_thumbnail" class="form-control" style="height: 36px" value="{{ $section['data']['image'] ?? '' }}" type="text" name="section_image[]" required>
+                                                                <input id="section_{{ $index }}_thumbnail" class="form-control" style="height: 36px" value="{{ data_get($section, 'data.image', '') }}" type="text" name="section_image[]" required>
                                                             </div>
-                                                            <div id="section_{{ $loop->index }}_holder" style="margin-top:15px; max-height:100px;">
-                                                                @if (!empty($section['data']['image'] ?? ''))
-                                                                    <img src="{{ $section['data']['image'] }}" style="height: 5rem;">
+                                                            <div id="section_{{ $index }}_holder" style="margin-top:15px; max-height:100px;">
+                                                                @if (!empty(data_get($section, 'data.image')))
+                                                                    <img src="{{ data_get($section, 'data.image') }}" style="height: 5rem;">
                                                                 @endif
                                                             </div>
                                                         </div>
