@@ -1,12 +1,12 @@
 @extends('frontend.layouts.main')
 @section('content')
 <div class="services-container font-sf-pro bg-white">
-    <section class="hero" style="background-image: url('{{$page->sections['hero']['hero_image'] ?? ''}}');">
+    <section class="hero" style="background-image: url('{{data_get($page->sections, 'hero.hero_image' , '')}}');">
         <div style="background-image: url('{{asset('images/frontend/bg_gradient_contact.svg')}}'); background-position: bottom; background-size: 100% 100%; height: 100%; width: 100%">
             <div class="container services-hero-container">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     @php
-                        $rawTitle = $page->sections['hero']['hero_title'] ?? '';
+                        $rawTitle = data_get($page->sections, 'hero.hero_title' , '');
                         $words = preg_split('/\s+/', trim($rawTitle));
 
                         if (count($words) > 5) {
@@ -30,17 +30,17 @@
                 <div class="col-12 col-lg-3">
                     <img src="{{asset('images/frontend/location_pin.svg')}}" alt="" class="contact-icons" />
                     <h4 class="fs-32 fw-500 mt-3 border-b-1px">Our Address</h4>
-                    <span class="contact-content">{{$page->sections['details']['address'] ?? ''}}</span>
+                    <span class="contact-content">{{data_get($page->sections, 'details.address' , '')}}</span>
                 </div>
                 <div class="col-12 col-lg-3 mt-5 mt-lg-0">
                     <img src="{{asset('images/frontend/support_icon.svg')}}" alt="" class="contact-icons" />
                     <h4 class="fs-32 fw-500 mt-3 border-b-1px">Call our Team</h4>
-                    <span class="contact-content"><a href="tel:+442081560125">{{$page->sections['details']['phone'] ?? ''}}</a></span>
+                    <span class="contact-content"><a href="tel:+442081560125">{{data_get($page->sections, 'details.phone' , '')}}</a></span>
                 </div>
                 <div class="col-12 col-lg-3 mt-5 mt-lg-0">
                     <img src="{{asset('images/frontend/envelope_icon.svg')}}" alt="" class="contact-icons" />
                     <h4 class="fs-32 fw-500 mt-3 border-b-1px">Our Email</h4>
-                    <span class="contact-content"><a href="mailto:info@synaptekx.com">{{$page->sections['details']['email'] ?? ''}}</a></span>
+                    <span class="contact-content"><a href="mailto:info@synaptekx.com">{{data_get($page->sections, 'details.email' , '')}}</a></span>
                 </div>
                 {{-- <div class="col-12 col-lg-3 mt-5 mt-lg-0">
                     <img src="{{asset('images/frontend/user_check_icon.svg')}}" alt="" class="contact-icons" />

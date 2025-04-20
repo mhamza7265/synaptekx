@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="services-container font-sf-pro">
-        <section class="hero" style="background-image: url('{{$page->sections['hero_section']['bg_image'] ?? ''}}');">
+        <section class="hero" style="background-image: url('{{data_get($page->sections, 'hero_section.bg_image' , '')}}');">
             <div class="container services-hero-container">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <div class="services-hero-text-content" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
-                        <h1 class="services-hero-title text-white text-center">{{$page->sections['hero_section']['hero_title'] ?? ''}}</h1>
+                        <h1 class="services-hero-title text-white text-center">{{data_get($page->sections, 'hero_section.hero_title' , '')}}</h1>
 
                         @php
-                            $rawTitle = $page->sections['hero_section']['hero_subtitle'] ?? '';
+                            $rawTitle = data_get($page->sections, 'hero_section.hero_subtitle' , '');
                             
                             if (stripos($rawTitle, 'synaptekx') !== false) {
                                 $highlighted = preg_replace(
@@ -30,32 +30,32 @@
         <section class="nav-content">
             <section class="nav-section">
                 <div class="section-navbar d-flex justify-content-between align-items-center px-110 px-35 py-4 overflow-x-auto white-space-nowrap">
-                    @if(isset($page->sections['all']))
-                        @foreach (collect($page->sections['all'])->reverse() as $section)
-                            <a href="#{{ \Illuminate\Support\Str::slug($section['title']) }}"
+                    @if (data_get($page, 'sections.all'))
+                        @foreach (collect(data_get($page, 'sections.all'))->reverse() as $section)
+                            <a href="#{{ \Illuminate\Support\Str::slug(data_get($section, 'title')) }}"
                             class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0"
                             data-aos="fade-up"
                             data-aos-duration="500"
                             data-aos-easing="ease-in-out"
                             data-aos-delay="{{ $loop->index }}00">
-                                {{ $section['title'] }}
+                                {{ data_get($section, 'title') }}
                             </a>
                         @endforeach
                     @endif
                 </div>
             </section>
-            @foreach ($page->sections['all'] as $section)
-                @if ($section['type'] == 'repeating' && $section['group'] == 'scaled_partners')
-                    <section id="{{\Illuminate\Support\Str::slug($section['title'])}}">
+            @foreach (data_get($page, 'sections.all') as $section)
+                @if (data_get($section, 'type') == 'repeating' && data_get($section, 'group') == 'scaled_partners')
+                    <section id="{{ \Illuminate\Support\Str::slug(data_get($section, 'title')) }}">
                         @php
-                            $sectionTitle = $section['title'] ?? '';
+                            $sectionTitle = data_get($section, 'title', '');
                         @endphp
-                        @foreach ($section['data']['partners'] as $partner)
+                        @foreach (data_get($section, 'data.partners', []) as $partner)
                             @if ($loop->odd)
                                 <section class="empowering-section bg-white position-relative">
                                     @if ($loop->first)
-                                        <img src="{{asset('images/frontend/services_element.svg')}}" alt="graphic-element" class="services-graphic" style="left: 0 !important" />
-                                    @endif                                    
+                                        <img src="{{ asset('images/frontend/services_element.svg') }}" alt="graphic-element" class="services-graphic" style="left: 0 !important" />
+                                    @endif
                                     <div class="container">
                                         @if ($loop->first)
                                             @php
@@ -70,19 +70,19 @@
                                                     $formattedTitle = '<span class="text-gradient">' . e($rawTitle) . '</span>';
                                                 }
                                             @endphp
-                                            <h1>{!!$formattedTitle!!}</h1>
+                                            <h1>{!! $formattedTitle !!}</h1>
                                         @endif
                                         <div class="row justify-content-between align-items-start">
                                             <div id="fixed-on-scroll" class="col-12 col-md-6 mx-auto">
                                                 <div class="text-content partner-logo" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                                                    <img src="{{$partner['partner_logo']}}" alt="elite-partners-logo" />
+                                                    <img src="{{ data_get($partner, 'partner_logo') }}" alt="elite-partners-logo" />
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6 sticky-section-right-texts-parent mx-auto mt-4 mt-md-0">
-                                                @foreach ($partner['details'] as $partnerDetail)
-                                                    <div class="sticky-section-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="{{$loop->index}}00">
-                                                        <h5 class="fs-22 fw-500">{{$partnerDetail['detail_title']}}</h5>
-                                                        <p>{{$partnerDetail['detail_subtitle']}}</p>
+                                                @foreach (data_get($partner, 'details', []) as $partnerDetail)
+                                                    <div class="sticky-section-right-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="{{ $loop->index }}00">
+                                                        <h5 class="fs-22 fw-500">{{ data_get($partnerDetail, 'detail_title') }}</h5>
+                                                        <p>{{ data_get($partnerDetail, 'detail_subtitle') }}</p>
                                                         <div id="div-end-unfiix"></div>
                                                     </div>
                                                 @endforeach
@@ -95,40 +95,39 @@
                                     <div class="container">
                                         <div class="row justify-content-between align-items-start">
                                             <div class="col-12 col-md-6 sticky-section-left-texts-parent mx-auto mt-4 mt-md-0">
-                                                @foreach ($partner['details'] as $partnerDetail)
-                                                    <div class="sticky-section-left-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out"  data-aos-delay="{{$loop->index}}00">
-                                                        <h5 class="fs-22 fw-500">{{$partnerDetail['detail_title']}}</h5>
-                                                        <p>{{$partnerDetail['detail_subtitle']}}</p>
+                                                @foreach (data_get($partner, 'details', []) as $partnerDetail)
+                                                    <div class="sticky-section-left-texts" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="{{ $loop->index }}00">
+                                                        <h5 class="fs-22 fw-500">{{ data_get($partnerDetail, 'detail_title') }}</h5>
+                                                        <p>{{ data_get($partnerDetail, 'detail_subtitle') }}</p>
                                                         <div id="div-end-unfiix"></div>
                                                     </div>
                                                 @endforeach
                                             </div>
                                             <div id="fixed-on-scroll" class="col-12 col-md-6 mx-auto overflow-x-hidden">
                                                 <div class="text-content partner-logo" data-aos="fade-left" data-aos-duration="1000" data-aos-easing="ease-in-out">
-                                                    <img src="{{$partner['partner_logo']}}" alt="elite-partners-logo" />
+                                                    <img src="{{ data_get($partner, 'partner_logo') }}" alt="elite-partners-logo" />
                                                 </div>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                 </section>
                             @endif
                         @endforeach
-                    </section>                  
-                @endif                
+                    </section>
+                @endif
             @endforeach
-            @foreach ($page->sections['all'] as $section)
-                @if ($section['type'] == 'repeating' && $section['group'] == 'all_partners')
-                    <section id="{{\Illuminate\Support\Str::Slug($section['title'])}}" class="home-section-3 position-relative font-outfit" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
-                        <img src="{{asset('images/frontend/graphic_element.svg')}}" class="div-graphic-element" />
+            @foreach (data_get($page, 'sections.all', []) as $section)
+                @if (data_get($section, 'type') == 'repeating' && data_get($section, 'group') == 'all_partners')
+                    <section id="{{ \Illuminate\Support\Str::Slug(data_get($section, 'title')) }}" class="home-section-3 position-relative font-outfit" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+                        <img src="{{ asset('images/frontend/graphic_element.svg') }}" class="div-graphic-element" />
 
                         <div class="container py-90px overflow-hidden">
                             <div class="d-flex justify-content-start align-content-center">
-                                <img src="{{asset('images/frontend/features_pill.svg')}}" draggable="false" />
+                                <img src="{{ asset('images/frontend/features_pill.svg') }}" draggable="false" />
                             </div>
                             <div class="col-md-12 mt-4">
                                 @php
-                                    $rawTitle = $section['title'] ?? '';
+                                    $rawTitle = data_get($section, 'title', '');
                                     $words = preg_split('/\s+/', trim($rawTitle));
 
                                     if (count($words) > 1) {
@@ -139,29 +138,29 @@
                                         $formattedTitle = '<span class="text-gradient">' . e($rawTitle) . '</span>';
                                     }
                                 @endphp
-                                <h1 class="w-60-perc home-sect-2-title text-white" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out">{!!$formattedTitle!!}</h1>
+                                <h1 class="w-60-perc home-sect-2-title text-white" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out">{!! $formattedTitle !!}</h1>
                             </div>
 
                             <div class="home-sect-3-content-container d-flex justify-content-between align-items-start mt-5">
                                 <div class="row w-100 m-auto overflow-hidden partners-tabs">
                                     <div class="d-flex col-md-4 col-12" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
                                         <div class="nav flex-column nav-pills tab-border-left" id="v-pills-tab" role="tablist">
-                                            @foreach ($section['data']['partners'] as $partner)
-                                                <button class="nav-link {{$loop->first ? 'active' : ''}}" id="tab-btn-{{$loop->iteration}}" data-bs-toggle="pill" data-bs-target="#tab-{{$loop->iteration}}" type="button">
+                                            @foreach (data_get($section, 'data.partners', []) as $partner)
+                                                <button class="nav-link {{ $loop->first ? 'active' : '' }}" id="tab-btn-{{ $loop->iteration }}" data-bs-toggle="pill" data-bs-target="#tab-{{ $loop->iteration }}" type="button">
                                                     <div class="image-div">
-                                                        <img src="{{$partner['partner_logo']}}" alt="" />
+                                                        <img src="{{ data_get($partner, 'partner_logo') }}" alt="" />
                                                     </div>
                                                 </button>
                                             @endforeach
                                         </div>
                                     </div>
-                            
+
                                     <!-- Right Side - Tab Content -->
                                     <div class="col-md-8 col-12" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
                                         <div class="tab-content section-3-tab-content" id="v-pills-tabContent">
-                                            @foreach ($section['data']['partners'] as $partner)
-                                                <div class="tab-pane fade {{$loop->first ? 'show active' : ''}}" id="tab-{{$loop->iteration}}">
-                                                    {!!$partner['partner_content']!!}
+                                            @foreach (data_get($section, 'data.partners', []) as $partner)
+                                                <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="tab-{{ $loop->iteration }}">
+                                                    {!! data_get($partner, 'partner_content') !!}
                                                 </div>
                                             @endforeach
                                         </div>
@@ -292,14 +291,14 @@
                 </div>
             </div>
             </section> --}}
-            @foreach ($page->sections['all'] as $section)
-                @if ($section['type'] == 'text' && $section['group'] == 'capabilities')
-                    <section id="{{\Illuminate\Support\Str::Slug($section['title'])}}" class="py-5" style="background-image: url('/images/frontend/bg-gradient_2.svg'); background-repeat: no-repeat; background-position: right top;">
+            @foreach (data_get($page, 'sections.all', []) as $section)
+                @if (data_get($section, 'type') == 'text' && data_get($section, 'group') == 'capabilities')
+                    <section id="{{ \Illuminate\Support\Str::Slug(data_get($section, 'title')) }}" class="py-5" style="background-image: url('/images/frontend/bg-gradient_2.svg'); background-repeat: no-repeat; background-position: right top;">
                         <div class="container py-5">
                             <div class="row justify-content-start">
                                 <div class="col-12 col-md-4" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out">
                                     @php
-                                        $rawTitle = $section['title'] ?? '';
+                                        $rawTitle = data_get($section, 'title', '');
                                         $words = preg_split('/\s+/', trim($rawTitle));
 
                                         if (count($words) > 1) {
@@ -310,17 +309,17 @@
                                             $formattedTitle = '<span class="text-gradient">' . e($rawTitle) . '</span>';
                                         }
                                     @endphp
-                                    <h1 class="fs-57 text-white" style="line-height: 1.3">{!!$formattedTitle!!}</h1>
+                                    <h1 class="fs-57 text-white" style="line-height: 1.3">{!! $formattedTitle !!}</h1>
                                 </div>
                                 <div class="col-12 col-md-6 ps-3 ps-md-5 mb-3 mb-md-0 mt-5 mt-md-0">
                                     <div class="row">
                                         @foreach ($services as $service)
                                             <div class="col-12 col-md-6">
-                                                <a href="{{ route('services', ['id' => $service->id]) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="{{$loop->index}}00">
+                                                <a href="{{ route('services', ['id' => $service->id]) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="{{ $loop->index }}00">
                                                     <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
                                                     </svg>
-                                                    {{$service->name}}
+                                                    {{ $service->name }}
                                                 </a>
                                             </div>
                                         @endforeach
@@ -331,6 +330,7 @@
                     </section>
                 @endif
             @endforeach
+
             @include('frontend.partials._contact-form')
             @include('frontend.partials._footer')
         </section>

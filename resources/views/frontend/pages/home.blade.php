@@ -13,65 +13,76 @@
         <section class="home-hero-section position-relative">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators home-hero-indicators">
-                    @foreach ($page->sections['hero_sections'] as $section)
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$loop->index}}" @if($loop->first) class="active" aria-current="true" @endif aria-label="Slide {{$loop->iteration}}"></button>
+                    @foreach (data_get($page, 'sections.hero_sections', []) as $index => $section)
+                        <button
+                            type="button"
+                            data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="{{ $index }}"
+                            @class(['active' => $loop->first])
+                            @if($loop->first) aria-current="true" @endif
+                            aria-label="Slide {{ $loop->iteration }}"
+                        ></button>
                     @endforeach
+
                 </div>
                 <div class="carousel-inner">
-                    @foreach ($page->sections['hero_sections'] as $section)
-                        <div class="carousel-item {{$loop->first ? 'active' : ''}}" 
-                            @if ($section['bg_type'] == 'image') 
-                                style="background-image: url('{{ $section['bg_file'] ?? '' }}'); background-size: cover" 
+                    @foreach (data_get($page, 'sections.hero_sections', []) as $section)
+                        <div class="carousel-item {{ $loop->first ? 'active' : '' }}"
+                            @if (data_get($section, 'bg_type') === 'image')
+                                style="background-image: url('{{ data_get($section, 'bg_file', '') }}'); background-size: cover"
                             @endif
-                            >
+                        >
                             <div class="hero-section hero-video">
-                                @if ($section['bg_type'] == 'video')
+                                @if (data_get($section, 'bg_type') === 'video')
                                     <video autoplay loop muted playsinline>
-                                        <source src="{{$section['bg_file'] ?? ''}}" type="video/mp4">
+                                        <source src="{{ data_get($section, 'bg_file', '') }}" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
-                                @endif                               
+                                @endif
+
                                 <div class="container overflow-hidden">
                                     @php
-                                        $rawTitle = $section['hero_title'] ?? '';
+                                        $rawTitle = data_get($section, 'hero_title', '');
                                         $words = preg_split('/\s+/', trim($rawTitle));
+                                        $formattedTitle = e($rawTitle);
 
                                         if (count($words) > 5) {
                                             $before = implode(' ', array_slice($words, 0, -2));
                                             $lastTwo = implode(' ', array_slice($words, -2));
                                             $formattedTitle = e($before) . ' <span class="text-gradient">' . e($lastTwo) . '</span>';
-                                        } else {
-                                            $formattedTitle = e($rawTitle);
                                         }
                                     @endphp
+
                                     <div class="hero-text-content" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
-                                        <h1 class="hero-title-text">{!!$formattedTitle!!}</h1>
+                                        <h1 class="hero-title-text">{!! $formattedTitle !!}</h1>
                                     </div>
+
                                     @php
-                                        $rawTitle = $section['hero_subtitle'] ?? '';
-                                        
-                                        if (stripos($rawTitle, 'synaptekx') !== false) {
-                                            $highlighted = preg_replace(
+                                        $rawSubtitle = data_get($section, 'hero_subtitle', '');
+                                        if (stripos($rawSubtitle, 'synaptekx') !== false) {
+                                            $formattedSubtitle = preg_replace(
                                                 '/(synaptekx)/i',
                                                 '<span class="text-gradient">$1</span>',
-                                                e($rawTitle)
+                                                e($rawSubtitle)
                                             );
-                                            $formattedSubtitle = $highlighted;
                                         } else {
-                                            $formattedSubtitle = e($rawTitle);
+                                            $formattedSubtitle = e($rawSubtitle);
                                         }
                                     @endphp
+
                                     <div class="hero-text-detail" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
-                                        <p class="hero-detail-text">{!!$formattedSubtitle!!}</p>
+                                        <p class="hero-detail-text">{!! $formattedSubtitle !!}</p>
                                     </div>
+
                                     <a href="{{ route('services', ['id' => 1]) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                        <img src="{{asset('images/frontend/check.svg')}}" />
+                                        <img src="{{ asset('images/frontend/check.svg') }}" />
                                         <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     @endforeach
+
                     {{-- <div class="carousel-item active">
                         <div class="hero-section hero-video">
                             <video autoplay loop muted playsinline>
@@ -179,17 +190,26 @@
 
             <div id="partners-carousel" class="carousel slide font-sf-pro" data-bs-ride="false" data-bs-interval="false">
                 <div class="carousel-inner">
-                    @foreach ($partners->sections['all'] as $section)
-                        @if ($section['type'] == 'repeating' && $section['group'] == 'scaled_partners')
-                            @foreach ($section['data']['partners'] as $partner)
-                                <div class="carousel-item {{$loop->first ? 'active' : ''}}">
+                    @foreach (data_get($partners, 'sections.all', []) as $section)
+                        @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'scaled_partners')
+                            @foreach (data_get($section, 'data.partners', []) as $partner)
+                                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                                     <div class="d-block d-md-flex justify-content-between align-content-center overflow-hidden">
-                                        <img src="{{$partner['partner_logo']}}" alt="aws icon" class="partners-icon" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" />
-                                        <div class="partner-carousel-content mt-4 mt-md-0" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
-                                            <h5 class="text-white fs-16 fw-500">{{$partner['partner_name']}}</h5>
-                                            <p class="partners-carousel-text fs-16 text-white">{{$partner['partner_description']}}</p>
-                                            <a href="{{route('partners')}}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
-                                                <img src="{{asset('images/frontend/check.svg')}}" />
+                                        <img src="{{ data_get($partner, 'partner_logo', '') }}" alt="partner icon"
+                                            class="partners-icon"
+                                            data-aos="fade-right"
+                                            data-aos-easing="ease-in-out"
+                                            data-aos-duration="500" />
+
+                                        <div class="partner-carousel-content mt-4 mt-md-0"
+                                            data-aos="fade-left"
+                                            data-aos-easing="ease-in-out"
+                                            data-aos-duration="500">
+                                            <h5 class="text-white fs-16 fw-500">{{ data_get($partner, 'partner_name', '') }}</h5>
+                                            <p class="partners-carousel-text fs-16 text-white">{{ data_get($partner, 'partner_description', '') }}</p>
+                                            <a href="{{ route('partners') }}"
+                                            class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                                <img src="{{ asset('images/frontend/check.svg') }}" />
                                                 <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                             </a>
                                         </div>
@@ -198,6 +218,7 @@
                             @endforeach
                         @endif
                     @endforeach
+
                     {{-- <div class="carousel-item active">
                         <div class="d-block d-md-flex justify-content-between align-content-center overflow-hidden">
                             <img src="{{asset('images/frontend/aws_icon.svg')}}" alt="aws icon" class="partners-icon" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" />
@@ -256,19 +277,19 @@
                 <!--</div>-->
                 <div class="col-md-12 mt-4">
                     @php
-                        $rawTitle = $page->sections['services_section']['section_title'] ?? '';
-                        
+                        $rawTitle = data_get($page, 'sections.services_section.section_title', '');
+
                         if (stripos($rawTitle, 'synaptekx') !== false) {
-                            $highlighted = preg_replace(
+                            $formattedTitle = preg_replace(
                                 '/(synaptekx)/i',
                                 '<span class="text-gradient">$1</span>',
                                 e($rawTitle)
                             );
-                            $formattedTitle = $highlighted;
                         } else {
                             $formattedTitle = e($rawTitle);
                         }
                     @endphp
+
                     <h1 class="w-60-perc home-sect-2-title text-white" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out">{!!$formattedTitle!!}</h1>
                 </div>
 
@@ -311,25 +332,25 @@
             <div class="container py-35px">
                 <div class="col-md-12 mt-4">
                     @php
-                        $rawTransformTitle = $page->sections['transform_section']['section_title'] ?? '';
-                        
+                        $rawTransformTitle = data_get($page, 'sections.transform_section.section_title', '');
+
                         if (stripos($rawTransformTitle, 'transformation') !== false) {
-                            $highlightedTitle = preg_replace(
-                                '/(Transformation)/i',
+                            $formattedTransformTitle = preg_replace(
+                                '/(transformation)/i',
                                 '<span class="text-gradient">$1</span>',
                                 e($rawTransformTitle)
                             );
-                            $formattedTransformTitle = $highlightedTitle;
                         } else {
                             $formattedTransformTitle = e($rawTransformTitle);
                         }
                     @endphp
+
                     <h1 class="home-sect-4-title text-black">{!!$formattedTransformTitle!!}</h1>
                 </div>
                 <div class="home_graphic mt-5" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
                     {{-- <img src="{{asset('images/frontend/home_graphic_1.svg')}}" class="home-graphic-1 object-fit-cover w-100" /> --}}
                     <video autoplay loop muted playsinline class="w-100">
-                        <source src="{{$page->sections['transform_section']['infograph'] ?? ''}}" type="video/mp4">
+                        <source src="{{data_get($page->sections, 'transform_section.infograph' , '')}}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -343,9 +364,9 @@
                 </div> -->
                 <div class="col-md-12 mt-4">
                     @php
-                        $rawTitle = $page->sections['features_section']['section_title'] ?? '';
+                        $rawTitle = data_get($page, 'sections.features_section.section_title', '');
                         $words = preg_split('/\s+/', trim($rawTitle));
-                    
+
                         if (count($words) >= 4) {
                             $firstTwo = implode(' ', array_slice($words, 0, 2));
                             $rest = implode(' ', array_slice($words, 2));
@@ -354,16 +375,24 @@
                             $formattedTitle = e($rawTitle);
                         }
                     @endphp
+
                     <h1 class="home-sect-2-title text-white">{!!$formattedTitle!!}</h1>
                 </div>
                 <div class="row justify-content-center align-items-start mt-5 pt-md-5 overflow-hidden">
-                    @if (isset($page->sections['features_section']['features']) && count($page->sections['features_section']['features']) > 0)
-                        @foreach ($page->sections['features_section']['features'] as $feature)
-                            <div class="innovative-sec-table col-lg-3 col-md-4 col-12" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="{{$loop->index}}00">
-                                <img src="{{ $feature['feature_icon'] ?? '' }}" style="width: 50px" />
+                    @php
+                        $features = data_get($page, 'sections.features_section.features', []);
+                    @endphp
+                    @if (!empty($features))
+                        @foreach ($features as $feature)
+                            <div class="innovative-sec-table col-lg-3 col-md-4 col-12"
+                                data-aos="fade-up"
+                                data-aos-duration="500"
+                                data-aos-easing="ease-in-out"
+                                data-aos-delay="{{ $loop->index }}00">
+                                <img src="{{ data_get($feature, 'feature_icon', '') }}" style="width: 50px" />
                                 <div class="text-div">
-                                    <h5 class="innovative-sec-table-title">{{$feature['feature_title'] ?? ''}}</h5>
-                                    <p class="innovative-sec-table-desc">{{$feature['feature_subtitle'] ?? ''}}</p>
+                                    <h5 class="innovative-sec-table-title">{{ data_get($feature, 'feature_title', '') }}</h5>
+                                    <p class="innovative-sec-table-desc">{{ data_get($feature, 'feature_subtitle', '') }}</p>
                                 </div>
                             </div>
                         @endforeach
