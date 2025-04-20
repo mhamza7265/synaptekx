@@ -11,9 +11,9 @@
                         <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('id') == $service->id) ? 'text-gradient' : 'text-black' }}">{{$service->name}}</p>
                     </a>
                     <div>
-                        @foreach ($service->sections['all'] as $section)
-                            <a href="{{ route('services', ['id' => $service->id]) . '#' . \Illuminate\Support\Str::slug($section['title'] ?? '') }}" class="mega-menu-mobile-link d-block menu-link">
-                                <i class="fa-solid fa-arrow-right me-3"></i>{{$section['display_title'] ?? ''}}
+                        @foreach (data_get($service->sections, 'all', []) as $section)
+                            <a href="{{ route('services', ['id' => $service->id]) . '#' . \Illuminate\Support\Str::slug(data_get($section, 'title' , '')) }}" class="mega-menu-mobile-link d-block menu-link">
+                                <i class="fa-solid fa-arrow-right me-3"></i>{{data_get($section, 'title' , '')}}
                             </a>
                         @endforeach
                         {{-- <a href="{{ route('services', ['name' => 'digital']) . '#consulting' }}" class="mega-menu-mobile-link d-block menu-link">
