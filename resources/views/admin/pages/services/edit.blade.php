@@ -147,11 +147,20 @@
                             <div class="card-header" id="headingFive10">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFive" aria-expanded="false" aria-controls="withoutSpacingAccordionFive">
+                                        @php
+                                            $hasStickyTitle = false;
+                                        @endphp
                                         @foreach (data_get($service, 'sections.all', []) as $section)
                                             @if ($section['type'] === 'repeating' && $section['group'] === 'features')
+                                                @php
+                                                    $hasStickyTitle = true;
+                                                @endphp
                                                 <div>{{ data_get($section, 'title', 'Sticky Gradient Section') }}</div>
                                             @endif
                                         @endforeach
+                                        @if (!$hasStickyTitle)
+                                            <div>Sticky Gradient Section</div>
+                                        @endif
 
                                         <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
@@ -227,11 +236,20 @@
                             <div class="card-header" id="headingTwo2">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
+                                        @php
+                                            $hasTransformSectionTitle = false;
+                                        @endphp
                                         @foreach (data_get($service, 'sections.all', []) as $section)
                                             @if (data_get($section, 'type') === 'single' && data_get($section, 'group') === 'transform')
+                                                @php
+                                                    $hasTransformSectionTitle = true;
+                                                @endphp
                                                 {{ data_get($section, 'title', 'Transformation Journey') }}
                                             @endif
                                         @endforeach
+                                        @if (!$hasTransformSectionTitle)
+                                            <span>Transformation Journey</span>
+                                        @endif
 
                                         <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
