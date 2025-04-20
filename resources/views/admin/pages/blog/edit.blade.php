@@ -13,7 +13,7 @@
                                     <div class="d-flex justify-content-between align-items-baseline">
                                         <div class="form-group" style="width: 49%">
                                             <span class="d-block">Blog Title:</span>
-                                            <input type="text" name="title" placeholder="Enter blog title" value="{{old('title', $blog->title)}}" class="form-control mt-2" id="title">
+                                            <input type="text" name="title" placeholder="Enter blog title" value="{{old('title', $blog->title)}}" class="form-control mt-2" id="title" required>
                                             @error('title')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -29,7 +29,7 @@
                                     <div class="d-flex justify-content-between align-items-baseline">
                                         <div class="form-group" style="width: 49%">
                                             <span class="d-block mt-3">Category:</span>
-                                            <input type="text" name="category" value="{{old('category', $blog->category)}}" class="form-control mt-2" id="category">
+                                            <input type="text" name="category" value="{{old('category', $blog->category)}}" class="form-control mt-2" id="category" required>
                                             @error('category')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -67,7 +67,7 @@
                                             <i class="fa fa-picture-o"></i> Choose
                                         </a>
                                         </span>
-                                        <input id="blog_thumbnail" style="height: 36px" value="{{old('thumbnail', $blog->thumbnail)}}" class="form-control" type="text" name="thumbnail">
+                                        <input id="blog_thumbnail" style="height: 36px" value="{{old('thumbnail', $blog->thumbnail)}}" class="form-control" type="text" name="thumbnail" required>
                                     </div>
                                     <div id="blog_holder" style="margin-top:15px; max-height:100px;"></div>
                                     @error('thumbnail')

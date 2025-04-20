@@ -21,13 +21,13 @@
                                     <form method="post" action="{{ route('admin.page-meta.update', ['slug' => $page->slug]) }}">
                                         @csrf 
                                         <span class="d-block mt-3">Meta Title</span>
-                                        <input type="text" name="meta_title" value="{{$page->meta_title}}" class="form-control mt-2">
+                                        <input type="text" name="meta_title" value="{{$page->meta_title}}" class="form-control mt-2" required>
                                         @error('meta_title')
                                             <div class="text-danger">{{ $message }}</div>                                            
                                         @enderror
 
                                         <span class="d-block mt-3">Meta Description</span>
-                                        <textarea name="meta_description" class="form-control mt-2" rows="3">{{$page->meta_description}}</textarea>
+                                        <textarea name="meta_description" class="form-control mt-2" rows="3" required>{{$page->meta_description}}</textarea>
                                         @error('meta_description')
                                             <div class="text-danger">{{ $message }}</div>                                            
                                         @enderror
@@ -147,7 +147,7 @@
                                         @csrf
                                         <div class="card-body">
                                             <span>Section Title:</span>
-                                            <input type="text" class="form-control mb-2" value="{{$page->sections['services_section']['section_title'] ?? ''}}" name="section_title">
+                                            <input type="text" class="form-control mb-2" value="{{$page->sections['services_section']['section_title'] ?? ''}}" name="section_title" required>
                                             {{-- <div id="digitalServicesContainer">
                                                 @if (isset($page->sections['services_section']['services']) && count($page->sections['services_section']['services']) > 0)
                                                     @foreach ($page->sections['services_section']['services']  as $service)
@@ -236,7 +236,7 @@
                                         <div class="card-body">
                                             <span class="d-block mt-3">Section Title:</span>
                                             <div class="form-group">
-                                                <input class="form-control mt-2" value="{{$page->sections['features_section']['section_title'] ?? ''}}" name="section_title" >
+                                                <input class="form-control mt-2" value="{{$page->sections['features_section']['section_title'] ?? ''}}" name="section_title" required>
                                             </div>
 
                                             <hr>
@@ -539,11 +539,11 @@
                     </button>
                     <span class="d-block mt-3">Title:</span>
                     <div class="form-group">
-                        <input type="text" class="form-control mt-2" name="list_title[]">
+                        <input type="text" class="form-control mt-2" name="list_title[]" required>
                     </div>
 
                     <span class="d-block mt-4">Content:</span>
-                    <textarea id="${id}" name="list_content[]" class="form-control summernote mt-2"></textarea>
+                    <textarea id="${id}" name="list_content[]" class="form-control summernote mt-2" required></textarea>
                 </div>
                 `;
                 $("#digitalServicesContainer").append(html);

@@ -21,13 +21,13 @@
                                     <form method="post" action="{{ route('admin.page-meta.update', ['slug' => $page->slug]) }}">
                                         @csrf 
                                         <span class="d-block mt-3">Meta Title</span>
-                                        <input type="text" name="meta_title" value="{{$page->meta_title}}" class="form-control mt-2">
+                                        <input type="text" name="meta_title" value="{{$page->meta_title}}" class="form-control mt-2" required>
                                         @error('meta_title')
                                             <div class="text-danger">{{ $message }}</div>                                            
                                         @enderror
 
                                         <span class="d-block mt-3">Meta Description</span>
-                                        <textarea name="meta_description" class="form-control mt-2" rows="3">{{$page->meta_description}}</textarea>
+                                        <textarea name="meta_description" class="form-control mt-2" rows="3" required>{{$page->meta_description}}</textarea>
                                         @error('meta_description')
                                             <div class="text-danger">{{ $message }}</div>                                            
                                         @enderror
@@ -59,7 +59,7 @@
                                                         <i class="fa fa-picture-o"></i> Choose
                                                     </a>
                                                     </span>
-                                                    <input id="thumbnail_0" style="height: 36px" class="form-control" value="{{$page->sections['hero_section']['bg_image'] ?? ''}}" type="text" name="bg_image">
+                                                    <input id="thumbnail_0" style="height: 36px" class="form-control" value="{{$page->sections['hero_section']['bg_image'] ?? ''}}" type="text" name="bg_image" required>
                                                 </div>
                                                 <div id="holder_0" style="margin-top:15px; max-height:100px;">
                                                     @if (!empty($page->sections['hero_section']['bg_image'] ?? ''))
@@ -71,7 +71,7 @@
                                                 <input type="text" class="form-control mb-2" value="{{$page->sections['hero_section']['hero_title'] ?? ''}}" name="hero_title">
                                         
                                                 <span class="d-block mt-2">Subtitle</span>
-                                                <textarea class="form-control" name="hero_subtitle" rows="2">{{$page->sections['hero_section']['hero_subtitle'] ?? ''}}</textarea>
+                                                <textarea class="form-control" name="hero_subtitle" rows="2" required>{{$page->sections['hero_section']['hero_subtitle'] ?? ''}}</textarea>
                                             </div>
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
@@ -102,11 +102,11 @@
 
                                                             <span>Title:</span>
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control mt-2" value="{{$section['data']['section_title'] ?? ''}}" name="section_title[]" >
+                                                                <input type="text" class="form-control mt-2" value="{{$section['data']['section_title'] ?? ''}}" name="section_title[]" required>
                                                             </div>
                                                             
                                                             <span class="d-block mt-4">Description:</span>
-                                                            <textarea name="section_desc[]" class="form-control mt-2">{{$section['data']['section_desc'] ?? ''}}</textarea>
+                                                            <textarea name="section_desc[]" class="form-control mt-2" required>{{$section['data']['section_desc'] ?? ''}}</textarea>
             
                                                             <span class="d-block mt-3">Select Image:</span>
                                                             <div class="input-group d-flex align-items-center mt-2">
@@ -115,7 +115,7 @@
                                                                     <i class="fa fa-picture-o"></i> Choose
                                                                 </a>
                                                                 </span>
-                                                                <input id="section_{{$loop->iteration}}_thumbnail" style="height: 36px" class="form-control" type="text" value="{{$section['data']['section_image'] ?? ''}}" name="section_image[]">
+                                                                <input id="section_{{$loop->iteration}}_thumbnail" style="height: 36px" class="form-control" type="text" value="{{$section['data']['section_image'] ?? ''}}" name="section_image[]" required>
                                                             </div>
                                                             <div id="section_{{$loop->iteration}}_holder" style="margin-top:15px; max-height:100px;">
                                                                 @if (!empty($section['data']['section_image'] ?? ''))
@@ -162,7 +162,7 @@
                                                     @if (is_array($section) && isset($section['type']) && $section['type'] === 'unique')
                                                         {{-- {{dd($section)}} --}}
                                                         <span>Section Title:</span>
-                                                        <input type="text" class="form-control mt-2" value="{{ $section['title'] ?? ''}}" name="section_title" >
+                                                        <input type="text" class="form-control mt-2" value="{{ $section['title'] ?? ''}}" name="section_title" required>
             
                                                         <hr>
             
@@ -173,9 +173,9 @@
                                                                         <i class="fa fa-trash text-danger"></i>
                                                                     </button>
                                                                     <span class="d-block mt-4">Feature Title:</span>
-                                                                    <input type="text" class="form-control" value="{{$detail['title']}}" name="detail_title[]">
+                                                                    <input type="text" class="form-control" value="{{$detail['title']}}" name="detail_title[]" required>
                                                                     <span class="d-block mt-4">Feature Description:</span>
-                                                                    <textarea name="detail_description[]" class="form-control mt-2" rows="3">{{$detail['description']}}</textarea>
+                                                                    <textarea name="detail_description[]" class="form-control mt-2" rows="3" required>{{$detail['description']}}</textarea>
                                                                     <hr>
                                                                 </div>
                                                             @endforeach
@@ -212,11 +212,11 @@
                                                             </button>
                                                             <span>Title:</span>
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control mt-2" value="{{$section['data']['section_title'] ?? ''}}" name="section_title[]" >
+                                                                <input type="text" class="form-control mt-2" value="{{$section['data']['section_title'] ?? ''}}" name="section_title[]" required>
                                                             </div>
                                                             
                                                             <span class="d-block mt-4">Description:</span>
-                                                            <textarea name="section_desc[]" class="form-control mt-2">{{$section['data']['section_desc'] ?? ''}}</textarea>
+                                                            <textarea name="section_desc[]" class="form-control mt-2" required>{{$section['data']['section_desc'] ?? ''}}</textarea>
 
                                                             <span class="d-block mt-3">Select Image:</span>
                                                             <div class="input-group d-flex align-items-center mt-2">
@@ -225,7 +225,7 @@
                                                                     <i class="fa fa-picture-o"></i> Choose
                                                                 </a>
                                                                 </span>
-                                                                <input id="feat_{{$loop->iteration}}_thumbnail" style="height: 36px" class="form-control" value="{{$section['data']['section_image'] ?? ''}}" type="text" name="feat_image[]">
+                                                                <input id="feat_{{$loop->iteration}}_thumbnail" style="height: 36px" class="form-control" value="{{$section['data']['section_image'] ?? ''}}" type="text" name="feat_image[]" required>
                                                             </div>
                                                             <div id="feat_{{$loop->iteration}}_holder" style="margin-top:15px; max-height:100px;">
                                                                 @if (!empty($section['data']['section_image'] ?? ''))
@@ -264,9 +264,9 @@
                             <i class="fa fa-trash text-danger"></i>
                         </button>
                         <span class="d-block mt-4">Feature Title:</span>
-                        <input type="text" class="form-control" name="detail_title[]">
+                        <input type="text" class="form-control" name="detail_title[]" required>
                         <span class="d-block mt-4">Feature Description:</span>
-                        <textarea name="detail_description[]" class="form-control mt-2" rows="3"></textarea>
+                        <textarea name="detail_description[]" class="form-control mt-2" rows="3" required></textarea>
                         <hr>
                     </div>
                 `;
@@ -297,11 +297,11 @@
 
                         <span>Title:</span>
                         <div class="form-group">
-                            <input type="text" class="form-control mt-2" name="section_title[]">
+                            <input type="text" class="form-control mt-2" name="section_title[]" required>
                         </div>
 
                         <span class="d-block mt-4">Description:</span>
-                        <textarea name="section_desc[]" class="form-control mt-2"></textarea>
+                        <textarea name="section_desc[]" class="form-control mt-2" required></textarea>
 
                         <span class="d-block mt-3">Select Image:</span>
                         <div class="input-group d-flex align-items-center mt-2">
@@ -311,7 +311,7 @@
                                     <i class="fa fa-picture-o"></i> Choose
                                 </a>
                             </span>
-                            <input id="thumbnail_${randomValue}" style="height: 36px" class="form-control" type="text" name="section_image[]">
+                            <input id="thumbnail_${randomValue}" style="height: 36px" class="form-control" type="text" name="section_image[]" required>
                         </div>
                         <div id="holder_${randomValue}" style="margin-top:15px; max-height:100px;"></div>
                     </div>
@@ -350,11 +350,11 @@
 
                         <span>Title:</span>
                         <div class="form-group">
-                            <input type="text" class="form-control mt-2" name="section_title[]">
+                            <input type="text" class="form-control mt-2" name="section_title[]" required>
                         </div>
 
                         <span class="d-block mt-4">Description:</span>
-                        <textarea name="section_desc[]" class="form-control mt-2"></textarea>
+                        <textarea name="section_desc[]" class="form-control mt-2" required></textarea>
 
                         <span class="d-block mt-3">Select Image:</span>
                         <div class="input-group d-flex align-items-center mt-2">
@@ -366,7 +366,7 @@
                                     <i class="fa fa-picture-o"></i> Choose
                                 </a>
                             </span>
-                            <input id="thumbnail_${randomValue}" style="height: 36px" class="form-control" type="text" name="feat_image[]">
+                            <input id="thumbnail_${randomValue}" style="height: 36px" class="form-control" type="text" name="feat_image[]" required>
                         </div>
                         <div id="holder_${randomValue}" style="margin-top:15px; max-height:100px;"></div>
                     </div>

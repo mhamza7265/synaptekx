@@ -21,13 +21,13 @@
                                     <form method="post" action="{{ route('admin.page-meta.update', ['slug' => $page->slug]) }}">
                                         @csrf 
                                         <span class="d-block mt-3">Meta Title</span>
-                                        <input type="text" name="meta_title" value="{{$page->meta_title}}" class="form-control mt-2">
+                                        <input type="text" name="meta_title" value="{{$page->meta_title}}" class="form-control mt-2" required>
                                         @error('meta_title')
                                             <div class="text-danger">{{ $message }}</div>                                            
                                         @enderror
 
                                         <span class="d-block mt-3">Meta Description</span>
-                                        <textarea name="meta_description" class="form-control mt-2" rows="3">{{$page->meta_description}}</textarea>
+                                        <textarea name="meta_description" class="form-control mt-2" rows="3" required>{{$page->meta_description}}</textarea>
                                         @error('meta_description')
                                             <div class="text-danger">{{ $message }}</div>                                            
                                         @enderror
@@ -60,7 +60,7 @@
                                                         <i class="fa fa-picture-o"></i> Choose
                                                     </a>
                                                     </span>
-                                                    <input id="thumbnail_0" style="height: 36px" class="form-control" value="{{$page->sections['hero']['hero_image'] ?? ''}}" type="text" name="bg_image">
+                                                    <input id="thumbnail_0" style="height: 36px" class="form-control" value="{{$page->sections['hero']['hero_image'] ?? ''}}" type="text" name="bg_image" required>
                                                 </div>
                                                 <div id="holder_0" style="margin-top:15px; max-height:100px;">
                                                     @if (!empty($page->sections['hero']['hero_image'] ?? null))
@@ -72,7 +72,7 @@
                                                 @enderror
                                         
                                                 <span class="d-block mt-3">Title</span>
-                                                <input type="text" class="form-control mb-2" value="{{$page->sections['hero']['hero_title'] ?? ''}}" name="hero_title">
+                                                <input type="text" class="form-control mb-2" value="{{$page->sections['hero']['hero_title'] ?? ''}}" name="hero_title" required>
                                                 @error('hero_title')
                                                     <div class="text-danger">{{ $message }}</div>
                                                 @enderror
@@ -97,7 +97,7 @@
                                         @csrf
                                         <div class="card-body">
                                             <span>Section Title:</span>
-                                            <input type="text" class="form-control mt-2"  value="{{$page->sections['section_title'] ?? ''}}" name="section_title" >
+                                            <input type="text" class="form-control mt-2"  value="{{$page->sections['section_title'] ?? ''}}" name="section_title" required>
                                         </div>
                                         @error('section_title')
                                             <div class="text-danger">{{ $message }}</div>

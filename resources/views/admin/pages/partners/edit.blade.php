@@ -21,13 +21,13 @@
                                     <form method="post" action="{{ route('admin.page-meta.update', ['slug' => $page->slug]) }}">
                                         @csrf 
                                         <span class="d-block mt-3">Meta Title</span>
-                                        <input type="text" name="meta_title" value="{{$page->meta_title}}" class="form-control mt-2">
+                                        <input type="text" name="meta_title" value="{{$page->meta_title}}" class="form-control mt-2" required>
                                         @error('meta_title')
                                             <div class="text-danger">{{ $message }}</div>                                            
                                         @enderror
 
                                         <span class="d-block mt-3">Meta Description</span>
-                                        <textarea name="meta_description" class="form-control mt-2" rows="3">{{$page->meta_description}}</textarea>
+                                        <textarea name="meta_description" class="form-control mt-2" rows="3" required>{{$page->meta_description}}</textarea>
                                         @error('meta_description')
                                             <div class="text-danger">{{ $message }}</div>                                            
                                         @enderror
@@ -59,7 +59,7 @@
                                                         <i class="fa fa-picture-o"></i> Choose
                                                     </a>
                                                     </span>
-                                                    <input id="thumbnail_0" style="height: 36px" value="{{$page->sections['hero_section']['bg_image'] ?? ''}}" class="form-control" type="text" name="bg_image">
+                                                    <input id="thumbnail_0" style="height: 36px" value="{{$page->sections['hero_section']['bg_image'] ?? ''}}" class="form-control" type="text" name="bg_image" required>
                                                 </div>
                                                 <div id="holder_0" style="margin-top:15px; max-height:100px;">
                                                     @if (!empty($page->sections['hero_section']['bg_image'] ?? ''))
@@ -71,7 +71,7 @@
                                                 <input type="text" class="form-control mb-2" value="{{$page->sections['hero_section']['hero_title'] ?? ''}}" name="hero_title">
                                         
                                                 <span class="d-block mt-2">Subtitle</span>
-                                                <textarea class="form-control" name="hero_subtitle" rows="2">{{$page->sections['hero_section']['hero_subtitle'] ?? ''}}</textarea>
+                                                <textarea class="form-control" name="hero_subtitle" rows="2" required>{{$page->sections['hero_section']['hero_subtitle'] ?? ''}}</textarea>
                                             </div>
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
@@ -133,7 +133,7 @@
                                             @if (($section['type'] ?? null) === 'repeating' && ($section['group'] ?? null) === 'scaled_partners')
                                                 <input type="hidden" name="section_index" value="{{ $sIndex }}">
                                                 <span>Section Title:</span>
-                                                <input type="text" class="form-control mb-2" name="section_title" value="{{ $section['title'] ?? '' }}">
+                                                <input type="text" class="form-control mb-2" name="section_title" value="{{ $section['title'] ?? '' }}" required>
 
                                                 <div id="elite-partners-section" class="mt-3">
                                                     @foreach ($section['data']['partners'] ?? [] as $pIndex => $partner)
@@ -151,7 +151,7 @@
                                                                         <i class="fa fa-picture-o"></i> Choose
                                                                     </a>
                                                                 </span>
-                                                                <input id="partner_{{ $pIndex }}_thumbnail" class="form-control" type="text" name="partner_logo[{{ $pIndex }}]" value="{{ $partner['partner_logo'] ?? '' }}">
+                                                                <input id="partner_{{ $pIndex }}_thumbnail" class="form-control" type="text" name="partner_logo[{{ $pIndex }}]" value="{{ $partner['partner_logo'] ?? '' }}" required>
                                                             </div>
                                                             <div id="partner_{{ $pIndex }}_holder" style="margin-top:15px; max-height:100px;">
                                                                 @if (!empty($partner['partner_logo']))
@@ -163,7 +163,7 @@
                                                             <input type="text" class="form-control mb-2" name="partner_name[{{ $pIndex }}]" value="{{ $partner['partner_name'] ?? '' }}">
 
                                                             <span>Partner Description:</span>
-                                                            <textarea class="form-control mb-2" name="partner_description[{{ $pIndex }}]">{{ $partner['partner_description'] ?? '' }}</textarea>
+                                                            <textarea class="form-control mb-2" name="partner_description[{{ $pIndex }}]" required>{{ $partner['partner_description'] ?? '' }}</textarea>
 
                                                             {{-- Partner Details --}}
                                                             <div class="elite_partner_details">
@@ -173,10 +173,10 @@
                                                                             <i class="fa fa-trash text-danger"></i>
                                                                         </button>
                                                                         <span>Title:</span>
-                                                                        <input type="text" class="form-control mt-2" name="detail_title[{{ $pIndex }}][]" value="{{ $detail['detail_title'] ?? '' }}">
+                                                                        <input type="text" class="form-control mt-2" name="detail_title[{{ $pIndex }}][]" value="{{ $detail['detail_title'] ?? '' }}" required>
                                                                         
                                                                         <span class="d-block mt-3">Description:</span>
-                                                                        <textarea name="detail_subtitle[{{ $pIndex }}][]" class="form-control mt-2">{{ $detail['detail_subtitle'] ?? '' }}</textarea>
+                                                                        <textarea name="detail_subtitle[{{ $pIndex }}][]" class="form-control mt-2" required>{{ $detail['detail_subtitle'] ?? '' }}</textarea>
                                                                     </div>
                                                                 @endforeach
                                                             </div>
@@ -239,7 +239,7 @@
                                             @if (($section['type'] ?? null) === 'repeating' && ($section['group'] ?? null) === 'all_partners')
                                                 <div class="card-body">
                                                     <span>Section Title:</span>
-                                                    <input type="text" class="form-control mb-2" value="{{$section['title']}}" name="section_title">
+                                                    <input type="text" class="form-control mb-2" value="{{$section['title']}}" name="section_title" required>
                                                     <div id="allPartnersContainer" class="mt-3">
                                                         @if (isset($section['data']))
                                                             @foreach ($section['data']['partners'] as $partner)
@@ -254,7 +254,7 @@
                                                                             <i class="fa fa-picture-o"></i> Choose
                                                                         </a>
                                                                         </span>
-                                                                        <input id="partner_thumbnail_1" style="height: 36px" class="form-control" value="{{$partner['partner_logo']}}" type="text" name="partner_logo[]">
+                                                                        <input id="partner_thumbnail_1" style="height: 36px" class="form-control" value="{{$partner['partner_logo']}}" type="text" name="partner_logo[]" required>
                                                                     </div>
                                                                     <div id="partner_holder_1" style="margin-top:15px; max-height:100px;">
                                                                         @if (!empty($partner['partner_logo']))
@@ -263,7 +263,7 @@
                                                                     </div>
                                                                     
                                                                     <span class="d-block mt-4">Content:</span>
-                                                                    <textarea id="summernote-0" name="partner_content[]" class="form-control summernote mt-2">{{$partner['partner_content']}}</textarea>
+                                                                    <textarea id="summernote-0" name="partner_content[]" class="form-control summernote mt-2" required>{{$partner['partner_content']}}</textarea>
                                                                 </div>
                                                             @endforeach
                                                         @else
@@ -275,12 +275,12 @@
                                                                         <i class="fa fa-picture-o"></i> Choose
                                                                     </a>
                                                                     </span>
-                                                                    <input id="partner_thumbnail_1-0" style="height: 36px" class="form-control" type="text" name="partner_logo[]">
+                                                                    <input id="partner_thumbnail_1-0" style="height: 36px" class="form-control" type="text" name="partner_logo[]" required>
                                                                 </div>
                                                                 <div id="partner_holder_1-0" style="margin-top:15px; max-height:100px;"></div>
                                             
                                                                 <span class="d-block mt-4">Content:</span>
-                                                                <textarea id="${id}" name="partner_content[]" class="form-control summernote mt-2"></textarea>
+                                                                <textarea id="${id}" name="partner_content[]" class="form-control summernote mt-2" required></textarea>
                                                             </div>
                                                         @endif
                                                     </div>
@@ -372,7 +372,7 @@
                                         <span>Section Title:</span>
                                         @foreach ($sections as $sIndex => $section)
                                             @if (($section['type'] ?? null) === 'text' && ($section['group'] ?? null) === 'capabilities')
-                                                <input type="text" class="form-control mb-2" value="{{$section['title'] ?? ''}}" name="section_title">
+                                                <input type="text" class="form-control mb-2" value="{{$section['title'] ?? ''}}" name="section_title" required>
                                             @endif
                                         @endforeach
                                         @error('section_title')
@@ -453,23 +453,23 @@
                                     <i class="fa fa-picture-o"></i> Choose
                                 </a>
                             </span>
-                            <input id="partner_${partnerCount}_thumbnail" style="height: 36px" class="form-control" type="text" name="partner_logo[${partnerCount}]">
+                            <input id="partner_${partnerCount}_thumbnail" style="height: 36px" class="form-control" type="text" name="partner_logo[${partnerCount}]" required>
                         </div>
                         <div id="partner_${partnerCount}_holder" style="margin-top:15px; max-height:100px;"></div>
 
                         <span>Partner Name:</span>
-                        <input type="text" class="form-control mb-2" name="partner_name[]" value="{{ $partner['partner_name'] ?? '' }}">
+                        <input type="text" class="form-control mb-2" name="partner_name[]" value="{{ $partner['partner_name'] ?? '' }}" required>
 
                         <span>Partner Description:</span>
-                        <textarea class="form-control mb-2" name="partner_description[]">{{ $partner['partner_description'] ?? '' }}</textarea>
+                        <textarea class="form-control mb-2" name="partner_description[]" required>{{ $partner['partner_description'] ?? '' }}</textarea>
 
                         <div class="elite_partner_details">
                             <div class="elite_partner_detail border p-3 mb-3 position-relative" data-detail-index="0">
                                 <span>Title:</span>
-                                <input type="text" class="form-control mt-2" name="detail_title[${partnerCount}][]">
+                                <input type="text" class="form-control mt-2" name="detail_title[${partnerCount}][]" required>
                                 
                                 <span class="d-block mt-3">Description:</span>
-                                <textarea name="detail_subtitle[${partnerCount}][]" class="form-control mt-2"></textarea>
+                                <textarea name="detail_subtitle[${partnerCount}][]" class="form-control mt-2" required></textarea>
                             </div>
                         </div>
 
@@ -583,12 +583,12 @@
                             <i class="fa fa-picture-o"></i> Choose
                         </a>
                         </span>
-                        <input id="partner_thumbnail_1-${childCount + 1}" style="height: 36px" class="form-control" type="text" name="partner_logo[]">
+                        <input id="partner_thumbnail_1-${childCount + 1}" style="height: 36px" class="form-control" type="text" name="partner_logo[]" required>
                     </div>
                     <div id="partner_holder_1-${childCount + 1}" style="margin-top:15px; max-height:100px;"></div>
 
                     <span class="d-block mt-4">Content:</span>
-                    <textarea id="${id}" name="partner_content[]" class="form-control summernote mt-2"></textarea>
+                    <textarea id="${id}" name="partner_content[]" class="form-control summernote mt-2" required></textarea>
                 </div>
                 `;
                 $("#allPartnersContainer").append(html);
@@ -616,15 +616,15 @@
                                             <i class="fa fa-picture-o"></i> Choose
                                         </a>
                                         </span>
-                                        <input id="events_thumbnail-${childCount + 1}" style="height: 36px" class="form-control" type="text" name="events_image[]">
+                                        <input id="events_thumbnail-${childCount + 1}" style="height: 36px" class="form-control" type="text" name="events_image[]" required>
                                     </div>
                                     <div id="events_holder-${childCount + 1}" style="margin-top:15px; max-height:100px;"></div>
 
                                     <span>Title:</span>
-                                    <input type="text" class="form-control mt-2" name="event_title[]" >
+                                    <input type="text" class="form-control mt-2" name="event_title[]" required>
                                     
                                     <span class="d-block mt-4">Description:</span>
-                                    <textarea name="event_desc[]" class="form-control mt-2"></textarea>
+                                    <textarea name="event_desc[]" class="form-control mt-2" required></textarea>
                                 </div>
                              `
                 // Convert HTML string to jQuery object
