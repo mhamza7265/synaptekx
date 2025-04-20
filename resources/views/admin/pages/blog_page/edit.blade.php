@@ -60,11 +60,11 @@
                                                         <i class="fa fa-picture-o"></i> Choose
                                                     </a>
                                                     </span>
-                                                    <input id="thumbnail_0" style="height: 36px" class="form-control" value="{{$page->sections['hero']['hero_image'] ?? ''}}" type="text" name="bg_image" required>
+                                                    <input id="thumbnail_0" style="height: 36px" class="form-control" value="{{data_get($page->sections, 'hero.hero_image' , '')}}" type="text" name="bg_image" required>
                                                 </div>
                                                 <div id="holder_0" style="margin-top:15px; max-height:100px;">
-                                                    @if (!empty($page->sections['hero']['hero_image'] ?? null))
-                                                        <img src="{{ asset($page->sections['hero']['hero_image']) }}" style="height: 5rem;">
+                                                    @if (!empty(data_get($page->sections, 'hero.hero_image' , '')))
+                                                        <img src="{{ asset(data_get($page->sections, 'hero.hero_image' , '')) }}" style="height: 5rem;">
                                                     @endif
                                                 </div>
                                                 @error('bg_image')
@@ -72,7 +72,7 @@
                                                 @enderror
                                         
                                                 <span class="d-block mt-3">Title</span>
-                                                <input type="text" class="form-control mb-2" value="{{$page->sections['hero']['hero_title'] ?? ''}}" name="hero_title" required>
+                                                <input type="text" class="form-control mb-2" value="{{data_get($page->sections, 'hero.hero_title' , '')}}" name="hero_title" required>
                                                 @error('hero_title')
                                                     <div class="text-danger">{{ $message }}</div>
                                                 @enderror
@@ -97,7 +97,7 @@
                                         @csrf
                                         <div class="card-body">
                                             <span>Section Title:</span>
-                                            <input type="text" class="form-control mt-2"  value="{{$page->sections['section_title'] ?? ''}}" name="section_title" required>
+                                            <input type="text" class="form-control mt-2"  value="{{data_get($page->sections, 'section_title' , '')}}" name="section_title" required>
                                         </div>
                                         @error('section_title')
                                             <div class="text-danger">{{ $message }}</div>

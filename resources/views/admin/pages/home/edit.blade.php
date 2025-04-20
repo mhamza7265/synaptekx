@@ -137,7 +137,8 @@
                             <div class="card-header" id="headingTwo2">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
-                                        {{$page->sections['services_section']['section_title'] ?? ''}}  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                            {{data_get($page->sections, 'services_section.section_title' , '')}}
+                                        <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
@@ -147,7 +148,7 @@
                                         @csrf
                                         <div class="card-body">
                                             <span>Section Title:</span>
-                                            <input type="text" class="form-control mb-2" value="{{$page->sections['services_section']['section_title'] ?? ''}}" name="section_title" required>
+                                            <input type="text" class="form-control mb-2" value="{{data_get($page->sections, 'services_section.section_title' , '')}}" name="section_title" required>
                                             {{-- <div id="digitalServicesContainer">
                                                 @if (isset($page->sections['services_section']['services']) && count($page->sections['services_section']['services']) > 0)
                                                     @foreach ($page->sections['services_section']['services']  as $service)
@@ -187,7 +188,8 @@
                             <div class="card-header" id="headingThree10">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionThree" aria-expanded="false" aria-controls="withoutSpacingAccordionThree">
-                                        {{$page->sections['transform_section']['section_title'] ?? ''}} <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                        {{data_get($page->sections, 'transform_section.section_title', '')}}
+                                        <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
@@ -198,7 +200,7 @@
                                         <div class="card-body">
                                             <span class="d-block mt-3">Section Title:</span>
                                             <div class="form-group">
-                                                <input class="form-control mt-2" value="{{$page->sections['transform_section']['section_title'] ?? ''}}" name="section_title" required>
+                                                <input class="form-control mt-2" value="{{data_get($page->sections, 'transform_section.section_title' , '')}}" name="section_title" required>
                                             </div>
 
                                             <span class="d-block mt-3">Select Infograph:</span>
@@ -208,11 +210,11 @@
                                                     <i class="fa fa-picture-o"></i> Choose
                                                 </a>
                                                 </span>
-                                                <input id="infograph_thumbnail" style="height: 36px" class="form-control" value="{{$page->sections['transform_section']['infograph'] ?? ''}}" type="text" name="infograph" required>
+                                                <input id="infograph_thumbnail" style="height: 36px" class="form-control" value="{{data_get($page->sections, 'transform_section.infograph' , '')}}" type="text" name="infograph" required>
                                             </div>
                                             <div id="infograph_holder" style="margin-top:15px; max-height:100px;">
-                                                @if (!empty($page->sections['transform_section']['infograph'] ?? ''))
-                                                    <img src="{{ asset($page->sections['transform_section']['infograph'] ?? '') }}" style="height: 5rem;">
+                                                @if (!empty(data_get($page->sections, 'transform_section.infograph', '')))
+                                                    <img src="{{ asset(data_get($page->sections, 'transform_section.infograph' , '')) }}" style="height: 5rem;">
                                                 @endif
                                             </div>
                                         </div>
@@ -225,7 +227,7 @@
                             <div class="card-header" id="headingFour10">
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFour" aria-expanded="false" aria-controls="withoutSpacingAccordionFour">
-                                        {{$page->sections['features_section']['section_title'] ?? ''}} <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                        {{data_get($page->sections, 'features_section.section_title' , '')}} <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
@@ -236,7 +238,7 @@
                                         <div class="card-body">
                                             <span class="d-block mt-3">Section Title:</span>
                                             <div class="form-group">
-                                                <input class="form-control mt-2" value="{{$page->sections['features_section']['section_title'] ?? ''}}" name="section_title" required>
+                                                <input class="form-control mt-2" value="{{data_get($page->sections, 'features_section.section_title' , '')}}" name="section_title" required>
                                             </div>
 
                                             <hr>
@@ -248,22 +250,22 @@
                                                     <i class="fa fa-picture-o"></i> Choose
                                                 </a>
                                                 </span>
-                                                <input id="feature_1_icon_thumbnail" value="{{$page->sections['features_section']['features'][0]['feature_icon'] ?? ''}}" style="height: 36px" class="form-control" type="text" name="feature_icon[]" required>
+                                                <input id="feature_1_icon_thumbnail" value="{{ data_get($page->sections, 'features_section.features.0.feature_icon', '') }}" style="height: 36px" class="form-control" type="text" name="feature_icon[]" required>
                                             </div>
                                             <div id="feature_1_icon_holder" style="margin-top:15px; max-height:100px;">
-                                                @if (!empty($page->sections['features_section']['features'][0]['feature_icon'] ?? ''))
-                                                    <img src="{{ $page->sections['features_section']['features'][0]['feature_icon'] ?? '' }}" style="height: 5rem;">
+                                                @if (!empty(data_get($page->sections, 'features_section.features.0.feature_icon' , '')))
+                                                    <img src="{{ data_get($page->sections, 'features_section.features.0.feature_icon' , '') }}" style="height: 5rem;">
                                                 @endif
                                             </div>
 
                                             <span class="d-block mt-3">Title:</span>
                                             <div class="form-group">
-                                                <input class="form-control mt-2" name="feature_title[]" value="{{ $page->sections['features_section']['features'][0]['feature_title'] ?? '' }}" required>
+                                                <input class="form-control mt-2" name="feature_title[]" value="{{ data_get($page->sections, 'features_section.features.0.feature_title' , '') }}" required>
                                             </div>
 
                                             <span class="d-block mt-3">Subtitle:</span>
                                             <div class="form-group">
-                                                <textarea class="form-control mt-2" name="feature_subtitle[]" rows="3" required>{{ $page->sections['features_section']['features'][0]['feature_subtitle'] ?? '' }}</textarea>
+                                                <textarea class="form-control mt-2" name="feature_subtitle[]" rows="3" required>{{ data_get($page->sections, 'features_section.features.0.feature_subtitle' , '') }}</textarea>
                                             </div>
 
                                             <hr>
@@ -275,22 +277,22 @@
                                                     <i class="fa fa-picture-o"></i> Choose
                                                 </a>
                                                 </span>
-                                                <input id="feature_2_icon_thumbnail" style="height: 36px" class="form-control" type="text" value="{{$page->sections['features_section']['features'][1]['feature_icon'] ?? ''}}" name="feature_icon[]" required>
+                                                <input id="feature_2_icon_thumbnail" style="height: 36px" class="form-control" type="text" value="{{data_get($page->sections, 'features_section.features.1.feature_icon' , '')}}" name="feature_icon[]" required>
                                             </div>
                                             <div id="feature_2_icon_holder" style="margin-top:15px; max-height:100px;">
-                                                @if (!empty($page->sections['features_section']['features'][1]['feature_icon'] ?? ''))
-                                                    <img src="{{ $page->sections['features_section']['features'][1]['feature_icon'] ?? '' }}" style="height: 5rem;">
+                                                @if (!empty(data_get($page->sections, 'features_section.features.1.feature_icon' , '')))
+                                                    <img src="{{ data_get($page->sections, 'features_section.features.1.feature_icon' , '') }}" style="height: 5rem;">
                                                 @endif
                                             </div>
 
                                             <span class="d-block mt-3">Title:</span>
                                             <div class="form-group">
-                                                <input class="form-control mt-2" name="feature_title[]" value="{{$page->sections['features_section']['features'][1]['feature_title'] ?? ''}}" required>
+                                                <input class="form-control mt-2" name="feature_title[]" value="{{data_get($page->sections, 'features_section.features.1.feature_title' , '')}}" required>
                                             </div>
 
                                             <span class="d-block mt-3">Subtitle:</span>
                                             <div class="form-group">
-                                                <textarea class="form-control mt-2" name="feature_subtitle[]" rows="3" required>{{$page->sections['features_section']['features'][1]['feature_subtitle'] ?? ''}}</textarea>
+                                                <textarea class="form-control mt-2" name="feature_subtitle[]" rows="3" required>{{data_get($page->sections, 'features_section.features.1.feature_subtitle' , '')}}</textarea>
                                             </div>
 
                                             <hr>
@@ -302,22 +304,22 @@
                                                     <i class="fa fa-picture-o"></i> Choose
                                                 </a>
                                                 </span>
-                                                <input id="feature_3_icon_thumbnail" style="height: 36px" class="form-control" type="text" value="{{$page->sections['features_section']['features'][2]['feature_icon'] ?? ''}}" name="feature_icon[]" required>
+                                                <input id="feature_3_icon_thumbnail" style="height: 36px" class="form-control" type="text" value="{{data_get($page->sections, 'features_section.features.2.feature_icon' , '')}}" name="feature_icon[]" required>
                                             </div>
                                             <div id="feature_3_icon_holder" style="margin-top:15px; max-height:100px;">
-                                                @if (!empty($page->sections['features_section']['features'][2]['feature_icon'] ?? ''))
-                                                    <img src="{{ $page->sections['features_section']['features'][2]['feature_icon'] ?? '' }}" style="height: 5rem;">
+                                                @if (!empty(data_get($page->sections, 'features_section.features.2.feature_icon' , '')))
+                                                    <img src="{{ data_get($page->sections, 'features_section.features.2.feature_icon' , '') }}" style="height: 5rem;">
                                                 @endif
                                             </div>
 
                                             <span class="d-block mt-3">Title:</span>
                                             <div class="form-group">
-                                                <input class="form-control mt-2" value="{{ $page->sections['features_section']['features'][2]['feature_title'] ?? '' }}" name="feature_title[]" required>
+                                                <input class="form-control mt-2" value="{{ data_get($page->sections, 'features_section.features.2.feature_title' , '') }}" name="feature_title[]" required>
                                             </div>
 
                                             <span class="d-block mt-3">Subtitle:</span>
                                             <div class="form-group">
-                                                <textarea class="form-control mt-2" name="feature_subtitle[]" rows="3" required>{{ $page->sections['features_section']['features'][2]['feature_subtitle'] ?? '' }}</textarea>
+                                                <textarea class="form-control mt-2" name="feature_subtitle[]" rows="3" required>{{ data_get($page->sections, 'features_section.features.2.feature_subtitle' , '') }}</textarea>
                                             </div>
 
                                             <hr>
@@ -329,22 +331,22 @@
                                                     <i class="fa fa-picture-o"></i> Choose
                                                 </a>
                                                 </span>
-                                                <input id="feature_4_icon_thumbnail" style="height: 36px" class="form-control" type="text" value="{{$page->sections['features_section']['features'][3]['feature_icon'] ?? ''}}" name="feature_icon[]" required>
+                                                <input id="feature_4_icon_thumbnail" style="height: 36px" class="form-control" type="text" value="{{data_get($page->sections, 'features_section.features.3.feature_icon' , '')}}" name="feature_icon[]" required>
                                             </div>
                                             <div id="feature_4_icon_holder" style="margin-top:15px; max-height:100px;">
-                                                @if (!empty($page->sections['features_section']['features'][3]['feature_icon'] ?? ''))
-                                                    <img src="{{ $page->sections['features_section']['features'][3]['feature_icon'] ?? '' }}" style="height: 5rem;">
+                                                @if (!empty(data_get($page->sections, 'features_section.features.3.feature_icon' , '')))
+                                                    <img src="{{ data_get($page->sections, 'features_section.features.3.feature_icon' , '') }}" style="height: 5rem;">
                                                 @endif
                                             </div>
 
                                             <span class="d-block mt-3">Title:</span>
                                             <div class="form-group">
-                                                <input class="form-control mt-2" name="feature_title[]" value="{{$page->sections['features_section']['features'][3]['feature_title'] ?? ''}}" required>
+                                                <input class="form-control mt-2" name="feature_title[]" value="{{data_get($page->sections, 'features_section.features.3.feature_title' , '')}}" required>
                                             </div>
 
                                             <span class="d-block mt-3">Subtitle:</span>
                                             <div class="form-group">
-                                                <textarea class="form-control mt-2" name="feature_subtitle[]" rows="3" required>{{$page->sections['features_section']['features'][3]['feature_subtitle'] ?? ''}}</textarea>
+                                                <textarea class="form-control mt-2" name="feature_subtitle[]" rows="3" required>{{data_get($page->sections, 'features_section.features.3.feature_subtitle' , '')}}</textarea>
                                             </div>
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>

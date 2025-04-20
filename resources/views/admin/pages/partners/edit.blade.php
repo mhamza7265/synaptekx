@@ -59,19 +59,19 @@
                                                         <i class="fa fa-picture-o"></i> Choose
                                                     </a>
                                                     </span>
-                                                    <input id="thumbnail_0" style="height: 36px" value="{{$page->sections['hero_section']['bg_image'] ?? ''}}" class="form-control" type="text" name="bg_image" required>
+                                                    <input id="thumbnail_0" style="height: 36px" value="{{data_get($page->sections, 'hero_section.bg_image' , '')}}" class="form-control" type="text" name="bg_image" required>
                                                 </div>
                                                 <div id="holder_0" style="margin-top:15px; max-height:100px;">
-                                                    @if (!empty($page->sections['hero_section']['bg_image'] ?? ''))
-                                                        <img src="{{ $page->sections['hero_section']['bg_image'] ?? '' }}" style="height: 5rem;">
+                                                    @if (!empty(data_get($page->sections, 'hero_section.bg_image' , '')))
+                                                        <img src="{{ data_get($page->sections, 'hero_section.bg_image' , '') }}" style="height: 5rem;">
                                                     @endif
                                                 </div>
                                         
                                                 <span class="d-block mt-3">Title</span>
-                                                <input type="text" class="form-control mb-2" value="{{$page->sections['hero_section']['hero_title'] ?? ''}}" name="hero_title">
+                                                <input type="text" class="form-control mb-2" value="{{data_get($page->sections, 'hero_section.hero_title' , '')}}" name="hero_title">
                                         
                                                 <span class="d-block mt-2">Subtitle</span>
-                                                <textarea class="form-control" name="hero_subtitle" rows="2" required>{{$page->sections['hero_section']['hero_subtitle'] ?? ''}}</textarea>
+                                                <textarea class="form-control" name="hero_subtitle" rows="2" required>{{data_get($page->sections, 'hero_section.hero_subtitle' , '')}}</textarea>
                                             </div>
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
@@ -118,9 +118,9 @@
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
                                         @foreach ($sections as $sIndex => $section)
-                                            @if (($section['type'] ?? null) === 'repeating' && ($section['group'] ?? null) === 'scaled_partners')
-                                                {{$section['title'] ?? ''}} 
-                                            @endif 
+                                            @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'scaled_partners')
+                                            {{ data_get($section, 'title', '') }}
+                                        @endif
                                         @endforeach  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
@@ -130,18 +130,18 @@
                                      <form method="post" action="{{ route('admin.partners-page.scaled-partners.update') }}">
                                         @csrf
                                         @foreach ($sections as $sIndex => $section)
-                                            @if (($section['type'] ?? null) === 'repeating' && ($section['group'] ?? null) === 'scaled_partners')
+                                            @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'scaled_partners')
                                                 <input type="hidden" name="section_index" value="{{ $sIndex }}">
                                                 <span>Section Title:</span>
-                                                <input type="text" class="form-control mb-2" name="section_title" value="{{ $section['title'] ?? '' }}" required>
+                                                <input type="text" class="form-control mb-2" name="section_title" value="{{ data_get($section, 'title', '') }}" required>
 
                                                 <div id="elite-partners-section" class="mt-3">
-                                                    @foreach ($section['data']['partners'] ?? [] as $pIndex => $partner)
+                                                    @foreach (data_get($section, 'data.partners', []) as $pIndex => $partner)
                                                         @php
                                                             $partnerIndex = $loop->index;
                                                         @endphp
                                                         <div class="card-body border p-3 mb-3 position-relative partner-wrapper" data-partner-index="{{ $pIndex }}">
-                                                            <button type="button" class="btn partner-dlt-btn position-absolute" data-index="{{$loop->index}}" style="top:5px; right:5px;">
+                                                            <button type="button" class="btn partner-dlt-btn position-absolute" data-index="{{ $loop->index }}" style="top:5px; right:5px;">
                                                                 <i class="fa fa-trash text-danger"></i>
                                                             </button>
                                                             <span class="d-block mt-3">Select Logo:</span>
@@ -151,32 +151,32 @@
                                                                         <i class="fa fa-picture-o"></i> Choose
                                                                     </a>
                                                                 </span>
-                                                                <input id="partner_{{ $pIndex }}_thumbnail" class="form-control" type="text" name="partner_logo[{{ $pIndex }}]" value="{{ $partner['partner_logo'] ?? '' }}" required>
+                                                                <input id="partner_{{ $pIndex }}_thumbnail" class="form-control" type="text" name="partner_logo[{{ $pIndex }}]" value="{{ data_get($partner, 'partner_logo', '') }}" required>
                                                             </div>
                                                             <div id="partner_{{ $pIndex }}_holder" style="margin-top:15px; max-height:100px;">
-                                                                @if (!empty($partner['partner_logo']))
-                                                                    <img src="{{ asset($partner['partner_logo']) }}" style="height: 5rem;">
+                                                                @if (!empty(data_get($partner, 'partner_logo')))
+                                                                    <img src="{{ asset(data_get($partner, 'partner_logo')) }}" style="height: 5rem;">
                                                                 @endif
                                                             </div>
 
                                                             <span>Partner Name:</span>
-                                                            <input type="text" class="form-control mb-2" name="partner_name[{{ $pIndex }}]" value="{{ $partner['partner_name'] ?? '' }}">
+                                                            <input type="text" class="form-control mb-2" name="partner_name[{{ $pIndex }}]" value="{{ data_get($partner, 'partner_name', '') }}">
 
                                                             <span>Partner Description:</span>
-                                                            <textarea class="form-control mb-2" name="partner_description[{{ $pIndex }}]" required>{{ $partner['partner_description'] ?? '' }}</textarea>
+                                                            <textarea class="form-control mb-2" name="partner_description[{{ $pIndex }}]" required>{{ data_get($partner, 'partner_description', '') }}</textarea>
 
                                                             {{-- Partner Details --}}
                                                             <div class="elite_partner_details">
-                                                                @foreach ($partner['details'] ?? [['detail_title' => '', 'detail_subtitle' => '']] as $dIndex => $detail)
+                                                                @foreach (data_get($partner, 'details', [['detail_title' => '', 'detail_subtitle' => '']]) as $dIndex => $detail)
                                                                     <div class="elite_partner_detail border p-3 mb-3 position-relative">
-                                                                        <button type="button" class="btn partner-detail-dlt-button position-absolute" data-index="{{$loop->index}}" data-partner-index="{{$partnerIndex}}" style="top:5px; right:5px;">
+                                                                        <button type="button" class="btn partner-detail-dlt-button position-absolute" data-index="{{ $loop->index }}" data-partner-index="{{ $partnerIndex }}" style="top:5px; right:5px;">
                                                                             <i class="fa fa-trash text-danger"></i>
                                                                         </button>
                                                                         <span>Title:</span>
-                                                                        <input type="text" class="form-control mt-2" name="detail_title[{{ $pIndex }}][]" value="{{ $detail['detail_title'] ?? '' }}" required>
-                                                                        
+                                                                        <input type="text" class="form-control mt-2" name="detail_title[{{ $pIndex }}][]" value="{{ data_get($detail, 'detail_title', '') }}" required>
+
                                                                         <span class="d-block mt-3">Description:</span>
-                                                                        <textarea name="detail_subtitle[{{ $pIndex }}][]" class="form-control mt-2" required>{{ $detail['detail_subtitle'] ?? '' }}</textarea>
+                                                                        <textarea name="detail_subtitle[{{ $pIndex }}][]" class="form-control mt-2" required>{{ data_get($detail, 'detail_subtitle', '') }}</textarea>
                                                                     </div>
                                                                 @endforeach
                                                             </div>
@@ -224,10 +224,12 @@
                                     @endphp
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFive" aria-expanded="false" aria-controls="withoutSpacingAccordionFive">
                                         @foreach ($sections as $sIndex => $section)
-                                            @if (($section['type'] ?? null) === 'repeating' && ($section['group'] ?? null) === 'all_partners')
-                                                {{$section['title'] ?? ''}} 
-                                            @endif 
-                                        @endforeach<div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                            @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'all_partners')
+                                                {{ data_get($section, 'title', '') }}
+                                            @endif
+                                        @endforeach
+
+                                        <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
@@ -236,53 +238,54 @@
                                     <form method="POST" action="{{ route('admin.partners-page.all-partners.update') }}">
                                         @csrf
                                         @foreach ($sections as $sIndex => $section)
-                                            @if (($section['type'] ?? null) === 'repeating' && ($section['group'] ?? null) === 'all_partners')
+                                            @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'all_partners')
                                                 <div class="card-body">
                                                     <span>Section Title:</span>
-                                                    <input type="text" class="form-control mb-2" value="{{$section['title']}}" name="section_title" required>
+                                                    <input type="text" class="form-control mb-2" value="{{ data_get($section, 'title', '') }}" name="section_title" required>
+
                                                     <div id="allPartnersContainer" class="mt-3">
-                                                        @if (isset($section['data']))
-                                                            @foreach ($section['data']['partners'] as $partner)
-                                                                <div class="partner-container border p-3 mb-3 position-relative">
-                                                                    <button type="button" class="btn all-partners-dlt-btn position-absolute" data-index="{{$loop->index}}" style="top:5px; right:5px;">
-                                                                        <i class="fa fa-trash text-danger"></i>
-                                                                    </button>
-                                                                    <span>Partner Logo:</span>
-                                                                    <div class="input-group d-flex align-items-center mt-2">
-                                                                        <span class="input-group-btn">
-                                                                        <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="partner_thumbnail_1" data-preview="partner_holder_1">
-                                                                            <i class="fa fa-picture-o"></i> Choose
-                                                                        </a>
-                                                                        </span>
-                                                                        <input id="partner_thumbnail_1" style="height: 36px" class="form-control" value="{{$partner['partner_logo']}}" type="text" name="partner_logo[]" required>
-                                                                    </div>
-                                                                    <div id="partner_holder_1" style="margin-top:15px; max-height:100px;">
-                                                                        @if (!empty($partner['partner_logo']))
-                                                                            <img src="{{ asset($partner['partner_logo']) }}" style="height: 5rem;">
-                                                                        @endif
-                                                                    </div>
-                                                                    
-                                                                    <span class="d-block mt-4">Content:</span>
-                                                                    <textarea id="summernote-0" name="partner_content[]" class="form-control summernote mt-2" required>{{$partner['partner_content']}}</textarea>
-                                                                </div>
-                                                            @endforeach
-                                                        @else
-                                                            <div class="partner-container border p-3 mb-3 position-relative">                                            
+                                                        @forelse (data_get($section, 'data.partners', []) as $partner)
+                                                            <div class="partner-container border p-3 mb-3 position-relative">
+                                                                <button type="button" class="btn all-partners-dlt-btn position-absolute" data-index="{{ $loop->index }}" style="top:5px; right:5px;">
+                                                                    <i class="fa fa-trash text-danger"></i>
+                                                                </button>
+
                                                                 <span>Partner Logo:</span>
                                                                 <div class="input-group d-flex align-items-center mt-2">
                                                                     <span class="input-group-btn">
-                                                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="partner_thumbnail_1-0" data-preview="partner_holder_1-0">
-                                                                        <i class="fa fa-picture-o"></i> Choose
-                                                                    </a>
+                                                                        <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="partner_thumbnail_{{ $loop->index }}" data-preview="partner_holder_{{ $loop->index }}">
+                                                                            <i class="fa fa-picture-o"></i> Choose
+                                                                        </a>
                                                                     </span>
-                                                                    <input id="partner_thumbnail_1-0" style="height: 36px" class="form-control" type="text" name="partner_logo[]" required>
+                                                                    <input id="partner_thumbnail_{{ $loop->index }}" style="height: 36px" class="form-control" value="{{ data_get($partner, 'partner_logo', '') }}" type="text" name="partner_logo[]" required>
                                                                 </div>
-                                                                <div id="partner_holder_1-0" style="margin-top:15px; max-height:100px;"></div>
-                                            
+
+                                                                <div id="partner_holder_{{ $loop->index }}" style="margin-top:15px; max-height:100px;">
+                                                                    @if (!empty(data_get($partner, 'partner_logo')))
+                                                                        <img src="{{ asset(data_get($partner, 'partner_logo')) }}" style="height: 5rem;">
+                                                                    @endif
+                                                                </div>
+
                                                                 <span class="d-block mt-4">Content:</span>
-                                                                <textarea id="${id}" name="partner_content[]" class="form-control summernote mt-2" required></textarea>
+                                                                <textarea name="partner_content[]" class="form-control summernote mt-2" required>{{ data_get($partner, 'partner_content', '') }}</textarea>
                                                             </div>
-                                                        @endif
+                                                        @empty
+                                                            <div class="partner-container border p-3 mb-3 position-relative">
+                                                                <span>Partner Logo:</span>
+                                                                <div class="input-group d-flex align-items-center mt-2">
+                                                                    <span class="input-group-btn">
+                                                                        <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="partner_thumbnail_0" data-preview="partner_holder_0">
+                                                                            <i class="fa fa-picture-o"></i> Choose
+                                                                        </a>
+                                                                    </span>
+                                                                    <input id="partner_thumbnail_0" style="height: 36px" class="form-control" type="text" name="partner_logo[]" required>
+                                                                </div>
+                                                                <div id="partner_holder_0" style="margin-top:15px; max-height:100px;"></div>
+
+                                                                <span class="d-block mt-4">Content:</span>
+                                                                <textarea name="partner_content[]" class="form-control summernote mt-2" required></textarea>
+                                                            </div>
+                                                        @endforelse
                                                     </div>
                                                 </div>
                                             @endif
@@ -358,10 +361,12 @@
                                     @endphp
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFeature1" aria-expanded="false" aria-controls="withoutSpacingAccordionFeature1">
                                         @foreach ($sections as $sIndex => $section)
-                                            @if (($section['type'] ?? null) === 'text' && ($section['group'] ?? null) === 'capabilities')
-                                                {{$section['title'] ?? ''}} 
-                                            @endif 
-                                        @endforeach  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                            @if (data_get($section, 'type') === 'text' && data_get($section, 'group') === 'capabilities')
+                                                {{ data_get($section, 'title', '') }}
+                                            @endif
+                                        @endforeach
+ 
+                                        <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
@@ -371,8 +376,8 @@
                                         @csrf
                                         <span>Section Title:</span>
                                         @foreach ($sections as $sIndex => $section)
-                                            @if (($section['type'] ?? null) === 'text' && ($section['group'] ?? null) === 'capabilities')
-                                                <input type="text" class="form-control mb-2" value="{{$section['title'] ?? ''}}" name="section_title" required>
+                                            @if (data_get($section, 'type') === 'text' && data_get($section, 'group') === 'capabilities')
+                                                <input type="text" class="form-control mb-2" value="{{ data_get($section, 'title', '') }}" name="section_title" required>
                                             @endif
                                         @endforeach
                                         @error('section_title')

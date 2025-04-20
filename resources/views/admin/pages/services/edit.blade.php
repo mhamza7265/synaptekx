@@ -101,19 +101,19 @@
                                                         <i class="fa fa-picture-o"></i> Choose
                                                     </a>
                                                     </span>
-                                                    <input id="thumbnail_bg" style="height: 36px" value="{{$service->sections['hero_section']['bg_image'] ?? ''}}" class="form-control" type="text" name="bg_image" required>
+                                                    <input id="thumbnail_bg" style="height: 36px" value="{{data_get($service->sections, 'hero_section.bg_image' , '')}}" class="form-control" type="text" name="bg_image" required>
                                                 </div>
                                                 <div id="holder_bg" style="margin-top:15px; max-height:100px;">
-                                                    @if (!empty($service->sections['hero_section']['bg_image'] ?? ''))
-                                                        <img src="{{ $service->sections['hero_section']['bg_image'] ?? '' }}" style="height: 5rem;">
+                                                    @if (!empty(data_get($service->sections, 'hero_section.bg_image' , '')))
+                                                        <img src="{{ data_get($service->sections, 'hero_section.bg_image' , '') }}" style="height: 5rem;">
                                                     @endif
                                                 </div>
                                         
                                                 <span class="d-block mt-3">Title</span>
-                                                <input type="text" class="form-control mb-2" value="{{$service->sections['hero_section']['hero_title'] ?? ''}}" name="hero_title">
+                                                <input type="text" class="form-control mb-2" value="{{data_get($service->sections, 'hero_section.hero_title' , '')}}" name="hero_title">
                                         
                                                 <span class="d-block mt-2">Subtitle</span>
-                                                <textarea class="form-control" name="hero_subtitle" rows="2" required>{{$service->sections['hero_section']['hero_subtitle'] ?? ''}}</textarea>
+                                                <textarea class="form-control" name="hero_subtitle" rows="2" required>{{data_get($service->sections, 'hero_section.hero_subtitle' , '')}}</textarea>
                                             </div>
                                         </div>
                                         <button class="btn btn-md btn-success">Save</button>
@@ -148,8 +148,11 @@
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionFive" aria-expanded="false" aria-controls="withoutSpacingAccordionFive">
                                         @foreach ($service->sections['all'] as $section)
-                                            @if ($section['type'] == 'repeating'&& $section['group'] == 'features')
-                                            {{$section['title']}} @endif @endforeach <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                            @if ($section['type'] === 'repeating' && $section['group'] === 'features')
+                                                <div>{{ $section['title'] }}</div>
+                                            @endif
+                                        @endforeach
+                                        <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
@@ -158,26 +161,28 @@
                                     <form method="POST" action="{{ route('admin.service-page.feature.update', $service->id) }}">
                                         @csrf
                                         @foreach ($service->sections['all'] as $section)
-                                            @if ($section['type'] == 'repeating'&& $section['group'] == 'features')
+                                            @if ($section['type'] === 'repeating' && $section['group'] === 'features')
                                                 <div class="card-body">
-                                                    <span>Section Title:</span>
-                                                    <input type="text" class="form-control mt-2" name="section_title" value="{{$section['title']}}" required>
+                                                    <label for="section_title">Section Title:</label>
+                                                    <input type="text" class="form-control mt-2" name="section_title" value="{{ $section['title'] }}" required>
 
-                                                    <span class="d-block mt-3">Display Title:</span>
-                                                    <input class="form-control mt-2" value="{{$section['display_title'] ?? ''}}" name="display_title" required>
-        
+                                                    <label for="display_title" class="d-block mt-3">Display Title:</label>
+                                                    <input class="form-control mt-2" name="display_title" value="{{ $section['display_title'] ?? '' }}" required>
+
                                                     <hr>
-        
+
                                                     <div id="details-section">
                                                         @foreach ($section['data']['details'] as $detail)
                                                             <div class="feature_detail border p-3 mb-3 position-relative">
-                                                                <button type="button" class="btn feature-detail-dlt-button position-absolute" data-index="{{$loop->index}}" data-service="{{$service->id}}" style="top:5px; right:5px;">
+                                                                <button type="button" class="btn feature-detail-dlt-button position-absolute" data-index="{{ $loop->index }}" data-service="{{ $service->id }}" style="top:5px; right:5px;">
                                                                     <i class="fa fa-trash text-danger"></i>
                                                                 </button>
-                                                                <span class="d-block mt-4">Detail Title:</span>
-                                                                <input type="text" class="form-control" value="{{$detail['detail_title']}}" name="detail_title[]" required>
-                                                                <span class="d-block mt-4">Detail Description:</span>
-                                                                <textarea name="detail_description[]" class="form-control mt-2" rows="3" required>{{$detail['detail_description']}}</textarea>
+
+                                                                <label for="detail_title_{{ $loop->index }}" class="d-block mt-4">Detail Title:</label>
+                                                                <input type="text" id="detail_title_{{ $loop->index }}" class="form-control" value="{{ $detail['detail_title'] }}" name="detail_title[]" required>
+
+                                                                <label for="detail_description_{{ $loop->index }}" class="d-block mt-4">Detail Description:</label>
+                                                                <textarea id="detail_description_{{ $loop->index }}" name="detail_description[]" class="form-control mt-2" rows="3" required>{{ $detail['detail_description'] }}</textarea>
                                                             </div>
                                                         @endforeach
                                                     </div>
@@ -195,8 +200,11 @@
                                 <section class="mb-0 mt-0">
                                     <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionTwo" aria-expanded="false" aria-controls="withoutSpacingAccordionTwo">
                                         @foreach ($service->sections['all'] as $section)
-                                            @if ($section['type'] == 'single' && $section['group'] == 'transform')
-                                            {{$section['title'] ?? ''}} @endif @endforeach  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                            @if ($section['type'] === 'single' && $section['group'] === 'transform')
+                                                {{ $section['title'] ?? '' }}
+                                            @endif
+                                        @endforeach
+                                        <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                     </div>
                                 </section>
                             </div>
@@ -205,27 +213,31 @@
                                     <form method="POST" action="{{ route('admin.service-page.transform.update', $service->id) }}">
                                         @csrf
                                         @foreach ($service->sections['all'] as $section)
-                                            @if ($section['type'] == 'single' && $section['group'] == 'transform')
+                                            @if ($section['type'] === 'single' && $section['group'] === 'transform')
                                                 <div class="card-body">
-                                                    <span class="d-block mt-3">Section Title:</span>
-                                                    <input class="form-control mt-2" value="{{$section['title'] ?? ''}}" name="section_title" required>
+                                                    <div class="form-group">
+                                                        <label for="section_title" class="d-block mt-3">Section Title:</label>
+                                                        <input id="section_title" class="form-control mt-2" value="{{ $section['title'] ?? '' }}" name="section_title" required>
 
-                                                    <span class="d-block mt-3">Display Title:</span>
-                                                    <input class="form-control mt-2" value="{{$section['display_title'] ?? ''}}" name="display_title" required>
-        
-                                                    <span class="d-block mt-3">Select Infograph:</span>
-                                                    <div class="input-group d-flex align-items-center mt-2">
-                                                        <span class="input-group-btn">
-                                                        <a class="lfm btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="infograph_thumbnail" data-preview="infograph_holder">
-                                                            <i class="fa fa-picture-o"></i> Choose
-                                                        </a>
-                                                        </span>
-                                                        <input id="infograph_thumbnail" style="height: 36px" class="form-control" value="{{$section['data']['infograph'] ?? ''}}" type="text" name="infograph" required>
+                                                        <label for="display_title" class="d-block mt-3">Display Title:</label>
+                                                        <input id="display_title" class="form-control mt-2" value="{{ $section['display_title'] ?? '' }}" name="display_title" required>
                                                     </div>
-                                                    <div id="infograph_holder" style="margin-top:15px; max-height:100px;">
-                                                        @if (!empty($section['data']['infograph'] ?? ''))
-                                                            <img src="{{ $section['data']['infograph'] ?? '' }}" style="height: 5rem;">
-                                                        @endif
+
+                                                    <div class="form-group">
+                                                        <label for="infograph" class="d-block mt-3">Select Infograph:</label>
+                                                        <div class="input-group d-flex align-items-center mt-2">
+                                                            <span class="input-group-btn">
+                                                                <a class="lfm btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="infograph_thumbnail" data-preview="infograph_holder">
+                                                                    <i class="fa fa-picture-o"></i> Choose
+                                                                </a>
+                                                            </span>
+                                                            <input id="infograph_thumbnail" class="form-control" value="{{ $section['data']['infograph'] ?? '' }}" type="text" name="infograph" required>
+                                                        </div>
+                                                        <div id="infograph_holder" style="margin-top:15px; max-height:100px;">
+                                                            @if (!empty($section['data']['infograph'] ?? ''))
+                                                                <img src="{{ $section['data']['infograph'] }}" style="height: 5rem;">
+                                                            @endif
+                                                        </div>
                                                     </div>
                                                 </div>
                                             @endif
@@ -249,34 +261,42 @@
                                         @csrf
                                         <div id="feature-sections" class="feature-sections-service">
                                             @foreach ($service->sections['all'] as $section)
-                                                @if ($section['type'] == 'repeating' && $section['group'] == 'repeating_blocks')
+                                                @if ($section['type'] === 'repeating' && $section['group'] === 'repeating_blocks')
                                                     <div class="card-body border p-3 mb-3 position-relative">
-                                                        <button type="button" class="btn section-dlt-button position-absolute" data-index="{{$loop->index}}" data-service="{{$service->id}}" style="top:5px; right:5px;">
+                                                        <button type="button" class="btn section-dlt-button position-absolute" data-index="{{ $loop->index }}" data-service="{{ $service->id }}" style="top:5px; right:5px;">
                                                             <i class="fa fa-trash text-danger"></i>
                                                         </button>
-        
-                                                        <span>Title:</span>
-                                                        <input type="text" class="form-control mt-2" value="{{$section['title'] ?? ''}}" name="section_title[]" required>
 
-                                                        <span class="d-block mt-3">Display Title:</span>
-                                                        <input class="form-control mt-2" value="{{$section['display_title'] ?? ''}}" name="display_title[]" required>
-                                                        
-                                                        <span class="d-block mt-4">Description:</span>
-                                                        <textarea name="section_desc[]" class="form-control summernote mt-2" required>{{$section['data']['description'] ?? ''}}</textarea>
-        
-                                                        <span class="d-block mt-3">Select Image:</span>
-                                                        <div class="input-group d-flex align-items-center mt-2">
-                                                            <span class="input-group-btn">
-                                                            <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_3_thumbnail" data-preview="section_3_holder">
-                                                                <i class="fa fa-picture-o"></i> Choose
-                                                            </a>
-                                                            </span>
-                                                            <input id="section_3_thumbnail" style="height: 36px" class="form-control" value="{{$section['data']['image'] ?? ''}}" type="text" name="section_image[]" required>
+                                                        <div class="form-group">
+                                                            <label for="section_title_{{ $loop->index }}" class="d-block">Title:</label>
+                                                            <input id="section_title_{{ $loop->index }}" class="form-control mt-2" value="{{ $section['title'] ?? '' }}" name="section_title[]" required>
                                                         </div>
-                                                        <div id="section_3_holder" style="margin-top:15px; max-height:100px;">
-                                                            @if (!empty($section['data']['image'] ?? ''))
-                                                                <img src="{{ $section['data']['image'] ?? '' }}" style="height: 5rem;">
-                                                            @endif
+
+                                                        <div class="form-group">
+                                                            <label for="display_title_{{ $loop->index }}" class="d-block mt-3">Display Title:</label>
+                                                            <input id="display_title_{{ $loop->index }}" class="form-control mt-2" value="{{ $section['display_title'] ?? '' }}" name="display_title[]" required>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="section_desc_{{ $loop->index }}" class="d-block mt-4">Description:</label>
+                                                            <textarea id="section_desc_{{ $loop->index }}" name="section_desc[]" class="form-control summernote mt-2" required>{{ $section['data']['description'] ?? '' }}</textarea>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="section_image_{{ $loop->index }}" class="d-block mt-3">Select Image:</label>
+                                                            <div class="input-group d-flex align-items-center mt-2">
+                                                                <span class="input-group-btn">
+                                                                    <a class="lfm_file btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="section_{{ $loop->index }}_thumbnail" data-preview="section_{{ $loop->index }}_holder">
+                                                                        <i class="fa fa-picture-o"></i> Choose
+                                                                    </a>
+                                                                </span>
+                                                                <input id="section_{{ $loop->index }}_thumbnail" class="form-control" style="height: 36px" value="{{ $section['data']['image'] ?? '' }}" type="text" name="section_image[]" required>
+                                                            </div>
+                                                            <div id="section_{{ $loop->index }}_holder" style="margin-top:15px; max-height:100px;">
+                                                                @if (!empty($section['data']['image'] ?? ''))
+                                                                    <img src="{{ $section['data']['image'] }}" style="height: 5rem;">
+                                                                @endif
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 @endif

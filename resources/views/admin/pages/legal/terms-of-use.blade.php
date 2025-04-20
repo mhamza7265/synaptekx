@@ -56,11 +56,11 @@
                                                 <i class="fa fa-picture-o"></i> Choose
                                             </a>
                                             </span>
-                                            <input id="section_1_thumbnail" value="{{$page->sections['hero']['hero_image'] ?? ''}}" style="height: 36px" class="form-control" type="text" name="bg_image">
+                                            <input id="section_1_thumbnail" value="{{data_get($page->sections, 'hero.hero_image' , '')}}" style="height: 36px" class="form-control" type="text" name="bg_image">
                                         </div>
                                         <div id="section_1_holder" style="margin-top:15px; max-height:100px;">
-                                            @if (!empty($page->sections['hero']['hero_image'] ?? null))
-                                                <img src="{{ asset($page->sections['hero']['hero_image'] ?? '') }}" style="height: 5rem;">
+                                            @if (!empty(data_get($page->sections, 'hero.hero_image' , '')))
+                                                <img src="{{ asset(data_get($page->sections, 'hero.hero_image' , '')) }}" style="height: 5rem;">
                                             @endif
                                         </div>
                                         @error('bg_image')
@@ -68,7 +68,7 @@
                                         @enderror
 
                                         <span class="d-block mt-3">Title:</span>
-                                        <input type="text" name="title" value="{{$page->sections['hero']['hero_title'] ?? ''}}" class="form-control mt-2">
+                                        <input type="text" name="title" value="{{data_get($page->sections, 'hero.hero_title' , '')}}" class="form-control mt-2">
                                         @error('title')
                                             <div class="text-danger">{{ $message }}</div>                                            
                                         @enderror
@@ -91,7 +91,7 @@
                                     @csrf
                                     <div class="container py-3">
                                         <span class="d-block mt-4">Content:</span>
-                                        <textarea id="summernote-0" name="terms_of_use_content"  class="form-control summernote mt-2">{{$page->sections['content'] ?? ''}}</textarea>
+                                        <textarea id="summernote-0" name="terms_of_use_content"  class="form-control summernote mt-2">{{data_get($page->sections, 'content', '')}}</textarea>
                                         @error('terms_of_use_content')
                                             <div class="text-danger">{{ $message }}</div>                                            
                                         @enderror
