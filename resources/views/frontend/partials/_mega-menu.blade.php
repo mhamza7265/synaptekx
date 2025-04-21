@@ -13,7 +13,7 @@
                     <div>
                         @foreach (data_get($service->sections, 'all', []) as $section)
                             <a href="{{ route('services', ['id' => $service->id]) . '#' . \Illuminate\Support\Str::slug(data_get($section, 'title' , '')) }}" class="mega-menu-mobile-link d-block menu-link">
-                                <i class="fa-solid fa-arrow-right me-3"></i>{{data_get($section, 'title' , '')}}
+                                <i class="fa-solid fa-arrow-right me-3"></i>{{data_get($section, 'display_title' , '')}}
                             </a>
                         @endforeach
                         {{-- <a href="{{ route('services', ['name' => 'digital']) . '#consulting' }}" class="mega-menu-mobile-link d-block menu-link">
