@@ -1,11 +1,11 @@
 <div id="services-menu" data-id="background-white" class="mega-menu w-100 shadow">
     <div class="container p-0">
         <div class="row justify-content-between align-items-baseline">
-            <div class="col-4">
-                @php
-                    $services = \App\Models\Services::all();
-                @endphp
-                @foreach ($services as $service)
+            @php
+                $services = \App\Models\Services::all();
+            @endphp
+            @foreach ($services as $service)
+                <div class="col-4">
                     <a href="{{ route('services', ['id' => $service->id]) }}" style="text-decoration: none" class="d-flex justify-content-start align-items-center gap-3">
                         <img src="{{$service->page_icon}}" />
                         <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('id') == $service->id) ? 'text-gradient' : 'text-black' }}">{{$service->name}}</p>
@@ -29,8 +29,8 @@
                             <i class="fa-solid fa-arrow-right me-3"></i>eCommerce
                         </a>                     --}}
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
             {{-- <div class="col-4">
                 <a href="{{ route('services', ['name' => 'data-ai']) }}" style="text-decoration: none" class="d-flex justify-content-start align-items-center gap-3">
                     <img src="{{asset('images/frontend/data_services.svg')}}" />
