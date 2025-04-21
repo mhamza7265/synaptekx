@@ -94,16 +94,16 @@
                                         <div id="about-feature-sections">
                                             @php
                                                 $hasAll = false;
-                                                $hasFeatureTwo = false;
+                                                $hasFeatures = false;
                                             @endphp
                                             @if (($sections = data_get($page, 'sections.all')) && is_array($sections))
                                                 @php
-                                                    $hasAll = true;
+                                                    $hasAllOne = true;
                                                 @endphp
                                                 @foreach ($sections as $section)
-                                                    @if (data_get($section, 'type') === 'repeating_2' && data_get($section, 'group') === 'features_2')
+                                                    @if (data_get($section, 'type') === 'repeating' && data_get($section, 'group') === 'features')
                                                         @php
-                                                            $hasFeatureTwo = true;
+                                                            $hasFeatures = true;
                                                         @endphp
                                                         <div class="card-body border p-3 mb-3 position-relative">
                                                             <button type="button" class="btn section-two-dlt-btn-two position-absolute" data-index="{{$loop->index}}" style="top:5px; right:5px;">
@@ -135,7 +135,7 @@
                                                     @endif
                                                 @endforeach
                                             @endif
-                                            @if (!$hasAll || !$hasFeatureTwo)
+                                            @if (!$hasAllOne || !$hasFeatures)
                                                 <div class="card-body border p-3 mb-3 position-relative">
                                                     <button type="button" class="btn section-two-dlt-btn-two position-absolute" style="top:5px; right:5px;">
                                                         <i class="fa fa-trash text-danger"></i>
