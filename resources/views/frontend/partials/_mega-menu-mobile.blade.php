@@ -9,7 +9,7 @@
     @endphp
     <div class="menu-list py-4 px-3">
         <div class="container p-0">
-            <div class="row justify-content-between align-items-baseline">
+            <div class="row justify-content-start align-items-baseline">
                 @foreach ($services as $service)
                     <div class="col-12">
                         <a href="{{ route('services', ['id' => $service->id]) }}" style="text-decoration: none" class="d-lg-flex justify-content-start align-items-center gap-3">
