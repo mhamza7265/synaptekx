@@ -124,7 +124,7 @@
                                                                         <i class="fa fa-picture-o"></i> Choose
                                                                     </a>
                                                                 </span>
-                                                                <input id="feat_{{$loop->iteration}}_thumbnail" style="height: 36px" class="form-control" value="{{ data_get($section, 'data.section_image', '') }}" type="text" name="feat_image[]" required>
+                                                                <input id="feat_{{$loop->iteration}}_thumbnail" style="height: 36px" class="form-control" value="{{ data_get($section, 'data.section_image', '') }}" type="text" name="section_image[]" required>
                                                             </div>
                                                             <div id="feat_{{$loop->iteration}}_holder" style="margin-top:15px; max-height:100px;">
                                                                 @if (!empty(data_get($section, 'data.section_image')))
@@ -155,7 +155,7 @@
                                                                 <i class="fa fa-picture-o"></i> Choose
                                                             </a>
                                                         </span>
-                                                        <input id="feat_new_thumbnail" style="height: 36px" class="form-control" type="text" name="feat_image[]" required>
+                                                        <input id="feat_new_thumbnail" style="height: 36px" class="form-control" type="text" name="section_image[]" required>
                                                     </div>
                                                     <div id="feat_new_holder" style="margin-top:15px; max-height:100px;"></div>
                                                 </div>
