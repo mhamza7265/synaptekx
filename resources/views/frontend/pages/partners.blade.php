@@ -337,7 +337,7 @@
                                     <div class="row">
                                         @foreach ($services as $service)
                                             <div class="col-12 col-md-6">
-                                                <a href="{{ route('services', ['id' => $service->id]) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="{{ $loop->index }}00">
+                                                <a href="{{ route('services', ['slug' => $service->slug]) }}" class="capability-link fs-32 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="{{ $loop->index }}00">
                                                     <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M0 2H20M20 2V20M20 2L2.75862 20" stroke="#FFFFFF99" stroke-opacity="1" stroke-width="3"/>
                                                     </svg>

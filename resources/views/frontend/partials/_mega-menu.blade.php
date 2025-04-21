@@ -6,9 +6,9 @@
             @endphp
             @foreach ($services as $service)
                 <div class="col-4">
-                    <a href="{{ route('services', ['id' => $service->id]) }}" style="text-decoration: none" class="d-flex justify-content-start align-items-center gap-3">
+                    <a href="{{ route('services', ['slug' => $service->slug]) }}" style="text-decoration: none" class="d-flex justify-content-start align-items-center gap-3">
                         <img src="{{$service->page_icon}}" />
-                        <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('id') == $service->id) ? 'text-gradient' : 'text-black' }}">{{$service->name}}</p>
+                        <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('slug') == $service->slug) ? 'text-gradient' : 'text-black' }}">{{$service->name}}</p>
                     </a>
                     <div>
                         @php
@@ -29,7 +29,7 @@
                                 $displayTitle = data_get($section, 'display_title', '');
                             @endphp
                             @if ($displayTitle)
-                                <a href="{{ route('services', ['id' => $service->id]) . '#' . $slug }}" 
+                                <a href="{{ route('services', ['slug' => $service->slug]) . '#' . $slug }}" 
                                 class="mega-menu-mobile-link d-block menu-link">
                                     <i class="fa-solid fa-arrow-right me-3"></i>{{ $displayTitle }}
                                 </a>

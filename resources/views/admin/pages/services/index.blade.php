@@ -35,7 +35,7 @@
                                     <td class="checkbox-column"> {{$loop->iteration}} </td>
                                     <td class="user-name">{{$service->name}}</td>
                                     <td class="text-center">
-                                        <a class="btn btn-sm btn-success" href="{{route('services', ['id' => $service->id])}}" target="_blank">
+                                        <a class="btn btn-sm btn-success" href="{{route('services', ['slug' => $service->slug])}}" target="_blank">
                                             <i class="fa fa-eye"></i>
                                         </a>
                                         <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', $service->id)}}">

@@ -26,11 +26,11 @@ class FrontendController extends Controller
         return view('frontend.pages.home', compact('title', 'description', 'page', 'partners', 'services'));
     }
 
-    public function services($id)
+    public function services($slug)
     {
         $settings = Setting::first();
         // Set the default title
-        $service = Services::findOrFail($id);
+        $service = Services::where('slug', $slug)->firstOrFail();
 
         $title = "$service->meta_title | $settings->site_title";
 

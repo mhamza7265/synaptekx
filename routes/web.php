@@ -29,7 +29,7 @@ Route::post('storage-link', [FrontendController::class, 'storageLink'])->name('s
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
 
-Route::get('/services/{id}', [FrontendController::class, 'services'])->name('services');
+Route::get('/services/{slug}', [FrontendController::class, 'services'])->name('services');
 
 Route::post('/contact', [FrontendController::class, 'sendContactEmail'])->name('contact');
 Route::get('/partners', [FrontendController::class, 'partners'])->name('partners');

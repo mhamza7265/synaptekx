@@ -8,7 +8,7 @@
             <div>
                 <p class="footer-link-heading text-left text-md-start text-nowrap">Services</p>
                 @foreach ($services as $service)
-                    <a href="{{ route('services', ['id' => $service->id]) }}" class="d-block footer-link text-left text-md-start">{{$service->name}}</a>
+                    <a href="{{ route('services', ['slug' => $service->slug]) }}" class="d-block footer-link text-left text-md-start">{{$service->name}}</a>
                 @endforeach
             </div>
             

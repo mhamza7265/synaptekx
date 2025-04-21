@@ -315,7 +315,7 @@
                                 @foreach ($services as $service)
                                     <div class="tab-pane fade show {{$loop->first ? 'active' : ''}}" id="tab-{{$loop->iteration}}">
                                         {!!$service->service_description!!}
-                                        <a href="{{ route('services', ['id' => $service->id]) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                        <a href="{{ route('services', ['slug' => $service->slug]) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                             <img src="{{asset('images/frontend/check.svg')}}" />
                                             <span class="ms-2 me-2 fs-14 text-white">Explore</span>
                                         </a>
