@@ -7,7 +7,7 @@
                 <div class="widget-content widget-content-area icon-accordion-content">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="text-center pb-2">Services Page Content</h4>
-                        <i href="{{route('admin.services.index')}}" class="btn btn-md btn-success">All Services</i>
+                        <a href="{{route('admin.services.index')}}" class="btn btn-md btn-success">All Services</a>
                     </div>
                     <div id="withoutSpacing" class="no-outer-spacing accordion">
                         <div class="card">
