@@ -5,7 +5,10 @@
         <div class="col-lg-12 layout-spacing">
             <div class="statbox widget box box-shadow">
                 <div class="widget-content widget-content-area icon-accordion-content">
-                    <h4 class="text-center pb-2">Services Page Content</h4>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-center pb-2">Services Page Content</h4>
+                        <i href="{{route('admin.services.index')}}" class="btn btn-md btn-success">All Services</i>
+                    </div>
                     <div id="withoutSpacing" class="no-outer-spacing accordion">
                         <div class="card">
                             <div class="card-header" id="headingMeta5">
