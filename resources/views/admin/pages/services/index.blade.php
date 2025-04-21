@@ -41,6 +41,13 @@
                                         <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', $service->id)}}">
                                             <i class="fa fa-edit"></i>
                                         </a>
+                                        <form class=" d-inline-block" action="{{route('admin.services.destroy', $service->id)}}" method="POST">
+                                            @csrf 
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this service?');">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

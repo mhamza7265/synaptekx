@@ -5,8 +5,8 @@
         <div class="col-lg-12 layout-spacing">
             <div class="statbox widget box box-shadow">
                 <div class="widget-content widget-content-area icon-accordion-content">
-                    <div class="d-flex justify-content-between align-items-center pb-2">
-                        <h4 class="text-center">Services Page Content</h4>
+                    <div class="d-flex justify-content-between align-items-center pb-3">
+                        <h4 class="text-center m-0">Services Page Content</h4>
                         <a href="{{route('admin.services.index')}}" class="btn btn-md btn-success">All Services</a>
                     </div>
                     <div id="withoutSpacing" class="no-outer-spacing accordion">

@@ -83,6 +83,8 @@ class ServicesPagesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $service = Services::find($id);
+        $service->delete();
+        return redirect()->route('admin.services.index')->with('success', 'Service Page Deleted Successfully!');
     }
 }
