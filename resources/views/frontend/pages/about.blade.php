@@ -16,17 +16,35 @@
         <section class="nav-content">
             <section class="nav-section px-lg-5">
                 <div class="section-navbar d-flex justify-content-between align-items-center px-5 py-4 overflow-x-auto white-space-nowrap">
-                    @foreach (data_get($page, 'sections.all', []) as $section)
+                    @php
+                        $sections = data_get($page, 'sections.all', []);
+
+                        $groupPriority = [
+                            'features' => 1,
+                            'scroll_section' => 2,
+                            'features_2' => 3,
+                        ];
+
+                        // Sort the sections by priority of their group
+                        usort($sections, function ($a, $b) use ($groupPriority) {
+                            $aPriority = $groupPriority[$a['group'] ?? ''] ?? 99;
+                            $bPriority = $groupPriority[$b['group'] ?? ''] ?? 99;
+                            return $aPriority <=> $bPriority;
+                        });
+                    @endphp
+
+                    @foreach ($sections as $section)
                         @php
                             $title = data_get($section, 'title', '');
                             $slug = \Illuminate\Support\Str::slug($title);
                         @endphp
+
                         <a href="#{{ $slug }}"
-                        class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0"
-                        data-aos="fade-up"
-                        data-aos-duration="500"
-                        data-aos-easing="ease-in-out"
-                        data-aos-delay="{{ $loop->index }}00">
+                            class="d-block page-nav-link fs-16 fw-600 text-start me-5 me-lg-0"
+                            data-aos="fade-up"
+                            data-aos-duration="500"
+                            data-aos-easing="ease-in-out"
+                            data-aos-delay="{{ $loop->index }}00">
                             {{ $title }}
                         </a>
                     @endforeach
