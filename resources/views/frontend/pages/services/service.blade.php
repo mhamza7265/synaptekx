@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="services-container font-sf-pro">
-        <section class="hero" style="background-image: url('{{asset('images/frontend/digital-bg.png')}}');">
+        <section class="hero" style="background-image: url('{{data_get($service->sections ,'hero_section.bg_image' , '')}}');">
             <div class="container services-hero-container">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <div class="services-hero-text-content" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
