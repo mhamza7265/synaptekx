@@ -30,18 +30,40 @@
         <section class="nav-content">
             <section class="nav-section">
                 <div class="section-navbar d-flex justify-content-between align-items-center px-110 px-35 py-4 overflow-x-auto white-space-nowrap">
-                    @if (data_get($page, 'sections.all'))
-                        @foreach (collect(data_get($page, 'sections.all'))->reverse() as $section)
-                            <a href="#{{ \Illuminate\Support\Str::slug(data_get($section, 'title')) }}"
-                            class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0"
-                            data-aos="fade-up"
-                            data-aos-duration="500"
-                            data-aos-easing="ease-in-out"
-                            data-aos-delay="{{ $loop->index }}00">
-                                {{ data_get($section, 'title') }}
+                    @php
+                    $groupPriority = [
+                        'scaled_partners' => 1,
+                        'all_partners' => 2,
+                        'capabilities' => 3,
+                    ];
+                
+                    $sections = collect(data_get($page, 'sections.all', []))
+                        ->sortBy(function ($section) use ($groupPriority) {
+                            $group = $section['group'] ?? '';
+                            return $groupPriority[$group] ?? 99;
+                        })
+                        ->values();
+                @endphp
+                
+                @if ($sections->isNotEmpty())
+                    @foreach ($sections as $section)
+                        @php
+                            $title = data_get($section, 'title', '');
+                            $slug = \Illuminate\Support\Str::slug($title);
+                        @endphp
+                
+                        @if ($title)
+                            <a href="#{{ $slug }}"
+                               class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0"
+                               data-aos="fade-up"
+                               data-aos-duration="500"
+                               data-aos-easing="ease-in-out"
+                               data-aos-delay="{{ $loop->index }}00">
+                                {{ $title }}
                             </a>
-                        @endforeach
-                    @endif
+                        @endif
+                    @endforeach
+                @endif         
                 </div>
             </section>
             @foreach (data_get($page, 'sections.all') as $section)
