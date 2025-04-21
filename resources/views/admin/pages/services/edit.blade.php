@@ -510,7 +510,7 @@
                                 contents: '<i class="note-icon-picture"></i>',
                                 tooltip: 'Insert image with LFM',
                                 click: function () {
-                                    window.open('/laravel-filemanager?type=Images', 'lfm', 'width=900,height=600');
+                                    window.open('https://vps.brainboxadvisory.com/laravel-filemanager?type=Images', 'lfm', 'width=900,height=600');
                                     window.SetUrl = function (items) {
                                         items.forEach(function (item) {
                                             const html = '<p><img src="' + item.url + '" style="display:block;"></p><p><br></p>';
