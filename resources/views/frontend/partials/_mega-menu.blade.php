@@ -1,6 +1,6 @@
 <div id="services-menu" data-id="background-white" class="mega-menu w-100 shadow">
     <div class="container p-0">
-        <div class="row justify-content-start align-items-baseline">
+        <div class="row justify-content-start align-items-baseline" style="row-gap: 30px">
             @php
                 $services = \App\Models\Services::all();
             @endphp
