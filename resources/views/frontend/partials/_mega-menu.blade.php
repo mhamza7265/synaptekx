@@ -11,23 +11,31 @@
                         <p class="m-0 font-menu-head text-black {{ (request()->routeIs('services') && request()->route('id') == $service->id) ? 'text-gradient' : 'text-black' }}">{{$service->name}}</p>
                     </a>
                     <div>
-                        @foreach (data_get($service->sections, 'all', []) as $section)
-                            <a href="{{ route('services', ['id' => $service->id]) . '#' . \Illuminate\Support\Str::slug(data_get($section, 'title' , '')) }}" class="mega-menu-mobile-link d-block menu-link">
-                                <i class="fa-solid fa-arrow-right me-3"></i>{{data_get($section, 'display_title' , '')}}
-                            </a>
+                        @php
+                            $orderedGroups = ['features', 'transform', 'repeating_blocks'];
+                            $sections = collect(data_get($service->sections, 'all', []))
+                                ->sortBy(function ($section) use ($orderedGroups) {
+                                    $group = data_get($section, 'group', '');
+                                    return array_search($group, $orderedGroups) !== false ? array_search($group, $orderedGroups) : 999;
+                                })
+                                ->filter(function ($section) use ($orderedGroups) {
+                                    return in_array(data_get($section, 'group', ''), $orderedGroups);
+                                });
+                        @endphp
+
+                        @foreach ($sections as $section)
+                            @php
+                                $slug = \Illuminate\Support\Str::slug(data_get($section, 'title', ''));
+                                $displayTitle = data_get($section, 'display_title', '');
+                            @endphp
+                            @if ($displayTitle)
+                                <a href="{{ route('services', ['id' => $service->id]) . '#' . $slug }}" 
+                                class="mega-menu-mobile-link d-block menu-link">
+                                    <i class="fa-solid fa-arrow-right me-3"></i>{{ $displayTitle }}
+                                </a>
+                            @endif
                         @endforeach
-                        {{-- <a href="{{ route('services', ['name' => 'digital']) . '#consulting' }}" class="mega-menu-mobile-link d-block menu-link">
-                            <i class="fa-solid fa-arrow-right me-3"></i>Consulting & Strategy
-                        </a>
-                        <a href="{{ route('services', ['name' => 'digital']) . '#transformation' }}" class="mega-menu-mobile-link d-block menu-link">
-                            <i class="fa-solid fa-arrow-right me-3"></i>Transformation
-                        </a>
-                        <a href="{{ route('services', ['name' => 'digital']) . '#business' }}" class="mega-menu-mobile-link d-block menu-link">
-                            <i class="fa-solid fa-arrow-right me-3"></i>Business Applications
-                        </a>
-                        <a href="{{ route('services', ['name' => 'digital']) . '#ecommerce' }}" class="mega-menu-mobile-link d-block menu-link">
-                            <i class="fa-solid fa-arrow-right me-3"></i>eCommerce
-                        </a>                     --}}
+
                     </div>
                 </div>
             @endforeach

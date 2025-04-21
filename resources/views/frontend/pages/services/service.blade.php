@@ -29,18 +29,29 @@
         <section class="nav-content">
             <section class="nav-section">
                 <div class="section-navbar d-flex justify-content-between align-items-center px-5 py-4 overflow-x-auto white-space-nowrap">
-                    @foreach (data_get($service, 'sections.all', []) as $index => $section)
+                    @php
+                        $sections = collect(data_get($service, 'sections.all', []))
+                            ->filter(function ($section) {
+                                return in_array(data_get($section, 'group'), ['features', 'transform', 'repeating_blocks']);
+                            })
+                            ->sortBy(function ($section) {
+                                $order = ['features' => 1, 'transform' => 2, 'repeating_blocks' => 3];
+                                return $order[data_get($section, 'group')] ?? 999;
+                            })
+                            ->values(); // Reindex to get correct $loop->index
+                    @endphp
+
+                    @foreach ($sections as $index => $section)
                         <a href="#{{ \Illuminate\Support\Str::slug(data_get($section, 'display_title')) }}" 
-                        id="empower-link" 
-                        class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" 
-                        data-aos="fade-up" 
-                        data-aos-duration="500" 
-                        data-aos-easing="ease-in-out" 
-                        data-aos-delay="{{ $index }}00">
+                            id="empower-link" 
+                            class="d-block page-nav-link fs-16 fw-600 text-center me-5 me-lg-0" 
+                            data-aos="fade-up" 
+                            data-aos-duration="500" 
+                            data-aos-easing="ease-in-out" 
+                            data-aos-delay="{{ $index }}00">
                             {{ data_get($section, 'display_title', '') }}
                         </a>
                     @endforeach
-
                 </div>
             </section>
             @foreach (data_get($service, 'sections.all', []) as $section)
