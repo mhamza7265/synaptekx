@@ -1935,3 +1935,9 @@ textarea {
         content: none;
     }
 }
+
+@media (min-width: 1400px) {
+    #partners-carousel .carousel-inner {
+        padding: 0 130px;
+    }
+}

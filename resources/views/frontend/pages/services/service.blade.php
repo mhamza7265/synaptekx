@@ -151,7 +151,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-5 mx-auto" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
-                                        <div class="services-section-image">
+                                        <div class="services-section-image ms-auto">
                                             <img src="{{ data_get($section, 'data.image', '') }}" alt="" class="services-section-img" />
                                         </div>
                                     </div>

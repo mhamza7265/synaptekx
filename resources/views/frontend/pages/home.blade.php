@@ -205,7 +205,7 @@
                                             data-aos="fade-left"
                                             data-aos-easing="ease-in-out"
                                             data-aos-duration="500">
-                                            <h5 class="text-white fs-16 fw-500">{{ data_get($partner, 'partner_name', '') }}</h5>
+                                            {{-- <h5 class="text-white fs-16 fw-500">{{ data_get($partner, 'partner_name', '') }}</h5> --}}
                                             <p class="partners-carousel-text fs-16 text-white">{{ data_get($partner, 'partner_description', '') }}</p>
                                             <a href="{{ route('partners') }}"
                                             class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
