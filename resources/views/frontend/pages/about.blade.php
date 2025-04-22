@@ -81,48 +81,72 @@
                             $imageColumnClass = $isOdd ? 'order-1 order-lg-1' : 'order-2 order-lg-2';
                             $contentColumnClass = $isOdd ? 'order-2 order-lg-2' : 'order-1 order-lg-1';
                         @endphp
+                        @if ($loop->odd)
+                            <section id="{{ $sectionId }}" class="{{ $sectionClass }}">
+                                <div class="container overflow-hidden">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-5 mx-auto mt-4 mt-lg-0 {{ $imageColumnClass }}"
+                                            data-aos="{{ $isOdd ? 'fade-right' : 'fade-left' }}"
+                                            data-aos-duration="500"
+                                            data-aos-easing="ease-in-out">
+                                                <div class="services-section-image">
+                                                    <img src="{{ $sectionImage }}" alt="" class="services-section-img" />
+                                                </div>
+                                        </div>
 
-                        <section id="{{ $sectionId }}" class="{{ $sectionClass }}">
-                            <div class="container overflow-hidden">
-                                <div class="row">
-                                    <div class="col-12 col-lg-{{ $isOdd ? '5' : '7' }} mx-auto mt-4 mt-lg-0 {{ $imageColumnClass }}"
-                                        data-aos="{{ $isOdd ? 'fade-right' : 'fade-left' }}"
-                                        data-aos-duration="500"
-                                        data-aos-easing="ease-in-out">
-                                        @if($isOdd)
-                                            <div class="services-section-image">
-                                                <img src="{{ $sectionImage }}" alt="" class="services-section-img" />
-                                            </div>
-                                        @else
-                                            <div class="w-88 mb-4 ps-md-5 me-auto mx-lg-auto">
-                                                <h1 class="{{ $titleClass }}">{!! $formattedTitle !!}</h1>
-                                            </div>
-                                            <div class="w-88 mt-3 ps-md-5 me-auto mx-lg-auto">
-                                                <p class="services-section-desc">{{ $sectionDesc }}</p>
-                                            </div>
-                                        @endif
-                                    </div>
-
-                                    <div class="col-12 col-lg-{{ $isOdd ? '7' : '5' }} mx-auto mt-4 mt-lg-0 {{ $contentColumnClass }}"
-                                        data-aos="{{ $isOdd ? 'fade-left' : 'fade-right' }}"
-                                        data-aos-duration="500"
-                                        data-aos-easing="ease-in-out">
-                                        @if($isOdd)
-                                            <div class="w-88 ps-md-5 me-auto mx-lg-auto mb-4">
-                                                <h1 class="{{ $titleClass }}">{!! $formattedTitle !!}</h1>
-                                            </div>
-                                            <div class="mt-3 w-88 ps-md-5 me-auto mx-lg-auto">
-                                                <p class="services-section-desc color-site-gray">{{ $sectionDesc }}</p>
-                                            </div>
-                                        @else
-                                            <div class="services-section-image">
-                                                <img src="{{ $sectionImage }}" alt="" class="services-section-img" />
-                                            </div>
-                                        @endif
+                                        <div class="col-12 col-lg-7 mx-auto mt-4 mt-lg-0 {{ $contentColumnClass }}"
+                                            data-aos="fade-left"
+                                            data-aos-duration="500"
+                                            data-aos-easing="ease-in-out">
+                                                <div class="w-88 ps-md-5 me-auto mx-lg-auto mb-4">
+                                                    <h1 class="{{ $titleClass }}">{!! $formattedTitle !!}</h1>
+                                                </div>
+                                                <div class="mt-3 w-88 ps-md-5 me-auto mx-lg-auto">
+                                                    <p class="services-section-desc color-site-gray">{{ $sectionDesc }}</p>
+                                                </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
+                        @elseif ($loop->even)
+                            <section id="{{ $sectionId }}" class="{{$sectionClass}}">
+                                <div class="container overflow-hidden">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-7 ps-md-5 mx-auto mt-4 mt-md-0" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
+                                            <div class="w-88 mb-4">
+                                                @php
+                                                    $rawTitle = data_get($section, 'data.section_title');
+                                                    $words = preg_split('/\s+/', trim($rawTitle));
+                                                
+                                                    if (count($words) > 1) {
+                                                        $before = implode(' ', array_slice($words, 0, -1));
+                                                        $lastWord = end($words);
+                                                        $formattedTitle = e($before) . ' <span class="text-gradient">' . e($lastWord) . '</span>';
+                                                    } else {
+                                                        $formattedTitle = '<span class="text-gradient">' . e($rawTitle) . '</span>';
+                                                    }
+                                                @endphp
+                                                <h1 class="fs-57 fw-500 text-start text-white text-md-start">{!!$formattedTitle!!}</h1>
+                                            </div>
+                                            <div class="w-88 mt-3">
+                                                <p class="services-section-desc">{{ data_get($section, 'data.section_desc') }}</p>
+                                            </div>
+                                            @if ($loop->last)
+                                                <a href="{{ route('contact') }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                                    <img src="{{ asset('images/frontend/check.svg') }}" />
+                                                    <span class="ms-2 me-2 fs-14 text-white">Get in Touch</span>
+                                                </a>
+                                            @endif
+                                        </div>
+                                        <div class="col-12 col-lg-5 mx-auto mt-4 mt-lg-0" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+                                            <div class="services-section-image ms-auto">
+                                                <img src="{{ $sectionImage }}" alt="" class="services-section-img" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        @endif
                     @endif
                 @endforeach
             @endif

@@ -1,5 +1,5 @@
 <head>
-    <title>{{$title}}</title>
+    <title>{{$pageTitle}}</title>
     @php
         $settings = \App\Models\Setting::first();
     @endphp
