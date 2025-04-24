@@ -98,17 +98,21 @@ class FrontendController extends Controller
         $page = Page::where('slug', 'blogs')->first();
         $pageTitle = "$page->meta_title | $settings->site_title";
         $description = "$page->meta_description";
-        $blogs = Blog::where('status', 'published')->paginate(6);
+        $blogs = Blog::where('status', 'published')
+            ->orderBy('created_at', 'desc')
+            ->paginate(6);
         return view('frontend.pages.blog', compact('pageTitle', 'description', 'blogs', 'page'));
     }
 
     public function blogsDetails($slug)
     {
         $settings = Setting::first();
-        $title = "Blogs Details | $settings->site_title";
+        $pageTitle = "Blogs Details | $settings->site_title";
         $blog = Blog::where('slug', $slug)->with('user')->first();
-        $blogs = Blog::where('status', 'published')->paginate(3);
-        return view('frontend.pages.blog-details', compact('title', 'blog', 'blogs'));
+        $blogs = Blog::where('status', 'published')
+            ->orderBy('created_at', 'desc')
+            ->paginate(3);
+        return view('frontend.pages.blog-details', compact('pageTitle', 'blog', 'blogs'));
     }
 
     public function privacyPolicy()

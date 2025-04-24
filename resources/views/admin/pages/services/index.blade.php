@@ -38,10 +38,10 @@
                                         <a class="btn btn-sm btn-success" href="{{route('services', ['slug' => $service->slug])}}" target="_blank">
                                             <i class="fa fa-eye"></i>
                                         </a>
-                                        <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', $service->id)}}">
+                                        <a class="btn btn-sm btn-warning" href="{{route('admin.services.edit', $service->slug)}}">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <form class=" d-inline-block" action="{{route('admin.services.destroy', $service->id)}}" method="POST">
+                                        <form class=" d-inline-block" action="{{route('admin.services.destroy', $service->slug)}}" method="POST">
                                             @csrf 
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this service?');">

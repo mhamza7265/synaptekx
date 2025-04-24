@@ -15,7 +15,7 @@ class ServicesPagesController extends Controller
     public function index()
     {
         $title = 'Services Pages';
-        $services = Services::all();
+        $services = Services::orderBy('id', 'desc')->get();
         return view('admin.pages.services.index', compact('title', 'services'));
     }
 
@@ -40,16 +40,24 @@ class ServicesPagesController extends Controller
             'page_icon' => 'required',
         ]);
 
-        $services = new Services;
+        $slug = Str::slug($request->name);
+        $originalSlug = $slug;
+        $count = 1;
 
+        // Keep incrementing the slug until it's unique
+        while (Services::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $count++;
+        }
+
+        $services = new Services;
         $services->name = $request->name;
         $services->meta_title = $request->meta_title;
         $services->meta_description = $request->meta_description;
         $services->page_icon = $request->page_icon;
-        $services->slug = Str::Slug($request->name);
+        $services->slug = $slug;
         $services->save();
 
-        return redirect()->route('admin.services.index')->with('success', 'Service Page Created Successfully !');
+        return redirect()->route('admin.services.index')->with('success', 'Service Page Created Successfully!');
     }
 
     /**
@@ -63,10 +71,10 @@ class ServicesPagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $slug)
     {
         $title = 'Edit Services Page';
-        $service = Services::find($id);
+        $service = Services::where('slug', $slug)->firstOrFail();
         return view('admin.pages.services.edit', compact('title', 'service'));
     }
 
@@ -81,9 +89,9 @@ class ServicesPagesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $slug)
     {
-        $service = Services::find($id);
+        $service = Services::where('slug', $slug)->firstOrFail();
         $service->delete();
         return redirect()->route('admin.services.index')->with('success', 'Service Page Deleted Successfully!');
     }

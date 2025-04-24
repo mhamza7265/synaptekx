@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -33,10 +34,9 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        // dd(request()->all());
-        request()->validate([
+        $request->validate([
             'title' => 'required',
-            'slug' => 'required|unique:blogs,slug',
+            'slug' => 'required', // removed unique validation
             'status' => 'required',
             'meta_description' => 'required',
             'keywords' => 'required',
@@ -45,20 +45,30 @@ class BlogController extends Controller
             'blog_body' => 'required',
         ]);
 
+        $slug = Str::slug($request->slug); // in case frontend passed extra characters
+        $originalSlug = $slug;
+        $count = 1;
+
+        // make the slug unique if already taken
+        while (Blog::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $count++;
+        }
+
         $blog = new Blog();
         $blog->title = $request->title;
-        $blog->slug = $request->slug;
+        $blog->slug = $slug;
         $blog->status = $request->status;
         $blog->meta_description = $request->meta_description;
         $blog->keywords = $request->keywords;
         $blog->thumbnail = $request->thumbnail;
         $blog->category = $request->category;
         $blog->blog_body = $request->blog_body;
-        $blog->user_id = Auth::user()->id;
+        $blog->user_id = auth()->id();
         $blog->save();
 
         return redirect()->route('admin.blogs.index')->with('success', 'Blog post created successfully.');
     }
+
 
     /**
      * Display the specified resource.
@@ -83,10 +93,13 @@ class BlogController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // Find the blog by ID
         $blog = Blog::find($id);
+
+        // Validate the input fields
         request()->validate([
             'title' => 'required',
-            'slug' => 'required|unique:blogs,slug,' . $id,
+            'slug' => 'required|unique:blogs,slug,' . $id,  // ensure current slug is excluded from unique check
             'status' => 'required',
             'meta_description' => 'required',
             'keywords' => 'required',
@@ -95,17 +108,23 @@ class BlogController extends Controller
             'blog_body' => 'required',
         ]);
 
+        // Sanitize/slugify the incoming slug (if it's passed with extra characters/spaces)
+        $slug = Str::slug($request->slug);
+
+        // Update the blog details
         $blog->title = $request->title;
-        $blog->slug = $request->slug;
+        $blog->slug = $slug;  // Use sanitized slug
         $blog->status = $request->status;
         $blog->meta_description = $request->meta_description;
         $blog->keywords = $request->keywords;
         $blog->thumbnail = $request->thumbnail;
         $blog->category = $request->category;
         $blog->blog_body = $request->blog_body;
-        $blog->user_id = Auth::user()->id;
+
+        // Don't update user_id unless necessary, as it can remain unchanged
         $blog->save();
 
+        // Redirect with success message
         return redirect()->route('admin.blogs.index')->with('success', 'Blog post updated successfully.');
     }
 

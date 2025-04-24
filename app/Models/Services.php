@@ -14,4 +14,9 @@ class Services extends Model
     protected $casts = [
         'sections' => 'array',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

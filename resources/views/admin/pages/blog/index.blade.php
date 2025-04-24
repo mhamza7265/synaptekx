@@ -25,6 +25,7 @@
                         <table id="style-1" class="table style-1 dt-table-hover non-hover">
                             <thead>
                                 <tr>
+                                    <th style="display: none;">ID</th>
                                     <th class="checkbox-column dt-no-sorting"> Record no. </th>
                                     <th>Title</th>
                                     <th>Author</th>
@@ -36,6 +37,7 @@
                             <tbody>
                                 @foreach ($blogs as $blog)
                                 <tr>
+                                    <td style="display: none;">{{ $blog->id }}</td>
                                     <td class="checkbox-column"> {{$loop->iteration}} </td>
                                     <td class="user-name"><span data-bs-toggle="tooltip" data-bs-placement="top" title="{{$blog->title}}">{{Illuminate\Support\Str::limit($blog->title, 10)}}</span></td>
                                     <td class="author"><span data-bs-toggle="tooltip" data-bs-placement="top" title="{{$blog->user->name}}">{{Illuminate\Support\Str::limit($blog->user->name, 10)}}</span></td>
@@ -73,6 +75,7 @@
         
         <script type="module">
             const c1 = $('#style-1').DataTable({
+                order: [[1, 'desc']],
                 headerCallback:function(e, a, t, n, s) {
                     e.getElementsByTagName("th")[0].innerHTML=`
                     <div class="form-check form-check-primary d-block">
