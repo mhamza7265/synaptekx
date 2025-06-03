@@ -380,7 +380,9 @@ class PartnersPageContentController extends Controller
 
         // Loop through all sections to find and delete the partner by index
         foreach ($allSections as $i => $section) {
-            if (isset($section['data']['partners'])) {
+            if (($section['type'] ?? '') === 'repeating' &&
+                ($section['group'] ?? '') === 'all_partners'
+            ) {
                 $partners = $section['data']['partners'] ?? [];
 
                 // Check if the partner exists and delete it
