@@ -349,10 +349,29 @@
                 </div>
                 <div class="home_graphic mt-5" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
                     {{-- <img src="{{asset('images/frontend/home_graphic_1.svg')}}" class="home-graphic-1 object-fit-cover w-100" /> --}}
-                    <video autoplay loop muted playsinline class="w-100">
+                    {{-- <video autoplay loop muted playsinline class="w-100">
                         <source src="{{data_get($page->sections, 'transform_section.infograph' , '')}}" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video>
+                    </video> --}}
+                    @php
+                        $mediaPath = data_get($page->sections, 'transform_section.infograph' , '');
+                        $extension = strtolower(pathinfo($mediaPath, PATHINFO_EXTENSION));
+                        $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'];
+                        $videoExtensions = ['mp4', 'webm', 'ogg'];
+                    @endphp
+
+                    @if (in_array($extension, $imageExtensions))
+                        <div class="home_graphic mt-5" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
+                            <img src="{{ $mediaPath }}" alt="Infographic Image" class="w-100" />
+                        </div>
+                    @elseif (in_array($extension, $videoExtensions))
+                        <div class="home_graphic mt-5" data-aos="zoom-in" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-center">
+                            <video autoplay loop muted playsinline class="w-100">
+                                <source src="{{ $mediaPath }}" type="video/{{ $extension }}">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    @endif
                 </div>
             </div>    
         </section> 
