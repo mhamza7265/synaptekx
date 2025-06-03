@@ -428,7 +428,7 @@
             });
 
             function toggleAddButton() {
-                if($('#carousel-container .hero-carousel-item').length > 4){
+                if($('#carousel-container .hero-carousel-item').length > 9){
                     $('#add-carousel').addClass('d-none');
                 }else{
                     $('#add-carousel').removeClass('d-none');
