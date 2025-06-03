@@ -144,9 +144,9 @@
                         <img src="{{ asset('images/frontend/graphic_element.svg') }}" class="div-graphic-element" />
 
                         <div class="container py-90px overflow-hidden">
-                            <div class="d-flex justify-content-start align-content-center">
+                            {{-- <div class="d-flex justify-content-start align-content-center">
                                 <img src="{{ asset('images/frontend/features_pill.svg') }}" draggable="false" />
-                            </div>
+                            </div> --}}
                             <div class="col-md-12 mt-4">
                                 @php
                                     $rawTitle = data_get($section, 'title', '');
