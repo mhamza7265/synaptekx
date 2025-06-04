@@ -38,23 +38,19 @@
     </div>
 </div> --}}
 
-<div class="brands-container slider-wrapper">
+<div class="brands-container slider-wrapper mt-5">
     <div class="slider-track">
-        @foreach ($partners->sections['all'] as $section)
-            @if ($section['type'] == 'repeating' && $section['group'] == 'all_partners')
-                @for ($i = 0; $i < 3; $i++)
-                    @foreach ($section['data']['partners'] as $partner)
-                        <img src="{{ $partner['partner_logo'] }}"
-                            data-aos="fade-up"
-                            data-aos-duration="500"
-                            data-aos-easing="ease-in-out"
-                            data-aos-delay="{{ $loop->index }}00" 
-                            class="carousel-partner-img"
-                            />
-                    @endforeach
-                @endfor
-            @endif
-        @endforeach
+        @for ($i = 0; $i < 3; $i++)
+            @foreach (data_get($page->sections, 'clients', []) as $key => $section)
+                <img src="{{ $section }}"
+                    data-aos="fade-up"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out"
+                    data-aos-delay="{{ $loop->index }}00" 
+                    class="carousel-partner-img"
+                    />
+            @endforeach
+        @endfor
         {{-- <img src="{{asset('images/frontend/aws_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" />
         <img src="{{asset('images/frontend/hashicorp_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100" />
         <img src="{{asset('images/frontend/microsoft_logo.svg')}}" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200" />

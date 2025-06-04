@@ -108,6 +108,28 @@ class HomePageContentController extends Controller
         return redirect()->back()->with('success', 'Clients section updated.');
     }
 
+    public function deleteClient($index)
+    {
+        $page = Page::where('slug', 'home')->firstOrFail();
+
+        $sections = $page->sections ?? [];
+
+        // Remove the client at the specified index
+        $clients = $sections['clients'] ?? [];
+        unset($clients[$index]);
+
+        // Reindex the array
+        $clients = array_values($clients);
+
+        // Update the sections
+        $sections['clients'] = $clients;
+        $page->sections = $sections;
+        $page->save();
+
+        return redirect()->back()->with('success', 'Client deleted successfully!');
+    }
+
+
 
     // public function updateServices(Request $request)
     // {

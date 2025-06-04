@@ -159,7 +159,7 @@
                                                                 </span>
                                                                 <input id="client_thumbnail-{{$loop->index}}" style="height: 36px" class="form-control" value="{{ old('client.'.$loop->index, $section) }}" type="text" name="client[]" required>
                                                                 @if ($loop->iteration > 1)
-                                                                    <button type="button" class="btn btn-danger delete-client" style="border-top-left-radius: 0; border-bottom-left-radius: 0">
+                                                                    <button type="button" class="btn btn-danger delete-client" data-id="{{$loop->index}}" style="border-top-left-radius: 0; border-bottom-left-radius: 0">
                                                                         <i class="fa fa-trash"></i>
                                                                     </button>
                                                                 @endif
@@ -548,9 +548,15 @@
                 }
             })
 
-            $(document).on('click', 'delete-client', function(){
+            $(document).on('click', '.delete-client', function(){
                 //delete from server logic
-                let form = $('#delete-client-icon');
+                if(confirm('Do you want to remove this?')){
+                    let form = $('#delete-client-icon');
+                    let id = $(this).data('id');
+                    let url = `/admin/home-page/client/delete/${id}`
+                    $(form).attr('action', url);
+                    $(form).submit();
+                } 
             })
         })
     </script>
