@@ -79,6 +79,36 @@ class HomePageContentController extends Controller
         return redirect()->back()->with('success', 'Hero section deleted successfully!');
     }
 
+    public function updateClients(Request $request)
+    {
+        // Clean up empty values
+        $request->merge([
+            'client' => array_filter($request->input('client', [])),
+        ]);
+
+        // Validate the cleaned array
+        $request->validate([
+            'client' => 'required|array|min:1',
+        ]);
+
+        // Retrieve the "home" page
+        $page = Page::where('slug', 'home')->firstOrFail();
+
+        // Store the cleaned client array
+        $clients = $request->input('client');
+
+        // Prepare the updated sections array
+        $sections = $page->sections ?? [];
+        $sections['clients'] = $clients;
+
+        // Update the page with new clients section
+        $page->sections = $sections;
+        $page->save();
+
+        return redirect()->back()->with('success', 'Clients section updated.');
+    }
+
+
     // public function updateServices(Request $request)
     // {
     //     // dd($request->all());

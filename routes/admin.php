@@ -37,6 +37,7 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
     Route::get('/home-page/edit', [HomePageContentController::class, 'edit'])->name('home-page.edit');
     Route::post('/home-page/hero/update', [HomePageContentController::class, 'updateHero'])->name('home-page.hero.update');
     Route::delete('/home-page/hero/delete/{index}', [HomePageContentController::class, 'deleteHero'])->name('home-page.hero.delete');
+    Route::post('/home-page/clients/update', [HomePageContentController::class, 'updateClients'])->name('home-page.clients.update');
     Route::post('/home-page/services/update', [HomePageContentController::class, 'updateServices'])->name('home-page.services.update');
     Route::delete('/home-page/services/delete/{index}', [HomePageContentController::class, 'deleteService'])->name('home-page.services.delete');
     Route::post('/home-page/transformation/update', [HomePageContentController::class, 'updateTransformSection'])->name('home-page.transformation.update');

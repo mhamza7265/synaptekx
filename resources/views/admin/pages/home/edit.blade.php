@@ -132,6 +132,75 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card mt-2">
+                            <div class="card-header" id="headingThree100">
+                                <section class="mb-0 mt-0">
+                                    <div style="display: flex; justify-content: space-between; cursor: pointer;" role="menu" class="collapsed" data-bs-toggle="collapse" data-bs-target="#withoutSpacingAccordionThreeThree" aria-expanded="false" aria-controls="withoutSpacingAccordionThreeThree">
+                                        Clients
+                                        <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="withoutSpacingAccordionThreeThree" class="collapse" aria-labelledby="headingThree100" data-bs-parent="#withoutSpacing">
+                                <div class="container py-3">
+                                    <form method="POST" action="{{route('admin.home-page.clients.update')}}">
+                                        @csrf
+                                        <div class="card-body">
+                                            <span class="d-block mb-3">Select Client Icons:</span>
+                                            <div class="d-flex justify-content-start flex-wrap gap-3 client-icons-container">
+                                                @if (data_get($page->sections, 'clients', []) && count(data_get($page->sections, 'clients', [])) > 0)
+                                                    @foreach (data_get($page->sections, 'clients', []) as $key => $section)
+                                                        <div style="width:49%" class="client-container">
+                                                            <div class="input-group d-flex align-items-center mt-2">
+                                                                <span class="input-group-btn">
+                                                                <a class="lfm_image btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="client_thumbnail-{{$loop->index}}" data-preview="client_holder-{{$loop->index}}">
+                                                                    <i class="fa fa-picture-o"></i>
+                                                                </a>
+                                                                </span>
+                                                                <input id="client_thumbnail-{{$loop->index}}" style="height: 36px" class="form-control" value="{{ old('client.'.$loop->index, $section) }}" type="text" name="client[]" required>
+                                                                @if ($loop->iteration > 1)
+                                                                    <button type="button" class="btn btn-danger delete-client" style="border-top-left-radius: 0; border-bottom-left-radius: 0">
+                                                                        <i class="fa fa-trash"></i>
+                                                                    </button>
+                                                                @endif
+                                                            </div>
+                                                            <div id="client_holder-{{$loop->index}}" style="margin-top:15px; max-height:100px;">
+                                                                @if (!empty($section))
+                                                                    <img src="{{ asset($section) }}" style="height: 5rem;">
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                @else
+                                                    <div style="width:49%" class="client-container">
+                                                        <div class="input-group d-flex align-items-center mt-2">
+                                                            <span class="input-group-btn">
+                                                            <a class="lfm_image btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="client_thumbnail-01" data-preview="client_holder-01">
+                                                                <i class="fa fa-picture-o"></i>
+                                                            </a>
+                                                            </span>
+                                                            <input id="client_thumbnail-01" style="height: 36px" class="form-control" value="" type="text" name="client[]" required>
+                                                            {{-- <button class="btn btn-danger" style="border-top-left-radius: 0; border-bottom-left-radius: 0">
+                                                                <i class="fa fa-trash"></i>
+                                                            </button> --}}
+                                                        </div>
+                                                        <div id="client_holder-01" style="margin-top:15px; max-height:100px;">
+                                                            <img src="" style="height: 5rem;">
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                            <button type="button" class="btn btn-success mt-3 mx-auto d-block" id="add-client-icon">Add Client</button>
+                                        </div>
+                                        <button class="btn btn-md btn-success">Save</button>
+                                    </form>
+                                    <form id="delete-client-icon" method="POST" style="display: none;">
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="card mt-2">
                             <div class="card-header" id="headingTwo2">
@@ -442,6 +511,46 @@
                     $(this).closest('.hero-carousel-item').remove();
                     return;
                 }
+            })
+        })
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#add-client-icon").click(function(){
+                let randomValue = Math.random().toString(36).substr(2, 9);
+                let parentContainer = $('.client-icons-container');
+                let html = `
+                            <div style="width:49%" class="client-container">
+                                <div class="input-group d-flex align-items-center mt-2">
+                                    <span class="input-group-btn">
+                                    <a class="lfm_image btn btn-primary" style="border-top-right-radius: 0; border-bottom-right-radius: 0" data-input="client_thumbnail-${randomValue}" data-preview="client_holder-${randomValue}">
+                                        <i class="fa fa-picture-o"></i>
+                                    </a>
+                                    </span>
+                                    <input id="client_thumbnail-${randomValue}" style="height: 36px" class="form-control" value="" type="text" name="client[]" required>
+                                    <button type="button" class="btn btn-danger delete-client-loc" style="border-top-left-radius: 0; border-bottom-left-radius: 0">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                                <div id="client_holder-${randomValue}" style="margin-top:15px; max-height:100px;">
+                                    <img src="" style="height: 5rem;">
+                                </div>
+                            </div>
+                        `
+                $(parentContainer).append(html);
+                $('.lfm_image').filemanager('image');
+            })
+
+            $(document).on('click', '.delete-client-loc', function(){
+                if(confirm('Do you want to remove this?')){
+                    $(this).closest('.client-container').remove();
+                }
+            })
+
+            $(document).on('click', 'delete-client', function(){
+                //delete from server logic
+                let form = $('#delete-client-icon');
             })
         })
     </script>
