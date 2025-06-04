@@ -145,7 +145,7 @@
                                 <div class="container py-3">
                                     <form method="POST" action="{{route('admin.home-page.clients.update')}}">
                                         @csrf
-                                        <div class="card-body">
+                                        <div class="card-body" style="background-color: darkseagreen">
                                             <span class="d-block mb-3">Select Client Icons:</span>
                                             <div class="d-flex justify-content-start flex-wrap gap-3 client-icons-container">
                                                 @if (data_get($page->sections, 'clients', []) && count(data_get($page->sections, 'clients', [])) > 0)
