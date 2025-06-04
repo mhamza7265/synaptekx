@@ -374,7 +374,7 @@
 }
 
 .hero-section {
-    height: 800px;
+    min-height: 800px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
