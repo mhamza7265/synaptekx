@@ -1562,6 +1562,15 @@ textarea {
     width: max-content;
 }
 
+.site-action-btn-home {
+    border: 2px solid #fc8e2b;
+    background: transparent;
+    border-radius: 18px;
+    padding: 5px;
+    width: max-content;
+    margin-bottom: 110px;
+}
+
 .content-box {
     background: dimgrey;
     padding: 5px;

@@ -74,7 +74,7 @@
                                         <p class="hero-detail-text">{!! $formattedSubtitle !!}</p>
                                     </div>
 
-                                    <a href="{{ route('services', ['slug' => 'digital']) }}" class="site-action-btn d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
+                                    <a href="{{ route('services', ['slug' => 'digital']) }}" class="site-action-btn-home d-flex justify-content-start align-items-center text-decoration-none text-black mt-4">
                                         <img src="{{ asset('images/frontend/check.svg') }}" />
                                         <span class="ms-2 me-2 fs-14 text-white">Find Out More</span>
                                     </a>
