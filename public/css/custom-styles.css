@@ -1585,6 +1585,20 @@ textarea {
     height: 100px;
 }
 
+.cookiepolicy {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    background-color: #f9f9f9;
+    z-index: 99999;
+}
+.cookiepolicy.show {
+    display: block;
+}
+
 /* .home-hero-section .carousel-item {
     height: 800px !important;
 } */

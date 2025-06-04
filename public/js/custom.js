@@ -143,4 +143,56 @@ $(document).ready(function () {
         $("#navMenu").css("transform", "translateX(-100%)");
         $("body").css("overflow-y", "auto");
     });
+
+    (function () {
+        "use strict";
+
+        var $cookieAlert = $("#cookiepolicy");
+        var $acceptCookies = $("#cookieconfirm");
+
+        if (!$cookieAlert.length) {
+            return;
+        }
+
+        // Initially hide the banner (in case not already hidden)
+        $cookieAlert.hide();
+
+        // Show the banner after a small delay if the cookie is not present
+        if (!getCookie("acceptCookies")) {
+            setTimeout(function () {
+                $cookieAlert.slideDown("slow").addClass("show");
+            }, 500); // 500ms delay
+        }
+
+        // Accept button click
+        $acceptCookies.on("click", function () {
+            setCookie("acceptCookies", true, 365);
+            $cookieAlert.slideUp("slow", function () {
+                $cookieAlert.removeClass("show");
+            });
+
+            // Dispatch custom event
+            $(window).trigger("cookieAlertAccept");
+        });
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(";");
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i].trim();
+                if (c.indexOf(name) === 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+    })();
 });
