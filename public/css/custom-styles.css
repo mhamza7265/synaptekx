@@ -1920,6 +1920,7 @@ textarea {
     }
     .partners-carousel-text {
         height: 200px;
+        overflow-y: scroll;
     }
     .hero-more-btn {
         margin-bottom: 30px;

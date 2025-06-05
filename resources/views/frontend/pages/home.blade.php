@@ -334,9 +334,9 @@
                     @php
                         $rawTransformTitle = data_get($page, 'sections.transform_section.section_title', '');
 
-                        if (stripos($rawTransformTitle, 'transformation') !== false) {
+                        if (stripos($rawTransformTitle, 'synaptekx') !== false) {
                             $formattedTransformTitle = preg_replace(
-                                '/(transformation)/i',
+                                '/(synaptekx)/i',
                                 '<span class="text-gradient">$1</span>',
                                 e($rawTransformTitle)
                             );
