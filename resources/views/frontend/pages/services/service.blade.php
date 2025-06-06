@@ -97,13 +97,13 @@
                                     if (stripos($rawTitle, 'transformation') !== false) {
                                         $formattedTitle = preg_replace(
                                             '/(transformation)/i',
-                                            '<span class="text-gradient">$1</span>',
+                                            '<span class="d-block d-md-inline text-gradient">$1</span>',
                                             e($rawTitle)
                                         );
                                     } elseif (stripos($rawTitle, 'synaptekx') !== false) {
                                         $formattedTitle = preg_replace(
                                             '/(synaptekx)/i',
-                                            '<span class="text-gradient">$1</span>',
+                                            '<span class="d-block d-md-inline text-gradient">$1</span>',
                                             e($rawTitle)
                                         );
                                     }
