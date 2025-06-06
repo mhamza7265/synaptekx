@@ -466,21 +466,22 @@
 
 .slider-track {
     display: flex;
-    width: max-content;
-    animation: scroll 70s linear infinite; /* Adjust speed */
+    width: fit-content;
+    animation: scroll 70s linear infinite;
 }
 
 .slider-track img {
     height: auto;
     margin: 0 10px;
+    flex-shrink: 0;
 }
 
 @keyframes scroll {
-    from {
-        transform: translateX(0);
+    0% {
+        transform: translateX(0%);
     }
-    to {
-        transform: translateX(-100%); /* Moves half of the items */
+    100% {
+        transform: translateX(-50%);
     }
 }
 
