@@ -93,21 +93,20 @@
                                 $rawTitle = data_get($section, 'title', '');
                                 $formattedTitle = $rawTitle;
 
-                                if ((stripos($rawTitle, 'transformation') !== false) || (stripos($rawTitle, 'synaptekx') !== false)) {
-                                    if(stripos($rawTitle, 'transformation')){
-                                        preg_replace(
+                                if (stripos($rawTitle, 'transformation') !== false || stripos($rawTitle, 'synaptekx') !== false) {
+                                    if (stripos($rawTitle, 'transformation') !== false) {
+                                        $formattedTitle = preg_replace(
                                             '/(transformation)/i',
                                             '<span class="text-gradient">$1</span>',
                                             e($rawTitle)
                                         );
-                                    }else if(stripos($rawTitle, 'synaptekx')){
-                                        preg_replace(
+                                    } elseif (stripos($rawTitle, 'synaptekx') !== false) {
+                                        $formattedTitle = preg_replace(
                                             '/(synaptekx)/i',
                                             '<span class="text-gradient">$1</span>',
                                             e($rawTitle)
                                         );
                                     }
-                                    
                                 }
                             @endphp
                             <h1 class="fs-57 fs-md-42px fw-500 text-center text-md-start">{!! $formattedTitle !!}</h1>
