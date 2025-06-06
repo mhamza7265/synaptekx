@@ -94,13 +94,13 @@
                                 $formattedTitle = $rawTitle;
 
                                 if ((stripos($rawTitle, 'transformation') !== false) || (stripos($rawTitle, 'synaptekx') !== false)) {
-                                    if($rawTitle = 'transformation'){
+                                    if(stripos($rawTitle, 'transformation')){
                                         preg_replace(
                                             '/(transformation)/i',
                                             '<span class="text-gradient">$1</span>',
                                             e($rawTitle)
                                         );
-                                    }else if($rawTitle = 'synaptekx'){
+                                    }else if(stripos($rawTitle, 'synaptekx')){
                                         preg_replace(
                                             '/(synaptekx)/i',
                                             '<span class="text-gradient">$1</span>',
