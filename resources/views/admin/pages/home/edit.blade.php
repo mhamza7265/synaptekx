@@ -705,7 +705,6 @@
         });
 
         $('.services-dlt-btn-dyn').on('click', function () {
-            console.log('services delet');
             if(confirm('Do you want to delete this service?')) {
                 const index = $(this).data('index');
                 const $form = $('#delete-services-form');

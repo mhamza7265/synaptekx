@@ -460,11 +460,8 @@
                 let partnerIndex = $partnerWrapper.data('partner-index'); // Get the index of this partner
 
                 let $detailsWrapper = $partnerWrapper.find('.elite_partner_details'); // Container for this partner's details
-                console.log('$detailsWrapper',$detailsWrapper);
                 let $firstDetail = $detailsWrapper.find('.elite_partner_detail').first(); // Template to clone
-                console.log('$firstDetail',$firstDetail);
                 let $newDetail = $firstDetail.clone();
-                console.log('$newDetail', $newDetail);
 
                 // Reset and clean the cloned detail
                 $newDetail.addClass('mt-3');
