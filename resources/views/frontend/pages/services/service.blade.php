@@ -91,33 +91,31 @@
                         <div class="container">
                             @php
                                 $rawTitle = data_get($section, 'title', '');
-                                $formattedTitle = $rawTitle;
+                                $formattedTitle = e($rawTitle); // Escape by default
 
-                                if (stripos($rawTitle, 'transformation') !== false || stripos($rawTitle, 'synaptekx') !== false) {
-                                    if (stripos($rawTitle, 'transformation') !== false) {
-                                        $formattedTitle = preg_replace(
-                                            '/(transformation)/i',
-                                            '<span class="d-block d-md-inline text-gradient">$1</span>',
-                                            e($rawTitle)
-                                        );
-                                    } elseif (stripos($rawTitle, 'synaptekx') !== false) {
-                                        $formattedTitle = preg_replace(
-                                            '/(synaptekx)/i',
-                                            '<span class="d-block d-md-inline text-gradient">$1</span>',
-                                            e($rawTitle)
-                                        );
-                                    }else{
-                                        $words = preg_split('/\s+/', trim($rawTitle));
-                                        $formattedTitle = e($rawTitle);
+                                if (stripos($rawTitle, 'transformation') !== false) {
+                                    $formattedTitle = preg_replace(
+                                        '/(transformation)/i',
+                                        '<span class="d-block d-md-inline text-gradient">$1</span>',
+                                        e($rawTitle)
+                                    );
+                                } elseif (stripos($rawTitle, 'synaptekx') !== false) {
+                                    $formattedTitle = preg_replace(
+                                        '/(synaptekx)/i',
+                                        '<span class="d-block d-md-inline text-gradient">$1</span>',
+                                        e($rawTitle)
+                                    );
+                                } else {
+                                    $words = preg_split('/\s+/', trim($rawTitle));
 
-                                        if (count($words) > 5) {
-                                            $before = implode(' ', array_slice($words, 0, -2));
-                                            $lastTwo = implode(' ', array_slice($words, -2));
-                                            $formattedTitle = e($before) . ' <span class="d-block d-md-inline text-gradient">' . e($lastTwo) . '</span>';
-                                        }
+                                    if (count($words) > 5) {
+                                        $before = implode(' ', array_slice($words, 0, -2));
+                                        $lastTwo = implode(' ', array_slice($words, -2));
+                                        $formattedTitle = e($before) . ' <span class="d-block d-md-inline text-gradient">' . e($lastTwo) . '</span>';
                                     }
                                 }
                             @endphp
+
                             <h1 class="fs-57 fs-md-42px fw-500 text-center text-md-start">{!! $formattedTitle !!}</h1>
                             @php
                                 $mediaPath = data_get($section, 'data.infograph', '');
