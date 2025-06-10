@@ -106,6 +106,15 @@
                                             '<span class="d-block d-md-inline text-gradient">$1</span>',
                                             e($rawTitle)
                                         );
+                                    }else{
+                                        $words = preg_split('/\s+/', trim($rawTitle));
+                                        $formattedTitle = e($rawTitle);
+
+                                        if (count($words) > 5) {
+                                            $before = implode(' ', array_slice($words, 0, -2));
+                                            $lastTwo = implode(' ', array_slice($words, -2));
+                                            $formattedTitle = e($before) . ' <span class="d-block d-md-inline text-gradient">' . e($lastTwo) . '</span>';
+                                        }
                                     }
                                 }
                             @endphp
