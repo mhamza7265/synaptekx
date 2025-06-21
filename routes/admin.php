@@ -96,4 +96,5 @@ Route::group(['middleware' => ['role:admin,superadmin']], function () {
 
     //pages meta route
     Route::post('/page-meta/{slug}', [PagesMetaContentController::class, 'update'])->name('page-meta.update');
+    Route::post('/service-page-meta/{slug}', [PagesMetaContentController::class, 'updateServiceMeta'])->name('service-page-meta.update');
 });

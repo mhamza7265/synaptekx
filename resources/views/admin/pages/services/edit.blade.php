@@ -21,7 +21,7 @@
 
                             <div id="withoutSpacingAccordionMeta5" class="collapse show" aria-labelledby="headingMeta5" data-bs-parent="#withoutSpacing">
                                 <div class="container py-3">
-                                    <form method="post" action="{{ route('admin.page-meta.update', ['slug' => $service->slug]) }}">
+                                    <form method="post" action="{{ route('admin.service-page-meta.update', ['slug' => $service->slug]) }}">
                                         @csrf 
                                         <span class="d-block mt-3">Meta Title</span>
                                         <input type="text" name="meta_title" value="{{$service->meta_title}}" class="form-control mt-2" required>
