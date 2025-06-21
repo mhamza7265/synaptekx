@@ -33,9 +33,10 @@ class FrontendController extends Controller
         $service = Services::where('slug', $slug)->firstOrFail();
 
         $pageTitle = "$service->meta_title | $settings->site_title";
+        $description = "$service->meta_description";
 
         // Return the appropriate view with the title
-        return view('frontend.pages.services.service', compact('pageTitle', 'service'));
+        return view('frontend.pages.services.service', compact('pageTitle', 'service', 'description'));
     }
 
     public function sendContactEmail(Request $request)
