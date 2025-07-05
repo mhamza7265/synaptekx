@@ -47,6 +47,7 @@ cp .env.example .env
 php artisan key:generate
 php artisan migrate --seed
 php artisan serve
+```bash
 
 Developed by Muhammad Hamza Hanif
 For technical support, please contact your IT team or reach out through the official Synaptekx contact channel.
