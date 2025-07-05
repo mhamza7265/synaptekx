@@ -1,30 +1,52 @@
-# Laravel Admin Dashboard with Bootstrap 5.3
+# Synaptekx Business Website
 
-## Features
+A responsive and feature-rich business website for **Synaptekx**, designed and developed using Laravel. It includes a public-facing frontend and a full-featured CMS (Content Management System) for dynamic content management.
 
-The Laravel Admin Dashboard is a web-based application that serves as a starting point for an Admin Dashboard panel, complete with User Management and Roles Permissions.
+## 🌐 Live Site
 
-- Constructed using Laravel 10
-- Incorporates Bootstrap 5.3
-- Features an Authentication System
-- Includes User Management with a Block/Unblock System
-- Equipped with a Roles Permissions System
-- Allows User Profile Viewing and Updating
-- Enables User Password Changes
-- More features to be added soon
+Visit the website here: [https://www.synaptekx.com](https://www.synaptekx.com)
 
-## Contributing
+## 🚀 Features
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Frontend
+- Fully responsive design
+- Scroll-based animations for interactive user experience
+- Clean, modern layout with a focus on performance and usability
+- SEO-optimized structure
 
-## Code of Conduct
+### Pages
+- Home
+- About Us
+- Services (dynamic – can be added or removed via admin panel)
+- Partners
+- Contact Us
+- Blog (with individual post view)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Backend (CMS)
+- Built-in Admin Panel with secure authentication
+- Add, edit, and delete service pages
+- Blog management: create, edit, publish/unpublish blog posts
+- Partner management (Elite & others)
+- Section-based CMS control for dynamic homepage and inner content
 
-## Security Vulnerabilities
+## 🛠️ Tech Stack
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **Framework:** Laravel (PHP)
+- **Frontend:** Blade Templates, TailwindCSS/Bootstrap (whichever was used)
+- **Database:** MySQL
+- **Animation:** AOS
+- **Admin Panel:** Custom Laravel-based CMS
 
-## License
+## 📦 Installation (for local development)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+git clone https://github.com/mhamza7265/synaptekx.git
+cd synaptekx
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
+
+Developed by Muhammad Hamza Hanif
+For technical support, please contact your IT team or reach out through the official Synaptekx contact channel.
